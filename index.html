@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Présidentielle 2027 — Candidats déclarés</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>Présidentielle 2027</h1>
+  <p class="subtitle"><span id="candidats-count">21</span> <span id="candidats-count-label">candidats</span> officiellement déclarés — Situation au <span id="derniere-maj">8 juillet 2026</span></p>
+</header>
+
+<div class="alert-box" id="alert-box">
+  <strong>⚡ 7 juillet 2026</strong> — Marine Le Pen condamnée en appel (45 mois d'inéligibilité dont 30 avec sursis), mais éligible pour 2027. Candidature confirmée + pourvoi en cassation suspensif déposé.
+</div>
+
+<div class="controls">
+  <input type="search" id="search-input" placeholder="Rechercher un candidat ou un parti…" aria-label="Rechercher un candidat ou un parti">
+  <select id="bloc-filter" aria-label="Filtrer par bloc politique">
+    <option value="">Tous les blocs</option>
+  </select>
+</div>
+
+<div class="table-wrap">
+<table>
+<thead>
+  <tr>
+    <th data-sort-key="nom">Candidat <span class="sort-arrow"></span></th>
+    <th data-sort-key="parti">Parti <span class="sort-arrow"></span></th>
+    <th data-sort-key="sondage">Sondage¹ <span class="sort-arrow"></span></th>
+    <th>Candidatures passées</th>
+    <th>Idées phares</th>
+  </tr>
+</thead>
+<tbody id="candidats-tbody">
+</tbody>
+</table>
+</div>
+
+<noscript>
+<p style="margin:1rem 0; color:#f59e0b; font-size:0.85rem;">JavaScript est désactivé — voici une version simplifiée du tableau. Activez JavaScript pour la recherche, le tri et les fiches candidats détaillées.</p>
+<div class="table-wrap">
+<table>
+<tbody>
+  <tr class="bloc-header bloc-exgauche"><td colspan="3">● Extrême gauche</td></tr>
+  <tr class="bloc-exgauche"><td><span class="candidat-name">Nathalie Arthaud</span></td><td class="parti">Lutte Ouvrière</td><td class="sondage-faible">~0.5%</td></tr>
+  <tr class="bloc-exgauche candidat-small"><td><span class="candidat-name">Juan Branco</span></td><td class="parti">Sans étiquette</td><td class="sondage-faible">&lt; 0.5%</td></tr>
+
+  <tr class="bloc-header bloc-gradicale"><td colspan="3">● Gauche radicale</td></tr>
+  <tr class="bloc-gradicale"><td><span class="candidat-name">Jean-Luc Mélenchon</span></td><td class="parti">La France Insoumise</td><td class="sondage-fort">13–16%</td></tr>
+
+  <tr class="bloc-header bloc-gprimaire"><td colspan="3">● Gauche — Primaire « Front populaire 2027 »</td></tr>
+  <tr class="bloc-gprimaire"><td><span class="candidat-name">Marine Tondelier</span></td><td class="parti">Les Écologistes</td><td class="sondage-moyen">~2.5%</td></tr>
+  <tr class="bloc-gprimaire"><td><span class="candidat-name">François Ruffin</span></td><td class="parti">Debout !</td><td class="sondage-moyen">~2–3%</td></tr>
+  <tr class="bloc-gprimaire candidat-small"><td><span class="candidat-name">Clémentine Autain</span></td><td class="parti">L'Après</td><td class="sondage-faible">&lt; 1%</td></tr>
+  <tr class="bloc-gprimaire candidat-small"><td><span class="candidat-name">Lydie Massard</span></td><td class="parti">Union Démocr. Bretonne</td><td class="sondage-faible">&lt; 0.5%</td></tr>
+
+  <tr class="bloc-header bloc-ghors"><td colspan="3">● Gauche — Hors primaire</td></tr>
+  <tr class="bloc-ghors"><td><span class="candidat-name">Delphine Batho</span></td><td class="parti">Génération Écologie</td><td class="sondage-faible">&lt; 1%</td></tr>
+  <tr class="bloc-ghors candidat-small"><td><span class="candidat-name">Jérôme Guedj</span></td><td class="parti">PS (dissident)</td><td class="sondage-faible">&lt; 1%</td></tr>
+  <tr class="bloc-ghors candidat-small"><td><span class="candidat-name">Karim Bouamrane</span></td><td class="parti">PS</td><td class="sondage-faible">&lt; 1%</td></tr>
+  <tr class="bloc-ghors candidat-small"><td><span class="candidat-name">Philippe Brun</span></td><td class="parti">PS (primaire interne)</td><td class="sondage-faible">&lt; 0.5%</td></tr>
+
+  <tr class="bloc-header bloc-centre"><td colspan="3">● Bloc central</td></tr>
+  <tr class="bloc-centre"><td><span class="candidat-name">Édouard Philippe</span></td><td class="parti">Horizons</td><td class="sondage-fort">14–19%</td></tr>
+  <tr class="bloc-centre"><td><span class="candidat-name">Gabriel Attal</span></td><td class="parti">Renaissance (EPR)</td><td class="sondage-moyen">8%</td></tr>
+
+  <tr class="bloc-header bloc-droite"><td colspan="3">● Droite</td></tr>
+  <tr class="bloc-droite"><td><span class="candidat-name">Bruno Retailleau</span></td><td class="parti">Les Républicains</td><td class="sondage-moyen">8%</td></tr>
+  <tr class="bloc-droite candidat-small"><td><span class="candidat-name">David Lisnard</span></td><td class="parti">Nouvelle Énergie</td><td class="sondage-faible">&lt; 1%</td></tr>
+
+  <tr class="bloc-header bloc-exdroite"><td colspan="3">● Extrême droite / Souverainisme</td></tr>
+  <tr class="bloc-exdroite"><td><span class="candidat-name">Marine Le Pen ⚖️</span></td><td class="parti">Rassemblement National</td><td class="sondage-fort">33–36%</td></tr>
+  <tr class="bloc-exdroite"><td><span class="candidat-name">Nicolas Dupont-Aignan</span></td><td class="parti">Debout la France</td><td class="sondage-moyen">~2%</td></tr>
+  <tr class="bloc-exdroite candidat-small"><td><span class="candidat-name">Florian Philippot</span></td><td class="parti">Les Patriotes</td><td class="sondage-faible">&lt; 0.5%</td></tr>
+
+  <tr class="bloc-header bloc-inclassable"><td colspan="3">● Inclassables</td></tr>
+  <tr class="bloc-inclassable candidat-small"><td><span class="candidat-name">François Asselineau</span></td><td class="parti">UPR</td><td class="sondage-faible">&lt; 0.5%</td></tr>
+  <tr class="bloc-inclassable candidat-small"><td><span class="candidat-name">Clara Egger</span></td><td class="parti">Solution Démocratique</td><td class="sondage-faible">&lt; 0.5%</td></tr>
+  <tr class="bloc-inclassable candidat-small"><td><span class="candidat-name">Antoine Mikolajczak</span></td><td class="parti">Équinoxe</td><td class="sondage-faible">&lt; 0.5%</td></tr>
+</tbody>
+</table>
+</div>
+</noscript>
+
+<footer>
+  <strong>¹ Sources :</strong> <span id="sources-sondages">IFOP-Fiducial (25/06/2026), Odoxa (26/05/2026), Toluna Harris Interactive (29/05/2026). Marges ±2–3 pts.</span><br><br>
+  <strong>⚖️</strong> Condamnée en appel le 07/07/2026. Pourvoi en cassation annoncé (suspensif). Campagne en « binôme » avec J. Bardella.<br><br>
+  <strong>Non encore déclarés mais pressentis :</strong> <span id="pressentis-list">R. Glucksmann (~9 %), É. Zemmour (~4 %), F. Roussel (~3 %), F. Hollande, B. Cazeneuve, D. de Villepin, G. Darmanin, X. Bertrand.</span><br><br>
+  <em>Le tableau défile horizontalement sur mobile. Cliquez sur un nom de candidat pour sa fiche détaillée (quand disponible).</em>
+</footer>
+
+</div>
+<script src="data/candidats.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
