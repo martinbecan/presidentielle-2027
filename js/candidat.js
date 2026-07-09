@@ -26,6 +26,38 @@
     if (t === 'baisse') return { arrow: '↘', cls: 'tendance-baisse', label: 'En baisse' };
     return { arrow: '→', cls: 'tendance-stable', label: 'Stable' };
   }
+  function bilanIcon(r) {
+    if (r === 'tenu') return { icon: '✅', label: 'Tenu' };
+    if (r === 'partiellement') return { icon: '⚠️', label: 'Partiellement tenu' };
+    if (r === 'non_tenu') return { icon: '❌', label: 'Non tenu' };
+    if (r === 'retourne') return { icon: '🔄', label: 'Retourné' };
+    return { icon: '❔', label: r || 'Non précisé' };
+  }
+  function verdictClass(v) {
+    v = (v || '').toLowerCase();
+    if (v.indexOf('faux') !== -1) return 'stance-contre';
+    if (v.indexOf('trompeur') !== -1) return 'stance-contre';
+    if (v.indexOf('partiellement') !== -1) return 'stance-nuance';
+    if (v.indexOf('vrai') !== -1) return 'stance-pour';
+    return 'stance-nuance';
+  }
+  function verdictLabel(v) {
+    return (v || '').replace(/_/g, ' ').replace(/^./, function (c) { return c.toUpperCase(); });
+  }
+  // Sujets 2027 dont 4 recoupent les "grands clivages" déjà en base (positions{}) — on retombe
+  // sur cette donnée quand la recherche dédiée aux 10 sujets n'a rien apporté de neuf.
+  var SUJET_FALLBACK_KEYS = ['retraites', 'immigration', 'europe', 'dette'];
+  function resolveSujet(candidat, key) {
+    var s10 = candidat.positions_10_sujets && candidat.positions_10_sujets[key];
+    var dejaDoc = s10 && (!s10.synthese || /^Non re-recherch/i.test(s10.synthese) || !s10.direction);
+    if (dejaDoc && SUJET_FALLBACK_KEYS.indexOf(key) !== -1 && candidat.positions && candidat.positions[key]) {
+      return { synthese: candidat.positions[key].detail, direction: stanceLabel(candidat.positions[key].stance), stanceCls: 'stance-' + candidat.positions[key].stance };
+    }
+    if (s10 && s10.synthese && !/^Non re-recherch/i.test(s10.synthese)) {
+      return { synthese: s10.synthese, direction: s10.direction, stanceCls: null };
+    }
+    return null;
+  }
 
   var bloc = blocInfo(c.bloc);
 
@@ -45,6 +77,8 @@
   html += '<div class="sondage-box"><div><div class="chiffre">' + c.sondage.label + '</div><div class="libelle">Intentions de vote¹</div></div></div>';
   html += '</div>';
 
+  html += '<a class="back-link" href="../comparateur.html?c=' + c.slug + '">🔀 Comparer avec un autre candidat</a>';
+
   if (c.noteDetail) {
     html += '<div class="alert-box"><strong>' + c.note + '</strong> ' + c.noteDetail + '</div>';
   }
@@ -59,6 +93,14 @@
     if (c.parcours.faits_marquants && c.parcours.faits_marquants.length) {
       html += '<h3 style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.06em; color:#f59e0b; margin:0.9rem 0 0.5rem;">Faits marquants</h3>';
       html += '<ul class="faits-list">' + c.parcours.faits_marquants.map(function (f) { return '<li>' + f + '</li>'; }).join('') + '</ul>';
+    }
+    if (c.changements_ligne && c.changements_ligne.length) {
+      html += '<h3 style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.06em; color:#f59e0b; margin:0.9rem 0 0.5rem;">Changements de ligne</h3>';
+      html += '<ul class="changement-list">' + c.changements_ligne.map(function (ch) {
+        return '<li><span class="changement-tag">↪️ Changement</span> <span class="changement-date">' + ch.date + '</span>' +
+          '<div class="changement-transition"><strong>' + ch.de + '</strong> → <strong>' + ch.vers + '</strong></div>' +
+          '<div class="changement-contexte">' + ch.contexte + '</div></li>';
+      }).join('') + '</ul>';
     }
     html += '</section>';
   }
@@ -89,22 +131,73 @@
     html += '</div></section>';
   }
 
-  // Positions
-  if (c.positions) {
-    var axes = [
-      ['retraites', 'Retraites'], ['immigration', 'Immigration'], ['europe', 'Europe / UE'],
-      ['nucleaire', 'Nucléaire'], ['dette', 'Dette publique']
-    ];
-    html += '<section class="fiche-section"><h2>Position sur les grands clivages</h2><div class="positions-grid">';
-    axes.forEach(function (a) {
-      var p = c.positions[a[0]];
-      if (!p) return;
-      html += '<div class="position-card"><div class="label">' + a[1] + '</div>';
-      html += '<div class="stance stance-' + p.stance + '">' + stanceLabel(p.stance) + '</div>';
-      html += '<div class="detail">' + p.detail + '</div></div>';
-    });
-    html += '</div></section>';
+  // Promesses vs bilan (uniquement pour les ex-titulaires de fonctions exécutives)
+  html += '<section class="fiche-section"><h2>Promesses passées vs bilan</h2>';
+  if (c.promesses_bilan && c.promesses_bilan.length) {
+    html += '<table class="bilan-table"><tbody>';
+    html += c.promesses_bilan.map(function (p) {
+      var b = bilanIcon(p.resultat);
+      return '<tr><td class="bilan-icon" title="' + b.label + '">' + b.icon + '</td>' +
+        '<td><div class="bilan-promesse">' + p.promesse + '</div><div class="bilan-detail">' + p.detail + '</div></td></tr>';
+    }).join('');
+    html += '</tbody></table>';
+  } else {
+    html += '<p class="no-data">N\'a jamais exercé de fonction exécutive nationale — pas de bilan de gouvernance à établir.</p>';
   }
+  html += '</section>';
+
+  // Positions sur les sujets qui comptent (10 thématiques)
+  var sujets = [
+    ['pouvoir_achat', 'Pouvoir d\'achat / salaires'], ['retraites', 'Retraites'], ['securite', 'Sécurité / justice'],
+    ['immigration', 'Immigration'], ['sante', 'Santé / hôpital'], ['ecologie', 'Écologie / énergie'],
+    ['education', 'Éducation'], ['europe', 'Europe / international'], ['dette', 'Dette / fiscalité'],
+    ['institutions', 'Institutions / démocratie']
+  ];
+  html += '<section class="fiche-section"><h2>Positions sur les sujets qui comptent</h2><div class="positions-grid">';
+  sujets.forEach(function (s) {
+    var r = resolveSujet(c, s[0]);
+    if (!r) return;
+    html += '<div class="position-card"><div class="label">' + s[1] + '</div>';
+    if (r.direction) {
+      html += '<div class="stance ' + (r.stanceCls || 'stance-nuance') + '">' + r.direction + '</div>';
+    }
+    html += '<div class="detail">' + r.synthese + '</div></div>';
+  });
+  html += '</div></section>';
+
+  // Vérification des affirmations (fact-checking)
+  html += '<section class="fiche-section"><h2>Vérification des affirmations</h2>';
+  if (c.fact_checks && c.fact_checks.length) {
+    html += '<div class="factcheck-list">' + c.fact_checks.map(function (f) {
+      return '<div class="factcheck-card"><div class="detail" style="margin-bottom:0.5rem;">' + f.affirmation + '</div>' +
+        '<span class="stance ' + verdictClass(f.verdict) + '">' + verdictLabel(f.verdict) + '</span>' +
+        (f.source ? ' <span class="factcheck-source">— ' + f.source + (f.date ? ' · ' + f.date : '') + '</span>' : '') +
+        (f.url ? '<br><a href="' + f.url + '" target="_blank" rel="noopener noreferrer" class="factcheck-link">Voir la vérification →</a>' : '') +
+        '</div>';
+    }).join('') + '</div>';
+  } else {
+    html += '<p class="no-data">Pas de vérification disponible à ce stade.</p>';
+  }
+  if (c.fact_checks_note) {
+    html += '<p class="no-data" style="margin-top:0.8rem;">' + c.fact_checks_note + '</p>';
+  }
+  html += '</section>';
+
+  // Soutiens politiques
+  html += '<section class="fiche-section"><h2>Soutiens politiques</h2>';
+  if (c.soutiens && c.soutiens.length) {
+    html += '<ul class="soutiens-list">' + c.soutiens.map(function (s) {
+      return '<li><span class="soutien-type soutien-' + (s.type && s.type.indexOf('officiel') === 0 ? 'officiel' : 'presume') + '">' +
+        (s.type && s.type.indexOf('officiel') === 0 ? 'Officiel' : 'Présumé') + '</span>' +
+        '<div><strong>' + s.nom + '</strong><div class="soutien-fonction">' + s.fonction + '</div></div></li>';
+    }).join('') + '</ul>';
+  } else {
+    html += '<p class="no-data">Aucun soutien nommément identifié dans les sources consultées à ce stade.</p>';
+  }
+  if (c.soutiens_note) {
+    html += '<p class="no-data" style="margin-top:0.8rem;">' + c.soutiens_note + '</p>';
+  }
+  html += '</section>';
 
   // Dynamique sondagière
   var t = tendanceLabel(c.sondage.tendance);

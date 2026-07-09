@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comparateur de candidats — Présidentielle 2027</title>
+<meta property="og:title" content="Comparateur de candidats — Présidentielle 2027">
+<meta property="og:description" content="Comparez 2 à 3 candidats côte à côte sur les 10 sujets qui comptent pour les Français.">
+<meta property="og:image" content="https://martinbance1309-debug.github.io/presidentielle-2027/assets/og-image.svg">
+<meta property="og:url" content="https://martinbance1309-debug.github.io/presidentielle-2027/comparateur.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="container">
+
+<nav class="site-nav">
+  <a href="index.html" class="site-nav-brand">🇫🇷 Présidentielle 2027</a>
+  <div class="site-nav-links">
+    <a href="index.html">Accueil</a>
+    <a href="comparateur.html" class="active">Comparateur</a>
+    <a href="timeline.html">Timeline</a>
+    <a href="apropos.html">À propos</a>
+  </div>
+</nav>
+
+<header>
+  <h1>Comparateur</h1>
+  <p class="subtitle">Sélectionnez 2 ou 3 candidats (parmi ceux ayant une fiche détaillée) pour comparer leurs positions côte à côte.</p>
+</header>
+
+<div class="comparateur-picker" id="comparateur-picker">
+  <div class="picker-slot">
+    <label for="slot-0">Candidat 1</label>
+    <select id="slot-0" data-slot="0"><option value="">— Choisir —</option></select>
+  </div>
+  <div class="picker-slot">
+    <label for="slot-1">Candidat 2</label>
+    <select id="slot-1" data-slot="1"><option value="">— Choisir —</option></select>
+  </div>
+  <div class="picker-slot">
+    <label for="slot-2">Candidat 3 <span class="optional">(optionnel)</span></label>
+    <select id="slot-2" data-slot="2"><option value="">— Choisir —</option></select>
+  </div>
+</div>
+
+<div class="comparateur-actions">
+  <button type="button" id="share-btn" class="share-btn" disabled>🔗 Partager cette comparaison</button>
+  <span id="share-feedback" class="share-feedback"></span>
+</div>
+<input type="text" id="share-link" class="share-link" readonly aria-label="Lien de la comparaison" hidden>
+
+<div id="comparateur-result">
+  <p class="no-data">Choisissez au moins deux candidats ci-dessus pour afficher la comparaison.</p>
+</div>
+
+<noscript>
+  <p style="margin-top:1.5rem; color:#f59e0b; font-size:0.85rem;">Le comparateur nécessite JavaScript pour fonctionner. Consultez les <a href="index.html">fiches candidats</a> individuellement en attendant.</p>
+</noscript>
+
+<footer>
+  <em>Le comparateur défile en colonnes empilées sur mobile.</em>
+</footer>
+
+</div>
+<script src="data/candidats.js"></script>
+<script src="js/comparateur.js"></script>
+</body>
+</html>

@@ -40,6 +40,36 @@ window.SITE_DATA = {
 
   sourcesSondages: "IFOP-Fiducial (25/06/2026), Odoxa (26/05/2026), Toluna Harris Interactive (29/05/2026). Marges ±2–3 pts. Les intentions RN (33–36 %) correspondent aux hypothèses Le Pen ou Bardella.",
 
+  // Frise chronologique de la campagne. `candidatSlug` sert à colorer le point selon le bloc
+  // politique (et à créer un lien si le candidat a une fiche) ; laisser null pour un événement
+  // institutionnel ne concernant pas un candidat précis.
+  timeline: [
+    { date: "2023-09", dateLabel: "Septembre 2023", titre: "Marine Le Pen annonce son intention d'être candidate (TF1)", candidatSlug: "marine-le-pen", future: false },
+    { date: "2024-09", dateLabel: "Septembre 2024", titre: "Édouard Philippe annonce son intention d'être candidat", candidatSlug: "edouard-philippe", future: false },
+    { date: "2025-03-31", dateLabel: "31 mars 2025", titre: "Marine Le Pen condamnée en première instance (inéligibilité)", candidatSlug: "marine-le-pen", future: false },
+    { date: "2025-10", dateLabel: "Octobre 2025", titre: "Marine Tondelier annonce son intention d'être candidate", candidatSlug: "marine-tondelier", future: false },
+    { date: "2025-11-15", dateLabel: "15 novembre 2025", titre: "Lancement de l'initiative de primaire unitaire de la gauche (Tondelier, Ruffin, Autain)", candidatSlug: null, future: false },
+    { date: "2025-11-25", dateLabel: "25 novembre 2025", titre: "Delphine Batho annonce sa candidature", candidatSlug: "delphine-batho", future: false },
+    { date: "2025-12-08", dateLabel: "8 décembre 2025", titre: "Nathalie Arthaud annonce sa candidature (congrès de Lutte Ouvrière)", candidatSlug: "nathalie-arthaud", future: false },
+    { date: "2025-12-08", dateLabel: "8 décembre 2025", titre: "Marine Tondelier désignée candidate des Écologistes pour la primaire de la gauche (86% des voix)", candidatSlug: "marine-tondelier", future: false },
+    { date: "2026-01", dateLabel: "Janvier-février 2026", titre: "François Ruffin et Jérôme Guedj se déclarent candidats", candidatSlug: "francois-ruffin", future: false },
+    { date: "2026-03", dateLabel: "Mars 2026", titre: "Bruno Retailleau annonce sa candidature à l'investiture des Républicains", candidatSlug: "bruno-retailleau", future: false },
+    { date: "2026-03", dateLabel: "Mars 2026", titre: "Florian Philippot, François Asselineau, Nicolas Dupont-Aignan et David Lisnard confirment leur candidature", candidatSlug: "nicolas-dupont-aignan", future: false },
+    { date: "2026-04-19", dateLabel: "19 avril 2026", titre: "Bruno Retailleau désigné candidat officiel des Républicains (73,8% des voix des adhérents)", candidatSlug: "bruno-retailleau", future: false },
+    { date: "2026-05-03", dateLabel: "3 mai 2026", titre: "Jean-Luc Mélenchon confirme sa candidature (4e candidature)", candidatSlug: "jean-luc-melenchon", future: false },
+    { date: "2026-05-22", dateLabel: "22 mai 2026", titre: "Gabriel Attal officialise sa candidature", candidatSlug: "gabriel-attal", future: false },
+    { date: "2026-06", dateLabel: "Juin 2026", titre: "Karim Bouamrane et Philippe Brun se déclarent candidats", candidatSlug: null, future: false },
+    { date: "2026-07-05", dateLabel: "5 juillet 2026", titre: "Meeting de lancement de campagne d'Édouard Philippe (Adidas Arena)", candidatSlug: "edouard-philippe", future: false },
+    { date: "2026-07-07", dateLabel: "7 juillet 2026", titre: "Verdict en appel de Marine Le Pen — éligible, pourvoi en cassation suspensif", candidatSlug: "marine-le-pen", future: false },
+    { date: "2026-07-09", dateLabel: "9 juillet 2026", titre: "Vote interne du PS sur les modalités de sa participation à la primaire", candidatSlug: null, future: true },
+    { date: "2026-10-11", dateLabel: "11 octobre 2026", titre: "Primaire « Front populaire 2027 »", candidatSlug: null, future: true },
+    { date: "2026-10", dateLabel: "Automne 2026", titre: "Publication des programmes détaillés des candidats", candidatSlug: null, future: true },
+    { date: "2027-01", dateLabel: "Début 2027", titre: "Ouverture de la collecte officielle des parrainages", candidatSlug: null, future: true },
+    { date: "2027-03", dateLabel: "~Mars 2027", titre: "Publication de la liste officielle des candidats (Conseil constitutionnel)", candidatSlug: null, future: true },
+    { date: "2027-04-18", dateLabel: "18 avril 2027", titre: "1er tour de l'élection présidentielle", candidatSlug: null, future: true },
+    { date: "2027-05-02", dateLabel: "2 mai 2027", titre: "2nd tour de l'élection présidentielle", candidatSlug: null, future: true }
+  ],
+
   candidats: [
     // ================= EXTRÊME GAUCHE =================
     {
@@ -89,6 +119,25 @@ window.SITE_DATA = {
         "https://www.franceinfo.fr/politique/nathalie-arthaud/",
         "https://en.wikipedia.org/wiki/Nathalie_Arthaud",
         "https://www.europe1.fr/politique/Un-programme-de-lutte-pour-Nathalie-Arthaud-916560"
+      ],
+      changements_ligne: [],
+      promesses_bilan: [],
+      fact_checks: [],
+      fact_checks_note: "Aucun fact-check récent (2025-2026) d'AFP Factuel, Les Décodeurs ou CheckNews trouvé sur Nathalie Arthaud malgré plusieurs recherches — son profil est peu ciblé par le fact-checking national.",
+      positions_10_sujets: {
+        pouvoir_achat: { synthese: "SMIC porté à 2 000 € net, indexation automatique des salaires et pensions sur les prix.", direction: "hausse forte des salaires" },
+        retraites: { synthese: "Retour à 60 ans, 37,5 annuités, +300 € sur salaires et pensions.", direction: "abaissement de l'âge légal" },
+        securite: { synthese: "Peu de proposition sécuritaire spécifique ; sujet subordonné au discours de classe (refus de la stigmatisation).", direction: "non prioritaire" },
+        immigration: { synthese: "Refuse toute division entre travailleurs français et immigrés (avec ou sans papiers), solidarité de classe contre les employeurs.", direction: "ouverture / solidarité de classe" },
+        sante: { synthese: "Défense des services publics hospitaliers ; favorable à la dépénalisation du cannabis.", direction: "renforcement du service public" },
+        ecologie: { synthese: "Rejette la fiscalité écologique jugée injuste pour les ménages ; prône une économie planifiée et nationalisée.", direction: "planification / nationalisation" },
+        education: { synthese: "Défense générale des services publics d'éducation, sans mesure détaillée identifiée.", direction: "renforcement du service public" },
+        europe: { synthese: "Rejette l'UE actuelle jugée capitaliste, prône une union des travailleurs européens plutôt qu'un repli souverainiste.", direction: "internationalisme, anti-UE capitaliste" },
+        dette: { synthese: "Annulation de la dette publique, mise à contribution des grands groupes capitalistes, circuit du Trésor hors marchés financiers.", direction: "annulation / socialisation de la dette" },
+        institutions: { synthese: "Favorable à la révocabilité des élus à tout moment ; sceptique envers les référendums (dont le RIC).", direction: "révocabilité des élus" }
+      },
+      soutiens: [
+        { nom: "Lutte Ouvrière (parti)", fonction: "Organisation désignant sa candidate via vote de congrès (décembre 2025)", type: "officiel" }
       ]
     },
     {
@@ -146,6 +195,35 @@ window.SITE_DATA = {
         "https://melenchon2027.fr/programme2025/livre/",
         "https://en.wikipedia.org/wiki/Jean-Luc_M%C3%A9lenchon",
         "https://www.publicsenat.fr/actualites/politique/presidentielle-2027-melenchon-et-philippe-au-coude-a-coude-pour-la-qualification-au-second-tour"
+      ],
+      changements_ligne: [
+        { date: "7-12 novembre 2008", de: "Courant minoritaire au sein du Parti socialiste (motion C, 18,52% au congrès de Reims)", vers: "Fondation du Parti de Gauche (congrès fondateur le 1er février 2009)", contexte: "Rupture actée après le vote des motions internes du congrès de Reims, sur fond de désaccord avec l'orientation majoritaire du PS." },
+        { date: "entre les programmes 2017 et 2022", de: "Sortie de l'euro envisagée comme option de repli (« Plan B ») en 2017", vers: "Stratégie de « désobéissance sélective » aux traités européens (pacte de stabilité, règles de concurrence), sans sortie automatique de l'euro", contexte: "Reformulation de la doctrine européenne ; l'issue en cas d'échec des négociations reste débattue en interne à LFI." },
+        { date: "depuis 2022 (guerre en Ukraine)", de: "Critique globale de l'OTAN avec ambiguïté sur les responsabilités du conflit", vers: "Maintien de la critique de l'OTAN tout en distinguant explicitement ce sujet de la responsabilité de la Russie, attribuée à Vladimir Poutine", contexte: "Clarification rhétorique adoptée face aux accusations de complaisance envers Moscou." }
+      ],
+      promesses_bilan: [],
+      fact_checks: [
+        { affirmation: "Une publication reprise sur les réseaux sociaux affirmait que Jean-Luc Mélenchon percevait un salaire mensuel d'environ 36 000 € du fait de mandats cumulés (eurodéputé, sénateur).", verdict: "faux", source: "Defacto (observatoire) / AFP Factuel", url: "https://defacto-observatoire.fr/get/Medias/Factuel/Fact-checks/Retour-d-une-infox-affirmant-que-Jean-Luc-Melenchon-gagne-un-salaire-mensuel-de-36-000/WebHome", date: "resurgence identifiée en 2022, réexaminée en 2026" },
+        { affirmation: "Lors d'un meeting à Lyon (26 février 2026), Jean-Luc Mélenchon a évoqué la prononciation du nom « Epstein », disant vouloir dire « Epstine » car « ça fait plus russe ».", verdict: "partiellement_vrai", source: "franceinfo / Public Sénat / France 24", url: "https://www.franceinfo.fr/politique/melenchon/ah-vous-voulez-dire-epstine-pardon-ca-fait-plus-russe-jean-luc-melenchon-cree-la-polemique-lors-d-un-meeting-a-lyon_7833758.html", date: "27 février 2026" },
+        { affirmation: "Un montage audio diffusé sur France Culture établissait un parallèle entre des propos de Jean-Luc Mélenchon et de Jean-Marie Le Pen pour suggérer une proximité avec l'antisémitisme.", verdict: "trompeur", source: "Arrêt sur images / 20 Minutes", url: "https://www.arretsurimages.net/articles/antisemitisme-face-a-le-pen-erner-diffuse-un-extrait-mensonger-sur-melenchon", date: "juin 2026" }
+      ],
+      positions_10_sujets: {
+        pouvoir_achat: { synthese: "SMIC à 1 600 € net, suppression de la TVA sur les produits de première nécessité, hausse du RSA et de l'AAH au niveau du seuil de pauvreté.", direction: "hausse des minima sociaux" },
+        retraites: { synthese: "Retour à 60 ans après 40 annuités, retraites portées au niveau du SMIC, opposition à la capitalisation.", direction: "abaissement de l'âge légal" },
+        securite: { synthese: "Priorité aux alternatives à l'incarcération, refus des peines planchers, autorité indépendante de contrôle de l'action policière, légalisation du cannabis.", direction: "approche non répressive" },
+        immigration: { synthese: "Pas de plafond chiffré à l'immigration légale, régularisation des sans-papiers, maintien de l'AME ; vote contre la loi immigration de 2024.", direction: "politique d'accueil" },
+        sante: { synthese: "Remboursement intégral et élargissement de la PMA, légalisation de l'aide à mourir, hausse du financement hospitalier.", direction: "renforcement du service public" },
+        ecologie: { synthese: "Objectif 100% énergies renouvelables d'ici 2050, sortie du nucléaire, fin des subventions aux énergies fossiles.", direction: "sortie du nucléaire" },
+        education: { synthese: "60 000 recrutements immédiats dans l'Éducation nationale, opposition à l'uniforme scolaire obligatoire.", direction: "renforcement des moyens publics" },
+        europe: { synthese: "Stratégie de « désobéissance européenne » sans sortie formelle de l'UE, renégociation des traités (Plan A) avec application unilatérale du programme en cas d'échec (Plan B).", direction: "renégociation / désobéissance sélective" },
+        dette: { synthese: "Remise en cause des règles de 3% de déficit et 60% de dette du cadre européen, plaidoyer pour une souveraineté budgétaire retrouvée.", direction: "assouplissement des règles budgétaires" },
+        institutions: { synthese: "VIe République parlementaire, suppression du 49.3, scrutin proportionnel, référendum d'initiative citoyenne, droit de vote à 16 ans.", direction: "refonte institutionnelle profonde" }
+      },
+      soutiens: [
+        { nom: "Mathilde Panot", fonction: "Présidente du groupe LFI à l'Assemblée nationale", type: "officiel" },
+        { nom: "Manuel Bompard", fonction: "Coordinateur de La France Insoumise", type: "officiel" },
+        { nom: "Clémence Guetté", fonction: "Députée LFI", type: "officiel" },
+        { nom: "Sophia Chikirou", fonction: "Députée européenne LFI", type: "officiel" }
       ]
     },
 
@@ -196,6 +274,33 @@ window.SITE_DATA = {
         "https://en.wikipedia.org/wiki/Marine_Tondelier",
         "https://reporterre.net/Presidentielle-2027-Marine-Tondelier-representera-Les-Ecologistes-a-la-primaire-de-la-gauche",
         "https://fr.wikipedia.org/wiki/Primaire_de_la_gauche_unitaire_de_2026"
+      ],
+      changements_ligne: [
+        { date: "été 2026", de: "Ligne historique des Écologistes de prudence/réticence envers la climatisation (jugée non prioritaire face à l'urgence climatique)", vers: "Reconnaît pendant la canicule 2026 que la climatisation « devient nécessaire » et fait partie des solutions d'adaptation, tout en la jugeant inégalitaire et « pas une solution miracle »", contexte: "Inflexion assumée pendant un épisode de canicule ; propose en complément un « congé climatique » pour les travailleurs exposés à la chaleur." }
+      ],
+      promesses_bilan: [],
+      fact_checks: [
+        { affirmation: "Le 12 janvier 2025 sur RTL, Marine Tondelier a déclaré que 40% de la population de Gaza avait été exterminée depuis octobre 2023.", verdict: "faux (reconnu par l'intéressée)", source: "Le JDD / Times of Israël (couverture de sa propre rectification publique)", url: "https://www.lejdd.fr/politique/40-de-la-population-de-gaza-exterminee-depuis-octobre-2023-marine-tondelier-reconnait-une-erreur-et-presente-ses-excuses-153825", date: "12-13 janvier 2025" }
+      ],
+      fact_checks_note: "Aucun fact-check dédié d'AFP Factuel, Les Décodeurs ou CheckNews spécifiquement consacré à Marine Tondelier n'a été identifié pour 2025-2026 ; le seul élément vérifiable trouvé est sa propre rectification publique, largement reprise par la presse généraliste.",
+      positions_10_sujets: {
+        pouvoir_achat: { synthese: "Non re-recherché — déjà documenté en base.", direction: "" },
+        retraites: { synthese: "Non re-recherché — déjà documenté en base.", direction: "" },
+        securite: { synthese: "Privilégie la prévention à la répression : police de proximité, justice des mineurs renforcée, insertion professionnelle plutôt que répression.", direction: "prévention / proximité" },
+        immigration: { synthese: "Ligne humaniste : régularisation de travailleurs sans papiers dans les métiers en tension, voies légales pour réfugiés climatiques ; conteste le lien immigration-délinquance.", direction: "accueil / régularisation" },
+        sante: { synthese: "50 000 recrutements hospitaliers, +15% de salaires, plan de 10 000 psychologues dans écoles et entreprises.", direction: "investissement public" },
+        ecologie: { synthese: "Axe central du programme : transition écologique estimée à ~140 Md€/an, articulant mitigation et adaptation.", direction: "transition renforcée" },
+        education: { synthese: "Cours d'écologie obligatoires dès le primaire, +20% de salaires enseignants, classes plafonnées à 20 élèves.", direction: "renforcement des moyens" },
+        europe: { synthese: "Ligne fédéraliste assumée, signataire d'un manifeste pour une Europe fédérale, forte et sociale.", direction: "fédéralisme européen" },
+        dette: { synthese: "Pas de position chiffrée officielle sur la dette ; des analyses externes pointent un risque de financement par la dette de son plan écologique.", direction: "non précisé / critiqué en externe" },
+        institutions: { synthese: "VIe République plus parlementaire, proportionnelle, référendum d'initiative citoyenne.", direction: "VIe République / proportionnelle" }
+      },
+      soutiens: [
+        { nom: "Olivier Faure", fonction: "Premier secrétaire du Parti socialiste", type: "officiel" },
+        { nom: "Clémentine Autain", fonction: "Députée, figure de la gauche (ex-LFI)", type: "officiel" },
+        { nom: "François Ruffin", fonction: "Député, figure de la gauche (ex-LFI)", type: "officiel" },
+        { nom: "Benjamin Lucas", fonction: "Député, Génération·s", type: "officiel" },
+        { nom: "Sandrine Rousseau", fonction: "Députée écologiste de Paris", type: "presume — critique en interne d'une candidature autonome jugée facteur de fragmentation" }
       ]
     },
     {
@@ -239,6 +344,31 @@ window.SITE_DATA = {
         "https://en.wikipedia.org/wiki/Fran%C3%A7ois_Ruffin",
         "https://www.lejdd.fr/politique/presidentielle-2027-francois-ruffin-se-dit-hostile-a-limmigration-de-travail-172605",
         "https://legrandcontinent.eu/fr/2026/02/25/pour-une-declaration-dindependance-la-doctrine-ruffin-sur-leurope/"
+      ],
+      changements_ligne: [
+        { date: "15 juin 2024", de: "Groupe parlementaire La France Insoumise", vers: "Groupe Écologiste et Social", contexte: "Refus de LFI de réinvestir plusieurs députés critiques de Jean-Luc Mélenchon (dont Alexis Corbière) et le président de son mouvement local dans la Somme ; Ruffin dénonce cette mise à l'écart et quitte le groupe LFI à l'Assemblée." },
+        { date: "28 juin 2025", de: "Micro-parti régional « Picardie Debout ! »", vers: "Mouvement national « Debout ! »", contexte: "Lancement officiel à Paris du mouvement Debout!, dont Ruffin devient président, en vue d'une candidature à la primaire de la gauche ou, à défaut, d'une candidature autonome." }
+      ],
+      promesses_bilan: [],
+      fact_checks: [],
+      fact_checks_note: "Aucun fact-check récent (2025-2026) d'AFP Factuel, Les Décodeurs ou CheckNews trouvé sur François Ruffin. Point notable hors périmètre strict : une enquête de Marianne documente un écart entre sa promesse de « vivre au SMIC » et des revenus déclarés à la HATVP nettement supérieurs (~125 000 €/an en moyenne 2019-2023) ; Ruffin a lui-même reconnu publiquement ne pas vivre au SMIC. Une polémique distincte (mai 2026) sur une bande dessinée accusée de véhiculer des stéréotypes racistes a aussi nourri un repositionnement de campagne sur le thème de la probité.",
+      positions_10_sujets: {
+        pouvoir_achat: { synthese: "Porte-parole des « travailleurs essentiels » ; SMIC à 1 700 € nets et prime immédiate de 1 000 € financée par la taxation des plus riches.", direction: "hausse des bas salaires" },
+        retraites: { synthese: "Non re-recherché — déjà documenté en base (opposition à la réforme des 64 ans).", direction: "" },
+        securite: { synthese: "Pas de volet sécuritaire détaillé ; recentrage de campagne sur la probité et la lutte anticorruption après la polémique sur sa BD (mai 2026).", direction: "axe probité plutôt que sécuritaire" },
+        immigration: { synthese: "Controverse en mai 2026 après avoir dit vouloir limiter l'immigration de travail future tout en défendant l'accueil des personnes déjà présentes, provoquant des tensions à gauche.", direction: "distinction accueil existant / restriction flux futurs" },
+        sante: { synthese: "Hausse de 20% du budget de la santé publique et recrutements massifs de soignants.", direction: "renforcement des moyens publics" },
+        ecologie: { synthese: "Sortie progressive (non immédiate) du nucléaire, énergies renouvelables citoyennes, objectif -50% de CO2 d'ici 2030, chèque vert pour les ménages modestes.", direction: "transition progressive et sociale" },
+        education: { synthese: "Recrutements massifs d'enseignants.", direction: "renforcement des moyens publics" },
+        europe: { synthese: "Non re-recherché — déjà documenté en base (critique des traités européens).", direction: "" },
+        dette: { synthese: "Non re-recherché — déjà documenté en base.", direction: "" },
+        institutions: { synthese: "VIe République via assemblée constituante, référendum d'initiative citoyenne, scrutin proportionnel intégral.", direction: "refonte institutionnelle" }
+      },
+      soutiens: [
+        { nom: "Alexis Corbière", fonction: "Député, ex-LFI (Seine-Saint-Denis)", type: "officiel" },
+        { nom: "Sébastien Jumel", fonction: "Ancien député, ex-PCF", type: "officiel" },
+        { nom: "Laurent Baumel", fonction: "Parlementaire, Parti socialiste", type: "officiel" },
+        { nom: "Mathieu Bosque", fonction: "Ex-LFI, ancien président du mouvement (2024-2025)", type: "officiel" }
       ]
     },
     {
@@ -296,7 +426,29 @@ window.SITE_DATA = {
         "https://fr.wikipedia.org/wiki/Delphine_Batho",
         "https://www.assemblee-nationale.fr/dyn/deputes/PA335999",
         "https://www.franceinfo.fr/politique/eelv/l-ex-ministre-delphine-batho-candidate-a-la-presidentielle"
-      ]
+      ],
+      changements_ligne: [
+        { date: "2 mai 2018", de: "Parti socialiste", vers: "Génération Écologie", contexte: "Annonce son départ du PS après l'échec de sa candidature à la présidence du parti au congrès d'Aubervilliers ; élue présidente de Génération Écologie le 10 septembre 2018." }
+      ],
+      promesses_bilan: [
+        { promesse: "Défendre un budget 2014 du ministère de l'Écologie à la hauteur des enjeux environnementaux", resultat: "non_tenu", detail: "Le 2 juillet 2013, elle qualifie publiquement le budget 2014 de son ministère de « mauvais » et exprime sa déception envers le gouvernement ; François Hollande met fin à ses fonctions le jour même." },
+        { promesse: "Incarner une écologie « régalienne », intégrée aux fonctions centrales de l'État", resultat: "non_tenu", detail: "Son mandat s'achève après 13 mois par un limogeage, avant d'avoir pu mettre en œuvre cette vision structurelle du ministère." }
+      ],
+      fact_checks: [],
+      fact_checks_note: "Aucun fact-check d'AFP Factuel, Les Décodeurs ou CheckNews trouvé sur Delphine Batho pour 2025-2026, ni de soutien externe nommément identifié au-delà de l'investiture unanime interne de Génération Écologie (juin 2026).",
+      positions_10_sujets: {
+        pouvoir_achat: { synthese: "Protection contre l'inflation et les hausses de prix de l'énergie, dans une logique de sobriété plutôt que de relance de la consommation.", direction: "protection ciblée" },
+        retraites: { synthese: "Critique la réforme des 64 ans, dénonçant un cumul d'efforts demandés aux citoyens sans contrepartie de justice sociale.", direction: "opposition à la réforme" },
+        securite: { synthese: "Demande le réexamen des plaintes de mineurs pour violences, citant des affaires précises comme symptômes d'un dysfonctionnement judiciaire.", direction: "renforcement protection des mineurs" },
+        immigration: { synthese: "Non re-recherché — déjà documenté en base.", direction: "" },
+        sante: { synthese: "Santé pensée comme indissociable de l'environnement (pollution de l'air et de l'eau, hausse des cancers).", direction: "santé environnementale" },
+        ecologie: { synthese: "Fait de la décroissance le cœur explicite de son projet, jugeant la croissance du PIB incompatible avec la sécurité climatique.", direction: "décroissance assumée" },
+        education: { synthese: "Éducation à la consommation responsable comme pilier de sa politique.", direction: "éducation à la consommation responsable" },
+        europe: { synthese: "Non re-recherché — déjà documenté en base.", direction: "" },
+        dette: { synthese: "Reconnaît un problème de dette et de déficit mais refuse une résolution par l'austérité seule, plaidant pour un « compromis social et écologique ».", direction: "compromis social et écologique" },
+        institutions: { synthese: "Critique le présidentialisme, l'usage du 49.3 et l'influence des lobbies ; défend l'indépendance des autorités (ex. IRSN).", direction: "anti-présidentialisme" }
+      },
+      soutiens: []
     },
     {
       slug: "jerome-guedj", nom: "Jérôme Guedj", parti: "PS (dissident)", bloc: "ghors", fiche: false,
@@ -357,6 +509,41 @@ window.SITE_DATA = {
         "https://en.wikipedia.org/wiki/%C3%89douard_Philippe",
         "https://www.cnews.fr/france/2026-07-05/presidentielle-2027-refonte-de-lecole-justice-immigration-ce-quil-faut-retenir-du",
         "https://www.elyseescope.com/candidat/edouard-philippe/programme-presidentiel-et-methode"
+      ],
+      changements_ligne: [
+        { date: "2002", de: "Parti socialiste (soutien à Michel Rocard)", vers: "UMP (proche d'Alain Juppé)", contexte: "Militant au PS dans les années 1990 en soutenant Michel Rocard, il rallie la droite lors de la création de l'UMP en 2002 et devient directeur général des services de l'UMP jusqu'en 2004." },
+        { date: "2017", de: "Les Républicains (ex-UMP)", vers: "Gouvernement Macron / bloc central", contexte: "Quitte Les Républicains pour devenir Premier ministre d'Emmanuel Macron, avant de fonder son propre parti Horizons en 2021." }
+      ],
+      promesses_bilan: [
+        { promesse: "Réforme systémique des retraites (régime universel par points), engagement du programme Macron 2017", resultat: "non_tenu", detail: "Interrompue par la crise du Covid-19 au printemps 2020 après un long mouvement social fin 2019 ; jamais reprise sous cette forme." },
+        { promesse: "Réforme de l'assurance-chômage (calcul et indemnisation)", resultat: "partiellement", detail: "Nouvelles modalités de calcul entrées en vigueur été 2019, mais les mesures les plus dures ont été suspendues par l'épidémie de Covid-19 en 2020." },
+        { promesse: "Suppression progressive de la taxe d'habitation sur la résidence principale", resultat: "partiellement", detail: "Engagée dès le budget 2018 pour 80% des foyers, mais suppression totale achevée seulement en 2023, après son départ de Matignon." },
+        { promesse: "Transformation de l'ISF en IFI et flat tax sur les revenus du capital", resultat: "tenu", detail: "Mesures figurant dans le budget 2018, premier budget préparé sous son autorité, appliquées dès 2018." },
+        { promesse: "Réforme ferroviaire de la SNCF (fin du statut de cheminot, ouverture à la concurrence)", resultat: "tenu", detail: "Adoptée par ordonnances avant l'été 2018 malgré un mouvement de grève important." }
+      ],
+      fact_checks: [],
+      fact_checks_note: "Aucun fact-check d'AFP Factuel, Les Décodeurs ou CheckNews trouvé sur Édouard Philippe pour 2025-2026. Élément factuel judiciaire notable à signaler pour la neutralité : le Parquet national financier a ouvert début mai 2026 une enquête visant Édouard Philippe pour détournement de fonds publics, favoritisme et prise illégale d'intérêts, concernant le financement (2,154 M€) d'une association gérant la « Cité numérique » du Havre ; faits contestés par l'intéressé, enquête en cours, sans mise en examen ni jugement à ce stade.",
+      positions_10_sujets: {
+        pouvoir_achat: { synthese: "Prime exceptionnelle ciblée sur les classes moyennes et indexation des retraites et minima sociaux sur l'inflation réelle.", direction: "soutien ciblé classes moyennes" },
+        retraites: { synthese: "Non re-recherché — déjà documenté en base (capitalisation, maintien 64 ans).", direction: "" },
+        securite: { synthese: "Renforcement de la sécurité au quotidien présenté comme un des piliers de campagne, aux côtés de l'école et des retraites.", direction: "fermeté" },
+        immigration: { synthese: "Non re-recherché — déjà documenté en base (immigration choisie et contrôlée).", direction: "" },
+        sante: { synthese: "Recrutement massif de personnels soignants et création d'un grand service public de santé décentralisé.", direction: "renforcement du service public" },
+        ecologie: { synthese: "Mix nucléaire-renouvelables avec 6 à 8 nouveaux EPR et un plan de 80 Md€ sur 5 ans pour la rénovation thermique ; adaptation aux canicules au cœur du débat.", direction: "nucléaire et renouvelables" },
+        education: { synthese: "« Refonte » de l'école présentée comme la plus importante depuis Jules Ferry : fondamentaux dès le CP, 50 lycées d'excellence en région.", direction: "retour aux fondamentaux, exigence" },
+        europe: { synthese: "Souveraineté européenne sur la technologie, la défense, l'énergie et la finance ; maintien plein dans l'OTAN plutôt qu'une armée européenne intégrée.", direction: "souveraineté européenne atlantiste" },
+        dette: { synthese: "Non re-recherché — déjà documenté en base (règle d'or budgétaire).", direction: "" },
+        institutions: { synthese: "Dissolution de l'Assemblée dès son élection et trois référendums (retraites, règle d'or, habilitation à légiférer par ordonnances sur santé/éducation/justice).", direction: "référendums et dissolution" }
+      },
+      soutiens: [
+        { nom: "Nathalie Kosciusko-Morizet", fonction: "Ancienne ministre (ex-UMP)", type: "officiel" },
+        { nom: "Marc Ferracci", fonction: "Ministre / figure macroniste", type: "officiel" },
+        { nom: "Sylvain Maillard", fonction: "Député", type: "officiel" },
+        { nom: "Agnès Buzyn", fonction: "Ancienne ministre de la Santé", type: "officiel" },
+        { nom: "François de Rugy", fonction: "Ancien ministre", type: "officiel" },
+        { nom: "Laurent Wauquiez", fonction: "Président du groupe Droite Républicaine à l'Assemblée", type: "officiel" },
+        { nom: "Maud Bregeon", fonction: "Porte-parole du gouvernement", type: "officiel" },
+        { nom: "Gérald Darmanin", fonction: "Ministre de la Justice", type: "presume" }
       ]
     },
     {
@@ -405,6 +592,36 @@ window.SITE_DATA = {
         "https://en.wikipedia.org/wiki/Gabriel_Attal",
         "https://www.franceinfo.fr/politique/gabriel-attal/zero-deficit-en-2037-gabriel-attal-devoile-une-serie-de-mesures",
         "https://placement.meilleurtaux.com/retraite/actualites/2026-mai/plan-de-gabriel-attal-retraites-supprimer-age-legal.html"
+      ],
+      changements_ligne: [
+        { date: "2006-2016", de: "Parti socialiste (adhérent à 17 ans, cabinet de Marisol Touraine 2012-2017)", vers: "En Marche! / Renaissance", contexte: "Identifié à l'aile réformatrice du PS avant de quitter le parti pour rejoindre En Marche! en 2016, à la veille de la présidentielle 2017." }
+      ],
+      promesses_bilan: [
+        { promesse: "Expérimentation de l'uniforme scolaire annoncée comme ministre de l'Éducation", resultat: "partiellement", detail: "Testée uniquement dans des établissements volontaires (kit à ~200€), jamais généralisée à l'échelle nationale." },
+        { promesse: "Décrets d'application de la loi immigration (dont délai de 15 jours pour l'édiction d'une OQTF)", resultat: "tenu", detail: "Décrets publiés juste avant la démission du gouvernement Attal fin août/début septembre 2024 ; l'exécution effective des OQTF reste distincte et faible." },
+        { promesse: "Position sur la réduction du nombre de fonctionnaires", resultat: "retourne", detail: "Écart documenté par la presse entre sa ligne à Matignon et sa proposition de campagne 2026-2027 de supprimer 100 000 postes de fonctionnaires." },
+        { promesse: "Conduire son gouvernement jusqu'à un terme normal", resultat: "non_tenu", detail: "Gouvernement mis fin par la dissolution de l'Assemblée annoncée par Emmanuel Macron le 9 juin 2024, décision pour laquelle Attal dit ne pas avoir été consulté." }
+      ],
+      fact_checks: [],
+      fact_checks_note: "Aucun fact-check d'AFP Factuel, Les Décodeurs ou CheckNews trouvé sur Gabriel Attal pour 2025-2026. Deux controverses adjacentes documentées par la presse généraliste (hors des trois organes demandés) : des affirmations contestées sur les finances locales (audition, février 2025), et une polémique (avril 2026) sur une campagne de promotion de son livre utilisant des visuels générés par IA avec de fausses recommandations de célébrités.",
+      positions_10_sujets: {
+        pouvoir_achat: { synthese: "Pas de hausse d'impôts annoncée ; plan de rigueur budgétaire global (120-150 Md€ d'économies) plutôt qu'un plan pouvoir d'achat dédié.", direction: "rigueur sans hausse d'impôts" },
+        retraites: { synthese: "Non re-recherché — déjà documenté en base (suppression de l'âge légal, capitalisation).", direction: "" },
+        securite: { synthese: "Développement d'une défense « forte, prête à intervenir » ; peu de détails trouvés sur la sécurité intérieure.", direction: "renforcement de la défense" },
+        immigration: { synthese: "Non re-recherché — déjà documenté en base (quotas votés par le Parlement).", direction: "" },
+        sante: { synthese: "Mutuelle publique à 1€/jour ciblant retraités et ménages modestes.", direction: "mutuelle publique ciblée" },
+        ecologie: { synthese: "Articulation entre dette économique et dette écologique évoquée, sans détail chiffré trouvé.", direction: "articulation dette économique/écologique" },
+        education: { synthese: "Pilier de son projet (ex-ministre de l'Éducation) : pédagogie différenciée et moyens humains renforcés dans les établissements en difficulté.", direction: "priorité éducation" },
+        europe: { synthese: "Non re-recherché — déjà documenté en base (positionnement pro-européen).", direction: "" },
+        dette: { synthese: "Objectif « zéro déficit en 2037 », retour sous 3% avant 2032, ~120-150 Md€ d'économies via gel des prestations et suppression de 100 000 postes.", direction: "rigueur progressive" },
+        institutions: { synthese: "Réduction du nombre de parlementaires, vote obligatoire dès 16 ans, réforme territoriale des collectivités locales.", direction: "réduction du nombre d'élus, vote des jeunes" }
+      },
+      soutiens: [
+        { nom: "Conseil national de Renaissance", fonction: "Instance du parti (motion votée à 91% appelant Attal à se déclarer candidat)", type: "officiel" },
+        { nom: "Prisca Thévenot", fonction: "Cadre du parti Renaissance", type: "officiel" },
+        { nom: "Franck Riester", fonction: "Député, initiateur d'une tribune de ~500 élus locaux", type: "officiel" },
+        { nom: "François Bayrou", fonction: "Président du MoDem, ex-Premier ministre — ne s'est positionné pour aucun des deux candidats du bloc central", type: "presume" },
+        { nom: "Gérald Darmanin", fonction: "Ministre — position non tranchée entre Attal et Philippe", type: "presume" }
       ]
     },
 
@@ -454,7 +671,40 @@ window.SITE_DATA = {
         "https://en.wikipedia.org/wiki/Bruno_Retailleau",
         "https://www.rts.ch/info/monde/2026/article/bruno-retailleau-candidat-lr-a-la-presidentielle-francaise-2027",
         "https://www.lejdd.fr/politique/bruno-retailleau-la-dissuasion-nucleaire-francaise-ne-se-partage-pas-167502"
-      ]
+      ],
+      changements_ligne: [
+        { date: "décembre 2009 - avril 2010", de: "Dauphin pressenti de Philippe de Villiers (Puy du Fou, Mouvement pour la France, souverainiste)", vers: "Non-inscrit puis rapprochement avec la majorité présidentielle", contexte: "Écarté de la direction du Puy du Fou fin 2009 ; démissionne du MPF en avril 2010, jugeant le parti trop radicalisé." },
+        { date: "2012", de: "Non-inscrit / ex-MPF", vers: "UMP (devenue LR en 2015)", contexte: "Adhésion formelle à l'UMP, structure jugée plus en phase avec ses ambitions électorales et sa ligne régalienne." }
+      ],
+      promesses_bilan: [
+        { promesse: "Augmenter fortement les expulsions d'étrangers en situation irrégulière et l'exécution des OQTF", resultat: "partiellement", detail: "Hausse de 15,9% des reconduites à la frontière et de 22,6% des départs forcés en 2025 ; mais seulement ~15% des OQTF prononcées ont abouti à une expulsion effective dans l'année." },
+        { promesse: "Durcir l'accès à la naturalisation et aux régularisations exceptionnelles", resultat: "tenu", detail: "Circulaire du 2 mai 2025 : naturalisations en baisse de 8,4% au 1er semestre 2025 (-17% depuis octobre 2025), admissions exceptionnelles au séjour en baisse de 34%." },
+        { promesse: "Faire adopter et appliquer une loi contre le narcotrafic", resultat: "partiellement", detail: "Loi entrée en vigueur le 13 juin 2025 : 47 commerces fermés, 29 expulsions de locataires ; mais les indicateurs SSMSI 2025 montrent une hausse persistante du trafic (+8%) et de l'usage (+6%)." },
+        { promesse: "Faire reculer la délinquance globale", resultat: "partiellement", detail: "SSMSI 2025 : baisse des cambriolages et vols de véhicules, mais hausse des violences physiques/sexuelles et des escroqueries (+8%)." },
+        { promesse: "Justifier le lien entre immigration irrégulière et délinquance pour fonder sa politique sécuritaire", resultat: "retourne", detail: "Contesté publiquement dans « Complément d'enquête » (23 janvier 2025) : le CEPII avance l'absence d'impact statistique de l'immigration sur la délinquance globale ; Retailleau a répliqué avec des chiffres eux-mêmes débattus." }
+      ],
+      fact_checks: [
+        { affirmation: "Recherche ciblée sur AFP Factuel, Les Décodeurs et CheckNews : aucun article de vérification dédié et récent (2025-2026) sur une déclaration chiffrée de Bruno Retailleau n'a été identifié.", verdict: "non_trouve", source: "", url: "", date: "" }
+      ],
+      fact_checks_note: "Point notable hors périmètre strict des 3 médias demandés : sur France 2 (« Complément d'enquête », 23 janvier 2025), Retailleau a affirmé que 38% des mis en cause pour cambriolage et 40% pour vol de véhicule sont des étrangers (qui représentent ~7% de la population), chiffres débattus par des chercheurs (CEPII) contestant tout lien statistique immigration-délinquance.",
+      positions_10_sujets: {
+        pouvoir_achat: { synthese: "Priorité à la baisse des charges et impôts de production plutôt qu'à la redistribution directe.", direction: "baisse des impôts de production" },
+        retraites: { synthese: "Non re-recherché — déjà documenté en base (âge légal à 65 ans).", direction: "" },
+        securite: { synthese: "Renforcement des moyens policiers, justice plus sévère, loi anti-narcotrafic.", direction: "fermeté" },
+        immigration: { synthese: "Non re-recherché — déjà documenté en base (moins de 50 000 personnes/an).", direction: "" },
+        sante: { synthese: "Réorganisation de l'offre de soins et lutte contre les déserts médicaux, peu de mesures budgétaires chiffrées nouvelles identifiées.", direction: "réforme organisationnelle" },
+        ecologie: { synthese: "Favorable au nucléaire, critique de ce qu'il qualifie d'écologie punitive ou normative.", direction: "pro-nucléaire" },
+        education: { synthese: "Insiste sur l'autorité, le redressement du niveau scolaire et la discipline.", direction: "autorité" },
+        europe: { synthese: "Ligne souverainiste modérée : critique du fédéralisme européen tout en restant dans le cadre de l'UE.", direction: "souverainiste modéré" },
+        dette: { synthese: "Non re-recherché — déjà documenté en base (~100 Md€ de réduction).", direction: "" },
+        institutions: { synthese: "Position institutionnelle conservatrice, attaché à la Ve République, pas de grande réforme constitutionnelle nouvelle identifiée.", direction: "conservateur institutionnel" }
+      },
+      soutiens: [
+        { nom: "François-Xavier Bellamy", fonction: "Numéro deux des Républicains, eurodéputé", type: "officiel" },
+        { nom: "Jean-Jacques Panunzi", fonction: "Sénateur LR de Corse-du-Sud", type: "officiel" },
+        { nom: "François-Xavier Ceccoli", fonction: "Député LR de Haute-Corse", type: "officiel" }
+      ],
+      soutiens_note: "Contrairement à une idée reçue, Laurent Wauquiez n'est PAS un soutien : il s'est opposé à la tenue du vote interne LR, a publiquement invité Retailleau à « savoir se retirer » si sa candidature ne décolle pas, et penche plutôt vers Édouard Philippe. Xavier Bertrand et Michel Barnier ne sont pas non plus des soutiens confirmés."
     },
     {
       slug: "david-lisnard", nom: "David Lisnard", parti: "Nouvelle Énergie", bloc: "droite", fiche: false,
@@ -513,7 +763,31 @@ window.SITE_DATA = {
         "https://en.wikipedia.org/wiki/Marine_Le_Pen",
         "https://www.touteleurope.eu/vie-politique-des-etats-membres/proces-des-assistants-du-rn-marine-le-pen-condamnee-en-appel-mais-eligible-a-l-election-presidentielle-2027/",
         "https://www.publicsenat.fr/actualites/politique/au-rn-la-reforme-des-retraites-divise-jordan-bardella-et-marine-le-pen"
-      ]
+      ],
+      changements_ligne: [
+        { date: "15 avril 2019", de: "Sortie de l'Union européenne (« Frexit ») et sortie de l'euro, ligne portée en 2017", vers: "Abandon officiel de la sortie de l'euro et de l'UE au profit d'une réforme « de l'intérieur » et d'une « alliance des nations » européenne", contexte: "Annoncé à Strasbourg lors de la présentation des 25 propositions RN pour les européennes, avec Jordan Bardella. Repositionnement après l'échec de la proposition de retour au franc en 2017, jugée anxiogène pour épargnants et retraités." }
+      ],
+      promesses_bilan: [],
+      fact_checks: [],
+      fact_checks_note: "Recherche approfondie (une quinzaine de requêtes ciblées AFP Factuel, Les Décodeurs, CheckNews) : aucun fact-check daté 2025-2026 et clairement attribué à ces trois médias n'a pu être identifié concernant Marine Le Pen.",
+      positions_10_sujets: {
+        pouvoir_achat: { synthese: "« Prime de Pouvoir d'Achat » de 80€/mois pour bas revenus et petites retraites (jusqu'à 1500€/mois), financée par une contribution de 3% sur les importations ; incitation des entreprises à augmenter les salaires de 10% (jusqu'à 3 SMIC).", direction: "primes ciblées et protectionnisme" },
+        retraites: { synthese: "Non re-recherché — déjà documenté en base (maintien à 60-62 ans).", direction: "" },
+        securite: { synthese: "Loi de programmation sécurité-justice (+7,7 Md€ sur 5 ans), +7000 policiers et gendarmes, présomption de légitime défense pour les forces de l'ordre.", direction: "renforcement des moyens et de l'autorité" },
+        immigration: { synthese: "Non re-recherché — déjà documenté en base (fin de l'immigration de peuplement).", direction: "" },
+        sante: { synthese: "20 Md€ pour le système de santé, suppression des ARS au profit des préfets, moratoire sur la fermeture de lits, +10% de salaires pour le personnel soignant.", direction: "renationalisation de la gouvernance hospitalière" },
+        ecologie: { synthese: "Priorité au nucléaire (objectif 75% du mix énergétique), moratoire sur l'éolien et le solaire, développement hydroélectricité/géothermie.", direction: "priorité au nucléaire" },
+        education: { synthese: "Uniforme du primaire au collège, journée d'école allongée d'une heure, vidéosurveillance généralisée, retour des filières S/L/ES au bac.", direction: "école plus disciplinée, retour aux filières traditionnelles" },
+        europe: { synthese: "Non re-recherché — déjà documenté en base (maintien dans l'UE et l'euro, réforme de l'intérieur).", direction: "" },
+        dette: { synthese: "Objectif de ramener le déficit public sous 3% du PIB et de stabiliser la dette publique durant le quinquennat.", direction: "stabilisation de la dette" },
+        institutions: { synthese: "Abaissement du seuil du RIC à 500 000 signatures, mandat présidentiel unique de 7 ans non renouvelable, référendum obligatoire pour les traités touchant à la souveraineté.", direction: "renforcement du référendum et de la démocratie directe" }
+      },
+      soutiens: [
+        { nom: "Jordan Bardella", fonction: "Président du Rassemblement National", type: "officiel" },
+        { nom: "Éric Ciotti", fonction: "Président de l'Union des droites pour la République (UDR)", type: "officiel" },
+        { nom: "Marion Maréchal", fonction: "Députée européenne, présidente d'Identité-Libertés", type: "presume" }
+      ],
+      soutiens_note: "La divergence Bardella/Le Pen sur les retraites (mai-juillet 2026) est le principal point de tension interne identifié."
     },
     {
       slug: "nicolas-dupont-aignan",
@@ -564,7 +838,34 @@ window.SITE_DATA = {
         "https://en.wikipedia.org/wiki/Nicolas_Dupont-Aignan",
         "https://www.debout-la-france.fr/actualite/presidentielle-2027-jusqua-45-dintentions-de-vote-pour-nicolas-dupont-aignan/",
         "https://www.parlons-politique.fr/elections/sortie-de-lue-ce-que-promet-nicolas-dupont-aignan"
-      ]
+      ],
+      changements_ligne: [
+        { date: "13 janvier 2007", de: "Membre de l'UMP", vers: "Départ de l'UMP et candidature indépendante", contexte: "Quitte l'UMP la veille de l'investiture de Nicolas Sarkozy comme candidat du parti, lui reprochant d'étouffer les débats internes." },
+        { date: "23 novembre 2008", de: "Sans parti après la rupture avec l'UMP", vers: "Fondation de Debout la France", contexte: "Crée ce mouvement avec l'ambition d'un troisième parti gaulliste et souverainiste." },
+        { date: "2016-2026", de: "« Europe des nations » réformée de l'intérieur, prudent sur le Frexit", vers: "Frexit explicite « le plus vite possible » (3 mai 2026, plan en 3 étapes)", contexte: "Trajectoire graduelle : en 2016 pas favorable à un Frexit immédiat ; en 2017 dit avoir « évolué » sur l'euro sans vouloir en sortir purement ; 2023-2024 promeut le concept de « Bruxit » (sortie collective) ; décembre 2025 qualifie l'UE de « liberticide » ; le 3 mai 2026 (Grand Rendez-vous CNews/Europe1/Les Échos) appelle au Frexit avec un plan en 3 étapes (arrêt de la contribution nette, rétablissement des frontières, primauté du droit français)." }
+      ],
+      promesses_bilan: [],
+      fact_checks: [],
+      fact_checks_note: "Aucun fact-check d'AFP Factuel, Les Décodeurs ou CheckNews trouvé sur Nicolas Dupont-Aignan pour 2025-2026. Élément comparable trouvé hors périmètre : franceinfo (« Le Vrai du Faux », 9 mai 2025) a nuancé son affirmation sur le coût net de la contribution française à l'UE (ordre de grandeur correct sur les montants bruts, mais présentation jugée trompeuse — le coût net représente en réalité ~1% du PIB français).",
+      positions_10_sujets: {
+        pouvoir_achat: { synthese: "Attribue la hausse des prix à l'appartenance à l'UE ; propose un protectionnisme « intelligent » (droits de douane ciblés, 50 à 75% de la commande publique réservée à la production française).", direction: "protectionnisme et sortie UE" },
+        retraites: { synthese: "Non re-recherché — déjà documenté en base (retour à 62 ans).", direction: "" },
+        securite: { synthese: "Appelle l'État à « reprendre en main » l'autorité, notamment la protection des enfants ; ligne de fermeté et de restauration de l'autorité publique.", direction: "durcissement / fermeté" },
+        immigration: { synthese: "Non re-recherché — déjà documenté en base (rétablissement des frontières).", direction: "" },
+        sante: { synthese: "10 Md€/an pour l'hôpital public, titularisation des contractuels, suppression des ARS, un établissement de santé par département, doublement des effectifs de médecine scolaire.", direction: "renforcement du service public hospitalier" },
+        ecologie: { synthese: "Écologie « raisonnée » opposée aux « excès punitifs » des Verts ; relocalisation, économie circulaire ; relance du nucléaire avec 10 nouveaux EPR d'ici 2040.", direction: "écologie pragmatique pro-nucléaire" },
+        education: { synthese: "Hausse de 20% du salaire des enseignants, recentrage sur les savoirs fondamentaux, autorité et mérite.", direction: "revalorisation salariale, retour aux fondamentaux" },
+        europe: { synthese: "Durcissement récent : appel explicite au Frexit « le plus vite possible » depuis mai 2026 (voir changements_ligne).", direction: "sortie de l'UE (Frexit)" },
+        dette: { synthese: "Non re-recherché — déjà documenté en base.", direction: "" },
+        institutions: { synthese: "Refondation démocratique dans l'esprit de la Ve République originelle, suppression de l'article 49.3, référendum d'initiative citoyenne à partir de 500 000 signatures.", direction: "renforcement de la démocratie directe" }
+      },
+      soutiens: [
+        { nom: "Cécile Bayle de Jessé", fonction: "Vice-présidente de Debout la France", type: "officiel" },
+        { nom: "Frédéric Guyard", fonction: "Secrétaire général de Debout la France", type: "officiel" },
+        { nom: "Alexis Villepelet", fonction: "Porte-parole de Debout la France", type: "officiel" },
+        { nom: "François Guillaume", fonction: "Membre d'honneur de Debout la France, ancien ministre", type: "officiel" }
+      ],
+      soutiens_note: "A publiquement appelé Florian Philippot et François Asselineau à le rejoindre pour unifier le camp souverainiste, mais aucun ralliement officiel n'est confirmé à ce jour."
     },
     {
       slug: "florian-philippot", nom: "Florian Philippot", parti: "Les Patriotes", bloc: "exdroite", fiche: false,

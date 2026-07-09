@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>À propos — Présidentielle 2027</title>
+<meta property="og:title" content="À propos — Présidentielle 2027">
+<meta property="og:description" content="Qui a fait ce site, méthodologie, sources et neutralité.">
+<meta property="og:image" content="https://martinbance1309-debug.github.io/presidentielle-2027/assets/og-image.svg">
+<meta property="og:url" content="https://martinbance1309-debug.github.io/presidentielle-2027/apropos.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="container">
+
+<nav class="site-nav">
+  <a href="index.html" class="site-nav-brand">🇫🇷 Présidentielle 2027</a>
+  <div class="site-nav-links">
+    <a href="index.html">Accueil</a>
+    <a href="comparateur.html">Comparateur</a>
+    <a href="timeline.html">Timeline</a>
+    <a href="apropos.html" class="active">À propos</a>
+  </div>
+</nav>
+
+<header>
+  <h1>À propos</h1>
+  <p class="subtitle">Qui a fait ce site, comment, et avec quelles limites.</p>
+</header>
+
+<section class="fiche-section">
+  <h2>Qui a fait ce site ?</h2>
+  <p class="detail">Ce site est un projet personnel, réalisé par un particulier pour permettre à ses proches de suivre la présidentielle 2027 sans avoir à recouper eux-mêmes des dizaines d'articles. Ce n'est pas un média, pas un institut de sondage, et il n'est affilié à aucun parti ni aucune structure de campagne.</p>
+</section>
+
+<section class="fiche-section">
+  <h2>Méthodologie</h2>
+  <p class="detail" style="margin-bottom:0.7rem;">Les données (parcours, programmes, positions, sondages, fact-checks, soutiens) ont été rassemblées par recherche sur des sources publiques — presse généralisée, sites officiels des candidats et partis, Assemblée nationale et Sénat, INSEE/SSMSI pour les statistiques citées, AFP Factuel / Les Décodeurs (Le Monde) / CheckNews (Libération) pour la vérification des affirmations — avec l'aide d'un assistant IA (Claude, d'Anthropic) pour la recherche et la mise en forme.</p>
+  <p class="detail" style="margin-bottom:0.7rem;"><strong>Ce que ça implique :</strong> malgré le soin apporté, des erreurs, omissions ou informations datées peuvent subsister — la campagne évolue vite. Chaque fiche candidat renvoie vers ses sources pour vérification. Si vous repérez une erreur, un lien mort ou une information à corriger, une remontée via le dépôt GitHub du site est la bienvenue.</p>
+  <p class="detail">Les indicateurs de position (« favorable / opposé / nuancé », les couleurs sur les 10 sujets, les verdicts de fact-check) sont une <strong>synthèse éditoriale</strong> destinée à faciliter la lecture rapide — ils ne remplacent pas la lecture des programmes complets ni des articles sources, et ne doivent pas être lus comme un jugement de valeur porté sur un candidat.</p>
+</section>
+
+<section class="fiche-section">
+  <h2>Neutralité</h2>
+  <p class="detail">Ce site est un outil pédagogique et factuel. Aucun candidat n'est favorisé ou dénigré : les mêmes catégories d'information (parcours, programme, positions, bilan, fact-checks, soutiens) sont recherchées pour chaque candidat ayant une fiche, avec la même exigence de sourçage. Quand une information n'a pas pu être trouvée ou vérifiée, le site l'indique explicitement plutôt que de la deviner.</p>
+</section>
+
+<section class="fiche-section">
+  <h2>Sources principales</h2>
+  <ul class="parcours-list">
+    <li>Presse française généraliste et spécialisée (dépêches, articles d'analyse)</li>
+    <li>Sites officiels des candidats et de leurs partis</li>
+    <li>Assemblée nationale, Sénat, Conseil constitutionnel, vie-publique.fr</li>
+    <li>AFP Factuel, Les Décodeurs (Le Monde), CheckNews (Libération) pour le fact-checking</li>
+    <li>Wikipédia (pour les éléments biographiques factuels et datés)</li>
+  </ul>
+  <p class="detail" style="margin-top:0.7rem;">Chaque fiche candidat liste ses sources spécifiques en bas de page.</p>
+</section>
+
+<section class="fiche-section">
+  <h2>Contact</h2>
+  <p class="detail">Pour signaler une erreur, une mise à jour à faire ou une question sur ce site, vous pouvez écrire à <a href="mailto:martinbance1309@gmail.com">martinbance1309@gmail.com</a>.</p>
+</section>
+
+<footer>
+  <em>Dernière mise à jour du site : <span id="derniere-maj-apropos">8 juillet 2026</span>.</em>
+</footer>
+
+</div>
+<script src="data/candidats.js"></script>
+<script>
+  if (window.SITE_DATA) {
+    document.getElementById('derniere-maj-apropos').textContent = window.SITE_DATA.derniere_maj;
+  }
+</script>
+</body>
+</html>
