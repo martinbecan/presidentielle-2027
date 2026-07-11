@@ -70,6 +70,30 @@ window.SITE_DATA = {
     { date: "2027-05-02", dateLabel: "2 mai 2027", titre: "2nd tour de l'élection présidentielle", candidatSlug: null, future: true }
   ],
 
+  // Questions du quiz de compatibilité. Chaque candidat porte un score -2..+2 par question
+  // dans son champ `quizCompatScores` (même id). 1 à 2 questions par thème, formulations
+  // alternées pour ne pas systématiquement favoriser un bord politique sur un thème donné.
+  quizCompatQuestions: [
+    { id: "retraites_1", theme: "retraites", texte: "L'âge légal de départ à la retraite devrait être abaissé à 60 ans." },
+    { id: "retraites_2", theme: "retraites", texte: "Le système de retraite par capitalisation devrait être développé en complément de la répartition." },
+    { id: "immigration_1", theme: "immigration", texte: "La France devrait réduire significativement les flux migratoires." },
+    { id: "immigration_2", theme: "immigration", texte: "Les personnes en situation irrégulière travaillant en France depuis plusieurs années devraient pouvoir être régularisées." },
+    { id: "securite_1", theme: "securite", texte: "Les peines de prison devraient être systématiquement exécutées, sans aménagement." },
+    { id: "securite_2", theme: "securite", texte: "La prévention et l'insertion devraient être privilégiées plutôt que la répression pour lutter contre la délinquance." },
+    { id: "ecologie_1", theme: "ecologie", texte: "La France devrait investir davantage dans le nucléaire plutôt que dans les énergies renouvelables." },
+    { id: "ecologie_2", theme: "ecologie", texte: "La transition écologique devrait rester une priorité budgétaire même si cela implique une hausse de la dépense publique." },
+    { id: "pouvoir_achat_1", theme: "pouvoir_achat", texte: "Le SMIC devrait être significativement augmenté." },
+    { id: "pouvoir_achat_2", theme: "pouvoir_achat", texte: "Les impôts de production et les charges des entreprises devraient être réduits pour stimuler l'emploi." },
+    { id: "dette_1", theme: "dette", texte: "La priorité doit être donnée à la réduction de la dette publique, même si cela implique des économies dans les services publics." },
+    { id: "europe_1", theme: "europe", texte: "La France devrait pouvoir s'affranchir de certaines règles européennes quand elles ne servent pas ses intérêts." },
+    { id: "europe_2", theme: "europe", texte: "L'intégration européenne devrait être renforcée, y compris par de nouveaux transferts de souveraineté." },
+    { id: "institutions_1", theme: "institutions", texte: "Le Président devrait pouvoir recourir plus souvent au référendum pour trancher les grandes questions." },
+    { id: "institutions_2", theme: "institutions", texte: "Le pouvoir devrait être davantage partagé avec le Parlement, plutôt que concentré entre les mains du Président." },
+    { id: "education_1", theme: "education", texte: "Les établissements scolaires devraient avoir plus d'autonomie dans leur organisation." },
+    { id: "education_2", theme: "education", texte: "Les salaires des enseignants devraient être fortement revalorisés en priorité." },
+    { id: "sante_1", theme: "sante", texte: "L'État devrait investir massivement pour recruter du personnel médical, même si cela implique une hausse des impôts." }
+  ],
+
   candidats: [
     // ================= EXTRÊME GAUCHE =================
     {
@@ -138,7 +162,12 @@ window.SITE_DATA = {
       },
       soutiens: [
         { nom: "Lutte Ouvrière (parti)", fonction: "Organisation désignant sa candidate via vote de congrès (décembre 2025)", type: "officiel" }
-      ]
+      ],
+      quizCompatScores: {
+        retraites_1: 2, retraites_2: -2, immigration_1: -2, immigration_2: 2, securite_1: -1, securite_2: 2,
+        ecologie_1: 0, ecologie_2: 1, pouvoir_achat_1: 2, pouvoir_achat_2: -2, dette_1: -2,
+        europe_1: 1, europe_2: -2, institutions_1: -1, institutions_2: 1, education_1: -1, education_2: 2, sante_1: 2
+      }
     },
     {
       slug: "juan-branco", nom: "Juan Branco", parti: "Sans étiquette", bloc: "exgauche", fiche: false,
@@ -203,9 +232,9 @@ window.SITE_DATA = {
       ],
       promesses_bilan: [],
       fact_checks: [
-        { affirmation: "Une publication reprise sur les réseaux sociaux affirmait que Jean-Luc Mélenchon percevait un salaire mensuel d'environ 36 000 € du fait de mandats cumulés (eurodéputé, sénateur).", verdict: "faux", source: "Defacto (observatoire) / AFP Factuel", url: "https://defacto-observatoire.fr/get/Medias/Factuel/Fact-checks/Retour-d-une-infox-affirmant-que-Jean-Luc-Melenchon-gagne-un-salaire-mensuel-de-36-000/WebHome", date: "resurgence identifiée en 2022, réexaminée en 2026" },
-        { affirmation: "Lors d'un meeting à Lyon (26 février 2026), Jean-Luc Mélenchon a évoqué la prononciation du nom « Epstein », disant vouloir dire « Epstine » car « ça fait plus russe ».", verdict: "partiellement_vrai", source: "franceinfo / Public Sénat / France 24", url: "https://www.franceinfo.fr/politique/melenchon/ah-vous-voulez-dire-epstine-pardon-ca-fait-plus-russe-jean-luc-melenchon-cree-la-polemique-lors-d-un-meeting-a-lyon_7833758.html", date: "27 février 2026" },
-        { affirmation: "Un montage audio diffusé sur France Culture établissait un parallèle entre des propos de Jean-Luc Mélenchon et de Jean-Marie Le Pen pour suggérer une proximité avec l'antisémitisme.", verdict: "trompeur", source: "Arrêt sur images / 20 Minutes", url: "https://www.arretsurimages.net/articles/antisemitisme-face-a-le-pen-erner-diffuse-un-extrait-mensonger-sur-melenchon", date: "juin 2026" }
+        { affirmation: "Une publication reprise sur les réseaux sociaux affirmait que Jean-Luc Mélenchon percevait un salaire mensuel d'environ 36 000 € du fait de mandats cumulés (eurodéputé, sénateur).", quizAffirmation: "Une publication reprise sur les réseaux sociaux affirmait qu'un responsable politique percevait un salaire mensuel d'environ 36 000 € du fait de mandats cumulés (eurodéputé, sénateur).", verdict: "faux", explication: "Ce chiffre ne correspond à aucun cumul réel : son indemnité nette de député s'élève à environ 5 680 €/mois. L'infox circule depuis 2022 malgré les démentis.", source: "Defacto (observatoire) / AFP Factuel", url: "https://defacto-observatoire.fr/get/Medias/Factuel/Fact-checks/Retour-d-une-infox-affirmant-que-Jean-Luc-Melenchon-gagne-un-salaire-mensuel-de-36-000/WebHome", date: "resurgence identifiée en 2022, réexaminée en 2026" },
+        { affirmation: "Lors d'un meeting à Lyon (26 février 2026), Jean-Luc Mélenchon a évoqué la prononciation du nom « Epstein », disant vouloir dire « Epstine » car « ça fait plus russe ».", quizAffirmation: "Lors d'un meeting à Lyon (26 février 2026), un candidat a évoqué la prononciation du nom « Epstein », disant vouloir dire « Epstine » car « ça fait plus russe ».", verdict: "partiellement_vrai", explication: "La prononciation « Epstine » correspond à la prononciation anglaise réelle du nom. Les propos sont authentiques, mais leur interprétation (maladresse ou sous-entendu problématique) fait débat.", source: "franceinfo / Public Sénat / France 24", url: "https://www.franceinfo.fr/politique/melenchon/ah-vous-voulez-dire-epstine-pardon-ca-fait-plus-russe-jean-luc-melenchon-cree-la-polemique-lors-d-un-meeting-a-lyon_7833758.html", date: "27 février 2026" },
+        { affirmation: "Un montage audio diffusé sur France Culture établissait un parallèle entre des propos de Jean-Luc Mélenchon et de Jean-Marie Le Pen pour suggérer une proximité avec l'antisémitisme.", quizAffirmation: "Un montage audio diffusé sur France Culture établissait un parallèle entre les propos d'un responsable politique et ceux de Jean-Marie Le Pen pour suggérer une proximité avec l'antisémitisme.", verdict: "trompeur", explication: "France Culture a reconnu avoir diffusé un extrait mensonger et s'est excusée publiquement ; LFI a saisi l'Arcom.", source: "Arrêt sur images / 20 Minutes", url: "https://www.arretsurimages.net/articles/antisemitisme-face-a-le-pen-erner-diffuse-un-extrait-mensonger-sur-melenchon", date: "juin 2026" }
       ],
       positions_10_sujets: {
         pouvoir_achat: { synthese: "SMIC à 1 600 € net, suppression de la TVA sur les produits de première nécessité, hausse du RSA et de l'AAH au niveau du seuil de pauvreté.", direction: "hausse des minima sociaux" },
@@ -224,7 +253,12 @@ window.SITE_DATA = {
         { nom: "Manuel Bompard", fonction: "Coordinateur de La France Insoumise", type: "officiel" },
         { nom: "Clémence Guetté", fonction: "Députée LFI", type: "officiel" },
         { nom: "Sophia Chikirou", fonction: "Députée européenne LFI", type: "officiel" }
-      ]
+      ],
+      quizCompatScores: {
+        retraites_1: 2, retraites_2: -2, immigration_1: -2, immigration_2: 2, securite_1: -2, securite_2: 2,
+        ecologie_1: -2, ecologie_2: 2, pouvoir_achat_1: 2, pouvoir_achat_2: -2, dette_1: -2,
+        europe_1: 2, europe_2: -2, institutions_1: 2, institutions_2: 2, education_1: -1, education_2: 2, sante_1: 2
+      }
     },
 
     // ================= GAUCHE — PRIMAIRE =================
@@ -280,7 +314,7 @@ window.SITE_DATA = {
       ],
       promesses_bilan: [],
       fact_checks: [
-        { affirmation: "Le 12 janvier 2025 sur RTL, Marine Tondelier a déclaré que 40% de la population de Gaza avait été exterminée depuis octobre 2023.", verdict: "faux (reconnu par l'intéressée)", source: "Le JDD / Times of Israël (couverture de sa propre rectification publique)", url: "https://www.lejdd.fr/politique/40-de-la-population-de-gaza-exterminee-depuis-octobre-2023-marine-tondelier-reconnait-une-erreur-et-presente-ses-excuses-153825", date: "12-13 janvier 2025" }
+        { affirmation: "Le 12 janvier 2025 sur RTL, Marine Tondelier a déclaré que 40% de la population de Gaza avait été exterminée depuis octobre 2023.", quizAffirmation: "Le 12 janvier 2025 sur RTL, une candidate a déclaré que 40% de la population de Gaza avait été exterminée depuis octobre 2023.", verdict: "faux", explication: "Le chiffre réel concernait une possible sous-estimation de 40% du nombre de morts selon une étude du Lancet, pas 40% de la population exterminée. Tondelier a reconnu son erreur et présenté ses excuses dès le lendemain.", source: "Le JDD / Times of Israël (couverture de sa propre rectification publique)", url: "https://www.lejdd.fr/politique/40-de-la-population-de-gaza-exterminee-depuis-octobre-2023-marine-tondelier-reconnait-une-erreur-et-presente-ses-excuses-153825", date: "12-13 janvier 2025" }
       ],
       fact_checks_note: "Aucun fact-check dédié d'AFP Factuel, Les Décodeurs ou CheckNews spécifiquement consacré à Marine Tondelier n'a été identifié pour 2025-2026 ; le seul élément vérifiable trouvé est sa propre rectification publique, largement reprise par la presse généraliste.",
       positions_10_sujets: {
@@ -301,7 +335,12 @@ window.SITE_DATA = {
         { nom: "François Ruffin", fonction: "Député, figure de la gauche (ex-LFI)", type: "officiel" },
         { nom: "Benjamin Lucas", fonction: "Député, Génération·s", type: "officiel" },
         { nom: "Sandrine Rousseau", fonction: "Députée écologiste de Paris", type: "presume — critique en interne d'une candidature autonome jugée facteur de fragmentation" }
-      ]
+      ],
+      quizCompatScores: {
+        retraites_1: 1, retraites_2: -1, immigration_1: -2, immigration_2: 2, securite_1: -1, securite_2: 2,
+        ecologie_1: -2, ecologie_2: 2, pouvoir_achat_1: 2, pouvoir_achat_2: -2, dette_1: -1,
+        europe_1: -2, europe_2: 2, institutions_1: 1, institutions_2: 2, education_1: -1, education_2: 2, sante_1: 2
+      }
     },
     {
       slug: "francois-ruffin",
@@ -350,8 +389,10 @@ window.SITE_DATA = {
         { date: "28 juin 2025", de: "Micro-parti régional « Picardie Debout ! »", vers: "Mouvement national « Debout ! »", contexte: "Lancement officiel à Paris du mouvement Debout!, dont Ruffin devient président, en vue d'une candidature à la primaire de la gauche ou, à défaut, d'une candidature autonome." }
       ],
       promesses_bilan: [],
-      fact_checks: [],
-      fact_checks_note: "Aucun fact-check récent (2025-2026) d'AFP Factuel, Les Décodeurs ou CheckNews trouvé sur François Ruffin. Point notable hors périmètre strict : une enquête de Marianne documente un écart entre sa promesse de « vivre au SMIC » et des revenus déclarés à la HATVP nettement supérieurs (~125 000 €/an en moyenne 2019-2023) ; Ruffin a lui-même reconnu publiquement ne pas vivre au SMIC. Une polémique distincte (mai 2026) sur une bande dessinée accusée de véhiculer des stéréotypes racistes a aussi nourri un repositionnement de campagne sur le thème de la probité.",
+      fact_checks: [
+        { affirmation: "François Ruffin dit reverser l'essentiel de son indemnité de député pour ne conserver que l'équivalent du SMIC.", quizAffirmation: "Un candidat, élu député, dit reverser l'essentiel de son indemnité pour ne conserver que l'équivalent du SMIC.", verdict: "trompeur", explication: "Selon une enquête sur ses revenus déclarés à la HATVP, il conserverait en réalité environ 2 800 €/mois plutôt que l'équivalent strict du SMIC (~1 100 €/mois) ; il l'a lui-même reconnu publiquement, précisant garder aussi une réserve financière personnelle.", source: "Marianne (enquête sur ses revenus déclarés à la HATVP)", url: "https://limportant.fr/infos-politique/1/433296", date: "" }
+      ],
+      fact_checks_note: "Aucun fact-check d'AFP Factuel, Les Décodeurs ou CheckNews trouvé sur François Ruffin. Une polémique distincte (mai 2026) sur une bande dessinée accusée de véhiculer des stéréotypes racistes a aussi nourri un repositionnement de campagne sur le thème de la probité.",
       positions_10_sujets: {
         pouvoir_achat: { synthese: "Porte-parole des « travailleurs essentiels » ; SMIC à 1 700 € nets et prime immédiate de 1 000 € financée par la taxation des plus riches.", direction: "hausse des bas salaires" },
         retraites: { synthese: "Non re-recherché — déjà documenté en base (opposition à la réforme des 64 ans).", direction: "" },
@@ -369,7 +410,12 @@ window.SITE_DATA = {
         { nom: "Sébastien Jumel", fonction: "Ancien député, ex-PCF", type: "officiel" },
         { nom: "Laurent Baumel", fonction: "Parlementaire, Parti socialiste", type: "officiel" },
         { nom: "Mathieu Bosque", fonction: "Ex-LFI, ancien président du mouvement (2024-2025)", type: "officiel" }
-      ]
+      ],
+      quizCompatScores: {
+        retraites_1: 1, retraites_2: -1, immigration_1: 1, immigration_2: 1, securite_1: -1, securite_2: 1,
+        ecologie_1: -1, ecologie_2: 2, pouvoir_achat_1: 2, pouvoir_achat_2: -2, dette_1: -2,
+        europe_1: 2, europe_2: -1, institutions_1: 1, institutions_2: 2, education_1: 0, education_2: 1, sante_1: 2
+      }
     },
     {
       slug: "clementine-autain", nom: "Clémentine Autain", parti: "L'Après", bloc: "gprimaire", fiche: false,
@@ -448,7 +494,12 @@ window.SITE_DATA = {
         dette: { synthese: "Reconnaît un problème de dette et de déficit mais refuse une résolution par l'austérité seule, plaidant pour un « compromis social et écologique ».", direction: "compromis social et écologique" },
         institutions: { synthese: "Critique le présidentialisme, l'usage du 49.3 et l'influence des lobbies ; défend l'indépendance des autorités (ex. IRSN).", direction: "anti-présidentialisme" }
       },
-      soutiens: []
+      soutiens: [],
+      quizCompatScores: {
+        retraites_1: 1, retraites_2: -1, immigration_1: -2, immigration_2: 1, securite_1: -1, securite_2: 1,
+        ecologie_1: -2, ecologie_2: 2, pouvoir_achat_1: 1, pouvoir_achat_2: -1, dette_1: -1,
+        europe_1: -1, europe_2: 0, institutions_1: 0, institutions_2: 2, education_1: -1, education_2: 0, sante_1: 1
+      }
     },
     {
       slug: "jerome-guedj", nom: "Jérôme Guedj", parti: "PS (dissident)", bloc: "ghors", fiche: false,
@@ -521,7 +572,9 @@ window.SITE_DATA = {
         { promesse: "Transformation de l'ISF en IFI et flat tax sur les revenus du capital", resultat: "tenu", detail: "Mesures figurant dans le budget 2018, premier budget préparé sous son autorité, appliquées dès 2018." },
         { promesse: "Réforme ferroviaire de la SNCF (fin du statut de cheminot, ouverture à la concurrence)", resultat: "tenu", detail: "Adoptée par ordonnances avant l'été 2018 malgré un mouvement de grève important." }
       ],
-      fact_checks: [],
+      fact_checks: [
+        { affirmation: "Édouard Philippe propose de porter la capitalisation à 10-15% du financement des retraites en quinze ans pour aider à résorber le déficit du système par répartition.", quizAffirmation: "Un candidat propose de porter la capitalisation à 10-15% du financement des retraites en quinze ans pour aider à résorber le déficit du système par répartition.", verdict: "partiellement_vrai", explication: "Face aux déficits projetés par le Conseil d'orientation des retraites (6,6 Md€ en 2030, 15 Md€ en 2035), la proposition reste peu chiffrée sur son financement de transition, ce qui laisse une partie du problème budgétaire sans réponse précise.", source: "Senioractu.com (à partir des projections du COR)", url: "https://www.senioractu.com/Retraites-la-mere-de-toutes-les-batailles-d-Edouard-Philippe-sera-financee-par-les-retraites_a27850.html", date: "6 juillet 2026" }
+      ],
       fact_checks_note: "Aucun fact-check d'AFP Factuel, Les Décodeurs ou CheckNews trouvé sur Édouard Philippe pour 2025-2026. Élément factuel judiciaire notable à signaler pour la neutralité : le Parquet national financier a ouvert début mai 2026 une enquête visant Édouard Philippe pour détournement de fonds publics, favoritisme et prise illégale d'intérêts, concernant le financement (2,154 M€) d'une association gérant la « Cité numérique » du Havre ; faits contestés par l'intéressé, enquête en cours, sans mise en examen ni jugement à ce stade.",
       positions_10_sujets: {
         pouvoir_achat: { synthese: "Prime exceptionnelle ciblée sur les classes moyennes et indexation des retraites et minima sociaux sur l'inflation réelle.", direction: "soutien ciblé classes moyennes" },
@@ -544,7 +597,12 @@ window.SITE_DATA = {
         { nom: "Laurent Wauquiez", fonction: "Président du groupe Droite Républicaine à l'Assemblée", type: "officiel" },
         { nom: "Maud Bregeon", fonction: "Porte-parole du gouvernement", type: "officiel" },
         { nom: "Gérald Darmanin", fonction: "Ministre de la Justice", type: "presume" }
-      ]
+      ],
+      quizCompatScores: {
+        retraites_1: -2, retraites_2: 2, immigration_1: 1, immigration_2: 0, securite_1: 1, securite_2: -1,
+        ecologie_1: 1, ecologie_2: 0, pouvoir_achat_1: -1, pouvoir_achat_2: 2, dette_1: 2,
+        europe_1: -1, europe_2: 1, institutions_1: 2, institutions_2: -1, education_1: 1, education_2: 0, sante_1: 0
+      }
     },
     {
       slug: "gabriel-attal",
@@ -602,8 +660,10 @@ window.SITE_DATA = {
         { promesse: "Position sur la réduction du nombre de fonctionnaires", resultat: "retourne", detail: "Écart documenté par la presse entre sa ligne à Matignon et sa proposition de campagne 2026-2027 de supprimer 100 000 postes de fonctionnaires." },
         { promesse: "Conduire son gouvernement jusqu'à un terme normal", resultat: "non_tenu", detail: "Gouvernement mis fin par la dissolution de l'Assemblée annoncée par Emmanuel Macron le 9 juin 2024, décision pour laquelle Attal dit ne pas avoir été consulté." }
       ],
-      fact_checks: [],
-      fact_checks_note: "Aucun fact-check d'AFP Factuel, Les Décodeurs ou CheckNews trouvé sur Gabriel Attal pour 2025-2026. Deux controverses adjacentes documentées par la presse généraliste (hors des trois organes demandés) : des affirmations contestées sur les finances locales (audition, février 2025), et une polémique (avril 2026) sur une campagne de promotion de son livre utilisant des visuels générés par IA avec de fausses recommandations de célébrités.",
+      fact_checks: [
+        { affirmation: "Une campagne de promotion du livre de Gabriel Attal montrait des célébrités (Emma Watson, Cristiano Ronaldo, Rosalía) recommandant chaleureusement l'ouvrage.", quizAffirmation: "Une campagne de promotion du livre d'un candidat montrait des célébrités (Emma Watson, Cristiano Ronaldo, Rosalía) recommandant chaleureusement l'ouvrage.", verdict: "faux", explication: "Les visuels étaient entièrement générés par IA. L'équipe de campagne a reconnu une « erreur » après les critiques et retiré l'opération, expliquant qu'ils avaient été diffusés par erreur par un groupe de militants.", source: "Actualitté", url: "https://actualitte.com/article/130884/insolite/a-la-recherche-d-electeurs-gabriel-attal-soumet-la-lecture-de-son-livre-a-des-ia", date: "avril 2026" }
+      ],
+      fact_checks_note: "Aucun fact-check d'AFP Factuel, Les Décodeurs ou CheckNews trouvé sur Gabriel Attal pour 2025-2026. Une controverse adjacente distincte existe aussi sur des affirmations contestées concernant les finances locales (audition, février 2025).",
       positions_10_sujets: {
         pouvoir_achat: { synthese: "Pas de hausse d'impôts annoncée ; plan de rigueur budgétaire global (120-150 Md€ d'économies) plutôt qu'un plan pouvoir d'achat dédié.", direction: "rigueur sans hausse d'impôts" },
         retraites: { synthese: "Non re-recherché — déjà documenté en base (suppression de l'âge légal, capitalisation).", direction: "" },
@@ -622,7 +682,12 @@ window.SITE_DATA = {
         { nom: "Franck Riester", fonction: "Député, initiateur d'une tribune de ~500 élus locaux", type: "officiel" },
         { nom: "François Bayrou", fonction: "Président du MoDem, ex-Premier ministre — ne s'est positionné pour aucun des deux candidats du bloc central", type: "presume" },
         { nom: "Gérald Darmanin", fonction: "Ministre — position non tranchée entre Attal et Philippe", type: "presume" }
-      ]
+      ],
+      quizCompatScores: {
+        retraites_1: -1, retraites_2: 2, immigration_1: 0, immigration_2: -1, securite_1: 0, securite_2: 0,
+        ecologie_1: 2, ecologie_2: -1, pouvoir_achat_1: -1, pouvoir_achat_2: 1, dette_1: 2,
+        europe_1: -2, europe_2: 1, institutions_1: 0, institutions_2: -1, education_1: 1, education_2: 0, sante_1: -1
+      }
     },
 
     // ================= DROITE =================
@@ -684,9 +749,9 @@ window.SITE_DATA = {
         { promesse: "Justifier le lien entre immigration irrégulière et délinquance pour fonder sa politique sécuritaire", resultat: "retourne", detail: "Contesté publiquement dans « Complément d'enquête » (23 janvier 2025) : le CEPII avance l'absence d'impact statistique de l'immigration sur la délinquance globale ; Retailleau a répliqué avec des chiffres eux-mêmes débattus." }
       ],
       fact_checks: [
-        { affirmation: "Recherche ciblée sur AFP Factuel, Les Décodeurs et CheckNews : aucun article de vérification dédié et récent (2025-2026) sur une déclaration chiffrée de Bruno Retailleau n'a été identifié.", verdict: "non_trouve", source: "", url: "", date: "" }
+        { affirmation: "Bruno Retailleau a affirmé que les étrangers, environ 7% de la population française, représentent 38% des mis en cause pour cambriolage et 40% pour vol de véhicule.", quizAffirmation: "Un candidat a affirmé que les étrangers, environ 7% de la population française, représentent 38% des mis en cause pour cambriolage et 40% pour vol de véhicule.", verdict: "partiellement_vrai", explication: "Ces chiffres sur les mis en cause proviennent de statistiques policières et ne sont pas inventés, mais la conclusion qu'il en tire (un lien de causalité entre immigration et délinquance) est contestée par une note du CEPII selon laquelle les études ne montrent pas d'impact statistique de l'immigration sur la délinquance.", source: "Atlantico (décryptage du débat CEPII / « Complément d'enquête »)", url: "https://atlantico.fr/article/decryptage/les-etudes-concluent-unanimement-a-labsence-dimpact-de-limmigration-sur-la-delinquance-disent-le-cepii-et-les-opposants-a-bruno-retailleau-vraiment-complement-enquete-patrick-stefanini-eric-delbecque", date: "23 janvier 2025" }
       ],
-      fact_checks_note: "Point notable hors périmètre strict des 3 médias demandés : sur France 2 (« Complément d'enquête », 23 janvier 2025), Retailleau a affirmé que 38% des mis en cause pour cambriolage et 40% pour vol de véhicule sont des étrangers (qui représentent ~7% de la population), chiffres débattus par des chercheurs (CEPII) contestant tout lien statistique immigration-délinquance.",
+      fact_checks_note: "Aucun fact-check d'AFP Factuel, Les Décodeurs ou CheckNews trouvé sur Bruno Retailleau ; l'item ci-dessus provient d'un décryptage journalistique équivalent (Atlantico).",
       positions_10_sujets: {
         pouvoir_achat: { synthese: "Priorité à la baisse des charges et impôts de production plutôt qu'à la redistribution directe.", direction: "baisse des impôts de production" },
         retraites: { synthese: "Non re-recherché — déjà documenté en base (âge légal à 65 ans).", direction: "" },
@@ -704,7 +769,12 @@ window.SITE_DATA = {
         { nom: "Jean-Jacques Panunzi", fonction: "Sénateur LR de Corse-du-Sud", type: "officiel" },
         { nom: "François-Xavier Ceccoli", fonction: "Député LR de Haute-Corse", type: "officiel" }
       ],
-      soutiens_note: "Contrairement à une idée reçue, Laurent Wauquiez n'est PAS un soutien : il s'est opposé à la tenue du vote interne LR, a publiquement invité Retailleau à « savoir se retirer » si sa candidature ne décolle pas, et penche plutôt vers Édouard Philippe. Xavier Bertrand et Michel Barnier ne sont pas non plus des soutiens confirmés."
+      soutiens_note: "Contrairement à une idée reçue, Laurent Wauquiez n'est PAS un soutien : il s'est opposé à la tenue du vote interne LR, a publiquement invité Retailleau à « savoir se retirer » si sa candidature ne décolle pas, et penche plutôt vers Édouard Philippe. Xavier Bertrand et Michel Barnier ne sont pas non plus des soutiens confirmés.",
+      quizCompatScores: {
+        retraites_1: -2, retraites_2: 1, immigration_1: 2, immigration_2: -2, securite_1: 2, securite_2: -2,
+        ecologie_1: 2, ecologie_2: -2, pouvoir_achat_1: -1, pouvoir_achat_2: 2, dette_1: 2,
+        europe_1: 1, europe_2: -2, institutions_1: 1, institutions_2: -1, education_1: 0, education_2: 0, sante_1: -1
+      }
     },
     {
       slug: "david-lisnard", nom: "David Lisnard", parti: "Nouvelle Énergie", bloc: "droite", fiche: false,
@@ -768,8 +838,11 @@ window.SITE_DATA = {
         { date: "15 avril 2019", de: "Sortie de l'Union européenne (« Frexit ») et sortie de l'euro, ligne portée en 2017", vers: "Abandon officiel de la sortie de l'euro et de l'UE au profit d'une réforme « de l'intérieur » et d'une « alliance des nations » européenne", contexte: "Annoncé à Strasbourg lors de la présentation des 25 propositions RN pour les européennes, avec Jordan Bardella. Repositionnement après l'échec de la proposition de retour au franc en 2017, jugée anxiogène pour épargnants et retraités." }
       ],
       promesses_bilan: [],
-      fact_checks: [],
-      fact_checks_note: "Recherche approfondie (une quinzaine de requêtes ciblées AFP Factuel, Les Décodeurs, CheckNews) : aucun fact-check daté 2025-2026 et clairement attribué à ces trois médias n'a pu être identifié concernant Marine Le Pen.",
+      fact_checks: [
+        { affirmation: "Après sa condamnation confirmée en appel, Marine Le Pen affirme rester présumée innocente tant que son pourvoi en cassation n'a pas été jugé.", quizAffirmation: "Après une condamnation confirmée en appel, un candidat affirme rester présumé innocent tant que son pourvoi en cassation n'a pas été jugé.", verdict: "vrai", explication: "Un pourvoi en cassation suspend les effets pénaux d'une décision d'appel : la personne reste présumée innocente jusqu'à un arrêt définitif, confirment plusieurs magistrats dont le procureur général près la Cour de cassation.", source: "franceinfo (« Vrai ou Faux »)", url: "https://www.franceinfo.fr/politique/front-national/affaire-des-assistants-fn-au-parlement-europeen/vrai-ou-faux-condamnee-en-appel-marine-le-pen-est-elle-presumee-innocente-apres-son-pourvoi-en-cassation_8099321.html", date: "9 juillet 2026" },
+        { affirmation: "Sur TF1, Marine Le Pen a comparé sa condamnation à l'issue judiciaire des dossiers de Jean-Luc Mélenchon (non-lieu) et François Bayrou (relaxe), présentés comme portant sur des faits similaires.", quizAffirmation: "Sur un plateau de télévision, un candidat a comparé sa condamnation à l'issue judiciaire des dossiers de Jean-Luc Mélenchon (non-lieu) et François Bayrou (relaxe), présentés comme portant sur des faits similaires.", verdict: "trompeur", explication: "Les trois dossiers présentent des différences factuelles importantes : le dossier RN porte sur un système organisé de plusieurs millions d'euros, le dossier Bayrou/MoDem sur des montants bien moindres, et l'enquête visant Mélenchon a été close faute de preuve de son implication personnelle.", source: "Telos / Public Sénat", url: "https://www.telos-eu.com/fr/politique-francaise-et-internationale/le-pen-bayrou-et-melenchon-face-aux-juges-trois-destins-differents-une-meme-motivation.html", date: "9 juillet 2026" }
+      ],
+      fact_checks_note: "Recherche approfondie (une quinzaine de requêtes ciblées AFP Factuel, Les Décodeurs, CheckNews) : aucun fact-check de ces trois médias précis n'a pu être identifié pour Marine Le Pen ; les deux items ci-dessus proviennent de vérifications journalistiques équivalentes.",
       positions_10_sujets: {
         pouvoir_achat: { synthese: "« Prime de Pouvoir d'Achat » de 80€/mois pour bas revenus et petites retraites (jusqu'à 1500€/mois), financée par une contribution de 3% sur les importations ; incitation des entreprises à augmenter les salaires de 10% (jusqu'à 3 SMIC).", direction: "primes ciblées et protectionnisme" },
         retraites: { synthese: "Non re-recherché — déjà documenté en base (maintien à 60-62 ans).", direction: "" },
@@ -787,7 +860,12 @@ window.SITE_DATA = {
         { nom: "Éric Ciotti", fonction: "Président de l'Union des droites pour la République (UDR)", type: "officiel" },
         { nom: "Marion Maréchal", fonction: "Députée européenne, présidente d'Identité-Libertés", type: "presume" }
       ],
-      soutiens_note: "La divergence Bardella/Le Pen sur les retraites (mai-juillet 2026) est le principal point de tension interne identifié."
+      soutiens_note: "La divergence Bardella/Le Pen sur les retraites (mai-juillet 2026) est le principal point de tension interne identifié.",
+      quizCompatScores: {
+        retraites_1: 2, retraites_2: -1, immigration_1: 2, immigration_2: -2, securite_1: 2, securite_2: -2,
+        ecologie_1: 2, ecologie_2: -1, pouvoir_achat_1: 0, pouvoir_achat_2: 1, dette_1: 0,
+        europe_1: 2, europe_2: -2, institutions_1: 2, institutions_2: -1, education_1: -1, education_2: 0, sante_1: 1
+      }
     },
     {
       slug: "nicolas-dupont-aignan",
@@ -845,8 +923,10 @@ window.SITE_DATA = {
         { date: "2016-2026", de: "« Europe des nations » réformée de l'intérieur, prudent sur le Frexit", vers: "Frexit explicite « le plus vite possible » (3 mai 2026, plan en 3 étapes)", contexte: "Trajectoire graduelle : en 2016 pas favorable à un Frexit immédiat ; en 2017 dit avoir « évolué » sur l'euro sans vouloir en sortir purement ; 2023-2024 promeut le concept de « Bruxit » (sortie collective) ; décembre 2025 qualifie l'UE de « liberticide » ; le 3 mai 2026 (Grand Rendez-vous CNews/Europe1/Les Échos) appelle au Frexit avec un plan en 3 étapes (arrêt de la contribution nette, rétablissement des frontières, primauté du droit français)." }
       ],
       promesses_bilan: [],
-      fact_checks: [],
-      fact_checks_note: "Aucun fact-check d'AFP Factuel, Les Décodeurs ou CheckNews trouvé sur Nicolas Dupont-Aignan pour 2025-2026. Élément comparable trouvé hors périmètre : franceinfo (« Le Vrai du Faux », 9 mai 2025) a nuancé son affirmation sur le coût net de la contribution française à l'UE (ordre de grandeur correct sur les montants bruts, mais présentation jugée trompeuse — le coût net représente en réalité ~1% du PIB français).",
+      fact_checks: [
+        { affirmation: "Nicolas Dupont-Aignan présente la contribution nette de la France à l'Union européenne comme une lourde charge de plusieurs milliards d'euros par an.", quizAffirmation: "Un candidat présente la contribution nette de la France à l'Union européenne comme une lourde charge de plusieurs milliards d'euros par an.", verdict: "trompeur", explication: "L'ordre de grandeur des montants bruts est globalement correct, mais la présentation est jugée trompeuse : le coût net réel représente environ 1% du PIB français, loin de l'image d'une charge écrasante.", source: "franceinfo (« Le Vrai du Faux »)", url: "https://www.franceinfo.fr/replay-radio/le-vrai-du-faux/l-europe-coute-t-elle-une-fortune-a-la-france_7275042.html", date: "9 mai 2025" }
+      ],
+      fact_checks_note: "Aucun fact-check d'AFP Factuel, Les Décodeurs ou CheckNews trouvé sur Nicolas Dupont-Aignan pour 2025-2026 ; l'item ci-dessus provient d'une vérification journalistique équivalente.",
       positions_10_sujets: {
         pouvoir_achat: { synthese: "Attribue la hausse des prix à l'appartenance à l'UE ; propose un protectionnisme « intelligent » (droits de douane ciblés, 50 à 75% de la commande publique réservée à la production française).", direction: "protectionnisme et sortie UE" },
         retraites: { synthese: "Non re-recherché — déjà documenté en base (retour à 62 ans).", direction: "" },
@@ -865,7 +945,12 @@ window.SITE_DATA = {
         { nom: "Alexis Villepelet", fonction: "Porte-parole de Debout la France", type: "officiel" },
         { nom: "François Guillaume", fonction: "Membre d'honneur de Debout la France, ancien ministre", type: "officiel" }
       ],
-      soutiens_note: "A publiquement appelé Florian Philippot et François Asselineau à le rejoindre pour unifier le camp souverainiste, mais aucun ralliement officiel n'est confirmé à ce jour."
+      soutiens_note: "A publiquement appelé Florian Philippot et François Asselineau à le rejoindre pour unifier le camp souverainiste, mais aucun ralliement officiel n'est confirmé à ce jour.",
+      quizCompatScores: {
+        retraites_1: 1, retraites_2: -1, immigration_1: 2, immigration_2: -2, securite_1: 1, securite_2: -1,
+        ecologie_1: 2, ecologie_2: -1, pouvoir_achat_1: 0, pouvoir_achat_2: 0, dette_1: -1,
+        europe_1: 2, europe_2: -2, institutions_1: 2, institutions_2: 1, education_1: -1, education_2: 2, sante_1: 1
+      }
     },
     {
       slug: "florian-philippot", nom: "Florian Philippot", parti: "Les Patriotes", bloc: "exdroite", fiche: false,

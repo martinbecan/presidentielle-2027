@@ -21,6 +21,8 @@
     <a href="index.html">Accueil</a>
     <a href="comparateur.html">Comparateur</a>
     <a href="timeline.html">Timeline</a>
+    <a href="quiz-vrai-faux.html">Vrai/Faux</a>
+    <a href="quiz-compatibilite.html">Quel candidat ?</a>
     <a href="apropos.html" class="active">À propos</a>
   </div>
 </nav>
@@ -29,6 +31,8 @@
   <h1>À propos</h1>
   <p class="subtitle">Qui a fait ce site, comment, et avec quelles limites.</p>
 </header>
+
+<div class="countdown-bar" id="countdown-bar"></div>
 
 <section class="fiche-section">
   <h2>Qui a fait ce site ?</h2>
@@ -75,5 +79,6 @@
     document.getElementById('derniere-maj-apropos').textContent = window.SITE_DATA.derniere_maj;
   }
 </script>
+<script src="js/countdown.js"></script>
 </body>
 </html>

@@ -21,6 +21,8 @@
     <a href="index.html" class="active">Accueil</a>
     <a href="comparateur.html">Comparateur</a>
     <a href="timeline.html">Timeline</a>
+    <a href="quiz-vrai-faux.html">Vrai/Faux</a>
+    <a href="quiz-compatibilite.html">Quel candidat ?</a>
     <a href="apropos.html">À propos</a>
   </div>
 </nav>
@@ -29,6 +31,10 @@
   <h1>Présidentielle 2027</h1>
   <p class="subtitle"><span id="candidats-count">21</span> <span id="candidats-count-label">candidats</span> officiellement déclarés — Situation au <span id="derniere-maj">8 juillet 2026</span></p>
 </header>
+
+<div class="countdown-bar" id="countdown-bar"></div>
+
+<a class="quiz-cta" href="quiz-compatibilite.html">🗳️ Quel candidat me correspond ?</a>
 
 <details class="pedagogie-box">
   <summary>📖 Comment ça marche ? <span class="chevron">▸</span></summary>
@@ -60,6 +66,15 @@
 
 <div class="alert-box" id="alert-box">
   <strong>⚡ 7 juillet 2026</strong> — Marine Le Pen condamnée en appel (45 mois d'inéligibilité dont 30 avec sursis), mais éligible pour 2027. Candidature confirmée + pourvoi en cassation suspensif déposé.
+</div>
+
+<div class="voter-banner">
+  <div class="voter-banner-icon">📋</div>
+  <div class="voter-banner-content">
+    <strong>Êtes-vous inscrit·e sur les listes électorales ?</strong>
+    <p>Pour voter à la présidentielle 2027, il faut être inscrit·e sur les listes électorales avant le <strong>vendredi 12 mars 2027</strong> (6ᵉ vendredi avant le premier tour). Vous avez déménagé récemment ? Vérifiez que votre inscription a bien été mise à jour.</p>
+    <a href="https://www.service-public.gouv.fr/particuliers/vosdroits/F34240" target="_blank" rel="noopener noreferrer" class="voter-banner-cta">Vérifier ou m'inscrire sur service-public.fr →</a>
+  </div>
 </div>
 
 <div class="controls">
@@ -141,5 +156,6 @@
 </div>
 <script src="data/candidats.js"></script>
 <script src="js/main.js"></script>
+<script src="js/countdown.js"></script>
 </body>
 </html>
