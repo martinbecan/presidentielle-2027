@@ -19,13 +19,16 @@
   <a href="index.html" class="site-nav-brand">🇫🇷 Présidentielle 2027</a>
   <div class="site-nav-links">
     <a href="index.html">Accueil</a>
+    <a href="candidats.html">Candidats</a>
     <a href="comparateur.html">Comparateur</a>
+    <a href="quiz-compatibilite.html">Quel candidat ?</a>
     <a href="timeline.html" class="active">Timeline</a>
     <a href="quiz-vrai-faux.html">Vrai/Faux</a>
-    <a href="quiz-compatibilite.html">Quel candidat ?</a>
     <a href="apropos.html">À propos</a>
   </div>
 </nav>
+
+<main>
 
 <header>
   <h1>Frise chronologique</h1>
@@ -42,6 +45,20 @@
   <p style="margin-top:1.5rem; color:#f59e0b; font-size:0.85rem;">La frise interactive nécessite JavaScript. Consultez le <a href="index.html">tableau récapitulatif</a> en attendant.</p>
 </noscript>
 
+<div class="signalement-widget" data-contexte="Timeline">
+  <button type="button" class="signalement-toggle">🚩 Signaler une erreur</button>
+  <div class="signalement-form" hidden>
+    <textarea class="signalement-textarea" maxlength="1000" placeholder="Décrivez l'erreur constatée…" aria-label="Décrivez l'erreur constatée"></textarea>
+    <div class="signalement-footer">
+      <span class="signalement-counter">0/1000</span>
+      <button type="button" class="signalement-send" disabled>Envoyer</button>
+    </div>
+    <p class="signalement-status" hidden></p>
+  </div>
+</div>
+
+</main>
+
 <footer>
   <em>Défile horizontalement sur ordinateur, verticalement sur mobile.</em>
 </footer>
@@ -50,5 +67,7 @@
 <script src="data/candidats.js"></script>
 <script src="js/timeline.js"></script>
 <script src="js/countdown.js"></script>
+<script src="js/signalement.js"></script>
+<script src="js/footer-meta.js"></script>
 </body>
 </html>

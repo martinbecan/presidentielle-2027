@@ -19,13 +19,16 @@
   <a href="index.html" class="site-nav-brand">🇫🇷 Présidentielle 2027</a>
   <div class="site-nav-links">
     <a href="index.html">Accueil</a>
+    <a href="candidats.html">Candidats</a>
     <a href="comparateur.html" class="active">Comparateur</a>
+    <a href="quiz-compatibilite.html">Quel candidat ?</a>
     <a href="timeline.html">Timeline</a>
     <a href="quiz-vrai-faux.html">Vrai/Faux</a>
-    <a href="quiz-compatibilite.html">Quel candidat ?</a>
     <a href="apropos.html">À propos</a>
   </div>
 </nav>
+
+<main>
 
 <header>
   <h1>Comparateur</h1>
@@ -63,13 +66,30 @@
   <p style="margin-top:1.5rem; color:#f59e0b; font-size:0.85rem;">Le comparateur nécessite JavaScript pour fonctionner. Consultez les <a href="index.html">fiches candidats</a> individuellement en attendant.</p>
 </noscript>
 
+<div class="signalement-widget" data-contexte="Comparateur">
+  <button type="button" class="signalement-toggle">🚩 Signaler une erreur</button>
+  <div class="signalement-form" hidden>
+    <textarea class="signalement-textarea" maxlength="1000" placeholder="Décrivez l'erreur constatée…" aria-label="Décrivez l'erreur constatée"></textarea>
+    <div class="signalement-footer">
+      <span class="signalement-counter">0/1000</span>
+      <button type="button" class="signalement-send" disabled>Envoyer</button>
+    </div>
+    <p class="signalement-status" hidden></p>
+  </div>
+</div>
+
+</main>
+
 <footer>
   <em>Le comparateur défile en colonnes empilées sur mobile.</em>
 </footer>
 
 </div>
 <script src="data/candidats.js"></script>
+<script src="js/silence-electoral.js"></script>
 <script src="js/comparateur.js"></script>
 <script src="js/countdown.js"></script>
+<script src="js/signalement.js"></script>
+<script src="js/footer-meta.js"></script>
 </body>
 </html>

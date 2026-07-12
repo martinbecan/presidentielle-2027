@@ -4,6 +4,16 @@
   if (!DATA || !root) return;
 
   function blocInfo(id) { return DATA.blocs.find(function (b) { return b.id === id; }); }
+  function renderSources(sources) {
+    if (!sources || !sources.length) {
+      return '<span class="source-badge source-unconfirmed">Source à confirmer</span>';
+    }
+    var links = sources.map(function (s) {
+      return '<a href="' + s.url + '" target="_blank" rel="noopener noreferrer" class="source-verify-link">🔍 Vérifier cette source' + (sources.length > 1 ? ' (' + s.nom + ')' : '') + '</a>';
+    }).join(' · ');
+    if (sources.length >= 2) links += ' <span class="source-crossref">' + sources.length + ' sources indépendantes</span>';
+    return links;
+  }
   function initials(nom) {
     return nom.split(' ').filter(function (w) { return /^[A-ZÀ-Ý]/.test(w); }).map(function (w) { return w[0]; }).slice(0, 2).join('');
   }
@@ -15,7 +25,7 @@
     DATA.candidats.forEach(function (c) {
       if (!c.fiche || !c.fact_checks || !c.fact_checks.length) return;
       c.fact_checks.forEach(function (fc) {
-        if (!fc.source || !fc.url) return; // on n'inclut que les items réellement sourcés et cliquables
+        if (!fc.sources || !fc.sources.length) return; // on n'inclut que les items réellement sourcés et cliquables
         if (!fc.quizAffirmation) return; // sécurité : jamais d'item sans version anonymisée (règle de neutralité stricte)
         pool.push({ candidat: c, fc: fc });
       });
@@ -81,6 +91,12 @@
     Array.prototype.forEach.call(root.querySelectorAll('.quiz-choice-btn'), function (btn) {
       btn.addEventListener('click', function () { answer(btn.getAttribute('data-choice')); });
     });
+
+    // Le contenu est régénéré à chaque question (innerHTML) : sans repositionner le focus,
+    // un utilisateur au clavier perdrait le focus (renvoyé en haut de page) à chaque clic/Entrée
+    // et devrait retabuler depuis le début — on ramène donc le focus sur le premier choix.
+    var firstChoice = root.querySelector('.quiz-choice-btn');
+    if (firstChoice) firstChoice.focus();
   }
 
   function answer(choice) {
@@ -99,7 +115,8 @@
     html += '<div class="quiz-reveal-verdict"><span class="stance ' + verdictClass(item.fc.verdict) + '">' + verdictLabel(item.fc.verdict) + '</span> ' +
       (correct ? '<span class="quiz-reveal-outcome quiz-ok">Vous avez vu juste</span>' : '<span class="quiz-reveal-outcome quiz-ko">Pas tout à fait</span>') + '</div>';
     if (item.fc.explication) html += '<p class="quiz-reveal-explication">' + item.fc.explication + '</p>';
-    html += '<p class="quiz-reveal-source">Source : <a href="' + item.fc.url + '" target="_blank" rel="noopener noreferrer">' + item.fc.source + '</a>' + (item.fc.date ? ' · ' + item.fc.date : '') + '</p>';
+    if (item.fc.mecanisme) html += '<p class="quiz-reveal-mecanisme">🔍 <strong>Mécanique repérée :</strong> ' + item.fc.mecanisme + '</p>';
+    html += '<p class="quiz-reveal-source">' + renderSources(item.fc.sources) + (item.fc.date ? ' · ' + item.fc.date : '') + '</p>';
     html += '<div class="quiz-reveal-candidat">';
     html += '<div class="avatar" style="width:40px;height:40px;font-size:0.95rem;background:' + bloc.couleur + '33; color:' + bloc.couleur + ';">' + initials(item.candidat.nom) + '</div>';
     html += '<div>Prononcé par <a href="candidats/' + item.candidat.slug + '.html">' + item.candidat.nom + '</a> (' + item.candidat.parti + ')</div>';
@@ -108,10 +125,14 @@
     html += '</div>';
     revealEl.innerHTML = html;
 
-    document.getElementById('quiz-next-btn').addEventListener('click', function () {
+    var nextBtn = document.getElementById('quiz-next-btn');
+    nextBtn.addEventListener('click', function () {
       current++;
       render();
     });
+    // Idem : le bouton cliqué vient d'être désactivé (les choix sont verrouillés après réponse),
+    // ce qui renvoie le focus en haut de page — on le ramène directement sur l'action à suivre.
+    nextBtn.focus();
   }
 
   function renderEnd() {
@@ -138,12 +159,14 @@
     html += '</div>';
     root.innerHTML = html;
 
-    document.getElementById('quiz-replay-btn').addEventListener('click', function () {
+    var replayBtn = document.getElementById('quiz-replay-btn');
+    replayBtn.addEventListener('click', function () {
       pool = shuffle(buildPool());
       current = 0;
       results = [];
       render();
     });
+    replayBtn.focus();
   }
 
   if (!pool.length) {

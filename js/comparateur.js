@@ -85,7 +85,7 @@
       html += '<div class="comparateur-card-nom">' + c.nom + '</div>';
       html += '<div class="comparateur-card-parti">' + c.parti + '</div>';
       html += '<span class="bloc-pill" style="background:' + bloc.couleur + '33; color:' + bloc.couleur + '; border:1px solid ' + bloc.couleur + '55;">' + bloc.label + '</span>';
-      html += '<div class="comparateur-sondage">' + c.sondage.label + '</div>';
+      html += '<div class="comparateur-sondage">' + ((window.isSilenceElectoral && window.isSilenceElectoral()) ? '<span class="silence-note">🔇 masqué</span>' : c.sondage.label) + '</div>';
       html += '</div>';
     });
     html += '</div>';
@@ -137,6 +137,14 @@
   function initFromUrl() {
     var params = new URLSearchParams(window.location.search);
     var slugs = (params.get('c') || '').split(',').map(function (s) { return s.trim(); }).filter(Boolean);
+
+    // Après le 1er tour, défaut intelligent : les 2 qualifiés pré-sélectionnés — sauf si
+    // l'utilisateur a explicitement demandé une autre comparaison via l'URL (?c=...).
+    if (!slugs.length) {
+      var qualifies = candidats.filter(function (c) { return c.statut === 'qualifie_2nd_tour'; });
+      if (qualifies.length === 2) slugs = qualifies.map(function (c) { return c.slug; });
+    }
+
     slugs.slice(0, 3).forEach(function (slug, idx) {
       if (slots[idx] && candidats.some(function (c) { return c.slug === slug; })) {
         slots[idx].value = slug;

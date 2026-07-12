@@ -21,6 +21,16 @@
     if (s === 'contre') return 'Plutôt opposé(e)';
     return 'Position nuancée';
   }
+  function renderSources(sources) {
+    if (!sources || !sources.length) {
+      return '<span class="source-badge source-unconfirmed">Source à confirmer</span>';
+    }
+    var links = sources.map(function (s) {
+      return '<a href="' + s.url + '" target="_blank" rel="noopener noreferrer" class="source-verify-link">🔍 Vérifier cette source' + (sources.length > 1 ? ' (' + s.nom + ')' : '') + '</a>';
+    }).join(' · ');
+    if (sources.length >= 2) links += ' <span class="source-crossref">' + sources.length + ' sources indépendantes</span>';
+    return links;
+  }
   function tendanceLabel(t) {
     if (t === 'hausse') return { arrow: '↗', cls: 'tendance-hausse', label: 'En hausse' };
     if (t === 'baisse') return { arrow: '↘', cls: 'tendance-baisse', label: 'En baisse' };
@@ -153,7 +163,11 @@
     ['education', 'Éducation'], ['europe', 'Europe / international'], ['dette', 'Dette / fiscalité'],
     ['institutions', 'Institutions / démocratie']
   ];
-  html += '<section class="fiche-section"><h2>Positions sur les sujets qui comptent</h2><div class="positions-grid">';
+  html += '<section class="fiche-section"><h2>Positions sur les sujets qui comptent</h2>';
+  if (c.sources && c.sources.length) {
+    html += '<p class="positions-sources-note"><a href="#fiche-sources" class="source-verify-link">🔍 Vérifier les sources de cette fiche</a></p>';
+  }
+  html += '<div class="positions-grid">';
   sujets.forEach(function (s) {
     var r = resolveSujet(c, s[0]);
     if (!r) return;
@@ -169,10 +183,13 @@
   html += '<section class="fiche-section"><h2>Vérification des affirmations</h2>';
   if (c.fact_checks && c.fact_checks.length) {
     html += '<div class="factcheck-list">' + c.fact_checks.map(function (f) {
+      var sourceNames = f.sources && f.sources.length ? f.sources.map(function (s) { return s.nom; }).join(' / ') : '';
+      var contexteFc = 'Vérification des affirmations — ' + c.nom + ' — « ' + f.affirmation.slice(0, 90) + (f.affirmation.length > 90 ? '…' : '') + ' »';
       return '<div class="factcheck-card"><div class="detail" style="margin-bottom:0.5rem;">' + f.affirmation + '</div>' +
         '<span class="stance ' + verdictClass(f.verdict) + '">' + verdictLabel(f.verdict) + '</span>' +
-        (f.source ? ' <span class="factcheck-source">— ' + f.source + (f.date ? ' · ' + f.date : '') + '</span>' : '') +
-        (f.url ? '<br><a href="' + f.url + '" target="_blank" rel="noopener noreferrer" class="factcheck-link">Voir la vérification →</a>' : '') +
+        (sourceNames ? ' <span class="factcheck-source">— ' + sourceNames + (f.date ? ' · ' + f.date : '') + '</span>' : '') +
+        '<br>' + renderSources(f.sources) +
+        (window.renderSignalement ? window.renderSignalement(contexteFc) : '') +
         '</div>';
     }).join('') + '</div>';
   } else {
@@ -200,18 +217,32 @@
   html += '</section>';
 
   // Dynamique sondagière
-  var t = tendanceLabel(c.sondage.tendance);
   html += '<section class="fiche-section"><h2>Dynamique sondagière</h2>';
-  html += '<div class="tendance-box"><span class="tendance-arrow ' + t.cls + '">' + t.arrow + '</span>';
-  html += '<span>' + c.sondage.label + ' — <strong class="' + t.cls + '">' + t.label + '</strong></span></div>';
+  if (window.isSilenceElectoral && window.isSilenceElectoral()) {
+    html += '<p class="silence-note">🔇 ' + window.SILENCE_ELECTORAL_MESSAGE + '</p>';
+  } else {
+    var t = tendanceLabel(c.sondage.tendance);
+    html += '<div class="tendance-box"><span class="tendance-arrow ' + t.cls + '">' + t.arrow + '</span>';
+    html += '<span>' + c.sondage.label + ' — <strong class="' + t.cls + '">' + t.label + '</strong></span>';
+    if (DATA.derniere_maj_sondages) html += '<span class="sondage-maj">maj ' + DATA.derniere_maj_sondages + '</span>';
+    html += '</div>';
+  }
   html += '</section>';
 
   // Sources
   if (c.sources && c.sources.length) {
-    html += '<section class="fiche-section"><h2>Sources</h2><ul class="parcours-list">';
+    html += '<section class="fiche-section" id="fiche-sources"><h2>Sources</h2><ul class="parcours-list">';
     html += c.sources.map(function (s) { return '<li><a href="' + s + '" target="_blank" rel="noopener noreferrer">' + s + '</a></li>'; }).join('');
     html += '</ul></section>';
   }
 
+  html += '<p class="fiche-maj-note">Fiche mise à jour le ' + DATA.derniere_maj + '</p>';
+
+  // Signalement d'erreur (générique, page entière)
+  if (window.renderSignalement) {
+    html += '<section class="fiche-section">' + window.renderSignalement('Fiche candidat — ' + c.nom) + '</section>';
+  }
+
   root.innerHTML = html;
+  if (window.initSignalementWidgets) window.initSignalementWidgets(root);
 })();

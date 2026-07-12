@@ -64,6 +64,12 @@
       if (current + 1 < questions.length) { current++; renderQuestion(); }
       else { renderResults(); }
     });
+
+    // Le contenu est régénéré à chaque question (innerHTML) : sans repositionner le focus,
+    // un utilisateur au clavier perdrait le focus à chaque Suivant/Précédent et devrait
+    // retabuler depuis le début — on ramène le focus sur le choix déjà sélectionné (ou le 1er).
+    var toFocus = root.querySelector('.quiz-choice-selected') || root.querySelector('.quiz-choice-btn');
+    if (toFocus) toFocus.focus();
   }
 
   function computeScores() {
@@ -88,7 +94,8 @@
   function renderResults() {
     var answeredCount = Object.keys(answers).filter(function (k) { return answers[k] !== 0; }).length;
     if (answeredCount === 0) {
-      root.innerHTML = '<p class="no-data">Vous avez répondu « neutre » à toutes les questions — impossible de calculer une compatibilité. <a href="quiz-compatibilite.html">Recommencer</a></p>';
+      root.innerHTML = '<p class="no-data" tabindex="-1">Vous avez répondu « neutre » à toutes les questions — impossible de calculer une compatibilité. <a href="quiz-compatibilite.html">Recommencer</a></p>';
+      root.querySelector('.no-data').focus();
       return;
     }
 
@@ -96,14 +103,16 @@
     var top3 = results.slice(0, 3);
 
     var html = '<div class="quiz-compat-results">';
-    html += '<h2 class="quiz-compat-results-title">Vos 3 candidats les plus compatibles</h2>';
+    html += '<h2 class="quiz-compat-results-title" tabindex="-1">Vos 3 candidats les plus compatibles</h2>';
     html += '<div class="quiz-compat-bars">';
     top3.forEach(function (r, i) {
       var bloc = blocInfo(r.candidat.bloc);
       html += '<a class="quiz-compat-bar-row" href="candidats/' + r.candidat.slug + '.html">';
       html += '<div class="avatar" style="width:44px;height:44px;font-size:1rem;background:' + bloc.couleur + '33; color:' + bloc.couleur + ';">' + initials(r.candidat.nom) + '</div>';
       html += '<div class="quiz-compat-bar-main">';
-      html += '<div class="quiz-compat-bar-label"><strong>' + r.candidat.nom + '</strong> <span class="quiz-compat-bar-parti">' + r.candidat.parti + '</span></div>';
+      var statutTxt = r.candidat.statut === 'qualifie_2nd_tour' ? ' <span class="statut-pill statut-qualifie">🟢 Qualifié·e pour le 2nd tour</span>' :
+        (r.candidat.statut === 'elimine_1er_tour' ? ' <span class="statut-pill statut-elimine">⚪ Éliminé·e au 1er tour</span>' : '');
+      html += '<div class="quiz-compat-bar-label"><strong>' + r.candidat.nom + '</strong> <span class="quiz-compat-bar-parti">' + r.candidat.parti + '</span>' + statutTxt + '</div>';
       html += '<div class="quiz-compat-bar-track"><div class="quiz-compat-bar-fill" data-target="' + r.pct + '" style="width:0%; background:' + bloc.couleur + ';"></div></div>';
       html += '</div>';
       html += '<div class="quiz-compat-bar-pct">' + r.pct + '%</div>';
@@ -117,7 +126,7 @@
     html += '<button type="button" class="quiz-next-btn quiz-next-btn-compat" id="quiz-memo-btn">📄 Générer mon mémo personnel</button>';
     html += '</div>';
 
-    html += '<p class="quiz-compat-disclaimer">Ce résultat est une aide à la réflexion basée sur vos réponses à quelques questions clés. Il ne remplace pas une lecture complète des programmes. Explorez les fiches candidats avant de vous décider.</p>';
+    html += '<p class="quiz-compat-disclaimer">Ce résultat est une aide à la réflexion basée sur vos réponses à quelques questions clés, pas un verdict. Ce site vous donne des sources, pas des vérités toutes faites : cliquez, recoupez, doutez — explorez les fiches candidats avant de vous décider, c\'est ça, voter en conscience.</p>';
 
     html += '<details class="quiz-compat-methodo"><summary>Comment ce score est calculé ? <span class="chevron">▸</span></summary>';
     html += '<div class="quiz-compat-methodo-content">';
@@ -152,6 +161,10 @@
     document.getElementById('quiz-memo-btn').addEventListener('click', function () {
       renderMemo(top3);
     });
+
+    // Transition depuis la dernière question (bouton détruit par le re-rendu) : on ramène
+    // le focus sur le titre des résultats plutôt que de le laisser retomber en haut de page.
+    root.querySelector('.quiz-compat-results-title').focus();
   }
 
   function renderMemo(top3) {
@@ -160,7 +173,7 @@
 
     var html = '<div class="memo-card">';
     html += '<div class="memo-header">';
-    html += '<div class="memo-header-title">🇫🇷 Mon mémo personnel — Présidentielle 2027</div>';
+    html += '<div class="memo-header-title" tabindex="-1">🇫🇷 Mon mémo personnel — Présidentielle 2027</div>';
     html += '<div class="memo-header-date">Généré le ' + today + '</div>';
     html += '</div>';
 
@@ -200,6 +213,8 @@
       document.body.classList.remove('memo-print-mode');
       renderResults();
     });
+
+    root.querySelector('.memo-header-title').focus();
   }
 
   if (!questions.length || !candidats.length) {

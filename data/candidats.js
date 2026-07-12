@@ -10,10 +10,16 @@
  */
 window.SITE_DATA = {
   derniere_maj: "8 juillet 2026",
+  derniere_maj_sondages: "25/06/2026",
 
   alerte: {
     titre: "⚡ 7 juillet 2026",
     texte: "Marine Le Pen condamnée en appel (45 mois d'inéligibilité dont 30 avec sursis), mais éligible pour 2027. Candidature confirmée + pourvoi en cassation suspensif déposé."
+  },
+
+  parrainages: {
+    statut: "pas_encore_ouvert",
+    message: "Les parrainages ne sont pas encore collectés — la période officielle démarre fin janvier 2027. Ce site affichera le suivi en temps réel dès l'ouverture, grâce à l'open data du Conseil constitutionnel."
   },
 
   blocs: [
@@ -102,6 +108,7 @@ window.SITE_DATA = {
       parti: "Lutte Ouvrière",
       bloc: "exgauche",
       fiche: true,
+      statut: "en_lice",
       sondage: { label: "~0.5%", niveau: "faible", tendance: "stable" },
       historique: [
         { annee: 2012, resultat: "0.6%" },
@@ -181,6 +188,7 @@ window.SITE_DATA = {
       parti: "La France Insoumise",
       bloc: "gradicale",
       fiche: true,
+      statut: "en_lice",
       sondage: { label: "13–16%", niveau: "fort", tendance: "hausse" },
       historique: [
         { annee: 2012, resultat: "11.1%" },
@@ -232,9 +240,9 @@ window.SITE_DATA = {
       ],
       promesses_bilan: [],
       fact_checks: [
-        { affirmation: "Une publication reprise sur les réseaux sociaux affirmait que Jean-Luc Mélenchon percevait un salaire mensuel d'environ 36 000 € du fait de mandats cumulés (eurodéputé, sénateur).", quizAffirmation: "Une publication reprise sur les réseaux sociaux affirmait qu'un responsable politique percevait un salaire mensuel d'environ 36 000 € du fait de mandats cumulés (eurodéputé, sénateur).", verdict: "faux", explication: "Ce chiffre ne correspond à aucun cumul réel : son indemnité nette de député s'élève à environ 5 680 €/mois. L'infox circule depuis 2022 malgré les démentis.", source: "Defacto (observatoire) / AFP Factuel", url: "https://defacto-observatoire.fr/get/Medias/Factuel/Fact-checks/Retour-d-une-infox-affirmant-que-Jean-Luc-Melenchon-gagne-un-salaire-mensuel-de-36-000/WebHome", date: "resurgence identifiée en 2022, réexaminée en 2026" },
-        { affirmation: "Lors d'un meeting à Lyon (26 février 2026), Jean-Luc Mélenchon a évoqué la prononciation du nom « Epstein », disant vouloir dire « Epstine » car « ça fait plus russe ».", quizAffirmation: "Lors d'un meeting à Lyon (26 février 2026), un candidat a évoqué la prononciation du nom « Epstein », disant vouloir dire « Epstine » car « ça fait plus russe ».", verdict: "partiellement_vrai", explication: "La prononciation « Epstine » correspond à la prononciation anglaise réelle du nom. Les propos sont authentiques, mais leur interprétation (maladresse ou sous-entendu problématique) fait débat.", source: "franceinfo / Public Sénat / France 24", url: "https://www.franceinfo.fr/politique/melenchon/ah-vous-voulez-dire-epstine-pardon-ca-fait-plus-russe-jean-luc-melenchon-cree-la-polemique-lors-d-un-meeting-a-lyon_7833758.html", date: "27 février 2026" },
-        { affirmation: "Un montage audio diffusé sur France Culture établissait un parallèle entre des propos de Jean-Luc Mélenchon et de Jean-Marie Le Pen pour suggérer une proximité avec l'antisémitisme.", quizAffirmation: "Un montage audio diffusé sur France Culture établissait un parallèle entre les propos d'un responsable politique et ceux de Jean-Marie Le Pen pour suggérer une proximité avec l'antisémitisme.", verdict: "trompeur", explication: "France Culture a reconnu avoir diffusé un extrait mensonger et s'est excusée publiquement ; LFI a saisi l'Arcom.", source: "Arrêt sur images / 20 Minutes", url: "https://www.arretsurimages.net/articles/antisemitisme-face-a-le-pen-erner-diffuse-un-extrait-mensonger-sur-melenchon", date: "juin 2026" }
+        { affirmation: "Une publication reprise sur les réseaux sociaux affirmait que Jean-Luc Mélenchon percevait un salaire mensuel d'environ 36 000 € du fait de mandats cumulés (eurodéputé, sénateur).", quizAffirmation: "Une publication reprise sur les réseaux sociaux affirmait qu'un responsable politique percevait un salaire mensuel d'environ 36 000 € du fait de mandats cumulés (eurodéputé, sénateur).", verdict: "faux", explication: "Ce chiffre ne correspond à aucun cumul réel : son indemnité nette de député s'élève à environ 5 680 €/mois. L'infox circule depuis 2022 malgré les démentis.", mecanisme: "Rumeur ancienne, déjà démentie, qui ressurgit périodiquement sans nouvelle vérification.", sources: [{ nom: "Defacto (observatoire) / AFP Factuel", url: "https://defacto-observatoire.fr/get/Medias/Factuel/Fact-checks/Retour-d-une-infox-affirmant-que-Jean-Luc-Melenchon-gagne-un-salaire-mensuel-de-36-000/WebHome" }], date: "resurgence identifiée en 2022, réexaminée en 2026" },
+        { affirmation: "Lors d'un meeting à Lyon (26 février 2026), Jean-Luc Mélenchon a évoqué la prononciation du nom « Epstein », disant vouloir dire « Epstine » car « ça fait plus russe ».", quizAffirmation: "Lors d'un meeting à Lyon (26 février 2026), un candidat a évoqué la prononciation du nom « Epstein », disant vouloir dire « Epstine » car « ça fait plus russe ».", verdict: "partiellement_vrai", explication: "La prononciation « Epstine » correspond à la prononciation anglaise réelle du nom. Les propos sont authentiques, mais leur interprétation (maladresse ou sous-entendu problématique) fait débat.", mecanisme: "Fait réel mais interprétation ajoutée après coup — utile de distinguer ce qui a été dit de ce qu'on en déduit.", sources: [{ nom: "franceinfo / Public Sénat / France 24", url: "https://www.franceinfo.fr/politique/melenchon/ah-vous-voulez-dire-epstine-pardon-ca-fait-plus-russe-jean-luc-melenchon-cree-la-polemique-lors-d-un-meeting-a-lyon_7833758.html" }], date: "27 février 2026" },
+        { affirmation: "Un montage audio diffusé sur France Culture établissait un parallèle entre des propos de Jean-Luc Mélenchon et de Jean-Marie Le Pen pour suggérer une proximité avec l'antisémitisme.", quizAffirmation: "Un montage audio diffusé sur France Culture établissait un parallèle entre les propos d'un responsable politique et ceux de Jean-Marie Le Pen pour suggérer une proximité avec l'antisémitisme.", verdict: "trompeur", explication: "France Culture a reconnu avoir diffusé un extrait mensonger et s'est excusée publiquement ; LFI a saisi l'Arcom.", mecanisme: "Extrait audio tronqué ou monté pour suggérer un rapprochement qui n'existe pas dans les propos d'origine.", sources: [{ nom: "Arrêt sur images / 20 Minutes", url: "https://www.arretsurimages.net/articles/antisemitisme-face-a-le-pen-erner-diffuse-un-extrait-mensonger-sur-melenchon" }], date: "juin 2026" }
       ],
       positions_10_sujets: {
         pouvoir_achat: { synthese: "SMIC à 1 600 € net, suppression de la TVA sur les produits de première nécessité, hausse du RSA et de l'AAH au niveau du seuil de pauvreté.", direction: "hausse des minima sociaux" },
@@ -268,6 +276,7 @@ window.SITE_DATA = {
       parti: "Les Écologistes",
       bloc: "gprimaire",
       fiche: true,
+      statut: "en_lice",
       sondage: { label: "~2.5%", niveau: "moyen", tendance: "stable" },
       historique: [],
       idees: ["Transition écologique", "Justice sociale", "Candidature unitaire gauche"],
@@ -314,7 +323,7 @@ window.SITE_DATA = {
       ],
       promesses_bilan: [],
       fact_checks: [
-        { affirmation: "Le 12 janvier 2025 sur RTL, Marine Tondelier a déclaré que 40% de la population de Gaza avait été exterminée depuis octobre 2023.", quizAffirmation: "Le 12 janvier 2025 sur RTL, une candidate a déclaré que 40% de la population de Gaza avait été exterminée depuis octobre 2023.", verdict: "faux", explication: "Le chiffre réel concernait une possible sous-estimation de 40% du nombre de morts selon une étude du Lancet, pas 40% de la population exterminée. Tondelier a reconnu son erreur et présenté ses excuses dès le lendemain.", source: "Le JDD / Times of Israël (couverture de sa propre rectification publique)", url: "https://www.lejdd.fr/politique/40-de-la-population-de-gaza-exterminee-depuis-octobre-2023-marine-tondelier-reconnait-une-erreur-et-presente-ses-excuses-153825", date: "12-13 janvier 2025" }
+        { affirmation: "Le 12 janvier 2025 sur RTL, Marine Tondelier a déclaré que 40% de la population de Gaza avait été exterminée depuis octobre 2023.", quizAffirmation: "Le 12 janvier 2025 sur RTL, une candidate a déclaré que 40% de la population de Gaza avait été exterminée depuis octobre 2023.", verdict: "faux", explication: "Le chiffre réel concernait une possible sous-estimation de 40% du nombre de morts selon une étude du Lancet, pas 40% de la population exterminée. Tondelier a reconnu son erreur et présenté ses excuses dès le lendemain.", mecanisme: "Deux chiffres de nature différente confondus : un taux de sous-estimation statistique devient un pourcentage de population.", sources: [{ nom: "Le JDD / Times of Israël (couverture de sa propre rectification publique)", url: "https://www.lejdd.fr/politique/40-de-la-population-de-gaza-exterminee-depuis-octobre-2023-marine-tondelier-reconnait-une-erreur-et-presente-ses-excuses-153825" }], date: "12-13 janvier 2025" }
       ],
       fact_checks_note: "Aucun fact-check dédié d'AFP Factuel, Les Décodeurs ou CheckNews spécifiquement consacré à Marine Tondelier n'a été identifié pour 2025-2026 ; le seul élément vérifiable trouvé est sa propre rectification publique, largement reprise par la presse généraliste.",
       positions_10_sujets: {
@@ -348,6 +357,7 @@ window.SITE_DATA = {
       parti: "Debout !",
       bloc: "gprimaire",
       fiche: true,
+      statut: "en_lice",
       sondage: { label: "~2–3%", niveau: "moyen", tendance: "hausse" },
       historique: [],
       idees: ["France populaire", "Réindustrialisation verte", "Lutte contre la pauvreté"],
@@ -390,7 +400,7 @@ window.SITE_DATA = {
       ],
       promesses_bilan: [],
       fact_checks: [
-        { affirmation: "François Ruffin dit reverser l'essentiel de son indemnité de député pour ne conserver que l'équivalent du SMIC.", quizAffirmation: "Un candidat, élu député, dit reverser l'essentiel de son indemnité pour ne conserver que l'équivalent du SMIC.", verdict: "trompeur", explication: "Selon une enquête sur ses revenus déclarés à la HATVP, il conserverait en réalité environ 2 800 €/mois plutôt que l'équivalent strict du SMIC (~1 100 €/mois) ; il l'a lui-même reconnu publiquement, précisant garder aussi une réserve financière personnelle.", source: "Marianne (enquête sur ses revenus déclarés à la HATVP)", url: "https://limportant.fr/infos-politique/1/433296", date: "" }
+        { affirmation: "François Ruffin dit reverser l'essentiel de son indemnité de député pour ne conserver que l'équivalent du SMIC.", quizAffirmation: "Un candidat, élu député, dit reverser l'essentiel de son indemnité pour ne conserver que l'équivalent du SMIC.", verdict: "trompeur", explication: "Selon une enquête sur ses revenus déclarés à la HATVP, il conserverait en réalité environ 2 800 €/mois plutôt que l'équivalent strict du SMIC (~1 100 €/mois) ; il l'a lui-même reconnu publiquement, précisant garder aussi une réserve financière personnelle.", mecanisme: "Formule résumée qui simplifie une réalité plus nuancée une fois les chiffres exacts vérifiés.", sources: [{ nom: "Marianne (enquête sur ses revenus déclarés à la HATVP)", url: "https://limportant.fr/infos-politique/1/433296" }], date: "" }
       ],
       fact_checks_note: "Aucun fact-check d'AFP Factuel, Les Décodeurs ou CheckNews trouvé sur François Ruffin. Une polémique distincte (mai 2026) sur une bande dessinée accusée de véhiculer des stéréotypes racistes a aussi nourri un repositionnement de campagne sur le thème de la probité.",
       positions_10_sujets: {
@@ -433,6 +443,7 @@ window.SITE_DATA = {
       parti: "Génération Écologie",
       bloc: "ghors",
       fiche: true,
+      statut: "en_lice",
       sondage: { label: "< 1%", niveau: "faible", tendance: "stable" },
       historique: [],
       idees: ["Écologie de gouvernement", "Autonomie régionale"],
@@ -521,6 +532,7 @@ window.SITE_DATA = {
       parti: "Horizons",
       bloc: "centre",
       fiche: true,
+      statut: "en_lice",
       sondage: { label: "14–19%", niveau: "fort", tendance: "stable" },
       historique: [],
       idees: ["Règle d'or budgétaire", "Refonte école « post-Ferry »", "3 référendums", "Retraite par capitalisation"],
@@ -573,7 +585,7 @@ window.SITE_DATA = {
         { promesse: "Réforme ferroviaire de la SNCF (fin du statut de cheminot, ouverture à la concurrence)", resultat: "tenu", detail: "Adoptée par ordonnances avant l'été 2018 malgré un mouvement de grève important." }
       ],
       fact_checks: [
-        { affirmation: "Édouard Philippe propose de porter la capitalisation à 10-15% du financement des retraites en quinze ans pour aider à résorber le déficit du système par répartition.", quizAffirmation: "Un candidat propose de porter la capitalisation à 10-15% du financement des retraites en quinze ans pour aider à résorber le déficit du système par répartition.", verdict: "partiellement_vrai", explication: "Face aux déficits projetés par le Conseil d'orientation des retraites (6,6 Md€ en 2030, 15 Md€ en 2035), la proposition reste peu chiffrée sur son financement de transition, ce qui laisse une partie du problème budgétaire sans réponse précise.", source: "Senioractu.com (à partir des projections du COR)", url: "https://www.senioractu.com/Retraites-la-mere-de-toutes-les-batailles-d-Edouard-Philippe-sera-financee-par-les-retraites_a27850.html", date: "6 juillet 2026" }
+        { affirmation: "Édouard Philippe propose de porter la capitalisation à 10-15% du financement des retraites en quinze ans pour aider à résorber le déficit du système par répartition.", quizAffirmation: "Un candidat propose de porter la capitalisation à 10-15% du financement des retraites en quinze ans pour aider à résorber le déficit du système par répartition.", verdict: "partiellement_vrai", explication: "Face aux déficits projetés par le Conseil d'orientation des retraites (6,6 Md€ en 2030, 15 Md€ en 2035), la proposition reste peu chiffrée sur son financement de transition, ce qui laisse une partie du problème budgétaire sans réponse précise.", mecanisme: "Objectif chiffré mis en avant sans détailler comment il serait concrètement financé.", sources: [{ nom: "Senioractu.com (à partir des projections du COR)", url: "https://www.senioractu.com/Retraites-la-mere-de-toutes-les-batailles-d-Edouard-Philippe-sera-financee-par-les-retraites_a27850.html" }], date: "6 juillet 2026" }
       ],
       fact_checks_note: "Aucun fact-check d'AFP Factuel, Les Décodeurs ou CheckNews trouvé sur Édouard Philippe pour 2025-2026. Élément factuel judiciaire notable à signaler pour la neutralité : le Parquet national financier a ouvert début mai 2026 une enquête visant Édouard Philippe pour détournement de fonds publics, favoritisme et prise illégale d'intérêts, concernant le financement (2,154 M€) d'une association gérant la « Cité numérique » du Havre ; faits contestés par l'intéressé, enquête en cours, sans mise en examen ni jugement à ce stade.",
       positions_10_sujets: {
@@ -610,6 +622,7 @@ window.SITE_DATA = {
       parti: "Renaissance (EPR)",
       bloc: "centre",
       fiche: true,
+      statut: "en_lice",
       sondage: { label: "8%", niveau: "moyen", tendance: "baisse" },
       historique: [],
       idees: ["« Droit au brut » / salaires", "Brevet obligatoire", "Quotas immigration", "Plan IA 20M salariés"],
@@ -661,7 +674,7 @@ window.SITE_DATA = {
         { promesse: "Conduire son gouvernement jusqu'à un terme normal", resultat: "non_tenu", detail: "Gouvernement mis fin par la dissolution de l'Assemblée annoncée par Emmanuel Macron le 9 juin 2024, décision pour laquelle Attal dit ne pas avoir été consulté." }
       ],
       fact_checks: [
-        { affirmation: "Une campagne de promotion du livre de Gabriel Attal montrait des célébrités (Emma Watson, Cristiano Ronaldo, Rosalía) recommandant chaleureusement l'ouvrage.", quizAffirmation: "Une campagne de promotion du livre d'un candidat montrait des célébrités (Emma Watson, Cristiano Ronaldo, Rosalía) recommandant chaleureusement l'ouvrage.", verdict: "faux", explication: "Les visuels étaient entièrement générés par IA. L'équipe de campagne a reconnu une « erreur » après les critiques et retiré l'opération, expliquant qu'ils avaient été diffusés par erreur par un groupe de militants.", source: "Actualitté", url: "https://actualitte.com/article/130884/insolite/a-la-recherche-d-electeurs-gabriel-attal-soumet-la-lecture-de-son-livre-a-des-ia", date: "avril 2026" }
+        { affirmation: "Une campagne de promotion du livre de Gabriel Attal montrait des célébrités (Emma Watson, Cristiano Ronaldo, Rosalía) recommandant chaleureusement l'ouvrage.", quizAffirmation: "Une campagne de promotion du livre d'un candidat montrait des célébrités (Emma Watson, Cristiano Ronaldo, Rosalía) recommandant chaleureusement l'ouvrage.", verdict: "faux", explication: "Les visuels étaient entièrement générés par IA. L'équipe de campagne a reconnu une « erreur » après les critiques et retiré l'opération, expliquant qu'ils avaient été diffusés par erreur par un groupe de militants.", mecanisme: "Contenu entièrement fabriqué par IA présenté comme un témoignage réel.", sources: [{ nom: "Actualitté", url: "https://actualitte.com/article/130884/insolite/a-la-recherche-d-electeurs-gabriel-attal-soumet-la-lecture-de-son-livre-a-des-ia" }], date: "avril 2026" }
       ],
       fact_checks_note: "Aucun fact-check d'AFP Factuel, Les Décodeurs ou CheckNews trouvé sur Gabriel Attal pour 2025-2026. Une controverse adjacente distincte existe aussi sur des affirmations contestées concernant les finances locales (audition, février 2025).",
       positions_10_sujets: {
@@ -697,6 +710,7 @@ window.SITE_DATA = {
       parti: "Les Républicains",
       bloc: "droite",
       fiche: true,
+      statut: "en_lice",
       sondage: { label: "8%", niveau: "moyen", tendance: "stable" },
       historique: [],
       idees: ["Fermeté sécuritaire", "1M logements en 5 ans", "Suppression ZAN", "Immigration restrictive"],
@@ -749,7 +763,7 @@ window.SITE_DATA = {
         { promesse: "Justifier le lien entre immigration irrégulière et délinquance pour fonder sa politique sécuritaire", resultat: "retourne", detail: "Contesté publiquement dans « Complément d'enquête » (23 janvier 2025) : le CEPII avance l'absence d'impact statistique de l'immigration sur la délinquance globale ; Retailleau a répliqué avec des chiffres eux-mêmes débattus." }
       ],
       fact_checks: [
-        { affirmation: "Bruno Retailleau a affirmé que les étrangers, environ 7% de la population française, représentent 38% des mis en cause pour cambriolage et 40% pour vol de véhicule.", quizAffirmation: "Un candidat a affirmé que les étrangers, environ 7% de la population française, représentent 38% des mis en cause pour cambriolage et 40% pour vol de véhicule.", verdict: "partiellement_vrai", explication: "Ces chiffres sur les mis en cause proviennent de statistiques policières et ne sont pas inventés, mais la conclusion qu'il en tire (un lien de causalité entre immigration et délinquance) est contestée par une note du CEPII selon laquelle les études ne montrent pas d'impact statistique de l'immigration sur la délinquance.", source: "Atlantico (décryptage du débat CEPII / « Complément d'enquête »)", url: "https://atlantico.fr/article/decryptage/les-etudes-concluent-unanimement-a-labsence-dimpact-de-limmigration-sur-la-delinquance-disent-le-cepii-et-les-opposants-a-bruno-retailleau-vraiment-complement-enquete-patrick-stefanini-eric-delbecque", date: "23 janvier 2025" }
+        { affirmation: "Bruno Retailleau a affirmé que les étrangers, environ 7% de la population française, représentent 38% des mis en cause pour cambriolage et 40% pour vol de véhicule.", quizAffirmation: "Un candidat a affirmé que les étrangers, environ 7% de la population française, représentent 38% des mis en cause pour cambriolage et 40% pour vol de véhicule.", verdict: "partiellement_vrai", explication: "Ces chiffres sur les mis en cause proviennent de statistiques policières et ne sont pas inventés, mais la conclusion qu'il en tire (un lien de causalité entre immigration et délinquance) est contestée par une note du CEPII selon laquelle les études ne montrent pas d'impact statistique de l'immigration sur la délinquance.", mecanisme: "Chiffres réels utilisés pour affirmer un lien de cause à effet que les études citées ne confirment pas — corrélation présentée comme causalité.", sources: [{ nom: "Atlantico (décryptage du débat CEPII / « Complément d'enquête »)", url: "https://atlantico.fr/article/decryptage/les-etudes-concluent-unanimement-a-labsence-dimpact-de-limmigration-sur-la-delinquance-disent-le-cepii-et-les-opposants-a-bruno-retailleau-vraiment-complement-enquete-patrick-stefanini-eric-delbecque" }], date: "23 janvier 2025" }
       ],
       fact_checks_note: "Aucun fact-check d'AFP Factuel, Les Décodeurs ou CheckNews trouvé sur Bruno Retailleau ; l'item ci-dessus provient d'un décryptage journalistique équivalent (Atlantico).",
       positions_10_sujets: {
@@ -788,6 +802,7 @@ window.SITE_DATA = {
       parti: "Rassemblement National",
       bloc: "exdroite",
       fiche: true,
+      statut: "en_lice",
       note: "⚖️",
       noteDetail: "Condamnée en appel le 07/07/2026. Pourvoi en cassation annoncé (suspensif). Campagne en « binôme » avec J. Bardella.",
       sondage: { label: "33–36%", niveau: "fort", tendance: "stable" },
@@ -839,8 +854,8 @@ window.SITE_DATA = {
       ],
       promesses_bilan: [],
       fact_checks: [
-        { affirmation: "Après sa condamnation confirmée en appel, Marine Le Pen affirme rester présumée innocente tant que son pourvoi en cassation n'a pas été jugé.", quizAffirmation: "Après une condamnation confirmée en appel, un candidat affirme rester présumé innocent tant que son pourvoi en cassation n'a pas été jugé.", verdict: "vrai", explication: "Un pourvoi en cassation suspend les effets pénaux d'une décision d'appel : la personne reste présumée innocente jusqu'à un arrêt définitif, confirment plusieurs magistrats dont le procureur général près la Cour de cassation.", source: "franceinfo (« Vrai ou Faux »)", url: "https://www.franceinfo.fr/politique/front-national/affaire-des-assistants-fn-au-parlement-europeen/vrai-ou-faux-condamnee-en-appel-marine-le-pen-est-elle-presumee-innocente-apres-son-pourvoi-en-cassation_8099321.html", date: "9 juillet 2026" },
-        { affirmation: "Sur TF1, Marine Le Pen a comparé sa condamnation à l'issue judiciaire des dossiers de Jean-Luc Mélenchon (non-lieu) et François Bayrou (relaxe), présentés comme portant sur des faits similaires.", quizAffirmation: "Sur un plateau de télévision, un candidat a comparé sa condamnation à l'issue judiciaire des dossiers de Jean-Luc Mélenchon (non-lieu) et François Bayrou (relaxe), présentés comme portant sur des faits similaires.", verdict: "trompeur", explication: "Les trois dossiers présentent des différences factuelles importantes : le dossier RN porte sur un système organisé de plusieurs millions d'euros, le dossier Bayrou/MoDem sur des montants bien moindres, et l'enquête visant Mélenchon a été close faute de preuve de son implication personnelle.", source: "Telos / Public Sénat", url: "https://www.telos-eu.com/fr/politique-francaise-et-internationale/le-pen-bayrou-et-melenchon-face-aux-juges-trois-destins-differents-une-meme-motivation.html", date: "9 juillet 2026" }
+        { affirmation: "Après sa condamnation confirmée en appel, Marine Le Pen affirme rester présumée innocente tant que son pourvoi en cassation n'a pas été jugé.", quizAffirmation: "Après une condamnation confirmée en appel, un candidat affirme rester présumé innocent tant que son pourvoi en cassation n'a pas été jugé.", verdict: "vrai", explication: "Un pourvoi en cassation suspend les effets pénaux d'une décision d'appel : la personne reste présumée innocente jusqu'à un arrêt définitif, confirment plusieurs magistrats dont le procureur général près la Cour de cassation.", sources: [{ nom: "franceinfo (« Vrai ou Faux »)", url: "https://www.franceinfo.fr/politique/front-national/affaire-des-assistants-fn-au-parlement-europeen/vrai-ou-faux-condamnee-en-appel-marine-le-pen-est-elle-presumee-innocente-apres-son-pourvoi-en-cassation_8099321.html" }], date: "9 juillet 2026" },
+        { affirmation: "Sur TF1, Marine Le Pen a comparé sa condamnation à l'issue judiciaire des dossiers de Jean-Luc Mélenchon (non-lieu) et François Bayrou (relaxe), présentés comme portant sur des faits similaires.", quizAffirmation: "Sur un plateau de télévision, un candidat a comparé sa condamnation à l'issue judiciaire des dossiers de Jean-Luc Mélenchon (non-lieu) et François Bayrou (relaxe), présentés comme portant sur des faits similaires.", verdict: "trompeur", explication: "Les trois dossiers présentent des différences factuelles importantes : le dossier RN porte sur un système organisé de plusieurs millions d'euros, le dossier Bayrou/MoDem sur des montants bien moindres, et l'enquête visant Mélenchon a été close faute de preuve de son implication personnelle.", mecanisme: "Des dossiers aux faits très différents mis sur le même plan pour suggérer une équivalence qui n'existe pas.", sources: [{ nom: "Telos / Public Sénat", url: "https://www.telos-eu.com/fr/politique-francaise-et-internationale/le-pen-bayrou-et-melenchon-face-aux-juges-trois-destins-differents-une-meme-motivation.html" }], date: "9 juillet 2026" }
       ],
       fact_checks_note: "Recherche approfondie (une quinzaine de requêtes ciblées AFP Factuel, Les Décodeurs, CheckNews) : aucun fact-check de ces trois médias précis n'a pu être identifié pour Marine Le Pen ; les deux items ci-dessus proviennent de vérifications journalistiques équivalentes.",
       positions_10_sujets: {
@@ -873,6 +888,7 @@ window.SITE_DATA = {
       parti: "Debout la France",
       bloc: "exdroite",
       fiche: true,
+      statut: "en_lice",
       sondage: { label: "~2%", niveau: "moyen", tendance: "stable" },
       historique: [
         { annee: 2012, resultat: "1.8%" },
@@ -924,7 +940,7 @@ window.SITE_DATA = {
       ],
       promesses_bilan: [],
       fact_checks: [
-        { affirmation: "Nicolas Dupont-Aignan présente la contribution nette de la France à l'Union européenne comme une lourde charge de plusieurs milliards d'euros par an.", quizAffirmation: "Un candidat présente la contribution nette de la France à l'Union européenne comme une lourde charge de plusieurs milliards d'euros par an.", verdict: "trompeur", explication: "L'ordre de grandeur des montants bruts est globalement correct, mais la présentation est jugée trompeuse : le coût net réel représente environ 1% du PIB français, loin de l'image d'une charge écrasante.", source: "franceinfo (« Le Vrai du Faux »)", url: "https://www.franceinfo.fr/replay-radio/le-vrai-du-faux/l-europe-coute-t-elle-une-fortune-a-la-france_7275042.html", date: "9 mai 2025" }
+        { affirmation: "Nicolas Dupont-Aignan présente la contribution nette de la France à l'Union européenne comme une lourde charge de plusieurs milliards d'euros par an.", quizAffirmation: "Un candidat présente la contribution nette de la France à l'Union européenne comme une lourde charge de plusieurs milliards d'euros par an.", verdict: "trompeur", explication: "L'ordre de grandeur des montants bruts est globalement correct, mais la présentation est jugée trompeuse : le coût net réel représente environ 1% du PIB français, loin de l'image d'une charge écrasante.", mecanisme: "Chiffre brut isolé de son contexte (montant net, part du PIB) pour paraître plus impressionnant qu'il ne l'est.", sources: [{ nom: "franceinfo (« Le Vrai du Faux »)", url: "https://www.franceinfo.fr/replay-radio/le-vrai-du-faux/l-europe-coute-t-elle-une-fortune-a-la-france_7275042.html" }], date: "9 mai 2025" }
       ],
       fact_checks_note: "Aucun fact-check d'AFP Factuel, Les Décodeurs ou CheckNews trouvé sur Nicolas Dupont-Aignan pour 2025-2026 ; l'item ci-dessus provient d'une vérification journalistique équivalente.",
       positions_10_sujets: {

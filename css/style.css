@@ -7,21 +7,21 @@
   --text: #e4e4e7;
   --text-bright: #fafafa;
   --text-dim: #a1a1aa;
-  --text-dimmer: #71717a;
-  --text-dimmest: #52525b;
-  --border: #27272a;
-  --border-soft: #1e1e24;
+  --text-dimmer: #8b8b94;
+  --text-dimmest: #7f7f88;
+  --border: #55555f;
+  --border-soft: #35353f;
   --accent: #f59e0b;
-  --card-bg: #16161c;
+  --card-bg: #262632;
 
-  --c-exgauche: #dc2626;
+  --c-exgauche: #e14444;
   --c-gradicale: #ef4444;
   --c-gprimaire: #f97316;
   --c-ghors: #eab308;
   --c-centre: #3b82f6;
   --c-droite: #8b5cf6;
-  --c-exdroite: #64748b;
-  --c-inclassable: #6b7280;
+  --c-exdroite: #7c8ba3;
+  --c-inclassable: #818793;
 
   --quiz-vf: #38bdf8;
   --quiz-compat: #a78bfa;
@@ -68,21 +68,6 @@ a { color: inherit; }
 .site-nav-links a:hover { color: var(--text-bright); }
 .site-nav-links a.active { color: var(--accent); border-bottom-color: var(--accent); }
 
-.quiz-cta {
-  display: block;
-  text-align: center;
-  text-decoration: none;
-  background: linear-gradient(135deg, rgba(167,139,250,0.18), rgba(56,189,248,0.12));
-  border: 1px solid var(--quiz-compat);
-  color: var(--text-bright);
-  font-weight: 600;
-  font-size: 0.95rem;
-  padding: 0.9rem 1.2rem;
-  border-radius: 10px;
-  margin-bottom: 1.5rem;
-}
-.quiz-cta:hover { border-color: #c4b5fd; background: linear-gradient(135deg, rgba(167,139,250,0.28), rgba(56,189,248,0.18)); }
-
 .countdown-bar {
   text-align: center;
   font-size: 0.72rem;
@@ -90,6 +75,121 @@ a { color: inherit; }
   margin-bottom: 1.3rem;
   letter-spacing: 0.01em;
 }
+
+/* ---------- Bloc d'accroche (accueil) ---------- */
+.hero-accroche {
+  text-align: center;
+  padding: 1.8rem 1rem 2.2rem;
+  margin-bottom: 1.8rem;
+  border-bottom: 1px solid var(--border);
+}
+.hero-tagline {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.3rem, 3.2vw, 1.8rem);
+  color: var(--text-bright);
+  letter-spacing: -0.01em;
+  margin-bottom: 0.7rem;
+}
+.hero-desc {
+  font-size: 0.9rem;
+  color: var(--text-dim);
+  line-height: 1.6;
+  max-width: 640px;
+  margin: 0 auto 1.6rem;
+}
+.hero-entries {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.7rem;
+  max-width: 780px;
+  margin: 0 auto;
+}
+.hero-entry {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  text-decoration: none;
+  color: var(--text);
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.9rem 0.6rem;
+  font-size: 0.78rem;
+  font-weight: 500;
+  transition: border-color 0.15s, transform 0.15s;
+}
+.hero-entry-icon { font-size: 1.3rem; }
+.hero-entry:hover { border-color: var(--accent); transform: translateY(-2px); }
+
+/* ---------- Actualités récentes (accueil) ---------- */
+.actualites-section { margin-bottom: 1.8rem; }
+.actualites-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  color: var(--text-bright);
+  margin-bottom: 0.8rem;
+}
+.actu-list { display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 0.6rem; }
+.actu-item {
+  border-left: 3px solid var(--border);
+  background: var(--card-bg);
+  border-radius: 0 8px 8px 0;
+  padding: 0.6rem 0.9rem;
+}
+.actu-item-latest { background: rgba(245,158,11,0.08); }
+.actu-date { font-size: 0.7rem; color: var(--text-dimmer); margin-bottom: 0.2rem; }
+.actu-titre { font-size: 0.86rem; color: var(--text); }
+.actu-titre a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--border); }
+.actu-titre a:hover { color: var(--accent); border-color: var(--accent); }
+.actu-more-link { font-size: 0.8rem; color: var(--text-dim); text-decoration: none; border-bottom: 1px solid var(--border); }
+.actu-more-link:hover { color: var(--accent); border-color: var(--accent); }
+
+.voir-candidats-btn {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  color: var(--text-bright);
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.8rem 1.2rem;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+}
+.voir-candidats-btn:hover { border-color: var(--accent); }
+
+/* ---------- Transition entre-deux-tours ---------- */
+.qualifies-box {
+  border: 1px solid var(--accent);
+  background: rgba(245,158,11,0.06);
+  border-radius: 10px;
+  padding: 1rem 1.2rem;
+  margin-bottom: 1.2rem;
+}
+.qualifies-box h2 { font-size: 1rem; margin-bottom: 0.7rem; color: var(--text-bright); }
+.qualifies-list { display: flex; flex-wrap: wrap; gap: 0.8rem; }
+.qualifie-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  text-decoration: none;
+  color: var(--text);
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.6rem 0.9rem;
+  min-width: 180px;
+}
+.qualifie-card:hover { border-color: var(--accent); }
+.qualifie-card .parti { font-size: 0.78rem; color: var(--text-dimmer); }
+.qualifie-score { font-size: 0.78rem; color: var(--accent); font-weight: 600; }
+.statut-pill { display: inline-block; font-size: 0.68rem; padding: 0.1rem 0.4rem; border-radius: 5px; margin-top: 0.15rem; }
+.statut-qualifie { background: rgba(74,222,128,0.15); color: #4ade80; }
+.statut-elimine { background: rgba(113,113,122,0.2); color: var(--text-dimmer); }
+.silence-note { font-size: 0.78rem; color: var(--text-dimmer); font-style: italic; }
+[tabindex="-1"]:focus-visible, [tabindex="-1"]:focus { outline: 2px solid var(--accent); outline-offset: 3px; }
 
 header {
   text-align: center;
@@ -220,6 +320,17 @@ h1 {
   border-bottom: 1px solid var(--border);
 }
 .pedagogie-bloc a:hover { color: var(--accent); border-color: var(--accent); }
+.parrainages-message { font-style: italic; color: var(--text-dimmer); font-size: 0.76rem; }
+.esprit-critique-list { list-style: none; padding: 0; margin: 0; }
+.esprit-critique-list li {
+  font-size: 0.8rem;
+  color: #d4d4d8;
+  line-height: 1.5;
+  padding-left: 1.1rem;
+  position: relative;
+  margin-bottom: 0.4rem;
+}
+.esprit-critique-list li::before { content: "?"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
 
 /* ---------- Filtres / recherche ---------- */
 .controls {
@@ -241,6 +352,7 @@ h1 {
 .controls input[type="search"]:focus {
   outline: none;
   border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(245,158,11,0.35);
 }
 .controls select {
   background: var(--card-bg);
@@ -284,6 +396,7 @@ thead th {
   user-select: none;
 }
 thead th.sortable:hover { color: var(--text-bright); }
+thead th.sortable:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
 thead th .sort-arrow { font-size: 0.6rem; opacity: 0.6; margin-left: 0.2rem; }
 
 th:nth-child(1) { width: 15%; }
@@ -522,8 +635,79 @@ section.fiche-section h2 {
   padding: 0.8rem 1rem;
 }
 .factcheck-source { font-size: 0.75rem; color: var(--text-dimmer); }
-.factcheck-link { font-size: 0.75rem; color: var(--text-dim); display: inline-block; margin-top: 0.4rem; }
-.factcheck-link:hover { color: var(--accent); }
+
+/* ---------- Vérification des sources ---------- */
+.source-verify-link { font-size: 0.75rem; color: var(--text-dim); display: inline-block; margin-top: 0.4rem; text-decoration: none; border-bottom: 1px solid var(--border); }
+.source-verify-link:hover { color: var(--accent); border-color: var(--accent); }
+.source-crossref { font-size: 0.7rem; color: var(--text-dimmer); font-style: italic; margin-left: 0.3rem; }
+.source-badge.source-unconfirmed {
+  display: inline-block;
+  font-size: 0.72rem;
+  color: var(--text-dimmer);
+  border: 1px dashed var(--border);
+  border-radius: 5px;
+  padding: 0.1rem 0.5rem;
+  margin-top: 0.4rem;
+}
+.positions-sources-note { margin-bottom: 0.8rem; }
+.positions-sources-note .source-verify-link { margin-top: 0; }
+
+/* ---------- Signalement d'erreur ---------- */
+.signalement-widget { margin-top: 0.6rem; }
+.signalement-toggle {
+  background: none;
+  border: 1px dashed var(--border);
+  color: var(--text-dimmer);
+  font-size: 0.72rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.signalement-toggle:hover { color: var(--text-dim); border-color: var(--text-dimmer); }
+.signalement-form {
+  margin-top: 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.7rem;
+  background: var(--card-bg);
+  max-width: 480px;
+}
+.signalement-textarea {
+  width: 100%;
+  min-height: 70px;
+  resize: vertical;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 0.8rem;
+  padding: 0.5rem;
+}
+.signalement-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 0.5rem; }
+.signalement-counter { font-size: 0.7rem; color: var(--text-dimmest); }
+.signalement-send {
+  background: var(--accent);
+  color: #1a1206;
+  border: none;
+  border-radius: 6px;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.signalement-send:disabled { opacity: 0.4; cursor: not-allowed; }
+.signalement-send:not(:disabled):hover { background: #fbbf24; }
+.signalement-status { font-size: 0.75rem; margin-top: 0.5rem; }
+.signalement-status-ok { color: #4ade80; }
+.signalement-status-fallback { color: var(--text-dimmer); }
+.factcheck-card .signalement-widget { margin-top: 0.5rem; }
+.factcheck-card .signalement-toggle { font-size: 0.68rem; }
+
+.footer-meta { font-size: 0.7rem; color: var(--text-dimmest); margin-top: 0.6rem; }
+.footer-meta a { color: var(--text-dimmer); }
+.sondage-maj { font-size: 0.68rem; color: var(--text-dimmest); margin-left: 0.4rem; }
+.fiche-maj-note { font-size: 0.72rem; color: var(--text-dimmer); margin-top: 1rem; }
 
 /* ---------- Soutiens politiques ---------- */
 .soutiens-list { list-style: none; }
@@ -829,6 +1013,7 @@ section.fiche-section h2 {
 .quiz-reveal-outcome.quiz-ok { color: #4ade80; }
 .quiz-reveal-outcome.quiz-ko { color: #f87171; }
 .quiz-reveal-explication { font-size: 0.85rem; color: #d4d4d8; line-height: 1.55; margin-bottom: 0.6rem; }
+.quiz-reveal-mecanisme { font-size: 0.8rem; color: var(--quiz-vf); line-height: 1.5; margin-bottom: 0.6rem; background: rgba(56,189,248,0.08); border-left: 2px solid var(--quiz-vf); padding: 0.5rem 0.7rem; border-radius: 0 6px 6px 0; }
 .quiz-reveal-source { font-size: 0.78rem; color: var(--text-dim); margin-bottom: 1rem; }
 .quiz-reveal-candidat {
   display: flex;
@@ -990,6 +1175,7 @@ a.quiz-next-btn { display: inline-block; text-decoration: none; text-align: cent
   table { font-size: 0.73rem; }
   .sondage-box { margin-left: 0; text-align: left; }
   .fiche-header { flex-direction: column; align-items: flex-start; }
+  .hero-entries { grid-template-columns: repeat(2, 1fr); }
 
   .timeline-track {
     flex-direction: column;

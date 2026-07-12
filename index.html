@@ -19,22 +19,50 @@
   <a href="index.html" class="site-nav-brand">🇫🇷 Présidentielle 2027</a>
   <div class="site-nav-links">
     <a href="index.html" class="active">Accueil</a>
+    <a href="candidats.html">Candidats</a>
     <a href="comparateur.html">Comparateur</a>
+    <a href="quiz-compatibilite.html">Quel candidat ?</a>
     <a href="timeline.html">Timeline</a>
     <a href="quiz-vrai-faux.html">Vrai/Faux</a>
-    <a href="quiz-compatibilite.html">Quel candidat ?</a>
     <a href="apropos.html">À propos</a>
   </div>
 </nav>
 
+<main>
+
+<section class="hero-accroche">
+  <p class="hero-tagline">Comprendre qui se présente, sans parti pris.</p>
+  <p class="hero-desc">Ce site rassemble en un seul endroit les parcours, programmes et positions de tous les candidats déclarés à l'élection présidentielle de 2027 — de façon neutre, sourcée et vérifiable. Pas de pronostic, pas de recommandation : juste de quoi vous faire votre propre opinion.</p>
+  <div class="hero-entries">
+    <a class="hero-entry" href="candidats.html">
+      <span class="hero-entry-icon">📇</span>
+      <span class="hero-entry-label">Découvrir les candidats</span>
+    </a>
+    <a class="hero-entry" href="comparateur.html">
+      <span class="hero-entry-icon">⚖️</span>
+      <span class="hero-entry-label">Comparer leurs positions</span>
+    </a>
+    <a class="hero-entry" href="quiz-compatibilite.html">
+      <span class="hero-entry-icon">🗳️</span>
+      <span class="hero-entry-label">Voir qui me correspond</span>
+    </a>
+    <a class="hero-entry" href="timeline.html">
+      <span class="hero-entry-icon">📅</span>
+      <span class="hero-entry-label">Suivre la campagne</span>
+    </a>
+  </div>
+</section>
+
 <header>
-  <h1>Présidentielle 2027</h1>
   <p class="subtitle"><span id="candidats-count">21</span> <span id="candidats-count-label">candidats</span> officiellement déclarés — Situation au <span id="derniere-maj">8 juillet 2026</span></p>
 </header>
 
 <div class="countdown-bar" id="countdown-bar"></div>
 
-<a class="quiz-cta" href="quiz-compatibilite.html">🗳️ Quel candidat me correspond ?</a>
+<section class="actualites-section">
+  <h2 class="actualites-title">Actualités récentes</h2>
+  <div id="actualites-root"><p class="no-data">Chargement…</p></div>
+</section>
 
 <details class="pedagogie-box">
   <summary>📖 Comment ça marche ? <span class="chevron">▸</span></summary>
@@ -47,6 +75,7 @@
     <div class="pedagogie-bloc">
       <h3>Les conditions</h3>
       <p>Pour être candidat officiel, il faut réunir <strong>500 parrainages</strong> (signatures) d'élus, provenant d'au moins <strong>30 départements</strong> différents, sans qu'un même département n'en fournisse plus de 50. Se déclarer candidat ne suffit donc pas : c'est le Conseil constitutionnel qui publie la liste officielle retenue, généralement en mars 2027.</p>
+      <p id="parrainages-message" class="parrainages-message"></p>
       <a href="https://www.conseil-constitutionnel.fr/nouveaux-cahiers-du-conseil-constitutionnel/les-parrainages-a-l-election-presidentielle" target="_blank" rel="noopener noreferrer">En savoir plus (Conseil constitutionnel) →</a>
     </div>
     <div class="pedagogie-bloc">
@@ -61,12 +90,19 @@
       <h3>Les sondages</h3>
       <p>Un sondage mesure des <strong>intentions de vote déclarées</strong> à un instant donné — ce n'est pas une prédiction du résultat final. Les marges d'erreur habituelles sont de <strong>±2 à 3 points</strong>. Les chiffres varient selon l'institut, la méthode et la date : mieux vaut comparer plusieurs sources qu'un seul chiffre.</p>
     </div>
+    <div class="pedagogie-bloc">
+      <h3>Comment lire une info politique</h3>
+      <p>Ce site fournit des sources, pas des vérités toutes faites. Avant de partager ou de croire une affirmation politique, quelques réflexes utiles :</p>
+      <ul class="esprit-critique-list">
+        <li>Qui l'affirme, et quel est son intérêt à le dire ?</li>
+        <li>Quand cette affirmation a-t-elle été faite — est-elle encore d'actualité ?</li>
+        <li>Est-ce vérifiable ailleurs, par une source indépendante ?</li>
+        <li>Est-ce un fait chiffré ou une opinion présentée comme un fait ?</li>
+        <li>Le chiffre est-il replacé dans son contexte, ou isolé pour impressionner ?</li>
+      </ul>
+    </div>
   </div>
 </details>
-
-<div class="alert-box" id="alert-box">
-  <strong>⚡ 7 juillet 2026</strong> — Marine Le Pen condamnée en appel (45 mois d'inéligibilité dont 30 avec sursis), mais éligible pour 2027. Candidature confirmée + pourvoi en cassation suspensif déposé.
-</div>
 
 <div class="voter-banner">
   <div class="voter-banner-icon">📋</div>
@@ -77,85 +113,19 @@
   </div>
 </div>
 
-<div class="controls">
-  <input type="search" id="search-input" placeholder="Rechercher un candidat ou un parti…" aria-label="Rechercher un candidat ou un parti">
-  <select id="bloc-filter" aria-label="Filtrer par bloc politique">
-    <option value="">Tous les blocs</option>
-  </select>
-</div>
+<a class="voir-candidats-btn" href="candidats.html">📇 Voir tous les candidats →</a>
 
-<div class="table-wrap">
-<table>
-<thead>
-  <tr>
-    <th data-sort-key="nom">Candidat <span class="sort-arrow"></span></th>
-    <th data-sort-key="parti">Parti <span class="sort-arrow"></span></th>
-    <th data-sort-key="sondage">Sondage¹ <span class="sort-arrow"></span></th>
-    <th>Candidatures passées</th>
-    <th>Idées phares</th>
-  </tr>
-</thead>
-<tbody id="candidats-tbody">
-</tbody>
-</table>
-</div>
-
-<noscript>
-<p style="margin:1rem 0; color:#f59e0b; font-size:0.85rem;">JavaScript est désactivé — voici une version simplifiée du tableau. Activez JavaScript pour la recherche, le tri et les fiches candidats détaillées.</p>
-<div class="table-wrap">
-<table>
-<tbody>
-  <tr class="bloc-header bloc-exgauche"><td colspan="3">● Extrême gauche</td></tr>
-  <tr class="bloc-exgauche"><td><span class="candidat-name">Nathalie Arthaud</span></td><td class="parti">Lutte Ouvrière</td><td class="sondage-faible">~0.5%</td></tr>
-  <tr class="bloc-exgauche candidat-small"><td><span class="candidat-name">Juan Branco</span></td><td class="parti">Sans étiquette</td><td class="sondage-faible">&lt; 0.5%</td></tr>
-
-  <tr class="bloc-header bloc-gradicale"><td colspan="3">● Gauche radicale</td></tr>
-  <tr class="bloc-gradicale"><td><span class="candidat-name">Jean-Luc Mélenchon</span></td><td class="parti">La France Insoumise</td><td class="sondage-fort">13–16%</td></tr>
-
-  <tr class="bloc-header bloc-gprimaire"><td colspan="3">● Gauche — Primaire « Front populaire 2027 »</td></tr>
-  <tr class="bloc-gprimaire"><td><span class="candidat-name">Marine Tondelier</span></td><td class="parti">Les Écologistes</td><td class="sondage-moyen">~2.5%</td></tr>
-  <tr class="bloc-gprimaire"><td><span class="candidat-name">François Ruffin</span></td><td class="parti">Debout !</td><td class="sondage-moyen">~2–3%</td></tr>
-  <tr class="bloc-gprimaire candidat-small"><td><span class="candidat-name">Clémentine Autain</span></td><td class="parti">L'Après</td><td class="sondage-faible">&lt; 1%</td></tr>
-  <tr class="bloc-gprimaire candidat-small"><td><span class="candidat-name">Lydie Massard</span></td><td class="parti">Union Démocr. Bretonne</td><td class="sondage-faible">&lt; 0.5%</td></tr>
-
-  <tr class="bloc-header bloc-ghors"><td colspan="3">● Gauche — Hors primaire</td></tr>
-  <tr class="bloc-ghors"><td><span class="candidat-name">Delphine Batho</span></td><td class="parti">Génération Écologie</td><td class="sondage-faible">&lt; 1%</td></tr>
-  <tr class="bloc-ghors candidat-small"><td><span class="candidat-name">Jérôme Guedj</span></td><td class="parti">PS (dissident)</td><td class="sondage-faible">&lt; 1%</td></tr>
-  <tr class="bloc-ghors candidat-small"><td><span class="candidat-name">Karim Bouamrane</span></td><td class="parti">PS</td><td class="sondage-faible">&lt; 1%</td></tr>
-  <tr class="bloc-ghors candidat-small"><td><span class="candidat-name">Philippe Brun</span></td><td class="parti">PS (primaire interne)</td><td class="sondage-faible">&lt; 0.5%</td></tr>
-
-  <tr class="bloc-header bloc-centre"><td colspan="3">● Bloc central</td></tr>
-  <tr class="bloc-centre"><td><span class="candidat-name">Édouard Philippe</span></td><td class="parti">Horizons</td><td class="sondage-fort">14–19%</td></tr>
-  <tr class="bloc-centre"><td><span class="candidat-name">Gabriel Attal</span></td><td class="parti">Renaissance (EPR)</td><td class="sondage-moyen">8%</td></tr>
-
-  <tr class="bloc-header bloc-droite"><td colspan="3">● Droite</td></tr>
-  <tr class="bloc-droite"><td><span class="candidat-name">Bruno Retailleau</span></td><td class="parti">Les Républicains</td><td class="sondage-moyen">8%</td></tr>
-  <tr class="bloc-droite candidat-small"><td><span class="candidat-name">David Lisnard</span></td><td class="parti">Nouvelle Énergie</td><td class="sondage-faible">&lt; 1%</td></tr>
-
-  <tr class="bloc-header bloc-exdroite"><td colspan="3">● Extrême droite / Souverainisme</td></tr>
-  <tr class="bloc-exdroite"><td><span class="candidat-name">Marine Le Pen ⚖️</span></td><td class="parti">Rassemblement National</td><td class="sondage-fort">33–36%</td></tr>
-  <tr class="bloc-exdroite"><td><span class="candidat-name">Nicolas Dupont-Aignan</span></td><td class="parti">Debout la France</td><td class="sondage-moyen">~2%</td></tr>
-  <tr class="bloc-exdroite candidat-small"><td><span class="candidat-name">Florian Philippot</span></td><td class="parti">Les Patriotes</td><td class="sondage-faible">&lt; 0.5%</td></tr>
-
-  <tr class="bloc-header bloc-inclassable"><td colspan="3">● Inclassables</td></tr>
-  <tr class="bloc-inclassable candidat-small"><td><span class="candidat-name">François Asselineau</span></td><td class="parti">UPR</td><td class="sondage-faible">&lt; 0.5%</td></tr>
-  <tr class="bloc-inclassable candidat-small"><td><span class="candidat-name">Clara Egger</span></td><td class="parti">Solution Démocratique</td><td class="sondage-faible">&lt; 0.5%</td></tr>
-  <tr class="bloc-inclassable candidat-small"><td><span class="candidat-name">Antoine Mikolajczak</span></td><td class="parti">Équinoxe</td><td class="sondage-faible">&lt; 0.5%</td></tr>
-</tbody>
-</table>
-</div>
-</noscript>
+</main>
 
 <footer>
-  <strong>¹ Sources :</strong> <span id="sources-sondages">IFOP-Fiducial (25/06/2026), Odoxa (26/05/2026), Toluna Harris Interactive (29/05/2026). Marges ±2–3 pts.</span><br><br>
-  <strong>⚖️</strong> Condamnée en appel le 07/07/2026. Pourvoi en cassation annoncé (suspensif). Campagne en « binôme » avec J. Bardella.<br><br>
-  <strong>Non encore déclarés mais pressentis :</strong> <span id="pressentis-list">R. Glucksmann (~9 %), É. Zemmour (~4 %), F. Roussel (~3 %), F. Hollande, B. Cazeneuve, D. de Villepin, G. Darmanin, X. Bertrand.</span><br><br>
-  <em>Le tableau défile horizontalement sur mobile. Cliquez sur un nom de candidat pour sa fiche détaillée (quand disponible).</em>
+  <em>Retrouvez la liste complète des candidats, avec recherche et tri, dans l'onglet <a href="candidats.html">Candidats</a>.</em>
 </footer>
 
 </div>
 <script src="data/candidats.js"></script>
-<script src="js/main.js"></script>
+<script src="js/home-meta.js"></script>
+<script src="js/actualites.js"></script>
 <script src="js/countdown.js"></script>
+<script src="js/footer-meta.js"></script>
 </body>
 </html>

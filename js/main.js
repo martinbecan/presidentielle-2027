@@ -11,12 +11,40 @@
   var alertBox = document.getElementById('alert-box');
   var pressentisEl = document.getElementById('pressentis-list');
   var sourcesEl = document.getElementById('sources-sondages');
+  var parrainagesEl = document.getElementById('parrainages-message');
+  var qualifiesBanner = document.getElementById('qualifies-banner');
 
   var sortState = { key: null, dir: 1 };
+
+  // Si le 1er tour a eu lieu (2 candidats marqués "qualifie_2nd_tour" dans les données),
+  // le site bascule automatiquement en mode "2 qualifiés" — rien à faire manuellement
+  // le jour venu, il suffit de mettre à jour le champ `statut` dans data/candidats.js.
+  var hasSecondTour = DATA.candidats.some(function (c) { return c.statut === 'qualifie_2nd_tour'; });
 
   function blocLabel(id) {
     var b = DATA.blocs.find(function (x) { return x.id === id; });
     return b ? b.label : id;
+  }
+
+  function statutBadge(c) {
+    if (c.statut === 'qualifie_2nd_tour') return '<span class="statut-pill statut-qualifie">🟢 Qualifié·e pour le 2nd tour</span>';
+    if (c.statut === 'elimine_1er_tour') return '<span class="statut-pill statut-elimine">⚪ Éliminé·e au 1er tour' + (c.score_1er_tour ? ' (' + c.score_1er_tour + ')' : '') + '</span>';
+    return '';
+  }
+
+  function renderQualifiesBanner() {
+    if (!qualifiesBanner) return;
+    if (!hasSecondTour) { qualifiesBanner.innerHTML = ''; return; }
+    var qualifies = DATA.candidats.filter(function (c) { return c.statut === 'qualifie_2nd_tour'; });
+    var html = '<div class="qualifies-box"><h2>🏆 Qualifiés pour le 2nd tour</h2><div class="qualifies-list">';
+    qualifies.forEach(function (c) {
+      html += '<a class="qualifie-card" href="' + (c.fiche ? 'candidats/' + c.slug + '.html' : '#') + '">';
+      html += '<span class="candidat-name">' + c.nom + '</span> <span class="parti">' + c.parti + '</span>';
+      if (c.score_1er_tour) html += '<span class="qualifie-score">' + c.score_1er_tour + '</span>';
+      html += '</a>';
+    });
+    html += '</div></div>';
+    qualifiesBanner.innerHTML = html;
   }
 
   function sondageValue(c) {
@@ -91,7 +119,8 @@
 
     var tdName = document.createElement('td');
     var nameHtml = '<span class="candidat-name">' + c.nom + '</span>' +
-      (c.note ? ' <span class="note-icon" title="' + (c.noteDetail || '') + '">' + c.note + '</span>' : '');
+      (c.note ? ' <span class="note-icon" title="' + (c.noteDetail || '') + '">' + c.note + '</span>' : '') +
+      (hasSecondTour ? '<br>' + statutBadge(c) : '');
     if (c.fiche) {
       tdName.innerHTML = '<a class="candidat-link" href="candidats/' + c.slug + '.html">' + nameHtml + '</a>';
     } else {
@@ -105,8 +134,12 @@
     tr.appendChild(tdParti);
 
     var tdSondage = document.createElement('td');
-    var sClass = c.sondage.niveau === 'fort' ? 'sondage-fort' : (c.sondage.niveau === 'moyen' ? 'sondage-moyen' : 'sondage-faible');
-    tdSondage.innerHTML = '<span class="' + sClass + '">' + c.sondage.label + '</span>' + tendanceArrow(c.sondage.tendance);
+    if (window.isSilenceElectoral && window.isSilenceElectoral()) {
+      tdSondage.innerHTML = '<span class="silence-note">🔇 Sondage masqué (réserve électorale)</span>';
+    } else {
+      var sClass = c.sondage.niveau === 'fort' ? 'sondage-fort' : (c.sondage.niveau === 'moyen' ? 'sondage-moyen' : 'sondage-faible');
+      tdSondage.innerHTML = '<span class="' + sClass + '">' + c.sondage.label + '</span>' + tendanceArrow(c.sondage.tendance);
+    }
     tr.appendChild(tdSondage);
 
     var tdHist = document.createElement('td');
@@ -132,7 +165,10 @@
     var headers = document.querySelectorAll('th[data-sort-key]');
     headers.forEach(function (th) {
       th.classList.add('sortable');
-      th.addEventListener('click', function () {
+      th.setAttribute('tabindex', '0');
+      th.setAttribute('role', 'button');
+      th.setAttribute('aria-label', 'Trier par ' + th.textContent.trim());
+      var activate = function () {
         var key = th.getAttribute('data-sort-key');
         if (sortState.key === key) {
           sortState.dir *= -1;
@@ -144,6 +180,10 @@
         var arrow = th.querySelector('.sort-arrow');
         if (arrow) arrow.textContent = sortState.dir === 1 ? '▲' : '▼';
         render();
+      };
+      th.addEventListener('click', activate);
+      th.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activate(); }
       });
     });
   }
@@ -153,6 +193,7 @@
       alertBox.innerHTML = '<strong>' + DATA.alerte.titre + '</strong> — ' + DATA.alerte.texte;
     }
     if (updatedEl) updatedEl.textContent = DATA.derniere_maj;
+    if (parrainagesEl && DATA.parrainages) parrainagesEl.textContent = DATA.parrainages.message;
     if (sourcesEl) sourcesEl.textContent = DATA.sourcesSondages;
     if (pressentisEl && DATA.pressentis) {
       pressentisEl.textContent = DATA.pressentis.map(function (p) {
@@ -170,6 +211,7 @@
   }
 
   fillHeader();
+  renderQualifiesBanner();
   wireSort();
   render();
 
