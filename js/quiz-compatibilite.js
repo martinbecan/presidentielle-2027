@@ -3,8 +3,23 @@
   var root = document.getElementById('quiz-compat-root');
   if (!DATA || !root || !DATA.quizCompatQuestions) return;
 
-  var questions = DATA.quizCompatQuestions;
+  // Fisher-Yates, exécuté une seule fois à l'ouverture du quiz : évite les effets d'ordre
+  // et empêche de deviner un schéma politique via le regroupement thématique visible.
+  // Conservé en mémoire JS pour la session (pas de re-mélange si on utilise "Précédent").
+  function shuffleArray(arr) {
+    var a = arr.slice();
+    for (var i = a.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var tmp = a[i]; a[i] = a[j]; a[j] = tmp;
+    }
+    return a;
+  }
+
+  var questions = shuffleArray(DATA.quizCompatQuestions);
+  var extensionQuestions = shuffleArray(DATA.quizCompatExtensionQuestions || []);
   var candidats = DATA.candidats.filter(function (c) { return c.fiche && c.quizCompatScores; });
+  var currentExt = 0;
+  var extensionDone = false;
 
   var current = 0;
   var answers = {};
@@ -17,6 +32,14 @@
     { value: -2, label: "Pas du tout d'accord" }
   ];
 
+  // Événements GoatCounter : démarrage, vue de chaque question (proxy simple pour repérer
+  // où les abandons se concentrent) et complétion. Silencieux si le script est bloqué/absent.
+  function trackEvent(path, title) {
+    if (window.goatcounter && window.goatcounter.count) {
+      window.goatcounter.count({ path: path, title: title, event: true });
+    }
+  }
+
   function blocInfo(id) { return DATA.blocs.find(function (b) { return b.id === id; }); }
   function initials(nom) {
     return nom.split(' ').filter(function (w) { return /^[A-ZÀ-Ý]/.test(w); }).map(function (w) { return w[0]; }).slice(0, 2).join('');
@@ -26,6 +49,8 @@
     var q = questions[current];
     var pct = Math.round((current / questions.length) * 100);
     var selected = answers.hasOwnProperty(q.id) ? answers[q.id] : null;
+
+    trackEvent('quiz-compat/question-' + (current + 1), 'Quiz compatibilité — Question ' + (current + 1) + '/' + questions.length);
 
     var html = '';
     html += '<div class="quiz-progress quiz-progress-compat"><div class="quiz-progress-bar" style="width:' + pct + '%"></div></div>';
@@ -72,6 +97,56 @@
     if (toFocus) toFocus.focus();
   }
 
+  // Questions d'extension (thèmes V5) : posées uniquement si l'utilisateur clique "Affiner
+  // mon résultat" après les résultats. Les réponses s'ajoutent au même objet `answers` que
+  // le quiz principal — computeScores() n'a pas besoin de logique séparée pour en tenir compte.
+  function renderExtensionQuestion() {
+    var q = extensionQuestions[currentExt];
+    var pct = Math.round((currentExt / extensionQuestions.length) * 100);
+    var selected = answers.hasOwnProperty(q.id) ? answers[q.id] : null;
+
+    var html = '';
+    html += '<div class="quiz-progress quiz-progress-compat"><div class="quiz-progress-bar" style="width:' + pct + '%"></div></div>';
+    html += '<div class="quiz-progress-label">Question complémentaire ' + (currentExt + 1) + '/' + extensionQuestions.length + '</div>';
+    html += '<div class="quiz-card quiz-card-compat">';
+    html += '<p class="quiz-affirmation">' + q.texte + '</p>';
+    html += '<div class="quiz-compat-options" id="quiz-compat-options">';
+    OPTIONS.forEach(function (opt) {
+      var sel = selected === opt.value ? ' quiz-choice-selected' : '';
+      html += '<button type="button" class="quiz-choice-btn' + sel + '" data-value="' + opt.value + '">' + opt.label + '</button>';
+    });
+    html += '</div>';
+    html += '<div class="quiz-compat-nav">';
+    html += '<button type="button" class="quiz-back-btn" id="quiz-back-btn"' + (currentExt === 0 ? ' disabled' : '') + '>← Précédent</button>';
+    html += '<button type="button" class="quiz-next-btn quiz-next-btn-compat" id="quiz-next-btn"' + (selected === null ? ' disabled' : '') + '>' + (currentExt + 1 < extensionQuestions.length ? 'Suivant →' : 'Voir mon résultat affiné →') + '</button>';
+    html += '</div>';
+    html += '</div>';
+
+    root.innerHTML = html;
+
+    Array.prototype.forEach.call(root.querySelectorAll('.quiz-choice-btn'), function (btn) {
+      btn.addEventListener('click', function () {
+        var val = parseFloat(btn.getAttribute('data-value'));
+        answers[q.id] = val;
+        Array.prototype.forEach.call(root.querySelectorAll('.quiz-choice-btn'), function (b) { b.classList.remove('quiz-choice-selected'); });
+        btn.classList.add('quiz-choice-selected');
+        document.getElementById('quiz-next-btn').disabled = false;
+      });
+    });
+
+    document.getElementById('quiz-back-btn').addEventListener('click', function () {
+      if (currentExt > 0) { currentExt--; renderExtensionQuestion(); }
+    });
+    document.getElementById('quiz-next-btn').addEventListener('click', function () {
+      if (!answers.hasOwnProperty(q.id)) return;
+      if (currentExt + 1 < extensionQuestions.length) { currentExt++; renderExtensionQuestion(); }
+      else { extensionDone = true; renderResults(); }
+    });
+
+    var toFocusExt = root.querySelector('.quiz-choice-selected') || root.querySelector('.quiz-choice-btn');
+    if (toFocusExt) toFocusExt.focus();
+  }
+
   function computeScores() {
     var results = [];
     candidats.forEach(function (c) {
@@ -92,6 +167,7 @@
   }
 
   function renderResults() {
+    trackEvent('quiz-compat/complete', 'Quiz compatibilité — terminé');
     var answeredCount = Object.keys(answers).filter(function (k) { return answers[k] !== 0; }).length;
     if (answeredCount === 0) {
       root.innerHTML = '<p class="no-data" tabindex="-1">Vous avez répondu « neutre » à toutes les questions — impossible de calculer une compatibilité. <a href="quiz-compatibilite.html">Recommencer</a></p>';
@@ -126,13 +202,17 @@
     html += '<button type="button" class="quiz-next-btn quiz-next-btn-compat" id="quiz-memo-btn">📄 Générer mon mémo personnel</button>';
     html += '</div>';
 
+    if (extensionQuestions.length && !extensionDone) {
+      html += '<button type="button" class="quiz-back-btn quiz-compat-extend-btn" id="quiz-extend-btn">➕ Affiner mon résultat avec ' + extensionQuestions.length + ' question' + (extensionQuestions.length > 1 ? 's' : '') + ' supplémentaire' + (extensionQuestions.length > 1 ? 's' : '') + '</button>';
+    }
+
     html += '<p class="quiz-compat-disclaimer">Ce résultat est une aide à la réflexion basée sur vos réponses à quelques questions clés, pas un verdict. Ce site vous donne des sources, pas des vérités toutes faites : cliquez, recoupez, doutez — explorez les fiches candidats avant de vous décider, c\'est ça, voter en conscience.</p>';
 
     html += '<details class="quiz-compat-methodo"><summary>Comment ce score est calculé ? <span class="chevron">▸</span></summary>';
     html += '<div class="quiz-compat-methodo-content">';
     html += '<p><strong>D\'où viennent les positions des candidats ?</strong> Des programmes officiels, déclarations publiques et votes recensés sur chaque fiche candidat, synthétisés thème par thème.</p>';
     html += '<p><strong>Comment le calcul fonctionne :</strong> chacune de vos réponses (de « tout à fait d\'accord » à « pas du tout d\'accord ») est comparée à la position du candidat sur le même sujet. Plus l\'écart est petit sur l\'ensemble des questions, plus le pourcentage de compatibilité est élevé. Les réponses « neutre » ne comptent ni pour ni contre un candidat.</p>';
-    html += '<p><strong>Les limites de l\'exercice :</strong> 18 questions ne peuvent pas capturer toutes les nuances d\'un programme. Certaines positions de candidats reposent sur une synthèse éditoriale de leurs déclarations, pas sur un questionnaire qu\'ils auraient eux-mêmes rempli. Un score élevé ne signifie pas un accord total, ni un score bas un désaccord total.</p>';
+    html += '<p><strong>Les limites de l\'exercice :</strong> ' + Object.keys(answers).length + ' questions ne peuvent pas capturer toutes les nuances d\'un programme. Certaines positions de candidats reposent sur une synthèse éditoriale de leurs déclarations, pas sur un questionnaire qu\'ils auraient eux-mêmes rempli. Un score élevé ne signifie pas un accord total, ni un score bas un désaccord total.</p>';
     html += '</div></details>';
 
     html += '<div class="voter-banner" style="margin-top:1.5rem;">';
@@ -156,11 +236,18 @@
     }, 50);
 
     document.getElementById('quiz-restart-btn').addEventListener('click', function () {
-      current = 0; answers = {}; renderQuestion();
+      current = 0; currentExt = 0; extensionDone = false; answers = {}; renderQuestion();
     });
     document.getElementById('quiz-memo-btn').addEventListener('click', function () {
       renderMemo(top3);
     });
+    var extendBtn = document.getElementById('quiz-extend-btn');
+    if (extendBtn) {
+      extendBtn.addEventListener('click', function () {
+        currentExt = 0;
+        renderExtensionQuestion();
+      });
+    }
 
     // Transition depuis la dernière question (bouton détruit par le re-rendu) : on ramène
     // le focus sur le titre des résultats plutôt que de le laisser retomber en haut de page.
@@ -222,5 +309,6 @@
     return;
   }
 
+  trackEvent('quiz-compat/start', 'Quiz compatibilité — démarré');
   renderQuestion();
 })();

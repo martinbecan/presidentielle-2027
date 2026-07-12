@@ -12,7 +12,9 @@
     ['pouvoir_achat', 'Pouvoir d\'achat / salaires'], ['retraites', 'Retraites'], ['securite', 'Sécurité / justice'],
     ['immigration', 'Immigration'], ['sante', 'Santé / hôpital'], ['ecologie', 'Écologie / énergie'],
     ['education', 'Éducation'], ['europe', 'Europe / international'], ['dette', 'Dette / fiscalité'],
-    ['institutions', 'Institutions / démocratie']
+    ['institutions', 'Institutions / démocratie'], ['laicite', 'Laïcité / religion dans l\'espace public'],
+    ['agriculture', 'Agriculture / ruralité'], ['numerique', 'Numérique / intelligence artificielle'],
+    ['logement', 'Logement'], ['defense', 'Défense / politique militaire']
   ];
   var FALLBACK_KEYS = ['retraites', 'immigration', 'europe', 'dette'];
 
@@ -97,11 +99,13 @@
         var r = resolveSujet(c, s[0]);
         html += '<div class="comparateur-cell">';
         html += '<span class="comparateur-cell-candidat-tag">' + c.nom + '</span>';
-        if (r) {
+        if (r && r.direction === 'non documenté') {
+          html += '<div class="stance stance-nodata">Pas d\'information à ce stade</div>';
+        } else if (r) {
           if (r.direction) html += '<div class="stance ' + (r.stanceCls || 'stance-nuance') + '">' + r.direction + '</div>';
           html += '<div class="detail">' + r.synthese + '</div>';
         } else {
-          html += '<div class="no-data">Non documenté</div>';
+          html += '<div class="stance stance-nodata">Pas d\'information à ce stade</div>';
         }
         html += '</div>';
       });

@@ -84,20 +84,32 @@ window.SITE_DATA = {
     { id: "retraites_2", theme: "retraites", texte: "Le système de retraite par capitalisation devrait être développé en complément de la répartition." },
     { id: "immigration_1", theme: "immigration", texte: "La France devrait réduire significativement les flux migratoires." },
     { id: "immigration_2", theme: "immigration", texte: "Les personnes en situation irrégulière travaillant en France depuis plusieurs années devraient pouvoir être régularisées." },
-    { id: "securite_1", theme: "securite", texte: "Les peines de prison devraient être systématiquement exécutées, sans aménagement." },
+    { id: "securite_1", theme: "securite", texte: "Les peines prononcées par la justice devraient être exécutées plus fermement, avec moins d'aménagements de peine." },
     { id: "securite_2", theme: "securite", texte: "La prévention et l'insertion devraient être privilégiées plutôt que la répression pour lutter contre la délinquance." },
-    { id: "ecologie_1", theme: "ecologie", texte: "La France devrait investir davantage dans le nucléaire plutôt que dans les énergies renouvelables." },
+    { id: "ecologie_1", theme: "ecologie", texte: "La France devrait investir davantage dans le nucléaire." },
+    { id: "ecologie_3", theme: "ecologie", texte: "La France devrait investir davantage dans les énergies renouvelables." },
     { id: "ecologie_2", theme: "ecologie", texte: "La transition écologique devrait rester une priorité budgétaire même si cela implique une hausse de la dépense publique." },
     { id: "pouvoir_achat_1", theme: "pouvoir_achat", texte: "Le SMIC devrait être significativement augmenté." },
     { id: "pouvoir_achat_2", theme: "pouvoir_achat", texte: "Les impôts de production et les charges des entreprises devraient être réduits pour stimuler l'emploi." },
-    { id: "dette_1", theme: "dette", texte: "La priorité doit être donnée à la réduction de la dette publique, même si cela implique des économies dans les services publics." },
-    { id: "europe_1", theme: "europe", texte: "La France devrait pouvoir s'affranchir de certaines règles européennes quand elles ne servent pas ses intérêts." },
+    { id: "dette_1", theme: "dette", texte: "Réduire la dette publique doit être une priorité pour la France." },
+    { id: "europe_1", theme: "europe", texte: "La France devrait pouvoir décider elle-même de certaines règles actuellement fixées au niveau européen." },
     { id: "europe_2", theme: "europe", texte: "L'intégration européenne devrait être renforcée, y compris par de nouveaux transferts de souveraineté." },
     { id: "institutions_1", theme: "institutions", texte: "Le Président devrait pouvoir recourir plus souvent au référendum pour trancher les grandes questions." },
     { id: "institutions_2", theme: "institutions", texte: "Le pouvoir devrait être davantage partagé avec le Parlement, plutôt que concentré entre les mains du Président." },
     { id: "education_1", theme: "education", texte: "Les établissements scolaires devraient avoir plus d'autonomie dans leur organisation." },
     { id: "education_2", theme: "education", texte: "Les salaires des enseignants devraient être fortement revalorisés en priorité." },
-    { id: "sante_1", theme: "sante", texte: "L'État devrait investir massivement pour recruter du personnel médical, même si cela implique une hausse des impôts." }
+    { id: "sante_1", theme: "sante", texte: "L'État devrait investir davantage dans le recrutement de personnel médical." }
+  ],
+
+  // Questions d'extension optionnelle du quiz de compatibilité (V5) : nouveaux thèmes
+  // ajoutés thème par thème, proposées seulement si la personne clique "Affiner mon résultat"
+  // après les résultats du quiz principal. Mêmes ids utilisés dans quizCompatScores.
+  quizCompatExtensionQuestions: [
+    { id: "laicite_1", theme: "laicite", texte: "Le port de signes religieux visibles (voile, kippa, croix...) devrait être davantage restreint dans l'espace public (université, sorties scolaires, services publics)." },
+    { id: "agriculture_1", theme: "agriculture", texte: "Les normes environnementales imposées aux agriculteurs devraient être assouplies pour améliorer leur compétitivité." },
+    { id: "numerique_1", theme: "numerique", texte: "L'État devrait investir massivement pour renforcer la souveraineté numérique et technologique de la France (intelligence artificielle, cloud, infrastructures) face aux acteurs américains et chinois." },
+    { id: "logement_1", theme: "logement", texte: "L'encadrement des loyers devrait être généralisé et renforcé pour lutter contre la crise du logement." },
+    { id: "defense_1", theme: "defense", texte: "La France devrait augmenter significativement son budget de défense, au-delà des objectifs déjà fixés." }
   ],
 
   candidats: [
@@ -165,14 +177,19 @@ window.SITE_DATA = {
         education: { synthese: "Défense générale des services publics d'éducation, sans mesure détaillée identifiée.", direction: "renforcement du service public" },
         europe: { synthese: "Rejette l'UE actuelle jugée capitaliste, prône une union des travailleurs européens plutôt qu'un repli souverainiste.", direction: "internationalisme, anti-UE capitaliste" },
         dette: { synthese: "Annulation de la dette publique, mise à contribution des grands groupes capitalistes, circuit du Trésor hors marchés financiers.", direction: "annulation / socialisation de la dette" },
-        institutions: { synthese: "Favorable à la révocabilité des élus à tout moment ; sceptique envers les référendums (dont le RIC).", direction: "révocabilité des élus" }
+        institutions: { synthese: "Favorable à la révocabilité des élus à tout moment ; sceptique envers les référendums (dont le RIC).", direction: "révocabilité des élus" },
+        laicite: { synthese: "Opposée au port du voile qu'elle juge être un signe d'oppression des femmes, mais s'oppose à son interdiction à l'université ; argumentaire féministe plutôt que fondé sur la laïcité au sens strict.", direction: "critique féministe, non partisane d'une interdiction élargie" },
+        agriculture: { synthese: "Peu de proposition agricole spécifique identifiée ; l'accent est mis sur la fin de la logique de profit imposée par les grands groupes agroalimentaires, sans remise en cause des OGM.", direction: "priorité à la lutte contre les monopoles, pas de position tranchée sur les normes" },
+        numerique: { synthese: "Aucune position spécifique identifiée sur le numérique ou l'intelligence artificielle à ce stade.", direction: "non documenté" },
+        logement: { synthese: "Aucune proposition détaillée sur le logement identifiée à ce stade.", direction: "non documenté" },
+        defense: { synthese: "Aucune position spécifique identifiée sur la défense ou les questions militaires à ce stade.", direction: "non documenté" }
       },
       soutiens: [
         { nom: "Lutte Ouvrière (parti)", fonction: "Organisation désignant sa candidate via vote de congrès (décembre 2025)", type: "officiel" }
       ],
       quizCompatScores: {
         retraites_1: 2, retraites_2: -2, immigration_1: -2, immigration_2: 2, securite_1: -1, securite_2: 2,
-        ecologie_1: 0, ecologie_2: 1, pouvoir_achat_1: 2, pouvoir_achat_2: -2, dette_1: -2,
+        ecologie_1: 0, ecologie_2: 1, ecologie_3: 0, laicite_1: -1, agriculture_1: 0, pouvoir_achat_1: 2, pouvoir_achat_2: -2, dette_1: -2,
         europe_1: 1, europe_2: -2, institutions_1: -1, institutions_2: 1, education_1: -1, education_2: 2, sante_1: 2
       }
     },
@@ -254,7 +271,12 @@ window.SITE_DATA = {
         education: { synthese: "60 000 recrutements immédiats dans l'Éducation nationale, opposition à l'uniforme scolaire obligatoire.", direction: "renforcement des moyens publics" },
         europe: { synthese: "Stratégie de « désobéissance européenne » sans sortie formelle de l'UE, renégociation des traités (Plan A) avec application unilatérale du programme en cas d'échec (Plan B).", direction: "renégociation / désobéissance sélective" },
         dette: { synthese: "Remise en cause des règles de 3% de déficit et 60% de dette du cadre européen, plaidoyer pour une souveraineté budgétaire retrouvée.", direction: "assouplissement des règles budgétaires" },
-        institutions: { synthese: "VIe République parlementaire, suppression du 49.3, scrutin proportionnel, référendum d'initiative citoyenne, droit de vote à 16 ans.", direction: "refonte institutionnelle profonde" }
+        institutions: { synthese: "VIe République parlementaire, suppression du 49.3, scrutin proportionnel, référendum d'initiative citoyenne, droit de vote à 16 ans.", direction: "refonte institutionnelle profonde" },
+        laicite: { synthese: "A fait évoluer sa position sur le voile ces dernières années vers une lecture plus libérale, défendant la liberté d'en porter dans la rue tout en maintenant la neutralité stricte pour les agents du service public.", direction: "laïcité limitée à la sphère de l'État, liberté dans l'espace public" },
+        agriculture: { synthese: "Vise l'installation de 300 000 paysans, l'interdiction de l'élevage intensif et la sortie des fermes-usines, avec des prix planchers garantis pour les producteurs.", direction: "agriculture écologique et paysanne, sortie de l'élevage intensif" },
+        numerique: { synthese: "Dénonce une « vassalisation numérique » de la France, critique l'implantation de centres de données contrôlés par des acteurs américains exposant le pays à l'extraterritorialité du droit états-unien.", direction: "souveraineté numérique, critique des GAFAM" },
+        logement: { synthese: "Propose un gel des loyers de deux ans puis un encadrement à la baisse dans les zones tendues, la construction d'un million de logements sociaux en 5 ans et la rénovation de 700 000 logements par an.", direction: "encadrement renforcé des loyers, construction sociale massive" },
+        defense: { synthese: "Propose la sortie de l'OTAN et de tout engagement dans une « défense européenne » jugée être une simple filiale de l'OTAN ; ne rejette pas par principe les hausses de budget militaire déjà engagées, mais veut réorienter les priorités vers le cyber et le spatial.", direction: "sortie de l'OTAN, réorientation des priorités militaires" }
       },
       soutiens: [
         { nom: "Mathilde Panot", fonction: "Présidente du groupe LFI à l'Assemblée nationale", type: "officiel" },
@@ -264,7 +286,7 @@ window.SITE_DATA = {
       ],
       quizCompatScores: {
         retraites_1: 2, retraites_2: -2, immigration_1: -2, immigration_2: 2, securite_1: -2, securite_2: 2,
-        ecologie_1: -2, ecologie_2: 2, pouvoir_achat_1: 2, pouvoir_achat_2: -2, dette_1: -2,
+        ecologie_1: -2, ecologie_2: 2, ecologie_3: 2, laicite_1: -2, agriculture_1: -2, numerique_1: 2, logement_1: 2, defense_1: 0, pouvoir_achat_1: 2, pouvoir_achat_2: -2, dette_1: -2,
         europe_1: 2, europe_2: -2, institutions_1: 2, institutions_2: 2, education_1: -1, education_2: 2, sante_1: 2
       }
     },
@@ -328,7 +350,7 @@ window.SITE_DATA = {
       fact_checks_note: "Aucun fact-check dédié d'AFP Factuel, Les Décodeurs ou CheckNews spécifiquement consacré à Marine Tondelier n'a été identifié pour 2025-2026 ; le seul élément vérifiable trouvé est sa propre rectification publique, largement reprise par la presse généraliste.",
       positions_10_sujets: {
         pouvoir_achat: { synthese: "Non re-recherché — déjà documenté en base.", direction: "" },
-        retraites: { synthese: "Non re-recherché — déjà documenté en base.", direction: "" },
+        retraites: { synthese: "S'inscrit dans la ligne de la gauche, opposée à la réforme portant l'âge à 64 ans, sans chiffrage détaillé et confirmé pour 2027.", direction: "opposition à la réforme des 64 ans" },
         securite: { synthese: "Privilégie la prévention à la répression : police de proximité, justice des mineurs renforcée, insertion professionnelle plutôt que répression.", direction: "prévention / proximité" },
         immigration: { synthese: "Ligne humaniste : régularisation de travailleurs sans papiers dans les métiers en tension, voies légales pour réfugiés climatiques ; conteste le lien immigration-délinquance.", direction: "accueil / régularisation" },
         sante: { synthese: "50 000 recrutements hospitaliers, +15% de salaires, plan de 10 000 psychologues dans écoles et entreprises.", direction: "investissement public" },
@@ -336,7 +358,12 @@ window.SITE_DATA = {
         education: { synthese: "Cours d'écologie obligatoires dès le primaire, +20% de salaires enseignants, classes plafonnées à 20 élèves.", direction: "renforcement des moyens" },
         europe: { synthese: "Ligne fédéraliste assumée, signataire d'un manifeste pour une Europe fédérale, forte et sociale.", direction: "fédéralisme européen" },
         dette: { synthese: "Pas de position chiffrée officielle sur la dette ; des analyses externes pointent un risque de financement par la dette de son plan écologique.", direction: "non précisé / critiqué en externe" },
-        institutions: { synthese: "VIe République plus parlementaire, proportionnelle, référendum d'initiative citoyenne.", direction: "VIe République / proportionnelle" }
+        institutions: { synthese: "VIe République plus parlementaire, proportionnelle, référendum d'initiative citoyenne.", direction: "VIe République / proportionnelle" },
+        laicite: { synthese: "Défend une lecture libérale de la loi de 1905, centrée sur la neutralité de l'État et la liberté individuelle ; critique l'usage de la laïcité comme prétexte pour viser une religion en particulier.", direction: "laïcité libérale, opposée à l'interdiction du voile" },
+        agriculture: { synthese: "Propose l'interdiction des pesticides de synthèse d'ici 2030 et la généralisation du bio et du local dans la restauration scolaire, au risque de tensions avec une partie du monde agricole.", direction: "transition écologique renforcée de l'agriculture" },
+        numerique: { synthese: "Aucune position spécifique identifiée sur le numérique ou l'intelligence artificielle à ce stade.", direction: "non documenté" },
+        logement: { synthese: "Inscrit le droit au logement pour tous parmi les priorités communes de la gauche pour 2027, sans détail chiffré propre identifié à ce stade.", direction: "priorité au droit au logement" },
+        defense: { synthese: "Aucune position spécifique identifiée sur la défense ou les questions militaires à ce stade.", direction: "non documenté" }
       },
       soutiens: [
         { nom: "Olivier Faure", fonction: "Premier secrétaire du Parti socialiste", type: "officiel" },
@@ -347,7 +374,7 @@ window.SITE_DATA = {
       ],
       quizCompatScores: {
         retraites_1: 1, retraites_2: -1, immigration_1: -2, immigration_2: 2, securite_1: -1, securite_2: 2,
-        ecologie_1: -2, ecologie_2: 2, pouvoir_achat_1: 2, pouvoir_achat_2: -2, dette_1: -1,
+        ecologie_1: -2, ecologie_2: 2, ecologie_3: 2, laicite_1: -2, agriculture_1: -2, logement_1: 1, pouvoir_achat_1: 2, pouvoir_achat_2: -2, dette_1: -1,
         europe_1: -2, europe_2: 2, institutions_1: 1, institutions_2: 2, education_1: -1, education_2: 2, sante_1: 2
       }
     },
@@ -405,15 +432,20 @@ window.SITE_DATA = {
       fact_checks_note: "Aucun fact-check d'AFP Factuel, Les Décodeurs ou CheckNews trouvé sur François Ruffin. Une polémique distincte (mai 2026) sur une bande dessinée accusée de véhiculer des stéréotypes racistes a aussi nourri un repositionnement de campagne sur le thème de la probité.",
       positions_10_sujets: {
         pouvoir_achat: { synthese: "Porte-parole des « travailleurs essentiels » ; SMIC à 1 700 € nets et prime immédiate de 1 000 € financée par la taxation des plus riches.", direction: "hausse des bas salaires" },
-        retraites: { synthese: "Non re-recherché — déjà documenté en base (opposition à la réforme des 64 ans).", direction: "" },
+        retraites: { synthese: "A voté la suspension de la réforme des retraites ; propose des départs anticipés pour les métiers pénibles.", direction: "suspension votée, départs anticipés pénibilité" },
         securite: { synthese: "Pas de volet sécuritaire détaillé ; recentrage de campagne sur la probité et la lutte anticorruption après la polémique sur sa BD (mai 2026).", direction: "axe probité plutôt que sécuritaire" },
         immigration: { synthese: "Controverse en mai 2026 après avoir dit vouloir limiter l'immigration de travail future tout en défendant l'accueil des personnes déjà présentes, provoquant des tensions à gauche.", direction: "distinction accueil existant / restriction flux futurs" },
         sante: { synthese: "Hausse de 20% du budget de la santé publique et recrutements massifs de soignants.", direction: "renforcement des moyens publics" },
         ecologie: { synthese: "Sortie progressive (non immédiate) du nucléaire, énergies renouvelables citoyennes, objectif -50% de CO2 d'ici 2030, chèque vert pour les ménages modestes.", direction: "transition progressive et sociale" },
         education: { synthese: "Recrutements massifs d'enseignants.", direction: "renforcement des moyens publics" },
-        europe: { synthese: "Non re-recherché — déjà documenté en base (critique des traités européens).", direction: "" },
-        dette: { synthese: "Non re-recherché — déjà documenté en base.", direction: "" },
-        institutions: { synthese: "VIe République via assemblée constituante, référendum d'initiative citoyenne, scrutin proportionnel intégral.", direction: "refonte institutionnelle" }
+        europe: { synthese: "Ne prône pas la sortie de l'UE mais un protectionnisme assumé et une indépendance stratégique européenne portée par la France.", direction: "protectionnisme, indépendance stratégique" },
+        dette: { synthese: "Considère la dette comme un investissement utile si elle finance des dépenses réduisant les coûts futurs (ex. rénovation énergétique).", direction: "dette utile si elle finance l'avenir" },
+        institutions: { synthese: "VIe République via assemblée constituante, référendum d'initiative citoyenne, scrutin proportionnel intégral.", direction: "refonte institutionnelle" },
+        laicite: { synthese: "Se réclame de « la loi de 1905, toute la loi de 1905, rien que la loi de 1905 », présentée comme garantissant la liberté de culte plutôt que son interdiction ; s'est opposé aux propositions d'interdiction du voile pour les mineures.", direction: "laïcité comme liberté de culte, opposé aux interdictions élargies" },
+        agriculture: { synthese: "Propose des prix planchers d'achat garantis par l'État pour chaque production agricole, fixés à partir des indicateurs de l'Observatoire des prix et des marges.", direction: "protection économique des agriculteurs par les prix" },
+        numerique: { synthese: "A publiquement interrogé un modèle d'intelligence artificielle sur ses effets sur l'emploi, dans un esprit de vigilance sociale face à la désindustrialisation ; pas de proposition chiffrée identifiée.", direction: "vigilance sociale face à l'IA" },
+        logement: { synthese: "Considère le logement comme « le point de blocage de la société française » ; propose de sortir le logement de la logique de marché, de généraliser l'encadrement des loyers et de réguler les locations type Airbnb.", direction: "sortie du logement de la logique de marché" },
+        defense: { synthese: "Soutient le renforcement de l'aide militaire à l'Ukraine face à la Russie, mais s'oppose à l'adhésion de l'Ukraine à l'OTAN et à l'envoi de troupes françaises sur le terrain.", direction: "soutien nuancé, opposé à l'engagement direct" }
       },
       soutiens: [
         { nom: "Alexis Corbière", fonction: "Député, ex-LFI (Seine-Saint-Denis)", type: "officiel" },
@@ -423,7 +455,7 @@ window.SITE_DATA = {
       ],
       quizCompatScores: {
         retraites_1: 1, retraites_2: -1, immigration_1: 1, immigration_2: 1, securite_1: -1, securite_2: 1,
-        ecologie_1: -1, ecologie_2: 2, pouvoir_achat_1: 2, pouvoir_achat_2: -2, dette_1: -2,
+        ecologie_1: -1, ecologie_2: 2, ecologie_3: 2, laicite_1: -2, agriculture_1: -1, logement_1: 2, defense_1: 1, pouvoir_achat_1: 2, pouvoir_achat_2: -2, dette_1: -2,
         europe_1: 2, europe_2: -1, institutions_1: 1, institutions_2: 2, education_1: 0, education_2: 1, sante_1: 2
       }
     },
@@ -497,18 +529,23 @@ window.SITE_DATA = {
         pouvoir_achat: { synthese: "Protection contre l'inflation et les hausses de prix de l'énergie, dans une logique de sobriété plutôt que de relance de la consommation.", direction: "protection ciblée" },
         retraites: { synthese: "Critique la réforme des 64 ans, dénonçant un cumul d'efforts demandés aux citoyens sans contrepartie de justice sociale.", direction: "opposition à la réforme" },
         securite: { synthese: "Demande le réexamen des plaintes de mineurs pour violences, citant des affaires précises comme symptômes d'un dysfonctionnement judiciaire.", direction: "renforcement protection des mineurs" },
-        immigration: { synthese: "Non re-recherché — déjà documenté en base.", direction: "" },
+        immigration: { synthese: "A voté contre la loi immigration de 2023 ; opposée à la réduction de l'immigration légale et à la suppression du droit du sol.", direction: "opposée à la loi immigration de 2023" },
         sante: { synthese: "Santé pensée comme indissociable de l'environnement (pollution de l'air et de l'eau, hausse des cancers).", direction: "santé environnementale" },
         ecologie: { synthese: "Fait de la décroissance le cœur explicite de son projet, jugeant la croissance du PIB incompatible avec la sécurité climatique.", direction: "décroissance assumée" },
         education: { synthese: "Éducation à la consommation responsable comme pilier de sa politique.", direction: "éducation à la consommation responsable" },
-        europe: { synthese: "Non re-recherché — déjà documenté en base.", direction: "" },
+        europe: { synthese: "Opposée à une sortie de la France de l'UE, tout en défendant une souveraineté écologique européenne.", direction: "souveraineté écologique européenne" },
         dette: { synthese: "Reconnaît un problème de dette et de déficit mais refuse une résolution par l'austérité seule, plaidant pour un « compromis social et écologique ».", direction: "compromis social et écologique" },
-        institutions: { synthese: "Critique le présidentialisme, l'usage du 49.3 et l'influence des lobbies ; défend l'indépendance des autorités (ex. IRSN).", direction: "anti-présidentialisme" }
+        institutions: { synthese: "Critique le présidentialisme, l'usage du 49.3 et l'influence des lobbies ; défend l'indépendance des autorités (ex. IRSN).", direction: "anti-présidentialisme" },
+        laicite: { synthese: "Revendique une application stricte et « intégrale » de la laïcité, qu'elle définit comme républicaine et anticommunautariste ; son parti a renoncé à organiser un événement en raison du port du voile par une intervenante.", direction: "laïcité stricte et intégrale" },
+        agriculture: { synthese: "Positionnement écologiste résolu (présidente de Génération Écologie), cohérent avec une transition agricole exigeante, sans mesure agricole chiffrée spécifique identifiée.", direction: "transition écologique de l'agriculture" },
+        numerique: { synthese: "Aucune position spécifique identifiée sur le numérique ou l'intelligence artificielle à ce stade.", direction: "non documenté" },
+        logement: { synthese: "Aucune proposition détaillée sur le logement identifiée à ce stade.", direction: "non documenté" },
+        defense: { synthese: "Aucune position spécifique identifiée sur la défense ou les questions militaires à ce stade.", direction: "non documenté" }
       },
       soutiens: [],
       quizCompatScores: {
         retraites_1: 1, retraites_2: -1, immigration_1: -2, immigration_2: 1, securite_1: -1, securite_2: 1,
-        ecologie_1: -2, ecologie_2: 2, pouvoir_achat_1: 1, pouvoir_achat_2: -1, dette_1: -1,
+        ecologie_1: -2, ecologie_2: 2, ecologie_3: 1, laicite_1: 2, agriculture_1: -2, pouvoir_achat_1: 1, pouvoir_achat_2: -1, dette_1: -1,
         europe_1: -1, europe_2: 0, institutions_1: 0, institutions_2: 2, education_1: -1, education_2: 0, sante_1: 1
       }
     },
@@ -590,15 +627,20 @@ window.SITE_DATA = {
       fact_checks_note: "Aucun fact-check d'AFP Factuel, Les Décodeurs ou CheckNews trouvé sur Édouard Philippe pour 2025-2026. Élément factuel judiciaire notable à signaler pour la neutralité : le Parquet national financier a ouvert début mai 2026 une enquête visant Édouard Philippe pour détournement de fonds publics, favoritisme et prise illégale d'intérêts, concernant le financement (2,154 M€) d'une association gérant la « Cité numérique » du Havre ; faits contestés par l'intéressé, enquête en cours, sans mise en examen ni jugement à ce stade.",
       positions_10_sujets: {
         pouvoir_achat: { synthese: "Prime exceptionnelle ciblée sur les classes moyennes et indexation des retraites et minima sociaux sur l'inflation réelle.", direction: "soutien ciblé classes moyennes" },
-        retraites: { synthese: "Non re-recherché — déjà documenté en base (capitalisation, maintien 64 ans).", direction: "" },
+        retraites: { synthese: "Maintien de l'âge légal à 64 ans, incitations fortes à travailler plus longtemps, contribution accrue des retraités et introduction d'une dose de capitalisation soumise à référendum.", direction: "maintien à 64 ans, capitalisation par référendum" },
         securite: { synthese: "Renforcement de la sécurité au quotidien présenté comme un des piliers de campagne, aux côtés de l'école et des retraites.", direction: "fermeté" },
-        immigration: { synthese: "Non re-recherché — déjà documenté en base (immigration choisie et contrôlée).", direction: "" },
+        immigration: { synthese: "Immigration « choisie et contrôlée » : quotas ciblés sur les métiers en tension, mais durcissement du regroupement familial.", direction: "immigration choisie et contrôlée" },
         sante: { synthese: "Recrutement massif de personnels soignants et création d'un grand service public de santé décentralisé.", direction: "renforcement du service public" },
         ecologie: { synthese: "Mix nucléaire-renouvelables avec 6 à 8 nouveaux EPR et un plan de 80 Md€ sur 5 ans pour la rénovation thermique ; adaptation aux canicules au cœur du débat.", direction: "nucléaire et renouvelables" },
         education: { synthese: "« Refonte » de l'école présentée comme la plus importante depuis Jules Ferry : fondamentaux dès le CP, 50 lycées d'excellence en région.", direction: "retour aux fondamentaux, exigence" },
         europe: { synthese: "Souveraineté européenne sur la technologie, la défense, l'énergie et la finance ; maintien plein dans l'OTAN plutôt qu'une armée européenne intégrée.", direction: "souveraineté européenne atlantiste" },
-        dette: { synthese: "Non re-recherché — déjà documenté en base (règle d'or budgétaire).", direction: "" },
-        institutions: { synthese: "Dissolution de l'Assemblée dès son élection et trois référendums (retraites, règle d'or, habilitation à légiférer par ordonnances sur santé/éducation/justice).", direction: "référendums et dissolution" }
+        dette: { synthese: "Objectif de réduction du déficit de 5,1% à 2% du PIB d'ici 2032 via une règle d'or budgétaire inscrite dans la Constitution.", direction: "règle d'or budgétaire constitutionnelle" },
+        institutions: { synthese: "Dissolution de l'Assemblée dès son élection et trois référendums (retraites, règle d'or, habilitation à légiférer par ordonnances sur santé/éducation/justice).", direction: "référendums et dissolution" },
+        laicite: { synthese: "Évoque une évolution du cadre de 1905 vers un « concordat » donnant à l'État un droit de regard sur l'organisation du culte musulman — une proposition contestée par des spécialistes de la laïcité comme s'écartant du principe de séparation.", direction: "révision du cadre de séparation, proposition controversée" },
+        agriculture: { synthese: "Aucune proposition agricole détaillée et chiffrée identifiée à ce stade.", direction: "non documenté" },
+        numerique: { synthese: "Inscrit l'intelligence artificielle au cœur de son projet, dans la continuité de l'axe porté par Gabriel Attal sur la souveraineté technologique.", direction: "souveraineté numérique, investissement en IA" },
+        logement: { synthese: "Aligné avec Gabriel Attal sur le logement (100% de convergence relevée), privilégiant un choc de l'offre par la construction plutôt que la régulation des loyers.", direction: "choc de l'offre, priorité à la construction" },
+        defense: { synthese: "Aucune position spécifique et distincte de celle de Gabriel Attal identifiée sur la défense à ce stade.", direction: "non documenté" }
       },
       soutiens: [
         { nom: "Nathalie Kosciusko-Morizet", fonction: "Ancienne ministre (ex-UMP)", type: "officiel" },
@@ -612,7 +654,7 @@ window.SITE_DATA = {
       ],
       quizCompatScores: {
         retraites_1: -2, retraites_2: 2, immigration_1: 1, immigration_2: 0, securite_1: 1, securite_2: -1,
-        ecologie_1: 1, ecologie_2: 0, pouvoir_achat_1: -1, pouvoir_achat_2: 2, dette_1: 2,
+        ecologie_1: 1, ecologie_2: 0, ecologie_3: 1, laicite_1: 1, agriculture_1: 1, numerique_1: 1, logement_1: -1, pouvoir_achat_1: -1, pouvoir_achat_2: 2, dette_1: 2,
         europe_1: -1, europe_2: 1, institutions_1: 2, institutions_2: -1, education_1: 1, education_2: 0, sante_1: 0
       }
     },
@@ -679,15 +721,20 @@ window.SITE_DATA = {
       fact_checks_note: "Aucun fact-check d'AFP Factuel, Les Décodeurs ou CheckNews trouvé sur Gabriel Attal pour 2025-2026. Une controverse adjacente distincte existe aussi sur des affirmations contestées concernant les finances locales (audition, février 2025).",
       positions_10_sujets: {
         pouvoir_achat: { synthese: "Pas de hausse d'impôts annoncée ; plan de rigueur budgétaire global (120-150 Md€ d'économies) plutôt qu'un plan pouvoir d'achat dédié.", direction: "rigueur sans hausse d'impôts" },
-        retraites: { synthese: "Non re-recherché — déjà documenté en base (suppression de l'âge légal, capitalisation).", direction: "" },
+        retraites: { synthese: "Propose de supprimer la notion d'âge légal (64 ans) au profit d'un système basé sur la durée de cotisation, avec une part de capitalisation ajoutée.", direction: "suppression de l'âge légal, capitalisation" },
         securite: { synthese: "Développement d'une défense « forte, prête à intervenir » ; peu de détails trouvés sur la sécurité intérieure.", direction: "renforcement de la défense" },
-        immigration: { synthese: "Non re-recherché — déjà documenté en base (quotas votés par le Parlement).", direction: "" },
+        immigration: { synthese: "Quotas d'immigration économique votés par le Parlement selon les besoins définis par les partenaires sociaux.", direction: "quotas économiques votés par le Parlement" },
         sante: { synthese: "Mutuelle publique à 1€/jour ciblant retraités et ménages modestes.", direction: "mutuelle publique ciblée" },
         ecologie: { synthese: "Articulation entre dette économique et dette écologique évoquée, sans détail chiffré trouvé.", direction: "articulation dette économique/écologique" },
         education: { synthese: "Pilier de son projet (ex-ministre de l'Éducation) : pédagogie différenciée et moyens humains renforcés dans les établissements en difficulté.", direction: "priorité éducation" },
-        europe: { synthese: "Non re-recherché — déjà documenté en base (positionnement pro-européen).", direction: "" },
+        europe: { synthese: "Se positionne comme pro-européen, dans la continuité de la ligne Renaissance.", direction: "pro-européen, ligne Renaissance" },
         dette: { synthese: "Objectif « zéro déficit en 2037 », retour sous 3% avant 2032, ~120-150 Md€ d'économies via gel des prestations et suppression de 100 000 postes.", direction: "rigueur progressive" },
-        institutions: { synthese: "Réduction du nombre de parlementaires, vote obligatoire dès 16 ans, réforme territoriale des collectivités locales.", direction: "réduction du nombre d'élus, vote des jeunes" }
+        institutions: { synthese: "Réduction du nombre de parlementaires, vote obligatoire dès 16 ans, réforme territoriale des collectivités locales.", direction: "réduction du nombre d'élus, vote des jeunes" },
+        laicite: { synthese: "A interdit le port de l'abaya à l'école durant son passage au ministère de l'Éducation nationale au nom de la neutralité religieuse ; son parti a par ailleurs porté des propositions d'extension de l'interdiction du voile dans l'espace public pour les mineures.", direction: "laïcité stricte, favorable à des interdictions élargies" },
+        agriculture: { synthese: "A érigé la souveraineté agricole et alimentaire au rang des intérêts fondamentaux de la nation ; a maintenu l'objectif de réduction de 50% des pesticides d'ici 2030 tout en simplifiant les normes appliquées aux agriculteurs.", direction: "souveraineté agricole, simplification des normes" },
+        numerique: { synthese: "Fait de l'intelligence artificielle l'une des quatre grandes initiatives de son projet, avec l'ambition de faire de la France la première puissance européenne en IA d'ici dix ans et un plan de 200 milliards d'euros annoncé pour l'IA, la tech et l'innovation.", direction: "investissement massif en IA, souveraineté technologique" },
+        logement: { synthese: "A porté un plan de « choc d'offre » avec simplification des procédures dans 22 territoires pilotes, visant plus de 30 000 logements construits d'ici 2027.", direction: "choc de l'offre, simplification des procédures" },
+        defense: { synthese: "A exempté les armées de son plan de suppression de 100 000 postes dans la fonction publique, signe d'une priorité budgétaire maintenue pour la défense dans un contexte de rigueur générale.", direction: "priorité budgétaire maintenue pour la défense" }
       },
       soutiens: [
         { nom: "Conseil national de Renaissance", fonction: "Instance du parti (motion votée à 91% appelant Attal à se déclarer candidat)", type: "officiel" },
@@ -698,7 +745,7 @@ window.SITE_DATA = {
       ],
       quizCompatScores: {
         retraites_1: -1, retraites_2: 2, immigration_1: 0, immigration_2: -1, securite_1: 0, securite_2: 0,
-        ecologie_1: 2, ecologie_2: -1, pouvoir_achat_1: -1, pouvoir_achat_2: 1, dette_1: 2,
+        ecologie_1: 2, ecologie_2: -1, ecologie_3: 1, laicite_1: 2, agriculture_1: 1, numerique_1: 2, logement_1: -1, defense_1: 1, pouvoir_achat_1: -1, pouvoir_achat_2: 1, dette_1: 2,
         europe_1: -2, europe_2: 1, institutions_1: 0, institutions_2: -1, education_1: 1, education_2: 0, sante_1: -1
       }
     },
@@ -768,15 +815,20 @@ window.SITE_DATA = {
       fact_checks_note: "Aucun fact-check d'AFP Factuel, Les Décodeurs ou CheckNews trouvé sur Bruno Retailleau ; l'item ci-dessus provient d'un décryptage journalistique équivalent (Atlantico).",
       positions_10_sujets: {
         pouvoir_achat: { synthese: "Priorité à la baisse des charges et impôts de production plutôt qu'à la redistribution directe.", direction: "baisse des impôts de production" },
-        retraites: { synthese: "Non re-recherché — déjà documenté en base (âge légal à 65 ans).", direction: "" },
+        retraites: { synthese: "Favorable à un relèvement de l'âge légal à 65 ans ; critique la suspension de la réforme des retraites votée fin 2025.", direction: "relèvement à 65 ans" },
         securite: { synthese: "Renforcement des moyens policiers, justice plus sévère, loi anti-narcotrafic.", direction: "fermeté" },
-        immigration: { synthese: "Non re-recherché — déjà documenté en base (moins de 50 000 personnes/an).", direction: "" },
+        immigration: { synthese: "Ligne restrictive : objectif de réduire l'immigration à moins de 50 000 personnes par an, révision constitutionnelle pour faciliter les expulsions.", direction: "objectif < 50 000 personnes/an" },
         sante: { synthese: "Réorganisation de l'offre de soins et lutte contre les déserts médicaux, peu de mesures budgétaires chiffrées nouvelles identifiées.", direction: "réforme organisationnelle" },
         ecologie: { synthese: "Favorable au nucléaire, critique de ce qu'il qualifie d'écologie punitive ou normative.", direction: "pro-nucléaire" },
         education: { synthese: "Insiste sur l'autorité, le redressement du niveau scolaire et la discipline.", direction: "autorité" },
         europe: { synthese: "Ligne souverainiste modérée : critique du fédéralisme européen tout en restant dans le cadre de l'UE.", direction: "souverainiste modéré" },
-        dette: { synthese: "Non re-recherché — déjà documenté en base (~100 Md€ de réduction).", direction: "" },
-        institutions: { synthese: "Position institutionnelle conservatrice, attaché à la Ve République, pas de grande réforme constitutionnelle nouvelle identifiée.", direction: "conservateur institutionnel" }
+        dette: { synthese: "Prône une rigueur budgétaire avec une réduction annoncée d'environ 100 Md€ de dépenses publiques.", direction: "rigueur, -100 Md€ de dépenses" },
+        institutions: { synthese: "Position institutionnelle conservatrice, attaché à la Ve République, pas de grande réforme constitutionnelle nouvelle identifiée.", direction: "conservateur institutionnel" },
+        laicite: { synthese: "S'est déclaré favorable à l'interdiction du port du voile à l'université et pour les accompagnatrices de sorties scolaires, une position que le gouvernement a qualifiée de « personnelle » et non reprise officiellement.", direction: "favorable à une extension de l'interdiction du voile" },
+        agriculture: { synthese: "A porté la loi Duplomb, qui assouplit fortement les normes environnementales et sanitaires applicables à l'agriculture, au nom de la compétitivité des exploitants.", direction: "assouplissement des normes environnementales" },
+        numerique: { synthese: "Coporteur d'une proposition de loi visant à protéger les mineurs des risques des réseaux sociaux ; pas de position générale sur l'IA ou la souveraineté numérique identifiée.", direction: "protection des mineurs sur les réseaux sociaux" },
+        logement: { synthese: "Propose la fin de l'encadrement des loyers, la suppression du zéro artificialisation nette (ZAN) et une loi d'urgence pour diviser par deux les délais de construction.", direction: "libéralisation, fin de l'encadrement des loyers" },
+        defense: { synthese: "Aucune position spécifique identifiée sur la défense ou les questions militaires à ce stade.", direction: "non documenté" }
       },
       soutiens: [
         { nom: "François-Xavier Bellamy", fonction: "Numéro deux des Républicains, eurodéputé", type: "officiel" },
@@ -786,7 +838,7 @@ window.SITE_DATA = {
       soutiens_note: "Contrairement à une idée reçue, Laurent Wauquiez n'est PAS un soutien : il s'est opposé à la tenue du vote interne LR, a publiquement invité Retailleau à « savoir se retirer » si sa candidature ne décolle pas, et penche plutôt vers Édouard Philippe. Xavier Bertrand et Michel Barnier ne sont pas non plus des soutiens confirmés.",
       quizCompatScores: {
         retraites_1: -2, retraites_2: 1, immigration_1: 2, immigration_2: -2, securite_1: 2, securite_2: -2,
-        ecologie_1: 2, ecologie_2: -2, pouvoir_achat_1: -1, pouvoir_achat_2: 2, dette_1: 2,
+        ecologie_1: 2, ecologie_2: -2, ecologie_3: -1, laicite_1: 2, agriculture_1: 2, logement_1: -2, pouvoir_achat_1: -1, pouvoir_achat_2: 2, dette_1: 2,
         europe_1: 1, europe_2: -2, institutions_1: 1, institutions_2: -1, education_1: 0, education_2: 0, sante_1: -1
       }
     },
@@ -860,15 +912,20 @@ window.SITE_DATA = {
       fact_checks_note: "Recherche approfondie (une quinzaine de requêtes ciblées AFP Factuel, Les Décodeurs, CheckNews) : aucun fact-check de ces trois médias précis n'a pu être identifié pour Marine Le Pen ; les deux items ci-dessus proviennent de vérifications journalistiques équivalentes.",
       positions_10_sujets: {
         pouvoir_achat: { synthese: "« Prime de Pouvoir d'Achat » de 80€/mois pour bas revenus et petites retraites (jusqu'à 1500€/mois), financée par une contribution de 3% sur les importations ; incitation des entreprises à augmenter les salaires de 10% (jusqu'à 3 SMIC).", direction: "primes ciblées et protectionnisme" },
-        retraites: { synthese: "Non re-recherché — déjà documenté en base (maintien à 60-62 ans).", direction: "" },
+        retraites: { synthese: "Refuse tout report de l'âge légal, veut le maintenir/ramener à 60-62 ans ; des divergences internes existent avec J. Bardella sur les modalités précises.", direction: "retour à 60-62 ans" },
         securite: { synthese: "Loi de programmation sécurité-justice (+7,7 Md€ sur 5 ans), +7000 policiers et gendarmes, présomption de légitime défense pour les forces de l'ordre.", direction: "renforcement des moyens et de l'autorité" },
-        immigration: { synthese: "Non re-recherché — déjà documenté en base (fin de l'immigration de peuplement).", direction: "" },
+        immigration: { synthese: "Fin de l'immigration de peuplement, suppression du droit du sol, traitement de l'asile à l'étranger, expulsions systématiques des étrangers délinquants.", direction: "fin de l'immigration de peuplement" },
         sante: { synthese: "20 Md€ pour le système de santé, suppression des ARS au profit des préfets, moratoire sur la fermeture de lits, +10% de salaires pour le personnel soignant.", direction: "renationalisation de la gouvernance hospitalière" },
         ecologie: { synthese: "Priorité au nucléaire (objectif 75% du mix énergétique), moratoire sur l'éolien et le solaire, développement hydroélectricité/géothermie.", direction: "priorité au nucléaire" },
         education: { synthese: "Uniforme du primaire au collège, journée d'école allongée d'une heure, vidéosurveillance généralisée, retour des filières S/L/ES au bac.", direction: "école plus disciplinée, retour aux filières traditionnelles" },
-        europe: { synthese: "Non re-recherché — déjà documenté en base (maintien dans l'UE et l'euro, réforme de l'intérieur).", direction: "" },
+        europe: { synthese: "N'est plus favorable à une sortie de l'UE ni de l'euro (Frexit abandonné depuis 2019) ; défend une réforme profonde des institutions européennes.", direction: "réforme des institutions, Frexit abandonné" },
         dette: { synthese: "Objectif de ramener le déficit public sous 3% du PIB et de stabiliser la dette publique durant le quinquennat.", direction: "stabilisation de la dette" },
-        institutions: { synthese: "Abaissement du seuil du RIC à 500 000 signatures, mandat présidentiel unique de 7 ans non renouvelable, référendum obligatoire pour les traités touchant à la souveraineté.", direction: "renforcement du référendum et de la démocratie directe" }
+        institutions: { synthese: "Abaissement du seuil du RIC à 500 000 signatures, mandat présidentiel unique de 7 ans non renouvelable, référendum obligatoire pour les traités touchant à la souveraineté.", direction: "renforcement du référendum et de la démocratie directe" },
+        laicite: { synthese: "Souhaite l'interdiction du port de signes religieux (voile, kippa) dans l'intégralité de l'espace public, y compris dans la rue — une position jugée par plusieurs spécialistes de la laïcité comme allant au-delà du cadre de la loi de 1905.", direction: "interdiction maximale des signes religieux dans l'espace public" },
+        agriculture: { synthese: "Propose d'assouplir les normes sanitaires et environnementales nationales et européennes pour améliorer la compétitivité des agriculteurs français, combiné à des mesures protectionnistes.", direction: "assouplissement des normes, protectionnisme" },
+        numerique: { synthese: "Aucune position spécifique identifiée sur le numérique ou l'intelligence artificielle à ce stade.", direction: "non documenté" },
+        logement: { synthese: "Aucune proposition détaillée sur le logement identifiée à ce stade.", direction: "non documenté" },
+        defense: { synthese: "Propose de porter le budget de la défense à 55 milliards d'euros par an d'ici 2027, soit une hausse significative par rapport à la trajectoire actuelle.", direction: "hausse marquée du budget de défense" }
       },
       soutiens: [
         { nom: "Jordan Bardella", fonction: "Président du Rassemblement National", type: "officiel" },
@@ -878,7 +935,7 @@ window.SITE_DATA = {
       soutiens_note: "La divergence Bardella/Le Pen sur les retraites (mai-juillet 2026) est le principal point de tension interne identifié.",
       quizCompatScores: {
         retraites_1: 2, retraites_2: -1, immigration_1: 2, immigration_2: -2, securite_1: 2, securite_2: -2,
-        ecologie_1: 2, ecologie_2: -1, pouvoir_achat_1: 0, pouvoir_achat_2: 1, dette_1: 0,
+        ecologie_1: 2, ecologie_2: -1, ecologie_3: -2, laicite_1: 2, agriculture_1: 2, defense_1: 2, pouvoir_achat_1: 0, pouvoir_achat_2: 1, dette_1: 0,
         europe_1: 2, europe_2: -2, institutions_1: 2, institutions_2: -1, education_1: -1, education_2: 0, sante_1: 1
       }
     },
@@ -945,15 +1002,20 @@ window.SITE_DATA = {
       fact_checks_note: "Aucun fact-check d'AFP Factuel, Les Décodeurs ou CheckNews trouvé sur Nicolas Dupont-Aignan pour 2025-2026 ; l'item ci-dessus provient d'une vérification journalistique équivalente.",
       positions_10_sujets: {
         pouvoir_achat: { synthese: "Attribue la hausse des prix à l'appartenance à l'UE ; propose un protectionnisme « intelligent » (droits de douane ciblés, 50 à 75% de la commande publique réservée à la production française).", direction: "protectionnisme et sortie UE" },
-        retraites: { synthese: "Non re-recherché — déjà documenté en base (retour à 62 ans).", direction: "" },
+        retraites: { synthese: "Abrogation de la réforme des retraites, retour à 62 ans, pension minimale de 1 200 €/mois.", direction: "abrogation, retour à 62 ans" },
         securite: { synthese: "Appelle l'État à « reprendre en main » l'autorité, notamment la protection des enfants ; ligne de fermeté et de restauration de l'autorité publique.", direction: "durcissement / fermeté" },
-        immigration: { synthese: "Non re-recherché — déjà documenté en base (rétablissement des frontières).", direction: "" },
+        immigration: { synthese: "Rétablissement des frontières nationales et primauté du droit français sur le droit européen en matière d'expulsions.", direction: "rétablissement des frontières nationales" },
         sante: { synthese: "10 Md€/an pour l'hôpital public, titularisation des contractuels, suppression des ARS, un établissement de santé par département, doublement des effectifs de médecine scolaire.", direction: "renforcement du service public hospitalier" },
         ecologie: { synthese: "Écologie « raisonnée » opposée aux « excès punitifs » des Verts ; relocalisation, économie circulaire ; relance du nucléaire avec 10 nouveaux EPR d'ici 2040.", direction: "écologie pragmatique pro-nucléaire" },
         education: { synthese: "Hausse de 20% du salaire des enseignants, recentrage sur les savoirs fondamentaux, autorité et mérite.", direction: "revalorisation salariale, retour aux fondamentaux" },
         europe: { synthese: "Durcissement récent : appel explicite au Frexit « le plus vite possible » depuis mai 2026 (voir changements_ligne).", direction: "sortie de l'UE (Frexit)" },
-        dette: { synthese: "Non re-recherché — déjà documenté en base.", direction: "" },
-        institutions: { synthese: "Refondation démocratique dans l'esprit de la Ve République originelle, suppression de l'article 49.3, référendum d'initiative citoyenne à partir de 500 000 signatures.", direction: "renforcement de la démocratie directe" }
+        dette: { synthese: "Dénonce l'aggravation de la dette depuis 2017 (+1000 Md€) ; a évoqué par le passé une monétisation partielle de la dette.", direction: "dénonce l'aggravation depuis 2017" },
+        institutions: { synthese: "Refondation démocratique dans l'esprit de la Ve République originelle, suppression de l'article 49.3, référendum d'initiative citoyenne à partir de 500 000 signatures.", direction: "renforcement de la démocratie directe" },
+        laicite: { synthese: "Favorable à l'interdiction des signes religieux dans les services publics, hôpitaux et universités, mais juge qu'une interdiction dans la rue « n'a pas de sens » et relève de la liberté individuelle.", direction: "interdiction dans les services publics, pas dans la rue" },
+        agriculture: { synthese: "Priorité à la sortie des accords de libre-échange (Mercosur inclus) et au retour à une PAC fondée sur la préférence communautaire, les prix garantis et des quotas ; interdiction des OGM tels que créés actuellement.", direction: "protectionnisme commercial, souveraineté alimentaire" },
+        numerique: { synthese: "Défend un numérique souverain : cloud souverain français, espace numérique citoyen alternatif aux GAFA, taxe forfaitaire sur l'exploitation commerciale des données personnelles, et investissement massif dans l'intelligence artificielle pour créer un champion numérique européen.", direction: "souveraineté numérique, taxation des GAFAM" },
+        logement: { synthese: "Vise 800 000 nouveaux propriétaires par an, la simplification des normes de construction et un doublement du budget MaPrimeRénov'.", direction: "accession à la propriété, simplification des normes" },
+        defense: { synthese: "Propose la sortie du commandement militaire intégré de l'OTAN pour une pleine autonomie de défense nationale, tout en limitant la dissuasion nucléaire française au seul territoire national.", direction: "autonomie de défense, sortie du commandement intégré de l'OTAN" }
       },
       soutiens: [
         { nom: "Cécile Bayle de Jessé", fonction: "Vice-présidente de Debout la France", type: "officiel" },
@@ -964,7 +1026,7 @@ window.SITE_DATA = {
       soutiens_note: "A publiquement appelé Florian Philippot et François Asselineau à le rejoindre pour unifier le camp souverainiste, mais aucun ralliement officiel n'est confirmé à ce jour.",
       quizCompatScores: {
         retraites_1: 1, retraites_2: -1, immigration_1: 2, immigration_2: -2, securite_1: 1, securite_2: -1,
-        ecologie_1: 2, ecologie_2: -1, pouvoir_achat_1: 0, pouvoir_achat_2: 0, dette_1: -1,
+        ecologie_1: 2, ecologie_2: -1, ecologie_3: -1, laicite_1: 1, agriculture_1: 0, numerique_1: 2, logement_1: -1, pouvoir_achat_1: 0, pouvoir_achat_2: 0, dette_1: -1,
         europe_1: 2, europe_2: -2, institutions_1: 2, institutions_2: 1, education_1: -1, education_2: 2, sante_1: 1
       }
     },

@@ -156,12 +156,15 @@
   }
   html += '</section>';
 
-  // Positions sur les sujets qui comptent (10 thématiques)
+  // Positions sur les sujets qui comptent (10 thématiques V2 + nouveaux thèmes V5, ajoutés
+  // au fil des recherches — un thème sans donnée pour un candidat est simplement omis)
   var sujets = [
     ['pouvoir_achat', 'Pouvoir d\'achat / salaires'], ['retraites', 'Retraites'], ['securite', 'Sécurité / justice'],
     ['immigration', 'Immigration'], ['sante', 'Santé / hôpital'], ['ecologie', 'Écologie / énergie'],
     ['education', 'Éducation'], ['europe', 'Europe / international'], ['dette', 'Dette / fiscalité'],
-    ['institutions', 'Institutions / démocratie']
+    ['institutions', 'Institutions / démocratie'], ['laicite', 'Laïcité / religion dans l\'espace public'],
+    ['agriculture', 'Agriculture / ruralité'], ['numerique', 'Numérique / intelligence artificielle'],
+    ['logement', 'Logement'], ['defense', 'Défense / politique militaire']
   ];
   html += '<section class="fiche-section"><h2>Positions sur les sujets qui comptent</h2>';
   if (c.sources && c.sources.length) {
@@ -172,6 +175,10 @@
     var r = resolveSujet(c, s[0]);
     if (!r) return;
     html += '<div class="position-card"><div class="label">' + s[1] + '</div>';
+    if (r.direction === 'non documenté') {
+      html += '<div class="stance stance-nodata">Pas d\'information à ce stade</div></div>';
+      return;
+    }
     if (r.direction) {
       html += '<div class="stance ' + (r.stanceCls || 'stance-nuance') + '">' + r.direction + '</div>';
     }
