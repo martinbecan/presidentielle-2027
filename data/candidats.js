@@ -9,12 +9,12 @@
  * ouvrant index.html directement depuis l'explorateur de fichiers (partage par email, clé USB, etc.).
  */
 window.SITE_DATA = {
-  derniere_maj: "8 juillet 2026",
-  derniere_maj_sondages: "25/06/2026",
+  derniere_maj: "1 août 2026",
+  derniere_maj_sondages: "11/07/2026",
 
   alerte: {
     titre: "⚡ 7 juillet 2026",
-    texte: "Marine Le Pen condamnée en appel (45 mois d'inéligibilité dont 30 avec sursis), mais éligible pour 2027. Candidature confirmée + pourvoi en cassation suspensif déposé."
+    texte: "Marine Le Pen condamnée en appel (45 mois d'inéligibilité dont 30 avec sursis), mais éligible pour 2027. Candidature confirmée + pourvoi en cassation suspensif déposé. La Cour de cassation a annoncé le 8/07/2026 qu'elle statuera au plus tard début avril 2027 — soit après la date limite de dépôt des candidatures (fin mars) : son éligibilité définitive restera donc incertaine jusqu'en pleine campagne."
   },
 
   parrainages: {
@@ -44,7 +44,7 @@ window.SITE_DATA = {
     { nom: "X. Bertrand", sondage: "" }
   ],
 
-  sourcesSondages: "IFOP-Fiducial (25/06/2026), Odoxa (26/05/2026), Toluna Harris Interactive (29/05/2026). Marges ±2–3 pts. Les intentions RN (33–36 %) correspondent aux hypothèses Le Pen ou Bardella.",
+  sourcesSondages: "Elabe (11/07/2026), IFOP-Fiducial (25/06/2026), Odoxa (26/05/2026), Toluna Harris Interactive (29/05/2026). Marges ±2–3 pts. Les intentions RN (34–35,5 %) correspondent aux hypothèses Le Pen ou Bardella.",
 
   // Frise chronologique de la campagne. `candidatSlug` sert à colorer le point selon le bloc
   // politique (et à créer un lien si le candidat a une fiche) ; laisser null pour un événement
@@ -67,8 +67,10 @@ window.SITE_DATA = {
     { date: "2026-06", dateLabel: "Juin 2026", titre: "Karim Bouamrane et Philippe Brun se déclarent candidats", candidatSlug: null, future: false },
     { date: "2026-07-05", dateLabel: "5 juillet 2026", titre: "Meeting de lancement de campagne d'Édouard Philippe (Adidas Arena)", candidatSlug: "edouard-philippe", future: false },
     { date: "2026-07-07", dateLabel: "7 juillet 2026", titre: "Verdict en appel de Marine Le Pen — éligible, pourvoi en cassation suspensif", candidatSlug: "marine-le-pen", future: false },
-    { date: "2026-07-09", dateLabel: "9 juillet 2026", titre: "Vote interne du PS sur les modalités de sa participation à la primaire", candidatSlug: null, future: true },
-    { date: "2026-10-11", dateLabel: "11 octobre 2026", titre: "Primaire « Front populaire 2027 »", candidatSlug: null, future: true },
+    { date: "2026-07-09", dateLabel: "9 juillet 2026", titre: "Le PS vote pour ne pas rejoindre la primaire unitaire de la gauche et organise sa propre primaire fermée réservée aux militants", candidatSlug: null, future: false },
+    { date: "2026-07-10", dateLabel: "10 juillet 2026", titre: "Ségolène Royal annonce sa candidature à la primaire interne du PS", candidatSlug: "segolene-royal", future: false },
+    { date: "2026-07-11", dateLabel: "11 juillet 2026", titre: "Clémentine Autain retire sa candidature, actant l'échec de la primaire unitaire de la gauche", candidatSlug: "clementine-autain", future: false },
+    { date: "2026-10-11", dateLabel: "11 octobre 2026", titre: "Primaire « Front populaire 2027 » (sans le PS, qui organise sa propre primaire interne)", candidatSlug: null, future: true },
     { date: "2026-10", dateLabel: "Automne 2026", titre: "Publication des programmes détaillés des candidats", candidatSlug: null, future: true },
     { date: "2027-01", dateLabel: "Début 2027", titre: "Ouverture de la collecte officielle des parrainages", candidatSlug: null, future: true },
     { date: "2027-03", dateLabel: "~Mars 2027", titre: "Publication de la liste officielle des candidats (Conseil constitutionnel)", candidatSlug: null, future: true },
@@ -461,6 +463,7 @@ window.SITE_DATA = {
     },
     {
       slug: "clementine-autain", nom: "Clémentine Autain", parti: "L'Après", bloc: "gprimaire", fiche: false,
+      statut: "retire", statutDetail: "11/07/2026, après l'échec de la primaire unitaire",
       sondage: { label: "< 1%", niveau: "faible", tendance: "stable" }, historique: [], idees: []
     },
     {
@@ -558,6 +561,10 @@ window.SITE_DATA = {
       sondage: { label: "< 1%", niveau: "faible", tendance: "stable" }, historique: [], idees: []
     },
     {
+      slug: "segolene-royal", nom: "Ségolène Royal", parti: "PS (primaire interne)", bloc: "ghors", fiche: false,
+      sondage: { label: "< 1%", niveau: "faible", tendance: "stable" }, historique: [], idees: []
+    },
+    {
       slug: "philippe-brun", nom: "Philippe Brun", parti: "PS (primaire interne)", bloc: "ghors", fiche: false,
       sondage: { label: "< 0.5%", niveau: "faible", tendance: "stable" }, historique: [], idees: []
     },
@@ -570,7 +577,7 @@ window.SITE_DATA = {
       bloc: "centre",
       fiche: true,
       statut: "en_lice",
-      sondage: { label: "14–19%", niveau: "fort", tendance: "stable" },
+      sondage: { label: "16,5–19%", niveau: "fort", tendance: "baisse" },
       historique: [],
       idees: ["Règle d'or budgétaire", "Refonte école « post-Ferry »", "3 référendums", "Retraite par capitalisation"],
       age: "55 ans (né en 1970 à Rouen)",
@@ -856,8 +863,8 @@ window.SITE_DATA = {
       fiche: true,
       statut: "en_lice",
       note: "⚖️",
-      noteDetail: "Condamnée en appel le 07/07/2026. Pourvoi en cassation annoncé (suspensif). Campagne en « binôme » avec J. Bardella.",
-      sondage: { label: "33–36%", niveau: "fort", tendance: "stable" },
+      noteDetail: "Condamnée en appel le 07/07/2026. Pourvoi en cassation annoncé (suspensif) ; décision attendue au plus tard début avril 2027, après la date limite de dépôt des candidatures. Campagne en « binôme » avec J. Bardella.",
+      sondage: { label: "34–35,5%", niveau: "fort", tendance: "hausse" },
       historique: [
         { annee: 2012, resultat: "17.9%" },
         { annee: 2017, resultat: "21.3%" },
@@ -878,7 +885,8 @@ window.SITE_DATA = {
           "Prend la présidence du FN en 2011 en engageant une stratégie de « dédiabolisation »",
           "Trois candidatures à la présidentielle : 2012 (17,9%), 2017 (21,3%, finaliste), 2022 (23,2%, finaliste)",
           "Cède la présidence du parti à Jordan Bardella en 2021 pour se concentrer sur 2022",
-          "Condamnée en appel le 7 juillet 2026 dans l'affaire des assistants parlementaires du FN au Parlement européen ; pourvoi en cassation suspensif déposé, lui permettant de rester candidate"
+          "Condamnée en appel le 7 juillet 2026 dans l'affaire des assistants parlementaires du FN au Parlement européen ; pourvoi en cassation suspensif déposé, lui permettant de rester candidate",
+          "La Cour de cassation annonce le 8 juillet 2026 qu'elle statuera au plus tard début avril 2027 — après la date limite de dépôt des candidatures fin mars, laissant son éligibilité définitive incertaine jusqu'en pleine campagne"
         ]
       },
       programme: {

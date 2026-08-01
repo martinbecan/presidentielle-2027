@@ -101,3 +101,9 @@ Moyenne mobile sur les 3 à 5 dernières étapes **avec estimation active**, en 
 - Fin : 2026-07-12 22:11:50
 - **Durée réelle : 6 min 25 s**
 - Style neutre "non documenté" (badge gris pointillé au lieu du même jaune que les vraies positions nuancées), 21 étiquettes génériques "Plutôt favorable/opposé" remplacées par des étiquettes spécifiques (retraites/immigration/Europe/dette), timeline passée en vertical permanent (bug V4 non détecté jusqu'ici).
+
+### Post-V5 — Mise à jour actualités (recherche web + intégration données)
+- Recherche (10 requêtes WebSearch, non horodatée à l'époque — phase de synthèse/proposition/validation avec Martin entre les deux, hors mesure)
+- Codage actif — Début : 2026-08-01 19:23:01 — Fin : 2026-08-01 19:25:09
+- **Durée réelle (codage actif seul) : 2 min 08 s**
+- Nouveau statut "retiré(e)" (schéma + badge CSS + main.js), ajout Ségolène Royal, sondages Le Pen/Philippe mis à jour (Elabe 11/07), précision calendrier cassation Le Pen (alerte + fiche), 3 événements timeline. Confirme le profil "édition mécanique" une fois les données de recherche déjà en main — l'essentiel du temps de ce type de tâche est en amont (recherche + validation), pas dans l'édition.
