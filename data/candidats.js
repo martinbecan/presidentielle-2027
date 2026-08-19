@@ -30,7 +30,7 @@ window.SITE_DATA = {
     { id: "centre",      label: "Bloc central",                                        couleur: "#3b82f6" },
     { id: "droite",      label: "Droite",                                              couleur: "#8b5cf6" },
     { id: "exdroite",    label: "Extrême droite / Souverainisme",                      couleur: "#64748b" },
-    { id: "inclassable", label: "Inclassables",                                        couleur: "#6b7280" }
+    { id: "inclassable", label: "Candidatures indépendantes",                          couleur: "#6b7280" }
   ],
 
   pressentis: [
@@ -72,6 +72,7 @@ window.SITE_DATA = {
     { date: "2026-07-11", dateLabel: "11 juillet 2026", titre: "Clémentine Autain retire sa candidature, actant l'échec de la primaire unitaire de la gauche", candidatSlug: "clementine-autain", future: false },
     { date: "2026-08-09", dateLabel: "9 août 2026", titre: "François Bayrou propose une primaire « du PS aux gaullistes » pour éviter un duel Le Pen/Mélenchon — proposition aussitôt rejetée par le PS et critiquée à l'unanimité", candidatSlug: null, future: false },
     { date: "2026-08-17", dateLabel: "17 août 2026", titre: "Gérald Darmanin officialise son soutien à Édouard Philippe", candidatSlug: "edouard-philippe", future: false },
+    { date: "2026-08-19", dateLabel: "19 août 2026", titre: "Francis Lalanne officialise sa candidature, soutenu par Dieudonné", candidatSlug: "francis-lalanne", future: false },
     { date: "2026-10-11", dateLabel: "11 octobre 2026", titre: "Primaire « Front populaire 2027 » (sans le PS, qui organise sa propre primaire interne)", candidatSlug: null, future: true },
     { date: "2026-10", dateLabel: "Automne 2026", titre: "Publication des programmes détaillés des candidats", candidatSlug: null, future: true },
     { date: "2027-01", dateLabel: "Début 2027", titre: "Ouverture de la collecte officielle des parrainages", candidatSlug: null, future: true },
@@ -1057,6 +1058,12 @@ window.SITE_DATA = {
     },
     {
       slug: "antoine-mikolajczak", nom: "Antoine Mikolajczak", parti: "Équinoxe", bloc: "inclassable", fiche: false,
+      sondage: { label: "< 0.5%", niveau: "faible", tendance: "stable" }, historique: [], idees: []
+    },
+    {
+      slug: "francis-lalanne", nom: "Francis Lalanne", parti: "France Libre", bloc: "inclassable", fiche: false,
+      note: "⚖️",
+      noteDetail: "Déclaré inéligible par le Conseil d'État jusqu'en octobre 2026 pour défaut de dépôt de son compte de campagne des européennes 2024 — inéligibilité expirant avant la présidentielle 2027. Campagne soutenue par Dieudonné, déjà candidat à ses côtés aux européennes 2024 (liste à 0,04%).",
       sondage: { label: "< 0.5%", niveau: "faible", tendance: "stable" }, historique: [], idees: []
     }
   ]
