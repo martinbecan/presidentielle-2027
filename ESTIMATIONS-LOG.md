@@ -107,3 +107,7 @@ Moyenne mobile sur les 3 à 5 dernières étapes **avec estimation active**, en 
 - Codage actif — Début : 2026-08-01 19:23:01 — Fin : 2026-08-01 19:25:09
 - **Durée réelle (codage actif seul) : 2 min 08 s**
 - Nouveau statut "retiré(e)" (schéma + badge CSS + main.js), ajout Ségolène Royal, sondages Le Pen/Philippe mis à jour (Elabe 11/07), précision calendrier cassation Le Pen (alerte + fiche), 3 événements timeline. Confirme le profil "édition mécanique" une fois les données de recherche déjà en main — l'essentiel du temps de ce type de tâche est en amont (recherche + validation), pas dans l'édition.
+
+### Post-V5 — Mise à jour actualités #2 (18/08/2026)
+- Non horodaté cette fois (recherche + édition faites sans bracketing `date`) — pas de mesure fiable à consigner, pour ne pas fausser la moyenne mobile avec un chiffre inventé.
+- Soutien Darmanin→Philippe passé de "présumé" à "officiel", ajout de 2 événements timeline (Bayrou, Darmanin), rafraîchissement des sondages de 7 candidats + 3 pressentis à partir d'un agrégat glissant 90 jours. Tâche mécanique une fois la recherche faite, cohérent avec le profil identifié le 01/08.

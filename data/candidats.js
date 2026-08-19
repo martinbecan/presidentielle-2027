@@ -9,8 +9,8 @@
  * ouvrant index.html directement depuis l'explorateur de fichiers (partage par email, clé USB, etc.).
  */
 window.SITE_DATA = {
-  derniere_maj: "1 août 2026",
-  derniere_maj_sondages: "11/07/2026",
+  derniere_maj: "19 août 2026",
+  derniere_maj_sondages: "18/08/2026",
 
   alerte: {
     titre: "⚡ 7 juillet 2026",
@@ -34,9 +34,9 @@ window.SITE_DATA = {
   ],
 
   pressentis: [
-    { nom: "R. Glucksmann", sondage: "~9%" },
-    { nom: "É. Zemmour", sondage: "~4%" },
-    { nom: "F. Roussel", sondage: "~3%" },
+    { nom: "R. Glucksmann", sondage: "~10,2%" },
+    { nom: "É. Zemmour", sondage: "~3,8%" },
+    { nom: "F. Roussel", sondage: "~2,5%" },
     { nom: "F. Hollande", sondage: "" },
     { nom: "B. Cazeneuve", sondage: "" },
     { nom: "D. de Villepin", sondage: "" },
@@ -44,7 +44,7 @@ window.SITE_DATA = {
     { nom: "X. Bertrand", sondage: "" }
   ],
 
-  sourcesSondages: "Elabe (11/07/2026), IFOP-Fiducial (25/06/2026), Odoxa (26/05/2026), Toluna Harris Interactive (29/05/2026). Marges ±2–3 pts. Les intentions RN (34–35,5 %) correspondent aux hypothèses Le Pen ou Bardella.",
+  sourcesSondages: "Agrégat glissant 90 jours (Ipsos, Ifop, Harris Interactive, BVA), 18/08/2026, marge ±2,8 pts. Complété par Elabe (11/07/2026) pour les données antérieures. Les intentions RN correspondent aux hypothèses Le Pen ou Bardella.",
 
   // Frise chronologique de la campagne. `candidatSlug` sert à colorer le point selon le bloc
   // politique (et à créer un lien si le candidat a une fiche) ; laisser null pour un événement
@@ -70,6 +70,8 @@ window.SITE_DATA = {
     { date: "2026-07-09", dateLabel: "9 juillet 2026", titre: "Le PS vote pour ne pas rejoindre la primaire unitaire de la gauche et organise sa propre primaire fermée réservée aux militants", candidatSlug: null, future: false },
     { date: "2026-07-10", dateLabel: "10 juillet 2026", titre: "Ségolène Royal annonce sa candidature à la primaire interne du PS", candidatSlug: "segolene-royal", future: false },
     { date: "2026-07-11", dateLabel: "11 juillet 2026", titre: "Clémentine Autain retire sa candidature, actant l'échec de la primaire unitaire de la gauche", candidatSlug: "clementine-autain", future: false },
+    { date: "2026-08-09", dateLabel: "9 août 2026", titre: "François Bayrou propose une primaire « du PS aux gaullistes » pour éviter un duel Le Pen/Mélenchon — proposition aussitôt rejetée par le PS et critiquée à l'unanimité", candidatSlug: null, future: false },
+    { date: "2026-08-17", dateLabel: "17 août 2026", titre: "Gérald Darmanin officialise son soutien à Édouard Philippe", candidatSlug: "edouard-philippe", future: false },
     { date: "2026-10-11", dateLabel: "11 octobre 2026", titre: "Primaire « Front populaire 2027 » (sans le PS, qui organise sa propre primaire interne)", candidatSlug: null, future: true },
     { date: "2026-10", dateLabel: "Automne 2026", titre: "Publication des programmes détaillés des candidats", candidatSlug: null, future: true },
     { date: "2027-01", dateLabel: "Début 2027", titre: "Ouverture de la collecte officielle des parrainages", candidatSlug: null, future: true },
@@ -208,7 +210,7 @@ window.SITE_DATA = {
       bloc: "gradicale",
       fiche: true,
       statut: "en_lice",
-      sondage: { label: "13–16%", niveau: "fort", tendance: "hausse" },
+      sondage: { label: "~14,8%", niveau: "fort", tendance: "hausse" },
       historique: [
         { annee: 2012, resultat: "11.1%" },
         { annee: 2017, resultat: "19.6%" },
@@ -301,7 +303,7 @@ window.SITE_DATA = {
       bloc: "gprimaire",
       fiche: true,
       statut: "en_lice",
-      sondage: { label: "~2.5%", niveau: "moyen", tendance: "stable" },
+      sondage: { label: "~4,1%", niveau: "moyen", tendance: "hausse" },
       historique: [],
       idees: ["Transition écologique", "Justice sociale", "Candidature unitaire gauche"],
       age: "39 ans (née le 23 août 1986)",
@@ -577,7 +579,7 @@ window.SITE_DATA = {
       bloc: "centre",
       fiche: true,
       statut: "en_lice",
-      sondage: { label: "16,5–19%", niveau: "fort", tendance: "baisse" },
+      sondage: { label: "~16,4%", niveau: "fort", tendance: "baisse" },
       historique: [],
       idees: ["Règle d'or budgétaire", "Refonte école « post-Ferry »", "3 référendums", "Retraite par capitalisation"],
       age: "55 ans (né en 1970 à Rouen)",
@@ -657,7 +659,7 @@ window.SITE_DATA = {
         { nom: "François de Rugy", fonction: "Ancien ministre", type: "officiel" },
         { nom: "Laurent Wauquiez", fonction: "Président du groupe Droite Républicaine à l'Assemblée", type: "officiel" },
         { nom: "Maud Bregeon", fonction: "Porte-parole du gouvernement", type: "officiel" },
-        { nom: "Gérald Darmanin", fonction: "Ministre de la Justice", type: "presume" }
+        { nom: "Gérald Darmanin", fonction: "Ministre de la Justice", type: "officiel" }
       ],
       quizCompatScores: {
         retraites_1: -2, retraites_2: 2, immigration_1: 1, immigration_2: 0, securite_1: 1, securite_2: -1,
@@ -672,7 +674,7 @@ window.SITE_DATA = {
       bloc: "centre",
       fiche: true,
       statut: "en_lice",
-      sondage: { label: "8%", niveau: "moyen", tendance: "baisse" },
+      sondage: { label: "~11,3%", niveau: "moyen", tendance: "hausse" },
       historique: [],
       idees: ["« Droit au brut » / salaires", "Brevet obligatoire", "Quotas immigration", "Plan IA 20M salariés"],
       age: "37 ans (né le 16 mars 1989 à Clamart)",
@@ -765,7 +767,7 @@ window.SITE_DATA = {
       bloc: "droite",
       fiche: true,
       statut: "en_lice",
-      sondage: { label: "8%", niveau: "moyen", tendance: "stable" },
+      sondage: { label: "~8,2%", niveau: "moyen", tendance: "stable" },
       historique: [],
       idees: ["Fermeté sécuritaire", "1M logements en 5 ans", "Suppression ZAN", "Immigration restrictive"],
       age: "65 ans (né le 20 novembre 1960 à Cholet)",
@@ -864,7 +866,7 @@ window.SITE_DATA = {
       statut: "en_lice",
       note: "⚖️",
       noteDetail: "Condamnée en appel le 07/07/2026. Pourvoi en cassation annoncé (suspensif) ; décision attendue au plus tard début avril 2027, après la date limite de dépôt des candidatures. Campagne en « binôme » avec J. Bardella.",
-      sondage: { label: "34–35,5%", niveau: "fort", tendance: "hausse" },
+      sondage: { label: "~35,8%", niveau: "fort", tendance: "hausse" },
       historique: [
         { annee: 2012, resultat: "17.9%" },
         { annee: 2017, resultat: "21.3%" },
