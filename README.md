@@ -101,6 +101,25 @@ Si un visiteur a désactivé JavaScript, `index.html` affiche un tableau simplif
 
 Voir avec Claude Code pour la mise en ligne sur GitHub Pages une fois le contenu validé.
 
+### Numéro de version des fichiers CSS / JS
+
+Toutes les pages appellent leurs feuilles de style et scripts avec un suffixe de version :
+
+```html
+<link rel="stylesheet" href="css/style.css?v=20260824">
+<script src="js/timeline.js?v=20260824"></script>
+```
+
+Sans ce suffixe, un visiteur déjà venu continue d'utiliser l'ancien CSS/JS gardé en cache par son navigateur, parfois plusieurs jours — il voit alors un site à moitié à jour (nouvelles données, ancien affichage).
+
+**Après toute modification d'un fichier dans `css/` ou `js/`, il faut donc incrémenter ce numéro sur les 17 pages HTML.** Format retenu : la date du jour, `AAAAMMJJ`. Commande (à lancer depuis la racine du projet, en remplaçant l'ancienne et la nouvelle valeur) :
+
+```bash
+grep -rl 'v=20260824' --include='*.html' . | xargs perl -pi -e 's/v=20260824/v=20260825/g'
+```
+
+Ce n'est pas nécessaire quand seul `data/candidats.js` change… mais ce fichier porte aussi un suffixe, donc autant tout incrémenter d'un coup à chaque mise en ligne.
+
 ## Neutralité
 
 Ce site est un outil pédagogique et factuel. Les indicateurs "position" (pour/contre/nuancé) sur les grands clivages sont une synthèse éditoriale simplifiée à partir de sources publiques (citées dans chaque fiche) — ils ne remplacent pas la lecture des programmes complets des candidats.

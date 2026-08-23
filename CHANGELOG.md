@@ -6,6 +6,7 @@ Historique des mises à jour du site. Tenu à jour manuellement à chaque sessio
 - **Refonte visuelle de la frise chronologique** : regroupement par année, pastilles de catégorie sur chaque événement, mise en avant des deux tours du scrutin, titres agrandis et dates passées en gris neutre
 - **Frise réorganisée en deux sections** : « À venir » (de la prochaine échéance à la plus lointaine) puis « Déjà passé » (du plus récent au plus ancien), pour que l'actualité récente soit visible sans faire défiler toute la campagne
 - Correction : la couleur du bloc « Primaire PS / Place publique » manquait en CSS (le bloc s'affichait sans teinte)
+- **Numéro de version sur les fichiers CSS et JS** (`?v=20260824`) : sans lui, les visiteurs déjà venus gardaient l'ancien affichage en cache après une mise à jour, parfois plusieurs jours. Procédure documentée dans le README
 
 ## 2026-08-23
 - **Raphaël Glucksmann candidat** (annonce au 20h de TF1) : passe des pressentis aux candidats déclarés, via la primaire commune PS / Place publique
