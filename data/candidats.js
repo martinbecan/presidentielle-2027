@@ -9,7 +9,7 @@
  * ouvrant index.html directement depuis l'explorateur de fichiers (partage par email, clé USB, etc.).
  */
 window.SITE_DATA = {
-  derniere_maj: "19 août 2026",
+  derniere_maj: "23 août 2026",
   derniere_maj_sondages: "18/08/2026",
 
   alerte: {
@@ -26,6 +26,7 @@ window.SITE_DATA = {
     { id: "exgauche",    label: "Extrême gauche",                                      couleur: "#dc2626" },
     { id: "gradicale",   label: "Gauche radicale",                                     couleur: "#ef4444" },
     { id: "gprimaire",   label: "Gauche — Primaire « Front populaire 2027 » (11 oct.)", couleur: "#f97316" },
+    { id: "gps",         label: "Gauche — Primaire PS / Place publique (oct.)",        couleur: "#ec4899" },
     { id: "ghors",       label: "Gauche — Hors primaire",                              couleur: "#eab308" },
     { id: "centre",      label: "Bloc central",                                        couleur: "#3b82f6" },
     { id: "droite",      label: "Droite",                                              couleur: "#8b5cf6" },
@@ -34,13 +35,13 @@ window.SITE_DATA = {
   ],
 
   pressentis: [
-    { nom: "R. Glucksmann", sondage: "~10,2%" },
     { nom: "É. Zemmour", sondage: "~3,8%" },
     { nom: "F. Roussel", sondage: "~2,5%" },
+    { nom: "L. Castets", sondage: "" },
+    { nom: "M. Pigasse", sondage: "" },
     { nom: "F. Hollande", sondage: "" },
     { nom: "B. Cazeneuve", sondage: "" },
     { nom: "D. de Villepin", sondage: "" },
-    { nom: "G. Darmanin", sondage: "" },
     { nom: "X. Bertrand", sondage: "" }
   ],
 
@@ -49,36 +50,58 @@ window.SITE_DATA = {
   // Frise chronologique de la campagne. `candidatSlug` sert à colorer le point selon le bloc
   // politique (et à créer un lien si le candidat a une fiche) ; laisser null pour un événement
   // institutionnel ne concernant pas un candidat précis.
+  //
+  // `categorie` alimente le filtre de la frise. Quatre valeurs possibles :
+  //   candidature   — entrées et sorties de course, désignations par un parti
+  //   justice       — décisions judiciaires affectant une candidature
+  //   institutionnel— échéances officielles, règles du scrutin, primaires
+  //   campagne      — meetings, universités d'été, soutiens, prises de position
+  timelineCategories: [
+    { id: "candidature",    label: "Candidatures" },
+    { id: "justice",        label: "Justice" },
+    { id: "institutionnel", label: "Échéances officielles" },
+    { id: "campagne",       label: "Vie de campagne" }
+  ],
+
   timeline: [
-    { date: "2023-09", dateLabel: "Septembre 2023", titre: "Marine Le Pen annonce son intention d'être candidate (TF1)", candidatSlug: "marine-le-pen", future: false },
-    { date: "2024-09", dateLabel: "Septembre 2024", titre: "Édouard Philippe annonce son intention d'être candidat", candidatSlug: "edouard-philippe", future: false },
-    { date: "2025-03-31", dateLabel: "31 mars 2025", titre: "Marine Le Pen condamnée en première instance (inéligibilité)", candidatSlug: "marine-le-pen", future: false },
-    { date: "2025-10", dateLabel: "Octobre 2025", titre: "Marine Tondelier annonce son intention d'être candidate", candidatSlug: "marine-tondelier", future: false },
-    { date: "2025-11-15", dateLabel: "15 novembre 2025", titre: "Lancement de l'initiative de primaire unitaire de la gauche (Tondelier, Ruffin, Autain)", candidatSlug: null, future: false },
-    { date: "2025-11-25", dateLabel: "25 novembre 2025", titre: "Delphine Batho annonce sa candidature", candidatSlug: "delphine-batho", future: false },
-    { date: "2025-12-08", dateLabel: "8 décembre 2025", titre: "Nathalie Arthaud annonce sa candidature (congrès de Lutte Ouvrière)", candidatSlug: "nathalie-arthaud", future: false },
-    { date: "2025-12-08", dateLabel: "8 décembre 2025", titre: "Marine Tondelier désignée candidate des Écologistes pour la primaire de la gauche (86% des voix)", candidatSlug: "marine-tondelier", future: false },
-    { date: "2026-01", dateLabel: "Janvier-février 2026", titre: "François Ruffin et Jérôme Guedj se déclarent candidats", candidatSlug: "francois-ruffin", future: false },
-    { date: "2026-03", dateLabel: "Mars 2026", titre: "Bruno Retailleau annonce sa candidature à l'investiture des Républicains", candidatSlug: "bruno-retailleau", future: false },
-    { date: "2026-03", dateLabel: "Mars 2026", titre: "Florian Philippot, François Asselineau, Nicolas Dupont-Aignan et David Lisnard confirment leur candidature", candidatSlug: "nicolas-dupont-aignan", future: false },
-    { date: "2026-04-19", dateLabel: "19 avril 2026", titre: "Bruno Retailleau désigné candidat officiel des Républicains (73,8% des voix des adhérents)", candidatSlug: "bruno-retailleau", future: false },
-    { date: "2026-05-03", dateLabel: "3 mai 2026", titre: "Jean-Luc Mélenchon confirme sa candidature (4e candidature)", candidatSlug: "jean-luc-melenchon", future: false },
-    { date: "2026-05-22", dateLabel: "22 mai 2026", titre: "Gabriel Attal officialise sa candidature", candidatSlug: "gabriel-attal", future: false },
-    { date: "2026-06", dateLabel: "Juin 2026", titre: "Karim Bouamrane et Philippe Brun se déclarent candidats", candidatSlug: null, future: false },
-    { date: "2026-07-05", dateLabel: "5 juillet 2026", titre: "Meeting de lancement de campagne d'Édouard Philippe (Adidas Arena)", candidatSlug: "edouard-philippe", future: false },
-    { date: "2026-07-07", dateLabel: "7 juillet 2026", titre: "Verdict en appel de Marine Le Pen — éligible, pourvoi en cassation suspensif", candidatSlug: "marine-le-pen", future: false },
-    { date: "2026-07-09", dateLabel: "9 juillet 2026", titre: "Le PS vote pour ne pas rejoindre la primaire unitaire de la gauche et organise sa propre primaire fermée réservée aux militants", candidatSlug: null, future: false },
-    { date: "2026-07-10", dateLabel: "10 juillet 2026", titre: "Ségolène Royal annonce sa candidature à la primaire interne du PS", candidatSlug: "segolene-royal", future: false },
-    { date: "2026-07-11", dateLabel: "11 juillet 2026", titre: "Clémentine Autain retire sa candidature, actant l'échec de la primaire unitaire de la gauche", candidatSlug: "clementine-autain", future: false },
-    { date: "2026-08-09", dateLabel: "9 août 2026", titre: "François Bayrou propose une primaire « du PS aux gaullistes » pour éviter un duel Le Pen/Mélenchon — proposition aussitôt rejetée par le PS et critiquée à l'unanimité", candidatSlug: null, future: false },
-    { date: "2026-08-17", dateLabel: "17 août 2026", titre: "Gérald Darmanin officialise son soutien à Édouard Philippe", candidatSlug: "edouard-philippe", future: false },
-    { date: "2026-08-19", dateLabel: "19 août 2026", titre: "Francis Lalanne officialise sa candidature, soutenu par Dieudonné", candidatSlug: "francis-lalanne", future: false },
-    { date: "2026-10-11", dateLabel: "11 octobre 2026", titre: "Primaire « Front populaire 2027 » (sans le PS, qui organise sa propre primaire interne)", candidatSlug: null, future: true },
-    { date: "2026-10", dateLabel: "Automne 2026", titre: "Publication des programmes détaillés des candidats", candidatSlug: null, future: true },
-    { date: "2027-01", dateLabel: "Début 2027", titre: "Ouverture de la collecte officielle des parrainages", candidatSlug: null, future: true },
-    { date: "2027-03", dateLabel: "~Mars 2027", titre: "Publication de la liste officielle des candidats (Conseil constitutionnel)", candidatSlug: null, future: true },
-    { date: "2027-04-18", dateLabel: "18 avril 2027", titre: "1er tour de l'élection présidentielle", candidatSlug: null, future: true },
-    { date: "2027-05-02", dateLabel: "2 mai 2027", titre: "2nd tour de l'élection présidentielle", candidatSlug: null, future: true }
+    { date: "2023-09", dateLabel: "Septembre 2023", titre: "Marine Le Pen annonce son intention d'être candidate (TF1)", candidatSlug: "marine-le-pen", categorie: "candidature", future: false },
+    { date: "2024-09", dateLabel: "Septembre 2024", titre: "Édouard Philippe annonce son intention d'être candidat", candidatSlug: "edouard-philippe", categorie: "candidature", future: false },
+    { date: "2025-03-31", dateLabel: "31 mars 2025", titre: "Marine Le Pen condamnée en première instance (inéligibilité)", candidatSlug: "marine-le-pen", categorie: "justice", future: false },
+    { date: "2025-10", dateLabel: "Octobre 2025", titre: "Marine Tondelier annonce son intention d'être candidate", candidatSlug: "marine-tondelier", categorie: "candidature", future: false },
+    { date: "2025-11-15", dateLabel: "15 novembre 2025", titre: "Lancement de l'initiative de primaire unitaire de la gauche (Tondelier, Ruffin, Autain)", candidatSlug: null, categorie: "institutionnel", future: false },
+    { date: "2025-11-25", dateLabel: "25 novembre 2025", titre: "Delphine Batho annonce sa candidature", candidatSlug: "delphine-batho", categorie: "candidature", future: false },
+    { date: "2025-12-08", dateLabel: "8 décembre 2025", titre: "Nathalie Arthaud annonce sa candidature (congrès de Lutte Ouvrière)", candidatSlug: "nathalie-arthaud", categorie: "candidature", future: false },
+    { date: "2025-12-08", dateLabel: "8 décembre 2025", titre: "Marine Tondelier désignée candidate des Écologistes pour la primaire de la gauche (86% des voix)", candidatSlug: "marine-tondelier", categorie: "candidature", future: false },
+    { date: "2026-01", dateLabel: "Janvier-février 2026", titre: "François Ruffin et Jérôme Guedj se déclarent candidats", candidatSlug: "francois-ruffin", categorie: "candidature", future: false },
+    { date: "2026-03", dateLabel: "Mars 2026", titre: "Bruno Retailleau annonce sa candidature à l'investiture des Républicains", candidatSlug: "bruno-retailleau", categorie: "candidature", future: false },
+    { date: "2026-03", dateLabel: "Mars 2026", titre: "Florian Philippot, François Asselineau, Nicolas Dupont-Aignan et David Lisnard confirment leur candidature", candidatSlug: "nicolas-dupont-aignan", categorie: "candidature", future: false },
+    { date: "2026-04-19", dateLabel: "19 avril 2026", titre: "Bruno Retailleau désigné candidat officiel des Républicains (73,8% des voix des adhérents)", candidatSlug: "bruno-retailleau", categorie: "candidature", future: false },
+    { date: "2026-05-03", dateLabel: "3 mai 2026", titre: "Jean-Luc Mélenchon confirme sa candidature (4e candidature)", candidatSlug: "jean-luc-melenchon", categorie: "candidature", future: false },
+    { date: "2026-05-22", dateLabel: "22 mai 2026", titre: "Gabriel Attal officialise sa candidature", candidatSlug: "gabriel-attal", categorie: "candidature", future: false },
+    { date: "2026-06", dateLabel: "Juin 2026", titre: "Karim Bouamrane et Philippe Brun se déclarent candidats", candidatSlug: null, categorie: "candidature", future: false },
+    { date: "2026-07-05", dateLabel: "5 juillet 2026", titre: "Meeting de lancement de campagne d'Édouard Philippe (Adidas Arena)", candidatSlug: "edouard-philippe", categorie: "campagne", future: false },
+    { date: "2026-07-07", dateLabel: "7 juillet 2026", titre: "Verdict en appel de Marine Le Pen — éligible, pourvoi en cassation suspensif", candidatSlug: "marine-le-pen", categorie: "justice", future: false },
+    { date: "2026-07-09", dateLabel: "9 juillet 2026", titre: "Le PS vote pour ne pas rejoindre la primaire unitaire de la gauche et organise sa propre primaire fermée réservée aux militants", candidatSlug: null, categorie: "institutionnel", future: false },
+    { date: "2026-07-10", dateLabel: "10 juillet 2026", titre: "Ségolène Royal annonce sa candidature à la primaire interne du PS", candidatSlug: "segolene-royal", categorie: "candidature", future: false },
+    { date: "2026-07-11", dateLabel: "11 juillet 2026", titre: "Clémentine Autain retire sa candidature, actant l'échec de la primaire unitaire de la gauche", candidatSlug: "clementine-autain", categorie: "candidature", future: false },
+    { date: "2026-08-02", dateLabel: "2 août 2026", titre: "Gabriel Attal propose une réforme constitutionnelle contre la « vétocratie » (délais imposés à l'administration, pouvoirs élargis des maires)", candidatSlug: "gabriel-attal", categorie: "campagne", future: false },
+    { date: "2026-08-09", dateLabel: "9 août 2026", titre: "François Bayrou propose une primaire « du PS aux gaullistes » pour éviter un duel Le Pen/Mélenchon — proposition aussitôt rejetée par le PS et critiquée à l'unanimité", candidatSlug: null, categorie: "campagne", future: false },
+    { date: "2026-08-17", dateLabel: "17 août 2026", titre: "Gérald Darmanin officialise son soutien à Édouard Philippe", candidatSlug: "edouard-philippe", categorie: "campagne", future: false },
+    { date: "2026-08-19", dateLabel: "19 août 2026", titre: "Francis Lalanne officialise sa candidature, soutenu par Dieudonné", candidatSlug: "francis-lalanne", categorie: "candidature", future: false },
+    { date: "2026-08-20", dateLabel: "20-22 août 2026", titre: "Journées d'été des Écologistes à Grenoble : Marine Tondelier maintient sa candidature autonome tout en appelant à l'union (« personne n'aura raison seul »)", candidatSlug: "marine-tondelier", categorie: "campagne", future: false },
+    { date: "2026-08-20", dateLabel: "20-23 août 2026", titre: "Universités d'été de La France Insoumise à Châteauneuf-sur-Isère (~6 000 militants)", candidatSlug: "jean-luc-melenchon", categorie: "campagne", future: false },
+    { date: "2026-08-23", dateLabel: "23 août 2026", titre: "Jean-Luc Mélenchon promet de censurer le gouvernement Lecornu sur le budget 2027", candidatSlug: "jean-luc-melenchon", categorie: "campagne", future: false },
+    { date: "2026-08-18", dateLabel: "18 août 2026", titre: "Le parquet de Paris ouvre une enquête sur des soupçons d'ingérence russe visant Gabriel Attal et Édouard Philippe (deepfakes et fausses unes de presse) — l'agence Viginum l'attribue avec un haut degré de confiance au réseau prorusse Matriochka", candidatSlug: "gabriel-attal", categorie: "justice", future: false },
+    { date: "2026-08-23", dateLabel: "23 août 2026", titre: "Édouard Philippe appelle à un rassemblement de la droite et du centre « entre novembre et février », Gabriel Attal préférant attendre le début 2027", candidatSlug: "edouard-philippe", categorie: "campagne", future: false },
+    { date: "2026-08-23", dateLabel: "23 août 2026", titre: "Raphaël Glucksmann officialise sa candidature au 20h de TF1 et annonce qu'il passera par la primaire commune PS / Place publique", candidatSlug: "raphael-glucksmann", categorie: "candidature", future: false },
+    { date: "2026-08-25", dateLabel: "25 août 2026", titre: "Conseil national du Parti socialiste : fixation des dates de sa primaire", candidatSlug: null, categorie: "institutionnel", future: true },
+    { date: "2026-10-10", dateLabel: "Octobre 2026 (dates pressenties)", titre: "Primaire commune Parti socialiste / Place publique — 1er tour les 10-11 octobre, 2nd tour les 17-18 octobre", candidatSlug: null, categorie: "institutionnel", future: true },
+    { date: "2026-10-11", dateLabel: "11 octobre 2026", titre: "Primaire « Front populaire 2027 » (Écologistes et Debout !, sans le PS ni LFI)", candidatSlug: null, categorie: "institutionnel", future: true },
+    { date: "2026-10", dateLabel: "Automne 2026", titre: "Publication des programmes détaillés des candidats", candidatSlug: null, categorie: "institutionnel", future: true },
+    { date: "2027-01", dateLabel: "Début 2027", titre: "Ouverture de la collecte officielle des parrainages", candidatSlug: null, categorie: "institutionnel", future: true },
+    { date: "2027-03", dateLabel: "~Mars 2027", titre: "Publication de la liste officielle des candidats (Conseil constitutionnel)", candidatSlug: null, categorie: "institutionnel", future: true },
+    { date: "2027-04-18", dateLabel: "18 avril 2027", titre: "1er tour de l'élection présidentielle", candidatSlug: null, categorie: "institutionnel", future: true },
+    { date: "2027-05-02", dateLabel: "2 mai 2027", titre: "2nd tour de l'élection présidentielle", candidatSlug: null, categorie: "institutionnel", future: true }
   ],
 
   // Questions du quiz de compatibilité. Chaque candidat porte un score -2..+2 par question
@@ -466,7 +489,7 @@ window.SITE_DATA = {
     },
     {
       slug: "clementine-autain", nom: "Clémentine Autain", parti: "L'Après", bloc: "gprimaire", fiche: false,
-      statut: "retire", statutDetail: "11/07/2026, après l'échec de la primaire unitaire",
+      statut: "retire", statutDetail: "11/07/2026, après l'échec de la primaire unitaire de la gauche",
       sondage: { label: "< 1%", niveau: "faible", tendance: "stable" }, historique: [], idees: []
     },
     {
@@ -556,19 +579,27 @@ window.SITE_DATA = {
       }
     },
     {
-      slug: "jerome-guedj", nom: "Jérôme Guedj", parti: "PS (dissident)", bloc: "ghors", fiche: false,
-      sondage: { label: "< 1%", niveau: "faible", tendance: "stable" }, historique: [], idees: []
-    },
-    {
       slug: "karim-bouamrane", nom: "Karim Bouamrane", parti: "PS", bloc: "ghors", fiche: false,
       sondage: { label: "< 1%", niveau: "faible", tendance: "stable" }, historique: [], idees: []
     },
+
+    // ================= GAUCHE — PRIMAIRE PS / PLACE PUBLIQUE =================
     {
-      slug: "segolene-royal", nom: "Ségolène Royal", parti: "PS (primaire interne)", bloc: "ghors", fiche: false,
+      slug: "raphael-glucksmann", nom: "Raphaël Glucksmann", parti: "Place publique", bloc: "gps", fiche: false,
+      sondage: { label: "~10,2%", niveau: "moyen", tendance: "hausse" },
+      historique: [], idees: ["Ligne pro-européenne", "« Contrat patriotique »", "Opposition à LFI"]
+    },
+    {
+      slug: "segolene-royal", nom: "Ségolène Royal", parti: "PS", bloc: "gps", fiche: false,
+      sondage: { label: "< 1%", niveau: "faible", tendance: "stable" },
+      historique: [{ annee: 2007, resultat: "25.9%" }], idees: []
+    },
+    {
+      slug: "jerome-guedj", nom: "Jérôme Guedj", parti: "PS", bloc: "gps", fiche: false,
       sondage: { label: "< 1%", niveau: "faible", tendance: "stable" }, historique: [], idees: []
     },
     {
-      slug: "philippe-brun", nom: "Philippe Brun", parti: "PS (primaire interne)", bloc: "ghors", fiche: false,
+      slug: "philippe-brun", nom: "Philippe Brun", parti: "PS", bloc: "gps", fiche: false,
       sondage: { label: "< 0.5%", niveau: "faible", tendance: "stable" }, historique: [], idees: []
     },
 
@@ -750,9 +781,9 @@ window.SITE_DATA = {
         { nom: "Conseil national de Renaissance", fonction: "Instance du parti (motion votée à 91% appelant Attal à se déclarer candidat)", type: "officiel" },
         { nom: "Prisca Thévenot", fonction: "Cadre du parti Renaissance", type: "officiel" },
         { nom: "Franck Riester", fonction: "Député, initiateur d'une tribune de ~500 élus locaux", type: "officiel" },
-        { nom: "François Bayrou", fonction: "Président du MoDem, ex-Premier ministre — ne s'est positionné pour aucun des deux candidats du bloc central", type: "presume" },
-        { nom: "Gérald Darmanin", fonction: "Ministre — position non tranchée entre Attal et Philippe", type: "presume" }
+        { nom: "François Bayrou", fonction: "Président du MoDem, ex-Premier ministre — ne s'est positionné pour aucun des deux candidats du bloc central", type: "presume" }
       ],
+      soutiens_note: "Gérald Darmanin, un temps cité comme indécis entre Gabriel Attal et Édouard Philippe, a officialisé son soutien à ce dernier le 17 août 2026 — il ne figure donc pas parmi les soutiens d'Attal.",
       quizCompatScores: {
         retraites_1: -1, retraites_2: 2, immigration_1: 0, immigration_2: -1, securite_1: 0, securite_2: 0,
         ecologie_1: 2, ecologie_2: -1, ecologie_3: 1, laicite_1: 2, agriculture_1: 1, numerique_1: 2, logement_1: -1, defense_1: 1, pouvoir_achat_1: -1, pouvoir_achat_2: 1, dette_1: 2,

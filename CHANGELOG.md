@@ -2,6 +2,16 @@
 
 Historique des mises à jour du site. Tenu à jour manuellement à chaque session de travail.
 
+## 2026-08-23
+- **Raphaël Glucksmann candidat** (annonce au 20h de TF1) : passe des pressentis aux candidats déclarés, via la primaire commune PS / Place publique
+- **Nouveau bloc « Gauche — Primaire PS / Place publique »** : il existe désormais deux primaires distinctes à gauche, l'ancienne opposition « primaire unitaire / hors primaire » était devenue trompeuse (Royal, Guedj et Brun y sont reclassés)
+- Rentrée politique intégrée : universités d'été LFI et journées d'été des Écologistes, appel de Philippe à un rassemblement droite/centre « entre novembre et février », promesse de censure du budget 2027 par Mélenchon, réforme constitutionnelle proposée par Attal
+- Enquête du parquet de Paris sur des soupçons d'ingérence russe (deepfakes) visant Attal et Philippe, attribuée par Viginum au réseau Matriochka
+- Calendrier de la primaire PS précisé (conseil national du 25/08, scrutin pressenti les 10-11 et 17-18 octobre)
+- Ajout de Lucie Castets et Matthieu Pigasse aux pressentis ; retrait de Gérald Darmanin des pressentis (il soutient Philippe)
+- **Filtre par catégorie sur la frise chronologique** (Candidatures / Justice / Échéances officielles / Vie de campagne), la frise étant passée à 38 événements
+- Correction : Darmanin apparaissait encore comme soutien indécis sur la fiche d'Attal alors qu'il avait tranché pour Philippe le 17/08
+
 ## 2026-08-19
 - Mise à jour actualités : soutien officiel de Gérald Darmanin à Édouard Philippe (17/08), proposition de primaire élargie de François Bayrou rejetée par le PS (9/08), sondages rafraîchis pour Le Pen, Philippe, Mélenchon, Attal, Retailleau, Tondelier et les pressentis (agrégat glissant 90 jours au 18/08/2026), 2 nouveaux événements dans la timeline
 - Ajout de Francis Lalanne, candidat déclaré le 19/08 (soutenu par Dieudonné, inéligibilité passée mentionnée factuellement)

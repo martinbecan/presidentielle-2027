@@ -933,6 +933,41 @@ section.fiche-section h2 {
    Vertical partout (desktop et mobile), volontairement : pas de bascule horizontale→verticale.
    Une frise horizontale deviendrait vite illisible (défilement latéral) à mesure que la
    campagne ajoute des événements ; le vertical reste lisible quel que soit le nombre. */
+.timeline-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.2rem 0 0.4rem;
+}
+.timeline-filter {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: none;
+  color: var(--text-dimmer);
+  font-family: inherit;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+.timeline-filter:hover { border-color: var(--accent); color: var(--text); }
+.timeline-filter.active {
+  background: var(--card-bg);
+  border-color: var(--accent);
+  color: var(--text);
+}
+.timeline-filter-count {
+  font-size: 0.72rem;
+  opacity: 0.7;
+  font-variant-numeric: tabular-nums;
+}
+/* Un filtre désactivé est barré : la différence couleur seule ne suffirait pas
+   pour un daltonien, l'état doit rester lisible sans percevoir la couleur. */
+.timeline-filter:not(.active) .timeline-filter-count { text-decoration: line-through; }
+
 .timeline-track {
   display: flex;
   flex-direction: column;
