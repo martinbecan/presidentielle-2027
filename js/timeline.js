@@ -12,8 +12,18 @@
   categories.forEach(function (c) { actives[c.id] = true; });
 
   function blocInfo(id) { return DATA.blocs.find(function (b) { return b.id === id; }); }
+  function categorieInfo(id) { return categories.find(function (c) { return c.id === id; }); }
 
   var events = DATA.timeline.slice().sort(function (a, b) { return a.date < b.date ? -1 : a.date > b.date ? 1 : 0; });
+
+  // L'année sert de repère principal : sur une frise qui dépasse la trentaine
+  // d'événements, c'est ce qui permet de se situer d'un coup d'œil.
+  function anneeDe(ev) { return ev.date.slice(0, 4); }
+
+  function aujourdhuiLabel() {
+    var d = new Date();
+    return d.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
+  }
 
   function renderFilters() {
     if (!filtersEl || !categories.length) return;
@@ -29,6 +39,35 @@
     filtersEl.innerHTML = html;
   }
 
+  function renderEvent(ev) {
+    var candidat = ev.candidatSlug ? DATA.candidats.find(function (c) { return c.slug === ev.candidatSlug; }) : null;
+    var couleur = candidat ? blocInfo(candidat.bloc).couleur : '#8b8b94';
+    var cat = ev.categorie ? categorieInfo(ev.categorie) : null;
+
+    var cls = 'timeline-event' + (ev.future ? ' future' : '') + (ev.majeur ? ' majeur' : '');
+    var html = '<div class="' + cls + '">';
+    // Un événement majeur porte la couleur d'accent du site, définie en CSS : on
+    // n'émet pas de style inline pour lui, sinon il écraserait la règle.
+    var dotStyle = ev.majeur ? '' : ' style="' + (ev.future ? 'border-color:' + couleur : 'background:' + couleur) + '"';
+    html += '<div class="timeline-dot"' + dotStyle + '></div>';
+    html += '<div class="timeline-body">';
+
+    html += '<div class="timeline-meta">';
+    html += '<span class="timeline-date">' + ev.dateLabel + '</span>';
+    if (cat) {
+      html += '<span class="timeline-cat timeline-cat-' + ev.categorie + '">' + (cat.court || cat.label) + '</span>';
+    }
+    html += '</div>';
+
+    if (candidat && candidat.fiche) {
+      html += '<div class="timeline-titre"><a href="candidats/' + candidat.slug + '.html">' + ev.titre + '</a></div>';
+    } else {
+      html += '<div class="timeline-titre">' + ev.titre + '</div>';
+    }
+    html += '</div></div>';
+    return html;
+  }
+
   function renderEvents() {
     var visible = events.filter(function (ev) {
       // Un événement sans catégorie reste toujours visible : le filtre ne doit jamais
@@ -41,24 +80,38 @@
       return;
     }
 
-    var html = '<div class="timeline-track">';
-    visible.forEach(function (ev) {
-      var candidat = ev.candidatSlug ? DATA.candidats.find(function (c) { return c.slug === ev.candidatSlug; }) : null;
-      var couleur = candidat ? blocInfo(candidat.bloc).couleur : '#6b7280';
-      var cls = 'timeline-event' + (ev.future ? ' future' : '');
+    // Le repère « aujourd'hui » se place devant le premier événement à venir encore
+    // visible — il disparaît donc proprement si le filtre ne laisse que du passé.
+    var premierFutur = visible.find(function (ev) { return ev.future; });
 
-      html += '<div class="' + cls + '">';
-      html += '<div class="timeline-dot" style="' + (ev.future ? 'border-color:' + couleur : 'background:' + couleur) + '"></div>';
-      html += '<div class="timeline-body">';
-      html += '<div class="timeline-date">' + ev.dateLabel + '</div>';
-      if (candidat && candidat.fiche) {
-        html += '<div class="timeline-titre"><a href="candidats/' + candidat.slug + '.html">' + ev.titre + '</a></div>';
-      } else {
-        html += '<div class="timeline-titre">' + ev.titre + '</div>';
+    var html = '';
+    var anneeCourante = null;
+    var trackOuverte = false;
+
+    function fermerTrack() {
+      if (trackOuverte) { html += '</div>'; trackOuverte = false; }
+    }
+
+    visible.forEach(function (ev) {
+      // Le repère « aujourd'hui » passe avant l'en-tête d'année : si la bascule
+      // tombe sur un changement d'année, on lit « Aujourd'hui » puis « 2027 ».
+      if (ev === premierFutur) {
+        fermerTrack();
+        html += '<div class="timeline-today"><span class="timeline-today-pill">Aujourd\'hui · ' + aujourdhuiLabel() + '</span></div>';
       }
-      html += '</div></div>';
+      var annee = anneeDe(ev);
+      if (annee !== anneeCourante) {
+        fermerTrack();
+        anneeCourante = annee;
+        html += '<h2 class="timeline-annee">' + annee + '</h2>';
+      }
+      if (!trackOuverte) {
+        html += '<div class="timeline-track' + (ev.future ? ' timeline-track-future' : '') + '">';
+        trackOuverte = true;
+      }
+      html += renderEvent(ev);
     });
-    html += '</div>';
+    fermerTrack();
 
     root.innerHTML = html;
   }

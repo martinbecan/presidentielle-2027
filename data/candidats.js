@@ -57,10 +57,10 @@ window.SITE_DATA = {
   //   institutionnel— échéances officielles, règles du scrutin, primaires
   //   campagne      — meetings, universités d'été, soutiens, prises de position
   timelineCategories: [
-    { id: "candidature",    label: "Candidatures" },
-    { id: "justice",        label: "Justice" },
-    { id: "institutionnel", label: "Échéances officielles" },
-    { id: "campagne",       label: "Vie de campagne" }
+    { id: "candidature",    label: "Candidatures",          court: "Candidature" },
+    { id: "justice",        label: "Justice",               court: "Justice" },
+    { id: "institutionnel", label: "Échéances officielles", court: "Échéance" },
+    { id: "campagne",       label: "Vie de campagne",       court: "Campagne" }
   ],
 
   timeline: [
@@ -100,8 +100,8 @@ window.SITE_DATA = {
     { date: "2026-10", dateLabel: "Automne 2026", titre: "Publication des programmes détaillés des candidats", candidatSlug: null, categorie: "institutionnel", future: true },
     { date: "2027-01", dateLabel: "Début 2027", titre: "Ouverture de la collecte officielle des parrainages", candidatSlug: null, categorie: "institutionnel", future: true },
     { date: "2027-03", dateLabel: "~Mars 2027", titre: "Publication de la liste officielle des candidats (Conseil constitutionnel)", candidatSlug: null, categorie: "institutionnel", future: true },
-    { date: "2027-04-18", dateLabel: "18 avril 2027", titre: "1er tour de l'élection présidentielle", candidatSlug: null, categorie: "institutionnel", future: true },
-    { date: "2027-05-02", dateLabel: "2 mai 2027", titre: "2nd tour de l'élection présidentielle", candidatSlug: null, categorie: "institutionnel", future: true }
+    { date: "2027-04-18", dateLabel: "18 avril 2027", titre: "1er tour de l'élection présidentielle", candidatSlug: null, categorie: "institutionnel", majeur: true, future: true },
+    { date: "2027-05-02", dateLabel: "2 mai 2027", titre: "2nd tour de l'élection présidentielle", candidatSlug: null, categorie: "institutionnel", majeur: true, future: true }
   ],
 
   // Questions du quiz de compatibilité. Chaque candidat porte un score -2..+2 par question

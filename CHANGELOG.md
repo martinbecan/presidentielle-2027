@@ -2,6 +2,10 @@
 
 Historique des mises à jour du site. Tenu à jour manuellement à chaque session de travail.
 
+## 2026-08-24
+- **Refonte visuelle de la frise chronologique** : regroupement par année, repère « Aujourd'hui » séparant le passé du futur, pastilles de catégorie sur chaque événement, mise en avant des deux tours du scrutin, titres agrandis et dates passées en gris neutre
+- Correction : la couleur du bloc « Primaire PS / Place publique » manquait en CSS (le bloc s'affichait sans teinte)
+
 ## 2026-08-23
 - **Raphaël Glucksmann candidat** (annonce au 20h de TF1) : passe des pressentis aux candidats déclarés, via la primaire commune PS / Place publique
 - **Nouveau bloc « Gauche — Primaire PS / Place publique »** : il existe désormais deux primaires distinctes à gauche, l'ancienne opposition « primaire unitaire / hors primaire » était devenue trompeuse (Royal, Guedj et Brun y sont reclassés)

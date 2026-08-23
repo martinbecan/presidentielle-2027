@@ -17,6 +17,7 @@
   --c-exgauche: #e14444;
   --c-gradicale: #ef4444;
   --c-gprimaire: #f97316;
+  --c-gps: #ec4899;
   --c-ghors: #eab308;
   --c-centre: #3b82f6;
   --c-droite: #8b5cf6;
@@ -434,6 +435,9 @@ td:nth-child(3) { text-align: center; font-variant-numeric: tabular-nums; }
 
 .bloc-gprimaire td { background: rgba(249, 115, 22, 0.06); }
 .bloc-header.bloc-gprimaire td { background: rgba(249, 115, 22, 0.12); border-left: 3px solid var(--c-gprimaire); }
+
+.bloc-gps td { background: rgba(236, 72, 153, 0.06); }
+.bloc-header.bloc-gps td { background: rgba(236, 72, 153, 0.12); border-left: 3px solid var(--c-gps); }
 
 .bloc-ghors td { background: rgba(234, 179, 8, 0.05); }
 .bloc-header.bloc-ghors td { background: rgba(234, 179, 8, 0.10); border-left: 3px solid var(--c-ghors); }
@@ -968,6 +972,43 @@ section.fiche-section h2 {
    pour un daltonien, l'état doit rester lisible sans percevoir la couleur. */
 .timeline-filter:not(.active) .timeline-filter-count { text-decoration: line-through; }
 
+/* L'année est le repère principal de la frise : au-delà d'une trentaine
+   d'événements, c'est elle qui permet de se situer d'un coup d'œil. */
+.timeline-annee {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.5rem;
+  color: var(--text-bright);
+  margin: 1.8rem 0 0.2rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--border-soft);
+}
+.timeline-annee:first-child { margin-top: 0.6rem; }
+
+/* Séparation passé / futur. Le pointillé de la ligne suffisait mal : ce repère
+   daté ancre la lecture et rend le compte à rebours tangible dans la frise. */
+.timeline-today {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin: 1.4rem 0 0.6rem;
+}
+.timeline-today::after {
+  content: "";
+  flex: 1;
+  border-top: 1px dashed var(--accent);
+  opacity: 0.5;
+}
+.timeline-today-pill {
+  flex: 0 0 auto;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  padding: 0.2rem 0.7rem;
+}
+
 .timeline-track {
   display: flex;
   flex-direction: column;
@@ -987,6 +1028,12 @@ section.fiche-section h2 {
   height: auto;
   background: var(--border);
   z-index: 0;
+}
+/* La portion à venir est tracée en pointillé plutôt qu'en trait plein :
+   le futur reste visuellement hypothétique. */
+.timeline-track-future::before {
+  background: none;
+  border-left: 2px dashed var(--border);
 }
 .timeline-event {
   flex: 0 0 auto;
@@ -1008,15 +1055,53 @@ section.fiche-section h2 {
   background: var(--bg);
   border-style: dashed;
 }
-.timeline-event.future { opacity: 0.6; }
+.timeline-event.future { opacity: 0.7; }
+/* Les deux tours du scrutin ne peuvent pas peser autant qu'une université d'été. */
+.timeline-event.majeur .timeline-dot {
+  width: 18px;
+  height: 18px;
+  margin-top: 0.1rem;
+  margin-left: -2px;
+  border-width: 3px;
+  border-color: var(--accent);
+  border-style: solid;
+}
+.timeline-event.majeur .timeline-titre {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-bright);
+}
+.timeline-event.majeur { opacity: 1; }
+
+.timeline-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.3rem;
+}
 .timeline-date {
   font-size: 0.68rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--accent);
-  margin-bottom: 0.35rem;
+  color: var(--text-dimmer);
 }
-.timeline-titre { font-size: 0.8rem; color: #d4d4d8; line-height: 1.45; }
+/* Pastilles volontairement discrètes : la couleur forte de la frise reste celle
+   du bloc politique (le point), la catégorie ne doit pas lui faire concurrence. */
+.timeline-cat {
+  font-size: 0.63rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.1rem 0.45rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+}
+.timeline-cat-candidature   { background: rgba(74,222,128,0.10); color: #86efac; border-color: rgba(74,222,128,0.30); }
+.timeline-cat-justice       { background: rgba(248,113,113,0.10); color: #fca5a5; border-color: rgba(248,113,113,0.30); }
+.timeline-cat-institutionnel{ background: rgba(96,165,250,0.10); color: #93c5fd; border-color: rgba(96,165,250,0.30); }
+.timeline-cat-campagne      { background: rgba(167,139,250,0.10); color: #c4b5fd; border-color: rgba(167,139,250,0.30); }
+
+.timeline-titre { font-size: 0.875rem; color: var(--text); line-height: 1.5; }
 .timeline-titre a { color: var(--text-bright); text-decoration: underline; text-decoration-color: var(--border); }
 .timeline-titre a:hover { color: var(--accent); text-decoration-color: var(--accent); }
 
