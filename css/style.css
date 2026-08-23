@@ -972,42 +972,40 @@ section.fiche-section h2 {
    pour un daltonien, l'état doit rester lisible sans percevoir la couleur. */
 .timeline-filter:not(.active) .timeline-filter-count { text-decoration: line-through; }
 
-/* L'année est le repère principal de la frise : au-delà d'une trentaine
-   d'événements, c'est elle qui permet de se situer d'un coup d'œil. */
+/* La frise se lit en deux temps : ce qui arrive, puis ce qui s'est passé
+   (du plus récent au plus ancien) — l'actualité reste ainsi en haut de page. */
+.timeline-section { margin-bottom: 2.4rem; }
+.timeline-section:last-child { margin-bottom: 0; }
+.timeline-section-titre {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.15rem;
+  color: var(--accent);
+  margin: 0 0 0.2rem;
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+.timeline-section-note {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: var(--text-dimmer);
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+/* L'année est le repère principal à l'intérieur d'une section : au-delà d'une
+   trentaine d'événements, c'est elle qui permet de se situer d'un coup d'œil. */
 .timeline-annee {
   font-family: 'Playfair Display', Georgia, serif;
   font-size: 1.5rem;
   color: var(--text-bright);
-  margin: 1.8rem 0 0.2rem;
+  margin: 1.4rem 0 0.2rem;
   padding-bottom: 0.4rem;
   border-bottom: 1px solid var(--border-soft);
 }
-.timeline-annee:first-child { margin-top: 0.6rem; }
-
-/* Séparation passé / futur. Le pointillé de la ligne suffisait mal : ce repère
-   daté ancre la lecture et rend le compte à rebours tangible dans la frise. */
-.timeline-today {
-  display: flex;
-  align-items: center;
-  gap: 0.7rem;
-  margin: 1.4rem 0 0.6rem;
-}
-.timeline-today::after {
-  content: "";
-  flex: 1;
-  border-top: 1px dashed var(--accent);
-  opacity: 0.5;
-}
-.timeline-today-pill {
-  flex: 0 0 auto;
-  font-size: 0.68rem;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--accent);
-  border: 1px solid var(--accent);
-  border-radius: 999px;
-  padding: 0.2rem 0.7rem;
-}
+.timeline-section-titre + .timeline-annee { margin-top: 0.7rem; }
 
 .timeline-track {
   display: flex;

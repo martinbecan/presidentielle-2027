@@ -80,38 +80,41 @@
       return;
     }
 
-    // Le repère « aujourd'hui » se place devant le premier événement à venir encore
-    // visible — il disparaît donc proprement si le filtre ne laisse que du passé.
-    var premierFutur = visible.find(function (ev) { return ev.future; });
+    // Deux sections ordonnées chacune par distance à aujourd'hui : les échéances à
+    // venir dans l'ordre où elles arriveront, le passé du plus récent au plus ancien.
+    // Une simple inversion globale ferait lire le 2nd tour avant le 1er.
+    var aVenir = visible.filter(function (ev) { return ev.future; });
+    var passe = visible.filter(function (ev) { return !ev.future; }).reverse();
 
     var html = '';
-    var anneeCourante = null;
-    var trackOuverte = false;
 
-    function fermerTrack() {
-      if (trackOuverte) { html += '</div>'; trackOuverte = false; }
+    function renderSection(liste, titre, sousTitre, futureCls) {
+      if (!liste.length) return;
+      html += '<section class="timeline-section">';
+      html += '<h2 class="timeline-section-titre">' + titre +
+        '<span class="timeline-section-note">' + sousTitre + '</span></h2>';
+
+      var anneeCourante = null;
+      var trackOuverte = false;
+      liste.forEach(function (ev) {
+        var annee = anneeDe(ev);
+        if (annee !== anneeCourante) {
+          if (trackOuverte) { html += '</div>'; trackOuverte = false; }
+          anneeCourante = annee;
+          html += '<h3 class="timeline-annee">' + annee + '</h3>';
+        }
+        if (!trackOuverte) {
+          html += '<div class="timeline-track' + futureCls + '">';
+          trackOuverte = true;
+        }
+        html += renderEvent(ev);
+      });
+      if (trackOuverte) html += '</div>';
+      html += '</section>';
     }
 
-    visible.forEach(function (ev) {
-      // Le repère « aujourd'hui » passe avant l'en-tête d'année : si la bascule
-      // tombe sur un changement d'année, on lit « Aujourd'hui » puis « 2027 ».
-      if (ev === premierFutur) {
-        fermerTrack();
-        html += '<div class="timeline-today"><span class="timeline-today-pill">Aujourd\'hui · ' + aujourdhuiLabel() + '</span></div>';
-      }
-      var annee = anneeDe(ev);
-      if (annee !== anneeCourante) {
-        fermerTrack();
-        anneeCourante = annee;
-        html += '<h2 class="timeline-annee">' + annee + '</h2>';
-      }
-      if (!trackOuverte) {
-        html += '<div class="timeline-track' + (ev.future ? ' timeline-track-future' : '') + '">';
-        trackOuverte = true;
-      }
-      html += renderEvent(ev);
-    });
-    fermerTrack();
+    renderSection(aVenir, 'À venir', 'de la prochaine échéance à la plus lointaine', ' timeline-track-future');
+    renderSection(passe, 'Déjà passé', 'du plus récent au plus ancien — aujourd\'hui, ' + aujourdhuiLabel(), '');
 
     root.innerHTML = html;
   }
