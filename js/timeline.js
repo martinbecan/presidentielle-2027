@@ -80,19 +80,38 @@
       return;
     }
 
-    // Deux sections ordonnées chacune par distance à aujourd'hui : les échéances à
-    // venir dans l'ordre où elles arriveront, le passé du plus récent au plus ancien.
-    // Une simple inversion globale ferait lire le 2nd tour avant le 1er.
     var aVenir = visible.filter(function (ev) { return ev.future; });
     var passe = visible.filter(function (ev) { return !ev.future; }).reverse();
 
     var html = '';
 
-    function renderSection(liste, titre, sousTitre, futureCls) {
+    // Les échéances à venir sont des dates connues, sans récit : les afficher avec
+    // points, ligne et en-têtes d'année leur donnait un poids qu'elles n'ont pas et
+    // repoussait l'actualité récente de plusieurs écrans. Elles tiennent ici en un
+    // bloc compact à deux colonnes, sans découpage par année.
+    function renderAVenir(liste) {
       if (!liste.length) return;
       html += '<section class="timeline-section">';
-      html += '<h2 class="timeline-section-titre">' + titre +
-        '<span class="timeline-section-note">' + sousTitre + '</span></h2>';
+      html += '<h2 class="timeline-section-titre">Prochaines échéances' +
+        '<span class="timeline-section-note">dans l\'ordre où elles arriveront</span></h2>';
+      html += '<ul class="echeances">';
+      liste.forEach(function (ev) {
+        html += '<li class="echeance' + (ev.majeur ? ' majeur' : '') + '">';
+        html += '<span class="echeance-date">' + ev.dateLabel + '</span>';
+        html += '<span class="echeance-titre">' + ev.titre + '</span>';
+        html += '</li>';
+      });
+      html += '</ul></section>';
+    }
+
+    // Le passé garde la frise complète : c'est là qu'il y a un récit à suivre,
+    // des couleurs de blocs politiques et des liens vers les fiches.
+    function renderPasse(liste) {
+      if (!liste.length) return;
+      html += '<section class="timeline-section">';
+      html += '<h2 class="timeline-section-titre">Déjà passé' +
+        '<span class="timeline-section-note">du plus récent au plus ancien — aujourd\'hui, ' +
+        aujourdhuiLabel() + '</span></h2>';
 
       var anneeCourante = null;
       var trackOuverte = false;
@@ -104,7 +123,7 @@
           html += '<h3 class="timeline-annee">' + annee + '</h3>';
         }
         if (!trackOuverte) {
-          html += '<div class="timeline-track' + futureCls + '">';
+          html += '<div class="timeline-track">';
           trackOuverte = true;
         }
         html += renderEvent(ev);
@@ -113,8 +132,8 @@
       html += '</section>';
     }
 
-    renderSection(aVenir, 'À venir', 'de la prochaine échéance à la plus lointaine', ' timeline-track-future');
-    renderSection(passe, 'Déjà passé', 'du plus récent au plus ancien — aujourd\'hui, ' + aujourdhuiLabel(), '');
+    renderAVenir(aVenir);
+    renderPasse(passe);
 
     root.innerHTML = html;
   }

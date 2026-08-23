@@ -995,7 +995,41 @@ section.fiche-section h2 {
   letter-spacing: 0;
 }
 
-/* L'année est le repère principal à l'intérieur d'une section : au-delà d'une
+/* Bloc compact des échéances à venir : deux colonnes, sans frise ni années.
+   Traitement volontairement plus léger que la frise — ce sont des dates connues,
+   sans récit, et leur donner la même hauteur repoussait l'actualité trop bas. */
+.echeances {
+  list-style: none;
+  margin: 0.8rem 0 0;
+  padding: 0.4rem 0 0;
+  border-top: 1px solid var(--border-soft);
+}
+.echeance {
+  display: grid;
+  grid-template-columns: 13.5rem 1fr;
+  gap: 0.9rem;
+  align-items: baseline;
+  padding: 0.42rem 0;
+  border-bottom: 1px solid var(--border-soft);
+}
+.echeance:last-child { border-bottom: none; }
+.echeance-date {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-dimmer);
+}
+.echeance-titre { font-size: 0.85rem; color: var(--text); line-height: 1.45; }
+/* Les deux tours du scrutin restent distingués, ici par la couleur d'accent
+   plutôt que par un point plus gros — il n'y a pas de point dans ce bloc. */
+.echeance.majeur .echeance-date,
+.echeance.majeur .echeance-titre { color: var(--accent); font-weight: 600; }
+
+@media (max-width: 620px) {
+  .echeance { grid-template-columns: 1fr; gap: 0.15rem; }
+}
+
+/* L'année est le repère principal à l'intérieur de la frise : au-delà d'une
    trentaine d'événements, c'est elle qui permet de se situer d'un coup d'œil. */
 .timeline-annee {
   font-family: 'Playfair Display', Georgia, serif;

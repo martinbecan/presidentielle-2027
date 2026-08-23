@@ -4,7 +4,7 @@ Historique des mises à jour du site. Tenu à jour manuellement à chaque sessio
 
 ## 2026-08-24
 - **Refonte visuelle de la frise chronologique** : regroupement par année, pastilles de catégorie sur chaque événement, mise en avant des deux tours du scrutin, titres agrandis et dates passées en gris neutre
-- **Frise réorganisée en deux sections** : « À venir » (de la prochaine échéance à la plus lointaine) puis « Déjà passé » (du plus récent au plus ancien), pour que l'actualité récente soit visible sans faire défiler toute la campagne
+- **Frise réorganisée** : un bloc compact « Prochaines échéances » (deux colonnes, sans frise ni années) puis « Déjà passé » du plus récent au plus ancien. Les échéances futures occupaient auparavant autant de place que le récit de la campagne et repoussaient l'actualité de plusieurs écrans ; les en-têtes d'année se lisaient aussi 2026 → 2027 → 2026, ce qui désorientait
 - Correction : la couleur du bloc « Primaire PS / Place publique » manquait en CSS (le bloc s'affichait sans teinte)
 - **Numéro de version sur les fichiers CSS et JS** (`?v=20260824`) : sans lui, les visiteurs déjà venus gardaient l'ancien affichage en cache après une mise à jour, parfois plusieurs jours. Procédure documentée dans le README
 
