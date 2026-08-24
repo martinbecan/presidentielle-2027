@@ -1268,6 +1268,42 @@ section.fiche-section h2 {
 .quiz-compat-bar-track { height: 8px; border-radius: 4px; background: var(--border-soft); overflow: hidden; }
 .quiz-compat-bar-fill { height: 100%; border-radius: 4px; transition: width 0.8s ease-out; }
 .quiz-compat-bar-pct { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--text-bright); flex-shrink: 0; }
+.quiz-compat-rang {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: var(--text-dimmer);
+  flex-shrink: 0;
+  width: 1.2rem;
+  text-align: right;
+}
+/* Au-delà du podium, le classement reste lisible mais visiblement secondaire :
+   il sert à situer les trois premiers, pas à être lu ligne à ligne. */
+.quiz-compat-bar-reste {
+  background: none;
+  border-color: var(--border-soft);
+  padding: 0.5rem 1rem;
+}
+.quiz-compat-bar-reste .quiz-compat-bar-pct { font-size: 1rem; color: var(--text-dim); }
+.quiz-compat-bar-reste .avatar { width: 32px !important; height: 32px !important; font-size: 0.78rem !important; }
+.quiz-compat-separateur {
+  font-size: 0.72rem;
+  color: var(--text-dimmer);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0.6rem 0 0.1rem;
+}
+.quiz-compat-ecart {
+  font-size: 0.85rem;
+  color: var(--text);
+  background: var(--card-bg);
+  border-left: 3px solid var(--quiz-compat);
+  padding: 0.8rem 1rem;
+  border-radius: 0 6px 6px 0;
+  margin: 0 0 1.3rem;
+  line-height: 1.55;
+}
+.quiz-compat-ecart strong { color: var(--text-bright); }
+.quiz-compat-diff-detail { font-size: 0.78rem; color: var(--text-dim); }
 
 .quiz-compat-disclaimer {
   font-size: 0.8rem;

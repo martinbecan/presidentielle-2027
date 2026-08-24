@@ -209,15 +209,15 @@ window.SITE_DATA = {
         laicite: { synthese: "Opposée au port du voile qu'elle juge être un signe d'oppression des femmes, mais s'oppose à son interdiction à l'université ; argumentaire féministe plutôt que fondé sur la laïcité au sens strict.", direction: "critique féministe, non partisane d'une interdiction élargie" },
         agriculture: { synthese: "Peu de proposition agricole spécifique identifiée ; l'accent est mis sur la fin de la logique de profit imposée par les grands groupes agroalimentaires, sans remise en cause des OGM.", direction: "priorité à la lutte contre les monopoles, pas de position tranchée sur les normes" },
         numerique: { synthese: "Aucune position spécifique identifiée sur le numérique ou l'intelligence artificielle à ce stade.", direction: "non documenté" },
-        logement: { synthese: "Aucune proposition détaillée sur le logement identifiée à ce stade.", direction: "non documenté" },
-        defense: { synthese: "Aucune position spécifique identifiée sur la défense ou les questions militaires à ce stade.", direction: "non documenté" }
+        logement: { synthese: "Oppose les besoins sociaux aux dépenses d'armement et pose la construction de logements comme la priorité que la société devrait servir en premier ; pas de dispositif chiffré propre identifié.", direction: "logement comme priorité sociale face aux dépenses militaires" },
+        defense: { synthese: "Dénonce la hausse du budget militaire et le retour d'un service militaire, jugeant que la défense des intérêts français à l'étranger ne sert pas les classes populaires.", direction: "opposition à la hausse des dépenses militaires" }
       },
       soutiens: [
         { nom: "Lutte Ouvrière (parti)", fonction: "Organisation désignant sa candidate via vote de congrès (décembre 2025)", type: "officiel" }
       ],
       quizCompatScores: {
         retraites_1: 2, retraites_2: -2, immigration_1: -2, immigration_2: 2, securite_1: -1, securite_2: 2,
-        ecologie_1: 0, ecologie_2: 1, ecologie_3: 0, laicite_1: -1, agriculture_1: 0, pouvoir_achat_1: 2, pouvoir_achat_2: -2, dette_1: -2,
+        ecologie_1: 0, ecologie_2: 1, ecologie_3: 0, laicite_1: -1, agriculture_1: 0, defense_1: -2, pouvoir_achat_1: 2, pouvoir_achat_2: -2, dette_1: -2,
         europe_1: 1, europe_2: -2, institutions_1: -1, institutions_2: 1, education_1: -1, education_2: 2, sante_1: 2
       }
     },
@@ -377,7 +377,7 @@ window.SITE_DATA = {
       ],
       fact_checks_note: "Aucun fact-check dédié d'AFP Factuel, Les Décodeurs ou CheckNews spécifiquement consacré à Marine Tondelier n'a été identifié pour 2025-2026 ; le seul élément vérifiable trouvé est sa propre rectification publique, largement reprise par la presse généraliste.",
       positions_10_sujets: {
-        pouvoir_achat: { synthese: "Non re-recherché — déjà documenté en base.", direction: "" },
+        pouvoir_achat: { synthese: "Cherche à préserver le pouvoir d'achat des classes moyennes et populaires pendant la transition écologique, via un « ISF climatique », une TVA modulée selon l'impact environnemental et une réforme de la fiscalité des transports favorisant le rail.", direction: "fiscalité écologique redistributive" },
         retraites: { synthese: "S'inscrit dans la ligne de la gauche, opposée à la réforme portant l'âge à 64 ans, sans chiffrage détaillé et confirmé pour 2027.", direction: "opposition à la réforme des 64 ans" },
         securite: { synthese: "Privilégie la prévention à la répression : police de proximité, justice des mineurs renforcée, insertion professionnelle plutôt que répression.", direction: "prévention / proximité" },
         immigration: { synthese: "Ligne humaniste : régularisation de travailleurs sans papiers dans les métiers en tension, voies légales pour réfugiés climatiques ; conteste le lien immigration-délinquance.", direction: "accueil / régularisation" },
@@ -389,9 +389,9 @@ window.SITE_DATA = {
         institutions: { synthese: "VIe République plus parlementaire, proportionnelle, référendum d'initiative citoyenne.", direction: "VIe République / proportionnelle" },
         laicite: { synthese: "Défend une lecture libérale de la loi de 1905, centrée sur la neutralité de l'État et la liberté individuelle ; critique l'usage de la laïcité comme prétexte pour viser une religion en particulier.", direction: "laïcité libérale, opposée à l'interdiction du voile" },
         agriculture: { synthese: "Propose l'interdiction des pesticides de synthèse d'ici 2030 et la généralisation du bio et du local dans la restauration scolaire, au risque de tensions avec une partie du monde agricole.", direction: "transition écologique renforcée de l'agriculture" },
-        numerique: { synthese: "Aucune position spécifique identifiée sur le numérique ou l'intelligence artificielle à ce stade.", direction: "non documenté" },
+        numerique: { synthese: "Défend une « technodiversité » : pluralité d'outils, d'acteurs et d'infrastructures numériques, contre la concentration du secteur entre quelques multinationales, dans une logique de souveraineté et de sobriété.", direction: "diversité et souveraineté numériques contre la concentration" },
         logement: { synthese: "Inscrit le droit au logement pour tous parmi les priorités communes de la gauche pour 2027, sans détail chiffré propre identifié à ce stade.", direction: "priorité au droit au logement" },
-        defense: { synthese: "Aucune position spécifique identifiée sur la défense ou les questions militaires à ce stade.", direction: "non documenté" }
+        defense: { synthese: "Rompt avec la tradition pacifiste écologiste : soutient un engagement militaire renforcé auprès de l'Ukraine, veut un commandement militaire européen intégré placé sous l'autorité du Conseil européen, et demande que le Parlement soit associé à la définition de la doctrine de dissuasion.", direction: "défense européenne intégrée, soutien à l'Ukraine" }
       },
       soutiens: [
         { nom: "Olivier Faure", fonction: "Premier secrétaire du Parti socialiste", type: "officiel" },
@@ -402,7 +402,7 @@ window.SITE_DATA = {
       ],
       quizCompatScores: {
         retraites_1: 1, retraites_2: -1, immigration_1: -2, immigration_2: 2, securite_1: -1, securite_2: 2,
-        ecologie_1: -2, ecologie_2: 2, ecologie_3: 2, laicite_1: -2, agriculture_1: -2, logement_1: 1, pouvoir_achat_1: 2, pouvoir_achat_2: -2, dette_1: -1,
+        ecologie_1: -2, ecologie_2: 2, ecologie_3: 2, laicite_1: -2, agriculture_1: -2, numerique_1: 1, logement_1: 1, defense_1: 1, pouvoir_achat_1: 2, pouvoir_achat_2: -2, dette_1: -1,
         europe_1: -2, europe_2: 2, institutions_1: 1, institutions_2: 2, education_1: -1, education_2: 2, sante_1: 2
       }
     },
@@ -678,10 +678,10 @@ window.SITE_DATA = {
         dette: { synthese: "Objectif de réduction du déficit de 5,1% à 2% du PIB d'ici 2032 via une règle d'or budgétaire inscrite dans la Constitution.", direction: "règle d'or budgétaire constitutionnelle" },
         institutions: { synthese: "Dissolution de l'Assemblée dès son élection et trois référendums (retraites, règle d'or, habilitation à légiférer par ordonnances sur santé/éducation/justice).", direction: "référendums et dissolution" },
         laicite: { synthese: "Évoque une évolution du cadre de 1905 vers un « concordat » donnant à l'État un droit de regard sur l'organisation du culte musulman — une proposition contestée par des spécialistes de la laïcité comme s'écartant du principe de séparation.", direction: "révision du cadre de séparation, proposition controversée" },
-        agriculture: { synthese: "Aucune proposition agricole détaillée et chiffrée identifiée à ce stade.", direction: "non documenté" },
+        agriculture: { synthese: "Dénonce une tendance française à la « surtransposition » des réglementations européennes et défend un meilleur partage de la valeur pour que les agriculteurs vivent de leur travail, tout en maintenant des normes exigeantes dans les négociations commerciales.", direction: "allègement des surtranspositions, partage de la valeur" },
         numerique: { synthese: "Inscrit l'intelligence artificielle au cœur de son projet, dans la continuité de l'axe porté par Gabriel Attal sur la souveraineté technologique.", direction: "souveraineté numérique, investissement en IA" },
         logement: { synthese: "Aligné avec Gabriel Attal sur le logement (100% de convergence relevée), privilégiant un choc de l'offre par la construction plutôt que la régulation des loyers.", direction: "choc de l'offre, priorité à la construction" },
-        defense: { synthese: "Aucune position spécifique et distincte de celle de Gabriel Attal identifiée sur la défense à ce stade.", direction: "non documenté" }
+        defense: { synthese: "Vise un budget de défense à 3 % du PIB, avec 250 000 réservistes (contre 45 000), un service militaire volontaire porté à 50 000 places par an, un plan munitions et une production massive de drones tactiques. Défend une armée européenne commune en complément de l'OTAN, sans s'y substituer.", direction: "réarmement à 3 % du PIB, pilier européen complémentaire de l'OTAN" }
       },
       soutiens: [
         { nom: "Nathalie Kosciusko-Morizet", fonction: "Ancienne ministre (ex-UMP)", type: "officiel" },
@@ -695,7 +695,7 @@ window.SITE_DATA = {
       ],
       quizCompatScores: {
         retraites_1: -2, retraites_2: 2, immigration_1: 1, immigration_2: 0, securite_1: 1, securite_2: -1,
-        ecologie_1: 1, ecologie_2: 0, ecologie_3: 1, laicite_1: 1, agriculture_1: 1, numerique_1: 1, logement_1: -1, pouvoir_achat_1: -1, pouvoir_achat_2: 2, dette_1: 2,
+        ecologie_1: 1, ecologie_2: 0, ecologie_3: 1, laicite_1: 1, agriculture_1: 1, numerique_1: 1, logement_1: -1, defense_1: 2, pouvoir_achat_1: -1, pouvoir_achat_2: 2, dette_1: 2,
         europe_1: -1, europe_2: 1, institutions_1: 2, institutions_2: -1, education_1: 1, education_2: 0, sante_1: 0
       }
     },
@@ -869,7 +869,7 @@ window.SITE_DATA = {
         agriculture: { synthese: "A porté la loi Duplomb, qui assouplit fortement les normes environnementales et sanitaires applicables à l'agriculture, au nom de la compétitivité des exploitants.", direction: "assouplissement des normes environnementales" },
         numerique: { synthese: "Coporteur d'une proposition de loi visant à protéger les mineurs des risques des réseaux sociaux ; pas de position générale sur l'IA ou la souveraineté numérique identifiée.", direction: "protection des mineurs sur les réseaux sociaux" },
         logement: { synthese: "Propose la fin de l'encadrement des loyers, la suppression du zéro artificialisation nette (ZAN) et une loi d'urgence pour diviser par deux les délais de construction.", direction: "libéralisation, fin de l'encadrement des loyers" },
-        defense: { synthese: "Aucune position spécifique identifiée sur la défense ou les questions militaires à ce stade.", direction: "non documenté" }
+        defense: { synthese: "Défend une dissuasion nucléaire strictement souveraine, sans partage de la définition des intérêts vitaux ni de la chaîne de commandement, avec un arsenal renforcé. Accepte un épaulement conventionnel européen à condition qu'il n'altère pas la doctrine française, et privilégie l'achat de matériel français et européen.", direction: "dissuasion souveraine non partagée, arsenal renforcé" }
       },
       soutiens: [
         { nom: "François-Xavier Bellamy", fonction: "Numéro deux des Républicains, eurodéputé", type: "officiel" },
@@ -879,7 +879,7 @@ window.SITE_DATA = {
       soutiens_note: "Contrairement à une idée reçue, Laurent Wauquiez n'est PAS un soutien : il s'est opposé à la tenue du vote interne LR, a publiquement invité Retailleau à « savoir se retirer » si sa candidature ne décolle pas, et penche plutôt vers Édouard Philippe. Xavier Bertrand et Michel Barnier ne sont pas non plus des soutiens confirmés.",
       quizCompatScores: {
         retraites_1: -2, retraites_2: 1, immigration_1: 2, immigration_2: -2, securite_1: 2, securite_2: -2,
-        ecologie_1: 2, ecologie_2: -2, ecologie_3: -1, laicite_1: 2, agriculture_1: 2, logement_1: -2, pouvoir_achat_1: -1, pouvoir_achat_2: 2, dette_1: 2,
+        ecologie_1: 2, ecologie_2: -2, ecologie_3: -1, laicite_1: 2, agriculture_1: 2, logement_1: -2, defense_1: 2, pouvoir_achat_1: -1, pouvoir_achat_2: 2, dette_1: 2,
         europe_1: 1, europe_2: -2, institutions_1: 1, institutions_2: -1, education_1: 0, education_2: 0, sante_1: -1
       }
     },
@@ -965,8 +965,8 @@ window.SITE_DATA = {
         institutions: { synthese: "Abaissement du seuil du RIC à 500 000 signatures, mandat présidentiel unique de 7 ans non renouvelable, référendum obligatoire pour les traités touchant à la souveraineté.", direction: "renforcement du référendum et de la démocratie directe" },
         laicite: { synthese: "Souhaite l'interdiction du port de signes religieux (voile, kippa) dans l'intégralité de l'espace public, y compris dans la rue — une position jugée par plusieurs spécialistes de la laïcité comme allant au-delà du cadre de la loi de 1905.", direction: "interdiction maximale des signes religieux dans l'espace public" },
         agriculture: { synthese: "Propose d'assouplir les normes sanitaires et environnementales nationales et européennes pour améliorer la compétitivité des agriculteurs français, combiné à des mesures protectionnistes.", direction: "assouplissement des normes, protectionnisme" },
-        numerique: { synthese: "Aucune position spécifique identifiée sur le numérique ou l'intelligence artificielle à ce stade.", direction: "non documenté" },
-        logement: { synthese: "Aucune proposition détaillée sur le logement identifiée à ce stade.", direction: "non documenté" },
+        numerique: { synthese: "Défend une souveraineté numérique : données des Français traitées en Europe et sous droit européen, réduction de l'emprise des GAFAM par la norme et la fiscalité, fonds souverain pour faire émerger des acteurs français, contrôle des rachats étrangers dans les secteurs numériques stratégiques.", direction: "souveraineté numérique, réduction de l'emprise des GAFAM" },
+        logement: { synthese: "Propose la construction de 100 000 logements sociaux par an, dont 20 000 réservés aux étudiants et jeunes travailleurs, dans le cadre plus large d'une priorité nationale au logement.", direction: "construction de logements sociaux, priorité nationale" },
         defense: { synthese: "Propose de porter le budget de la défense à 55 milliards d'euros par an d'ici 2027, soit une hausse significative par rapport à la trajectoire actuelle.", direction: "hausse marquée du budget de défense" }
       },
       soutiens: [
@@ -977,7 +977,7 @@ window.SITE_DATA = {
       soutiens_note: "La divergence Bardella/Le Pen sur les retraites (mai-juillet 2026) est le principal point de tension interne identifié.",
       quizCompatScores: {
         retraites_1: 2, retraites_2: -1, immigration_1: 2, immigration_2: -2, securite_1: 2, securite_2: -2,
-        ecologie_1: 2, ecologie_2: -1, ecologie_3: -2, laicite_1: 2, agriculture_1: 2, defense_1: 2, pouvoir_achat_1: 0, pouvoir_achat_2: 1, dette_1: 0,
+        ecologie_1: 2, ecologie_2: -1, ecologie_3: -2, laicite_1: 2, agriculture_1: 2, numerique_1: 2, defense_1: 2, pouvoir_achat_1: 0, pouvoir_achat_2: 1, dette_1: 0,
         europe_1: 2, europe_2: -2, institutions_1: 2, institutions_2: -1, education_1: -1, education_2: 0, sante_1: 1
       }
     },

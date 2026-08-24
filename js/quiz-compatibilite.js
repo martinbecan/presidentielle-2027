@@ -45,6 +45,22 @@
     return nom.split(' ').filter(function (w) { return /^[A-ZÀ-Ý]/.test(w); }).map(function (w) { return w[0]; }).slice(0, 2).join('');
   }
 
+  // Index des questions (principales + extension) pour retrouver un énoncé depuis son id
+  // au moment d'expliquer ce qui sépare deux candidats.
+  var questionsById = {};
+  DATA.quizCompatQuestions.forEach(function (q) { questionsById[q.id] = q; });
+  (DATA.quizCompatExtensionQuestions || []).forEach(function (q) { questionsById[q.id] = q; });
+
+  // Traduit un score de barème (-2..2) en formulation lisible, dans les mêmes termes
+  // que les réponses proposées à l'utilisateur.
+  function libelleScore(v) {
+    if (v >= 2) return 'nettement pour';
+    if (v === 1) return 'plutôt pour';
+    if (v === 0) return 'position nuancée';
+    if (v === -1) return 'plutôt contre';
+    return 'nettement contre';
+  }
+
   function renderQuestion() {
     var q = questions[current];
     var pct = Math.round((current / questions.length) * 100);
@@ -181,9 +197,14 @@
     var html = '<div class="quiz-compat-results">';
     html += '<h2 class="quiz-compat-results-title" tabindex="-1">Vos 3 candidats les plus compatibles</h2>';
     html += '<div class="quiz-compat-bars">';
-    top3.forEach(function (r, i) {
+    results.forEach(function (r, i) {
       var bloc = blocInfo(r.candidat.bloc);
-      html += '<a class="quiz-compat-bar-row" href="candidats/' + r.candidat.slug + '.html">';
+      // Au-delà du podium, le classement continue mais en retrait : l'écart réel entre
+      // le 1er et le dernier (~24 points) n'était pas visible en n'affichant que le top 3,
+      // qui est par construction le groupe le plus resserré du classement.
+      var cls = 'quiz-compat-bar-row' + (i > 2 ? ' quiz-compat-bar-reste' : '');
+      html += '<a class="' + cls + '" href="candidats/' + r.candidat.slug + '.html">';
+      html += '<div class="quiz-compat-rang">' + (i + 1) + '</div>';
       html += '<div class="avatar" style="width:44px;height:44px;font-size:1rem;background:' + bloc.couleur + '33; color:' + bloc.couleur + ';">' + initials(r.candidat.nom) + '</div>';
       html += '<div class="quiz-compat-bar-main">';
       var statutTxt = r.candidat.statut === 'qualifie_2nd_tour' ? ' <span class="statut-pill statut-qualifie">🟢 Qualifié·e pour le 2nd tour</span>' :
@@ -193,8 +214,44 @@
       html += '</div>';
       html += '<div class="quiz-compat-bar-pct">' + r.pct + '%</div>';
       html += '</a>';
+      if (i === 2 && results.length > 3) {
+        html += '<p class="quiz-compat-separateur">Le reste du classement, pour situer ces scores</p>';
+      }
     });
     html += '</div>';
+
+    if (results.length > 1) {
+      var ecart = results[0].pct - results[results.length - 1].pct;
+      html += '<p class="quiz-compat-ecart">Vos trois premiers sont proches les uns des autres — c\'est normal, ce sont justement les plus proches de vous. L\'écart qui compte est ailleurs : <strong>' +
+        ecart + ' points</strong> séparent ' + results[0].candidat.nom + ' (' + results[0].pct + ' %) de ' +
+        results[results.length - 1].candidat.nom + ' (' + results[results.length - 1].pct + ' %).</p>';
+    }
+
+    // Sur quoi s'est jouée la première place : les questions où les deux premiers
+    // divergent le plus. C'est la question que se pose l'utilisateur devant deux
+    // scores presque identiques.
+    if (results.length > 1) {
+      var a = results[0].candidat, b = results[1].candidat;
+      var diffs = Object.keys(answers).filter(function (id) { return answers[id] !== 0; })
+        .map(function (id) {
+          var va = a.quizCompatScores[id], vb = b.quizCompatScores[id];
+          if (typeof va !== 'number' || typeof vb !== 'number') return null;
+          var q = questionsById[id];
+          return q ? { texte: q.texte, ecart: Math.abs(va - vb), va: va, vb: vb } : null;
+        })
+        .filter(Boolean).filter(function (d) { return d.ecart > 0; })
+        .sort(function (x, y) { return y.ecart - x.ecart; }).slice(0, 3);
+
+      if (diffs.length) {
+        html += '<details class="quiz-compat-methodo"><summary>Qu\'est-ce qui sépare ' + a.nom + ' de ' + b.nom + ' ? <span class="chevron">▸</span></summary>';
+        html += '<div class="quiz-compat-methodo-content"><p>Les sujets sur lesquels vos deux premiers s\'opposent le plus :</p><ul class="parcours-list">';
+        diffs.forEach(function (d) {
+          html += '<li>' + d.texte + '<br><span class="quiz-compat-diff-detail">' +
+            a.nom + ' : ' + libelleScore(d.va) + ' · ' + b.nom + ' : ' + libelleScore(d.vb) + '</span></li>';
+        });
+        html += '</ul><p>Sur ces points, votre propre réponse fait pencher la balance. Les fiches candidats détaillent leurs positions.</p></div></details>';
+      }
+    }
 
     var compareSlugs = top3.map(function (r) { return r.candidat.slug; }).join(',');
     html += '<div class="quiz-compat-actions">';
