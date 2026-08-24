@@ -11,6 +11,7 @@
   var alertBox = document.getElementById('alert-box');
   var pressentisEl = document.getElementById('pressentis-list');
   var sourcesEl = document.getElementById('sources-sondages');
+  var notesEl = document.getElementById('notes-candidats');
   var parrainagesEl = document.getElementById('parrainages-message');
   var qualifiesBanner = document.getElementById('qualifies-banner');
 
@@ -196,6 +197,14 @@
     if (updatedEl) updatedEl.textContent = DATA.derniere_maj;
     if (parrainagesEl && DATA.parrainages) parrainagesEl.textContent = DATA.parrainages.message;
     if (sourcesEl) sourcesEl.textContent = DATA.sourcesSondages;
+    // Légende des pictogrammes du tableau, construite depuis les données : codée en dur,
+    // elle se désynchronisait des fiches à chaque mise à jour (la mention du calendrier
+    // de la cassation, ajoutée en août 2026, n'y était jamais remontée).
+    if (notesEl) {
+      notesEl.innerHTML = DATA.candidats.filter(function (c) { return c.note && c.noteDetail; })
+        .map(function (c) { return '<strong>' + c.note + '</strong> ' + c.noteDetail + '<br><br>'; })
+        .join('');
+    }
     if (pressentisEl && DATA.pressentis) {
       pressentisEl.textContent = DATA.pressentis.map(function (p) {
         return p.nom + (p.sondage ? ' (' + p.sondage + ')' : '');

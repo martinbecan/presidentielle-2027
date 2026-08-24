@@ -3,6 +3,8 @@
 Historique des mises à jour du site. Tenu à jour manuellement à chaque session de travail.
 
 ## 2026-08-24
+- **Allègement des pieds de page** : suppression du renvoi vers l'onglet Candidats sur l'accueil (4ᵉ lien vers la même page), du bouton « Voir tous les candidats » en bas d'accueil, des mentions décrivant le défilement sur mobile (comparateur et tableau des candidats) et de la date de mise à jour en double sur la page À propos
+- Correction : la légende des pictogrammes ⚖️ du tableau des candidats était codée en dur et s'était désynchronisée des données — la mention du calendrier de la cassation n'y figurait pas et celle de Francis Lalanne manquait entièrement. Elle est désormais construite depuis `data/candidats.js`
 - **Refonte visuelle de la frise chronologique** : regroupement par année, pastilles de catégorie sur chaque événement, mise en avant des deux tours du scrutin, titres agrandis et dates passées en gris neutre
 - **Frise réorganisée** : un bloc compact « Prochaines échéances » (deux colonnes, sans frise ni années) puis « Déjà passé » du plus récent au plus ancien. Les échéances futures occupaient auparavant autant de place que le récit de la campagne et repoussaient l'actualité de plusieurs écrans ; les en-têtes d'année se lisaient aussi 2026 → 2027 → 2026, ce qui désorientait
 - Correction : la couleur du bloc « Primaire PS / Place publique » manquait en CSS (le bloc s'affichait sans teinte)
