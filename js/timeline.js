@@ -3,7 +3,6 @@
   var root = document.getElementById('timeline-root');
   if (!DATA || !root || !DATA.timeline) return;
 
-  var filtersEl = document.getElementById('timeline-filters');
   var categories = DATA.timelineCategories || [];
 
   // Catégories actives. Toutes cochées au départ : le filtre sert à réduire le bruit
@@ -25,18 +24,22 @@
     return d.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
   }
 
-  function renderFilters() {
-    if (!filtersEl || !categories.length) return;
-    var html = '';
+  // Les filtres ne portent que sur le passé, et sont affichés juste au-dessus de lui.
+  // Les faire agir aussi sur le bloc « Prochaines échéances » n'apportait rien — ses
+  // 8 entrées sont presque toutes de la même catégorie, donc c'était un tout-ou-rien —
+  // et cela aurait modifié du contenu situé hors du champ de vision de la commande.
+  function filtresHtml(passeComplet) {
+    if (!categories.length) return '';
+    var html = '<div class="timeline-filters" role="group" aria-label="Filtrer les événements passés par catégorie">';
     categories.forEach(function (cat) {
-      var count = events.filter(function (ev) { return ev.categorie === cat.id; }).length;
+      var count = passeComplet.filter(function (ev) { return ev.categorie === cat.id; }).length;
       if (!count) return;
       var on = actives[cat.id];
       html += '<button type="button" class="timeline-filter' + (on ? ' active' : '') + '"' +
         ' data-cat="' + cat.id + '" aria-pressed="' + (on ? 'true' : 'false') + '">' +
         cat.label + ' <span class="timeline-filter-count">' + count + '</span></button>';
     });
-    filtersEl.innerHTML = html;
+    return html + '</div>';
   }
 
   function renderEvent(ev) {
@@ -69,19 +72,14 @@
   }
 
   function renderEvents() {
-    var visible = events.filter(function (ev) {
+    // Les échéances à venir ne sont jamais filtrées : elles restent toujours affichées.
+    var aVenir = events.filter(function (ev) { return ev.future; });
+    var passeComplet = events.filter(function (ev) { return !ev.future; });
+    var passe = passeComplet.filter(function (ev) {
       // Un événement sans catégorie reste toujours visible : le filtre ne doit jamais
       // faire disparaître silencieusement une donnée mal étiquetée.
       return !ev.categorie || actives[ev.categorie];
-    });
-
-    if (!visible.length) {
-      root.innerHTML = '<p class="no-data">Aucun événement ne correspond aux filtres sélectionnés.</p>';
-      return;
-    }
-
-    var aVenir = visible.filter(function (ev) { return ev.future; });
-    var passe = visible.filter(function (ev) { return !ev.future; }).reverse();
+    }).reverse();
 
     var html = '';
 
@@ -107,11 +105,16 @@
     // Le passé garde la frise complète : c'est là qu'il y a un récit à suivre,
     // des couleurs de blocs politiques et des liens vers les fiches.
     function renderPasse(liste) {
-      if (!liste.length) return;
       html += '<section class="timeline-section">';
       html += '<h2 class="timeline-section-titre">Déjà passé' +
         '<span class="timeline-section-note">du plus récent au plus ancien — aujourd\'hui, ' +
         aujourdhuiLabel() + '</span></h2>';
+      html += filtresHtml(passeComplet);
+
+      if (!liste.length) {
+        html += '<p class="no-data">Aucun événement ne correspond aux filtres sélectionnés.</p></section>';
+        return;
+      }
 
       var anneeCourante = null;
       var trackOuverte = false;
@@ -138,21 +141,19 @@
     root.innerHTML = html;
   }
 
-  if (filtersEl) {
-    filtersEl.addEventListener('click', function (e) {
-      var btn = e.target.closest('.timeline-filter');
-      if (!btn) return;
-      var cat = btn.getAttribute('data-cat');
-      actives[cat] = !actives[cat];
-      renderFilters();
-      renderEvents();
-      // Le bouton est recréé par renderFilters() : on rend le focus à son remplaçant
-      // pour ne pas perdre la position du clavier entre deux filtrages.
-      var again = filtersEl.querySelector('.timeline-filter[data-cat="' + cat + '"]');
-      if (again) again.focus();
-    });
-  }
+  // Délégation sur `root` : les boutons vivent maintenant dans le HTML régénéré à
+  // chaque rendu, un écouteur posé sur eux directement ne survivrait pas au premier clic.
+  root.addEventListener('click', function (e) {
+    var btn = e.target.closest('.timeline-filter');
+    if (!btn) return;
+    var cat = btn.getAttribute('data-cat');
+    actives[cat] = !actives[cat];
+    renderEvents();
+    // Le bouton vient d'être recréé : on rend le focus à son remplaçant pour ne pas
+    // perdre la position du clavier entre deux filtrages.
+    var again = root.querySelector('.timeline-filter[data-cat="' + cat + '"]');
+    if (again) again.focus();
+  });
 
-  renderFilters();
   renderEvents();
 })();
