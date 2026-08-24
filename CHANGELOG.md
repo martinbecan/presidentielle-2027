@@ -3,6 +3,7 @@
 Historique des mises à jour du site. Tenu à jour manuellement à chaque session de travail.
 
 ## 2026-08-24
+- **Lien « voir le changelog » retiré des pieds de page** : ce journal est un document de maintenance technique, sans intérêt pour un visiteur venu s'informer sur les candidats, et il l'envoyait sur GitHub. Seule la date de mise à jour reste — elle répond à sa vraie question, « est-ce à jour ? ». Une section « Code source et historique » a été ajoutée sur la page À propos, avec le dépôt, le changelog et l'historique détaillé des données ; l'ancienne mention non cliquable du dépôt GitHub y est corrigée
 - **Allègement des pieds de page** : suppression du renvoi vers l'onglet Candidats sur l'accueil (4ᵉ lien vers la même page), du bouton « Voir tous les candidats » en bas d'accueil, des mentions décrivant le défilement sur mobile (comparateur et tableau des candidats) et de la date de mise à jour en double sur la page À propos
 - Correction : la légende des pictogrammes ⚖️ du tableau des candidats était codée en dur et s'était désynchronisée des données — la mention du calendrier de la cassation n'y figurait pas et celle de Francis Lalanne manquait entièrement. Elle est désormais construite depuis `data/candidats.js`
 - **Refonte visuelle de la frise chronologique** : regroupement par année, pastilles de catégorie sur chaque événement, mise en avant des deux tours du scrutin, titres agrandis et dates passées en gris neutre

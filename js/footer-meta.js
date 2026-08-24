@@ -3,10 +3,12 @@
   var footer = document.querySelector('footer');
   if (!DATA || !footer) return;
 
-  var changelogUrl = 'https://github.com/martinbecan/presidentielle-2027/blob/main/CHANGELOG.md';
-
+  // Seule la date figure ici : elle répond à la question que se pose un visiteur
+  // (« est-ce à jour ? »). Le lien vers le dépôt et son changelog vit sur la page
+  // À propos — le journal des modifications est technique et n'intéresse pas
+  // quelqu'un venu s'informer sur les candidats.
   var p = document.createElement('p');
   p.className = 'footer-meta';
-  p.innerHTML = 'Site mis à jour le ' + DATA.derniere_maj + ' — <a href="' + changelogUrl + '" target="_blank" rel="noopener noreferrer">voir le changelog</a>';
+  p.textContent = 'Site mis à jour le ' + DATA.derniere_maj;
   footer.appendChild(p);
 })();
