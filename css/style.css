@@ -793,6 +793,60 @@ section.fiche-section h2 {
 .position-card .detail { font-size: 0.78rem; color: var(--text-dim); line-height: 1.5; }
 
 .tendance-box { display: flex; align-items: center; gap: 0.8rem; font-size: 0.9rem; }
+
+/* Courbe d'évolution des sondages. La bande d'incertitude est aussi importante que la
+   ligne : sans elle, le lecteur surinterprète des variations qui sont du bruit. */
+/* Les URL de sources sont affichées en entier : sans césure forcée, elles débordent
+   de l'écran sur mobile et provoquent un défilement horizontal de toute la page. */
+#fiche-sources a { overflow-wrap: anywhere; }
+
+.sondage-courbe-wrap { margin-top: 1rem; }
+.courbe-zone { display: flex; gap: 0.5rem; height: 120px; }
+.courbe-yaxis {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 0.68rem;
+  color: var(--text-dimmer);
+  font-variant-numeric: tabular-nums;
+  flex-shrink: 0;
+  /* La boîte déborde d'une demi-ligne en haut et en bas : space-between centre alors
+     chaque libellé sur sa graduation au lieu de l'aligner par son bord. */
+  margin: -0.65em 0;
+}
+.courbe-plot { position: relative; flex: 1; min-width: 0; }
+.sondage-courbe { width: 100%; height: 100%; display: block; }
+.courbe-grille { stroke: var(--border-soft); stroke-width: 1; }
+.courbe-marge { fill: var(--border); opacity: 0.35; }
+.courbe-ligne { fill: none; stroke: var(--accent); stroke-width: 2; stroke-linejoin: round; }
+.courbe-point {
+  position: absolute;
+  width: 9px; height: 9px;
+  margin: -4.5px 0 0 -4.5px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 2px var(--bg);
+}
+.courbe-xaxis {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.68rem;
+  color: var(--text-dimmer);
+  margin-top: 0.35rem;
+  /* Aligné sur la zone de tracé, pas sur l'axe des ordonnées */
+  padding-left: calc(1.6rem + 0.5rem);
+}
+.courbe-xaxis span:first-child { text-align: left; }
+.courbe-xaxis span:last-child { text-align: right; }
+.sondage-courbe-note {
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  line-height: 1.5;
+  margin-top: 0.5rem;
+  border-left: 3px solid var(--border-soft);
+  padding-left: 0.7rem;
+}
+.sondage-courbe-note strong { color: var(--text); }
 .tendance-arrow { font-size: 1.4rem; }
 .tendance-hausse { color: #4ade80; }
 .tendance-baisse { color: #f87171; }

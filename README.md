@@ -37,6 +37,26 @@ sondage: { label: "33–36%", niveau: "fort", tendance: "stable" },
 - `niveau` : `"fort"`, `"moyen"` ou `"faible"` — contrôle la mise en valeur visuelle (gras, taille)
 - `tendance` : `"hausse"`, `"baisse"` ou `"stable"` — affiche une flèche ▲ ▼ →
 
+### Ajouter un relevé de sondage à la courbe
+
+Chaque fiche candidat affiche une courbe d'évolution construite à partir des relevés successifs du site. Pour ajouter un point, à chaque mise à jour des sondages :
+
+1. Mettre à jour `derniere_maj_sondages` et le `sondage.label` du candidat, comme d'habitude.
+2. Ajouter une entrée à son tableau `sondageHistorique` :
+
+```js
+sondageHistorique: [
+  { date: "2026-06-25", label: "25 juin", valeur: 34.5, source: "IFOP-Fiducial" },
+  { date: "2026-08-18", label: "18 août", valeur: 35.8, source: "Agrégat 90 j" }
+],
+```
+
+`valeur` est un nombre (le milieu de la fourchette si le sondage en donne une), `label` est ce qui s'affiche sous l'axe.
+
+**Attention à la cohérence des hypothèses.** Les sondages testent des scénarios différents (Le Pen candidate / Bardella candidat, configurations de gauche variables). Un même candidat peut apparaître à 36 % dans une hypothèse et 17 % dans une autre le même jour. Ne relever que des points issus de la **même hypothèse**, sinon la courbe montre des variations qui n'existent pas.
+
+**Vérifier les flèches de tendance.** `sondage.tendance` ne doit indiquer « hausse » ou « baisse » que si l'écart dépasse la marge d'erreur — laquelle dépend du score (±3,0 pts autour de 35 %, ±1,1 pt autour de 3 %). Le seuil pour distinguer deux mesures vaut `marge × √2`. La note sous la courbe calcule et affiche ce verdict automatiquement ; la flèche doit s'y conformer.
+
 ### Ajouter un nouveau candidat (sans fiche détaillée)
 
 Ajoutez un objet dans le tableau `candidats` de `data/candidats.js`, sur le modèle des candidats `< 1%` déjà présents :

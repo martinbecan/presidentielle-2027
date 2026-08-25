@@ -36,6 +36,84 @@
     if (t === 'baisse') return { arrow: '↘', cls: 'tendance-baisse', label: 'En baisse' };
     return { arrow: '→', cls: 'tendance-stable', label: 'Stable' };
   }
+  // Marge d'erreur à 95 % pour un échantillon de ~1000 personnes. Elle dépend du score :
+  // ±3,0 pts autour de 35 %, mais seulement ±1,1 pt autour de 3 %. C'est pourquoi un même
+  // mouvement de 2 points est du bruit pour un candidat à 35 % et un vrai signal à 3 %.
+  var TAILLE_ECHANTILLON = 1000;
+  function margeErreur(p) {
+    var f = p / 100;
+    return 1.96 * Math.sqrt(f * (1 - f) / TAILLE_ECHANTILLON) * 100;
+  }
+
+  // Courbe d'évolution des intentions de vote, construite à partir des relevés successifs
+  // du site (un point par mise à jour des sondages). La bande grise matérialise la marge
+  // d'erreur : tant que la courbe reste dedans, la variation n'est pas interprétable.
+  function renderCourbeSondages(c) {
+    var h = c.sondageHistorique;
+    if (!h || h.length < 2) return '';
+
+    // Les libellés sont volontairement en HTML, hors du SVG : un <text> SVG se met à
+    // l'échelle avec le dessin et tombait à 5 px sur mobile, illisible. En HTML ils
+    // gardent leur taille réelle quelle que soit la largeur d'écran.
+    var W = 100, H = 46;
+    var vals = h.map(function (p) { return p.valeur; });
+    var marges = vals.map(margeErreur);
+    var lo = Math.min.apply(null, vals.map(function (v, i) { return v - marges[i]; }));
+    var hi = Math.max.apply(null, vals.map(function (v, i) { return v + marges[i]; }));
+    var pad = Math.max((hi - lo) * 0.15, 0.8);
+    lo = Math.max(0, lo - pad); hi = hi + pad;
+
+    function x(i) { return (W * (h.length === 1 ? 0.5 : i / (h.length - 1))).toFixed(2); }
+    function y(v) { return (H * (1 - (v - lo) / (hi - lo))).toFixed(2); }
+
+    var haut = h.map(function (p, i) { return x(i) + ',' + y(p.valeur + marges[i]); });
+    var bas = h.map(function (p, i) { return x(i) + ',' + y(p.valeur - marges[i]); }).reverse();
+    var ligne = h.map(function (p, i) { return x(i) + ',' + y(p.valeur); }).join(' ');
+
+    var svg = '<svg class="sondage-courbe" viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="none" role="img" ' +
+      'aria-label="Évolution des intentions de vote : ' +
+      h.map(function (p) { return p.label + ' ' + String(p.valeur).replace('.', ',') + ' %'; }).join(', ') + '">';
+
+    [lo, (lo + hi) / 2, hi].forEach(function (v) {
+      svg += '<line x1="0" y1="' + y(v) + '" x2="' + W + '" y2="' + y(v) + '" class="courbe-grille" vector-effect="non-scaling-stroke"/>';
+    });
+
+    svg += '<polygon class="courbe-marge" points="' + haut.concat(bas).join(' ') + '"/>';
+    svg += '<polyline class="courbe-ligne" points="' + ligne + '" vector-effect="non-scaling-stroke"/>';
+    svg += '</svg>';
+
+    // Les points sont posés en HTML par-dessus le SVG, pour garder un rayon constant :
+    // un cercle SVG serait étiré par preserveAspectRatio="none".
+    var points = h.map(function (p, i) {
+      return '<span class="courbe-point" style="left:' + x(i) + '%; top:' + (y(p.valeur) / H * 100).toFixed(2) + '%;" ' +
+        'title="' + p.label + ' : ' + String(p.valeur).replace('.', ',') + ' % (± ' +
+        marges[i].toFixed(1).replace('.', ',') + ') — ' + p.source + '"></span>';
+    }).join('');
+
+    var yAxis = '<div class="courbe-yaxis">' +
+      [hi, (lo + hi) / 2, lo].map(function (v) { return '<span>' + v.toFixed(0) + '</span>'; }).join('') + '</div>';
+    var xAxis = '<div class="courbe-xaxis">' +
+      h.map(function (p) { return '<span>' + p.label + '</span>'; }).join('') + '</div>';
+
+    // Verdict statistique : l'écart entre le premier et le dernier relevé dépasse-t-il
+    // le seuil au-delà duquel deux mesures sont distinguables (marge × √2) ?
+    var d = vals[vals.length - 1] - vals[0];
+    var seuil = margeErreur((vals[0] + vals[vals.length - 1]) / 2) * Math.SQRT2;
+    var lecture = Math.abs(d) >= seuil
+      ? 'Sur la période, l\'écart de ' + (d > 0 ? '+' : '') + d.toFixed(1).replace('.', ',') +
+        ' point' + (Math.abs(d) >= 2 ? 's' : '') + ' dépasse le seuil de ' + seuil.toFixed(1).replace('.', ',') +
+        ' au-delà duquel deux mesures sont distinguables : l\'évolution est réelle.'
+      : 'Sur la période, l\'écart de ' + (d > 0 ? '+' : '') + d.toFixed(1).replace('.', ',') +
+        ' point reste sous le seuil de ' + seuil.toFixed(1).replace('.', ',') +
+        ' au-delà duquel deux mesures deviennent distinguables : rien ne permet de conclure à une évolution.';
+
+    return '<div class="sondage-courbe-wrap">' +
+      '<div class="courbe-zone">' + yAxis + '<div class="courbe-plot">' + svg + points + '</div></div>' + xAxis +
+      '<p class="sondage-courbe-note"><strong>Comment lire :</strong> chaque point est un relevé du site, à sa date. ' +
+      'La zone grisée est la marge d\'erreur du sondage (± ' + marges[marges.length - 1].toFixed(1).replace('.', ',') +
+      ' points ici) : deux relevés dont les zones se chevauchent ne sont pas distinguables. ' + lecture + '</p></div>';
+  }
+
   function bilanIcon(r) {
     if (r === 'tenu') return { icon: '✅', label: 'Tenu' };
     if (r === 'partiellement') return { icon: '⚠️', label: 'Partiellement tenu' };
@@ -233,6 +311,7 @@
     html += '<span>' + c.sondage.label + ' — <strong class="' + t.cls + '">' + t.label + '</strong></span>';
     if (DATA.derniere_maj_sondages) html += '<span class="sondage-maj">maj ' + DATA.derniere_maj_sondages + '</span>';
     html += '</div>';
+    html += renderCourbeSondages(c);
   }
   html += '</section>';
 
