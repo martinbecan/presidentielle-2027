@@ -75,6 +75,101 @@
   // cellules d'une même ligne (même sujet) partagent alors la même rangée de grille, donc la
   // même hauteur, quelle que soit la longueur du texte — l'alignement est garanti par le CSS,
   // pas par du bricolage de hauteurs fixes.
+  // Courbes de sondage superposées. Axe commun et absolu, volontairement : réétaler
+  // chaque candidat sur sa propre échelle rendrait les lignes « comparables » en
+  // fabriquant une équivalence visuelle qui n'existe pas dans les chiffres.
+  function renderCourbesComparees(list) {
+    var S = window.SONDAGES;
+    var avecHisto = list.filter(function (c) { return c.sondageHistorique && c.sondageHistorique.length >= 2; });
+    if (avecHisto.length < 2) return '';
+    if (window.isSilenceElectoral && window.isSilenceElectoral()) return '';
+
+    // Toutes les séries doivent partager les mêmes dates pour être superposables.
+    var refDates = avecHisto[0].sondageHistorique.map(function (p) { return p.date; }).join('|');
+    avecHisto = avecHisto.filter(function (c) {
+      return c.sondageHistorique.map(function (p) { return p.date; }).join('|') === refDates;
+    });
+    if (avecHisto.length < 2) return '';
+
+    var releves = avecHisto[0].sondageHistorique;
+    var lo = Infinity, hi = -Infinity;
+    avecHisto.forEach(function (c) {
+      c.sondageHistorique.forEach(function (p) {
+        var m = S.margeErreur(p.valeur);
+        lo = Math.min(lo, p.valeur - m); hi = Math.max(hi, p.valeur + m);
+      });
+    });
+    var pad = Math.max((hi - lo) * 0.12, 0.8);
+    lo = Math.max(0, lo - pad); hi = hi + pad;
+
+    var W = 100, H = 46;
+    function x(i) { return (W * (releves.length === 1 ? 0.5 : i / (releves.length - 1))).toFixed(2); }
+    function y(v) { return (H * (1 - (v - lo) / (hi - lo))).toFixed(2); }
+
+    var svg = '<svg class="sondage-courbe" viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="none" role="img" ' +
+      'aria-label="Évolution comparée des intentions de vote : ' +
+      avecHisto.map(function (c) {
+        return c.nom + ' ' + c.sondageHistorique.map(function (p) { return p.label + ' ' + S.nb(p.valeur) + ' %'; }).join(', ');
+      }).join(' ; ') + '">';
+
+    [lo, (lo + hi) / 2, hi].forEach(function (v) {
+      svg += '<line x1="0" y1="' + y(v) + '" x2="' + W + '" y2="' + y(v) + '" class="courbe-grille" vector-effect="non-scaling-stroke"/>';
+    });
+
+    avecHisto.forEach(function (c) {
+      var col = blocInfo(c.bloc).couleur;
+      var haut = c.sondageHistorique.map(function (p, i) { return x(i) + ',' + y(p.valeur + S.margeErreur(p.valeur)); });
+      var bas = c.sondageHistorique.map(function (p, i) { return x(i) + ',' + y(p.valeur - S.margeErreur(p.valeur)); }).reverse();
+      svg += '<polygon points="' + haut.concat(bas).join(' ') + '" fill="' + col + '" opacity="0.18"/>';
+      svg += '<polyline points="' + c.sondageHistorique.map(function (p, i) { return x(i) + ',' + y(p.valeur); }).join(' ') +
+        '" fill="none" stroke="' + col + '" stroke-width="2" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>';
+    });
+    svg += '</svg>';
+
+    var points = '';
+    avecHisto.forEach(function (c) {
+      var col = blocInfo(c.bloc).couleur;
+      c.sondageHistorique.forEach(function (p, i) {
+        points += '<span class="courbe-point" style="left:' + x(i) + '%; top:' + (y(p.valeur) / H * 100).toFixed(2) +
+          '%; background:' + col + ';" title="' + c.nom + ' — ' + p.label + ' : ' + S.nb(p.valeur) + ' %"></span>';
+      });
+    });
+
+    var yAxis = '<div class="courbe-yaxis">' +
+      [hi, (lo + hi) / 2, lo].map(function (v) { return '<span>' + v.toFixed(0) + '</span>'; }).join('') + '</div>';
+    var xAxis = '<div class="courbe-xaxis">' +
+      releves.map(function (p) { return '<span>' + p.label + '</span>'; }).join('') + '</div>';
+
+    var legende = '<div class="courbe-legende">' + avecHisto.map(function (c) {
+      var v = c.sondageHistorique.map(function (p) { return p.valeur; });
+      var evo = S.evolutionSignificative(v);
+      return '<span class="courbe-legende-item"><span class="courbe-legende-puce" style="background:' + blocInfo(c.bloc).couleur +
+        ';"></span>' + c.nom + ' <span class="courbe-legende-val">' + S.nb(v[v.length - 1]) + ' %' +
+        (evo ? ' · évolution réelle' : '') + '</span></span>';
+    }).join('') + '</div>';
+
+    // Garde-fou d'échelle : sur un axe commun, un candidat bas se retrouve écrasé même
+    // quand son mouvement est statistiquement établi. On le dit plutôt que de laisser
+    // croire qu'il n'a pas bougé.
+    var ecrases = avecHisto.filter(function (c) {
+      var v = c.sondageHistorique.map(function (p) { return p.valeur; });
+      var amplitude = Math.max.apply(null, v) - Math.min.apply(null, v);
+      return S.evolutionSignificative(v) && amplitude / (hi - lo) < 0.12;
+    }).map(function (c) { return c.nom; });
+
+    var note = '<p class="sondage-courbe-note"><strong>Axe commun</strong> : les niveaux sont comparables tels quels, ' +
+      'les zones colorées sont les marges d\'erreur.';
+    if (ecrases.length) {
+      note += ' <strong class="courbe-verdict-non">Attention</strong> : l\'écart de niveau entre les candidats écrase visuellement ' +
+        'l\'évolution de ' + ecrases.join(' et ') + ', pourtant statistiquement établie — sa fiche la montre à son échelle.';
+    }
+    note += '</p>';
+
+    return '<div class="comparateur-courbes"><h3 class="comparateur-courbes-titre">Évolution comparée des intentions de vote</h3>' +
+      legende + '<div class="courbe-zone">' + yAxis + '<div class="courbe-plot">' + svg + points + '</div></div>' +
+      xAxis + note + '</div>';
+  }
+
   function renderTable(list) {
     var html = '<div class="comparateur-table">';
 
@@ -132,7 +227,7 @@
       return;
     }
     var selectedCandidats = uniqueSlugs.map(function (slug) { return candidats.find(function (c) { return c.slug === slug; }); }).filter(Boolean);
-    resultEl.innerHTML = renderTable(selectedCandidats);
+    resultEl.innerHTML = renderCourbesComparees(selectedCandidats) + renderTable(selectedCandidats);
     var tableEl = resultEl.querySelector('.comparateur-table');
     if (tableEl) tableEl.style.gridTemplateColumns = '150px repeat(' + selectedCandidats.length + ', 1fr)';
     shareBtn.disabled = false;

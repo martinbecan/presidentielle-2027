@@ -868,6 +868,25 @@ section.fiche-section h2 {
    « évolution réelle » / « rien ne permet de conclure » est écrit en toutes lettres. */
 .courbe-verdict-oui { color: #86efac !important; }
 .courbe-verdict-non { color: var(--text-dimmer) !important; }
+
+/* Courbes superposées du comparateur */
+.comparateur-courbes {
+  background: var(--card-bg);
+  border: 1px solid var(--border-soft);
+  border-radius: 10px;
+  padding: 1rem 1.1rem;
+  margin-bottom: 1.5rem;
+}
+.comparateur-courbes-titre {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: var(--text-bright);
+  margin-bottom: 0.6rem;
+}
+.courbe-legende { display: flex; flex-wrap: wrap; gap: 0.4rem 1.1rem; margin-bottom: 0.8rem; font-size: 0.78rem; }
+.courbe-legende-item { display: inline-flex; align-items: center; gap: 0.4rem; }
+.courbe-legende-puce { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+.courbe-legende-val { color: var(--text-dim); }
 .tendance-arrow { font-size: 1.4rem; }
 .tendance-hausse { color: #4ade80; }
 .tendance-baisse { color: #f87171; }

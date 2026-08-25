@@ -3,6 +3,8 @@
 Historique des mises à jour du site. Tenu à jour manuellement à chaque session de travail.
 
 ## 2026-08-24
+- **Courbes de sondage superposées dans le comparateur**, sur un axe commun et absolu, une couleur par bloc politique et la marge d'erreur de chacun. Un avertissement se déclenche automatiquement quand l'écart de niveau entre candidats écrase visuellement l'évolution d'un petit candidat pourtant statistiquement établie (cas Le Pen / Tondelier)
+- Les calculs statistiques passent dans un module partagé `js/sondages.js`, utilisé par les fiches et le comparateur — la même formule dupliquée finit toujours par diverger
 - **Courbe d'évolution des sondages sur les fiches candidats** (titre et indicateur de tendance sur une seule ligne, note de lecture compactée), avec bande d'incertitude matérialisant la marge d'erreur. Un point par relevé du site (25/06, 11/07, 18/08 à ce jour) ; la série s'enrichira à chaque mise à jour. Une note indique si l'écart observé dépasse le seuil au-delà duquel deux mesures sont distinguables
 - **Correction de 3 flèches de tendance non étayées** : Le Pen affichait « hausse » pour +1,3 pt (seuil 4,2), Philippe « baisse » pour −0,1 pt (seuil 3,2), Mélenchon « hausse » pour +0,3 pt (seuil 3,1). Toutes trois passent à « stable ». Seuls Attal (+3,3, seuil 2,6) et Tondelier (+1,6, seuil 1,6) ont une évolution statistiquement établie
 - Correction : les URL de sources débordaient de l'écran sur mobile et provoquaient un défilement horizontal de la page entière

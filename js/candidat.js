@@ -36,14 +36,8 @@
     if (t === 'baisse') return { arrow: '↘', cls: 'tendance-baisse', label: 'En baisse' };
     return { arrow: '→', cls: 'tendance-stable', label: 'Stable' };
   }
-  // Marge d'erreur à 95 % pour un échantillon de ~1000 personnes. Elle dépend du score :
-  // ±3,0 pts autour de 35 %, mais seulement ±1,1 pt autour de 3 %. C'est pourquoi un même
-  // mouvement de 2 points est du bruit pour un candidat à 35 % et un vrai signal à 3 %.
-  var TAILLE_ECHANTILLON = 1000;
-  function margeErreur(p) {
-    var f = p / 100;
-    return 1.96 * Math.sqrt(f * (1 - f) / TAILLE_ECHANTILLON) * 100;
-  }
+  // Calculs statistiques mutualisés avec le comparateur — voir js/sondages.js
+  var margeErreur = window.SONDAGES.margeErreur;
 
   // Courbe d'évolution des intentions de vote, construite à partir des relevés successifs
   // du site (un point par mise à jour des sondages). La bande grise matérialise la marge
@@ -98,7 +92,7 @@
     // Verdict statistique : l'écart entre le premier et le dernier relevé dépasse-t-il
     // le seuil au-delà duquel deux mesures sont distinguables (marge × √2) ?
     var d = vals[vals.length - 1] - vals[0];
-    var seuil = margeErreur((vals[0] + vals[vals.length - 1]) / 2) * Math.SQRT2;
+    var seuil = window.SONDAGES.seuilDistinguable(vals[0], vals[vals.length - 1]);
     var ecart = (d > 0 ? '+' : '') + d.toFixed(1).replace('.', ',');
     var s = seuil.toFixed(1).replace('.', ',');
     var lecture = Math.abs(d) >= seuil
