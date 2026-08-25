@@ -99,19 +99,17 @@
     // le seuil au-delà duquel deux mesures sont distinguables (marge × √2) ?
     var d = vals[vals.length - 1] - vals[0];
     var seuil = margeErreur((vals[0] + vals[vals.length - 1]) / 2) * Math.SQRT2;
+    var ecart = (d > 0 ? '+' : '') + d.toFixed(1).replace('.', ',');
+    var s = seuil.toFixed(1).replace('.', ',');
     var lecture = Math.abs(d) >= seuil
-      ? 'Sur la période, l\'écart de ' + (d > 0 ? '+' : '') + d.toFixed(1).replace('.', ',') +
-        ' point' + (Math.abs(d) >= 2 ? 's' : '') + ' dépasse le seuil de ' + seuil.toFixed(1).replace('.', ',') +
-        ' au-delà duquel deux mesures sont distinguables : l\'évolution est réelle.'
-      : 'Sur la période, l\'écart de ' + (d > 0 ? '+' : '') + d.toFixed(1).replace('.', ',') +
-        ' point reste sous le seuil de ' + seuil.toFixed(1).replace('.', ',') +
-        ' au-delà duquel deux mesures deviennent distinguables : rien ne permet de conclure à une évolution.';
+      ? '<strong class="courbe-verdict-oui">' + ecart + ' pts</strong> sur la période, au-delà du seuil de ' + s + ' : évolution réelle.'
+      : '<strong class="courbe-verdict-non">' + ecart + ' pts</strong> sur la période, sous le seuil de ' + s + ' : rien ne permet de conclure.';
 
     return '<div class="sondage-courbe-wrap">' +
       '<div class="courbe-zone">' + yAxis + '<div class="courbe-plot">' + svg + points + '</div></div>' + xAxis +
-      '<p class="sondage-courbe-note"><strong>Comment lire :</strong> chaque point est un relevé du site, à sa date. ' +
-      'La zone grisée est la marge d\'erreur du sondage (± ' + marges[marges.length - 1].toFixed(1).replace('.', ',') +
-      ' points ici) : deux relevés dont les zones se chevauchent ne sont pas distinguables. ' + lecture + '</p></div>';
+      '<p class="sondage-courbe-note"><strong>Zone grisée</strong> : marge d\'erreur (± ' +
+      marges[marges.length - 1].toFixed(1).replace('.', ',') + ' pts) — deux relevés qui s\'y chevauchent ' +
+      'ne sont pas distinguables. ' + lecture + '</p></div>';
   }
 
   function bilanIcon(r) {
@@ -301,16 +299,19 @@
   }
   html += '</section>';
 
-  // Dynamique sondagière
-  html += '<section class="fiche-section"><h2>Dynamique sondagière</h2>';
+  // Dynamique sondagière. Le titre et l'indicateur sont sur la même ligne : ils portent
+  // la même information, les empiler gaspillait une hauteur de ligne pour rien.
+  html += '<section class="fiche-section sondage-section">';
   if (window.isSilenceElectoral && window.isSilenceElectoral()) {
+    html += '<div class="sondage-entete"><h2>Dynamique sondagière</h2></div>';
     html += '<p class="silence-note">🔇 ' + window.SILENCE_ELECTORAL_MESSAGE + '</p>';
   } else {
     var t = tendanceLabel(c.sondage.tendance);
+    html += '<div class="sondage-entete"><h2>Dynamique sondagière</h2>';
     html += '<div class="tendance-box"><span class="tendance-arrow ' + t.cls + '">' + t.arrow + '</span>';
     html += '<span>' + c.sondage.label + ' — <strong class="' + t.cls + '">' + t.label + '</strong></span>';
     if (DATA.derniere_maj_sondages) html += '<span class="sondage-maj">maj ' + DATA.derniere_maj_sondages + '</span>';
-    html += '</div>';
+    html += '</div></div>';
     html += renderCourbeSondages(c);
   }
   html += '</section>';

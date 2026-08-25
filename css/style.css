@@ -800,7 +800,24 @@ section.fiche-section h2 {
    de l'écran sur mobile et provoquent un défilement horizontal de toute la page. */
 #fiche-sources a { overflow-wrap: anywhere; }
 
-.sondage-courbe-wrap { margin-top: 1rem; }
+/* Titre et indicateur de tendance sur une seule ligne : ils portent la même
+   information. Le trait de séparation reste sous l'ensemble. */
+.sondage-entete {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.1rem;
+  margin-bottom: 0.9rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+.sondage-entete h2 {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.sondage-courbe-wrap { margin-top: 0.2rem; }
 .courbe-zone { display: flex; gap: 0.5rem; height: 120px; }
 .courbe-yaxis {
   display: flex;
@@ -847,6 +864,10 @@ section.fiche-section h2 {
   padding-left: 0.7rem;
 }
 .sondage-courbe-note strong { color: var(--text); }
+/* Le verdict garde une couleur, mais l'information reste lisible sans la percevoir :
+   « évolution réelle » / « rien ne permet de conclure » est écrit en toutes lettres. */
+.courbe-verdict-oui { color: #86efac !important; }
+.courbe-verdict-non { color: var(--text-dimmer) !important; }
 .tendance-arrow { font-size: 1.4rem; }
 .tendance-hausse { color: #4ade80; }
 .tendance-baisse { color: #f87171; }
