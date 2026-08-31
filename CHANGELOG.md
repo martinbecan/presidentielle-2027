@@ -2,6 +2,13 @@
 
 Historique des mises à jour du site. Tenu à jour manuellement à chaque session de travail.
 
+## 2026-08-31
+- **Primaire PS / Place publique : dates corrigées.** Le conseil national du 25/08 a ratifié l'accord (159 pour, 32 contre, 21 abstentions) et fixé les tours aux **9-10 et 16-17 octobre** — le site affichait 10-11 et 17-18, qui n'étaient que pressenties. La GRS s'ajoute aux organisateurs. Dépôt des candidatures du 1er au 15 septembre
+- **Olivier Faure candidat** à la primaire (annonce du 30/08 au 20h de TF1), aux côtés de Glucksmann, Royal, Guedj et Brun
+- **4ᵉ relevé de sondages** (agrégat des 5 sondages les plus récents, 31/08) : Le Pen 35,6 %, Philippe 16,9 %, Mélenchon 15,0 %, Glucksmann 9,9 %, Attal 7,7 %, Retailleau 7,6 %, Tondelier 3,5 %
+- **Les 2 dernières flèches de tendance passent à « stable »** : la hausse d'Attal (8 → 11,3) s'est entièrement rétractée à 7,7, celle de Tondelier est retombée de 4,1 à 3,5. Plus aucune évolution n'est statistiquement établie à ce jour — illustration directe de ce que mesure la marge d'erreur
+- **Axe des courbes proportionnel au temps** et non au rang du relevé : nos intervalles sont de 16, 38 puis 13 jours, les espacer également déformait la pente. Les séries de longueurs différentes peuvent désormais être superposées dans le comparateur
+
 ## 2026-08-24
 - **Courbes de sondage superposées dans le comparateur**, sur un axe commun et absolu, une couleur par bloc politique et la marge d'erreur de chacun. Un avertissement se déclenche automatiquement quand l'écart de niveau entre candidats écrase visuellement l'évolution d'un petit candidat pourtant statistiquement établie (cas Le Pen / Tondelier)
 - Les calculs statistiques passent dans un module partagé `js/sondages.js`, utilisé par les fiches et le comparateur — la même formule dupliquée finit toujours par diverger

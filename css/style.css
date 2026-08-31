@@ -818,7 +818,14 @@ section.fiche-section h2 {
 }
 
 .sondage-courbe-wrap { margin-top: 0.2rem; }
-.courbe-zone { display: flex; gap: 0.5rem; height: 120px; }
+/* Grille à deux colonnes : l'axe vertical et la zone de tracé partagent leur largeur
+   avec la rangée des dates, ce qui aligne les libellés sans calage en dur. */
+.courbe-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: 120px auto;
+  column-gap: 0.5rem;
+}
 .courbe-yaxis {
   display: flex;
   flex-direction: column;
@@ -844,17 +851,27 @@ section.fiche-section h2 {
   background: var(--accent);
   box-shadow: 0 0 0 2px var(--bg);
 }
-.courbe-xaxis {
-  display: flex;
-  justify-content: space-between;
+/* Libellés placés à leur date réelle plutôt qu'à intervalle régulier. Les extrêmes
+   sont recalés vers l'intérieur pour ne pas déborder de la zone de tracé. */
+.courbe-xaxis-date {
+  position: relative;
+  height: 1.1rem;
+  margin-top: 0.35rem;
   font-size: 0.68rem;
   color: var(--text-dimmer);
-  margin-top: 0.35rem;
-  /* Aligné sur la zone de tracé, pas sur l'axe des ordonnées */
-  padding-left: calc(1.6rem + 0.5rem);
 }
-.courbe-xaxis span:first-child { text-align: left; }
-.courbe-xaxis span:last-child { text-align: right; }
+.courbe-xaxis-date span {
+  position: absolute;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+.courbe-xaxis-date span:first-child { transform: none; }
+.courbe-xaxis-date span:last-child { transform: translateX(-100%); }
+/* Sur écran étroit, seules les bornes de la période sont écrites : les relevés
+   rapprochés se chevaucheraient. Chaque point garde sa date au survol. */
+@media (max-width: 600px) {
+  .courbe-xaxis-date span:not(:first-child):not(:last-child) { display: none; }
+}
 .sondage-courbe-note {
   font-size: 0.78rem;
   color: var(--text-dim);

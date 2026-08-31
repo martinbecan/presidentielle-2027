@@ -57,7 +57,8 @@
     var pad = Math.max((hi - lo) * 0.15, 0.8);
     lo = Math.max(0, lo - pad); hi = hi + pad;
 
-    function x(i) { return (W * (h.length === 1 ? 0.5 : i / (h.length - 1))).toFixed(2); }
+    var posX = window.SONDAGES.axeTemps([h]);
+    function x(i) { return posX(h[i].date).toFixed(2); }
     function y(v) { return (H * (1 - (v - lo) / (hi - lo))).toFixed(2); }
 
     var haut = h.map(function (p, i) { return x(i) + ',' + y(p.valeur + marges[i]); });
@@ -86,8 +87,9 @@
 
     var yAxis = '<div class="courbe-yaxis">' +
       [hi, (lo + hi) / 2, lo].map(function (v) { return '<span>' + v.toFixed(0) + '</span>'; }).join('') + '</div>';
-    var xAxis = '<div class="courbe-xaxis">' +
-      h.map(function (p) { return '<span>' + p.label + '</span>'; }).join('') + '</div>';
+    var xAxis = '<div class="courbe-xaxis courbe-xaxis-date">' + h.map(function (p, i) {
+      return '<span style="left:' + x(i) + '%;">' + p.label + '</span>';
+    }).join('') + '</div>';
 
     // Verdict statistique : l'écart entre le premier et le dernier relevé dépasse-t-il
     // le seuil au-delà duquel deux mesures sont distinguables (marge × √2) ?
@@ -100,7 +102,7 @@
       : '<strong class="courbe-verdict-non">' + ecart + ' pts</strong> sur la période, sous le seuil de ' + s + ' : rien ne permet de conclure.';
 
     return '<div class="sondage-courbe-wrap">' +
-      '<div class="courbe-zone">' + yAxis + '<div class="courbe-plot">' + svg + points + '</div></div>' + xAxis +
+      '<div class="courbe-grid">' + yAxis + '<div class="courbe-plot">' + svg + points + '</div><div></div>' + xAxis + '</div>' +
       '<p class="sondage-courbe-note"><strong>Zone grisée</strong> : marge d\'erreur (± ' +
       marges[marges.length - 1].toFixed(1).replace('.', ',') + ' pts) — deux relevés qui s\'y chevauchent ' +
       'ne sont pas distinguables. ' + lecture + '</p></div>';

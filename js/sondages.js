@@ -32,10 +32,26 @@
 
   function nb(v) { return String(v).replace('.', ','); }
 
+  // Position horizontale proportionnelle au temps écoulé, et non au rang du relevé.
+  // Nos intervalles sont irréguliers (16, 38 puis 13 jours) : les espacer également
+  // déformerait la pente des courbes, donc la lecture de la dynamique.
+  function axeTemps(series) {
+    var ts = [];
+    series.forEach(function (s) {
+      s.forEach(function (p) { ts.push(Date.parse(p.date)); });
+    });
+    var min = Math.min.apply(null, ts), max = Math.max.apply(null, ts);
+    return function (dateStr) {
+      if (max === min) return 50;
+      return (Date.parse(dateStr) - min) / (max - min) * 100;
+    };
+  }
+
   window.SONDAGES = {
     margeErreur: margeErreur,
     seuilDistinguable: seuilDistinguable,
     evolutionSignificative: evolutionSignificative,
+    axeTemps: axeTemps,
     nb: nb
   };
 })();

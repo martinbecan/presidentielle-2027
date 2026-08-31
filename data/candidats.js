@@ -9,8 +9,8 @@
  * ouvrant index.html directement depuis l'explorateur de fichiers (partage par email, clé USB, etc.).
  */
 window.SITE_DATA = {
-  derniere_maj: "23 août 2026",
-  derniere_maj_sondages: "18/08/2026",
+  derniere_maj: "31 août 2026",
+  derniere_maj_sondages: "31/08/2026",
 
   alerte: {
     titre: "⚡ 7 juillet 2026",
@@ -35,8 +35,8 @@ window.SITE_DATA = {
   ],
 
   pressentis: [
-    { nom: "É. Zemmour", sondage: "~3,8%" },
-    { nom: "F. Roussel", sondage: "~2,5%" },
+    { nom: "É. Zemmour", sondage: "~3,4%" },
+    { nom: "F. Roussel", sondage: "~2,3%" },
     { nom: "L. Castets", sondage: "" },
     { nom: "M. Pigasse", sondage: "" },
     { nom: "F. Hollande", sondage: "" },
@@ -45,7 +45,7 @@ window.SITE_DATA = {
     { nom: "X. Bertrand", sondage: "" }
   ],
 
-  sourcesSondages: "Agrégat glissant 90 jours (Ipsos, Ifop, Harris Interactive, BVA), 18/08/2026, marge ±2,8 pts. Complété par Elabe (11/07/2026) pour les données antérieures. Les intentions RN correspondent aux hypothèses Le Pen ou Bardella.",
+  sourcesSondages: "Agrégat des 5 sondages les plus récents (IFOP, Ipsos, Elabe, OpinionWay, Harris, Verian), 31/08/2026. Marge ±2–3 pts selon le score. Les intentions RN correspondent aux hypothèses Le Pen ou Bardella.",
 
   // Frise chronologique de la campagne. `candidatSlug` sert à colorer le point selon le bloc
   // politique (et à créer un lien si le candidat a une fiche) ; laisser null pour un événement
@@ -94,8 +94,10 @@ window.SITE_DATA = {
     { date: "2026-08-18", dateLabel: "18 août 2026", titre: "Le parquet de Paris ouvre une enquête sur des soupçons d'ingérence russe visant Gabriel Attal et Édouard Philippe (deepfakes et fausses unes de presse) — l'agence Viginum l'attribue avec un haut degré de confiance au réseau prorusse Matriochka", candidatSlug: "gabriel-attal", categorie: "justice", future: false },
     { date: "2026-08-23", dateLabel: "23 août 2026", titre: "Édouard Philippe appelle à un rassemblement de la droite et du centre « entre novembre et février », Gabriel Attal préférant attendre le début 2027", candidatSlug: "edouard-philippe", categorie: "campagne", future: false },
     { date: "2026-08-23", dateLabel: "23 août 2026", titre: "Raphaël Glucksmann officialise sa candidature au 20h de TF1 et annonce qu'il passera par la primaire commune PS / Place publique", candidatSlug: "raphael-glucksmann", categorie: "candidature", future: false },
-    { date: "2026-08-25", dateLabel: "25 août 2026", titre: "Conseil national du Parti socialiste : fixation des dates de sa primaire", candidatSlug: null, categorie: "institutionnel", future: true },
-    { date: "2026-10-10", dateLabel: "Octobre 2026 (dates pressenties)", titre: "Primaire commune Parti socialiste / Place publique — 1er tour les 10-11 octobre, 2nd tour les 17-18 octobre", candidatSlug: null, categorie: "institutionnel", future: true },
+    { date: "2026-08-25", dateLabel: "25 août 2026", titre: "Le conseil national du PS ratifie l'accord de primaire commune avec Place publique et la GRS (159 pour, 32 contre, 21 abstentions)", candidatSlug: null, categorie: "institutionnel", future: false },
+    { date: "2026-08-30", dateLabel: "30 août 2026", titre: "Olivier Faure, premier secrétaire du PS, annonce sa candidature à la primaire au 20h de TF1", candidatSlug: "olivier-faure", categorie: "candidature", future: false },
+    { date: "2026-09-01", dateLabel: "1er-15 septembre 2026", titre: "Dépôt des candidatures à la primaire PS / Place publique", candidatSlug: null, categorie: "institutionnel", future: true },
+    { date: "2026-10-09", dateLabel: "9-10 et 16-17 octobre 2026", titre: "Primaire commune Parti socialiste / Place publique / GRS — 1er tour les 9-10 octobre, 2nd tour les 16-17 octobre", candidatSlug: null, categorie: "institutionnel", future: true },
     { date: "2026-10-11", dateLabel: "11 octobre 2026", titre: "Primaire « Front populaire 2027 » (Écologistes et Debout !, sans le PS ni LFI)", candidatSlug: null, categorie: "institutionnel", future: true },
     { date: "2026-10", dateLabel: "Automne 2026", titre: "Publication des programmes détaillés des candidats", candidatSlug: null, categorie: "institutionnel", future: true },
     { date: "2027-01", dateLabel: "Début 2027", titre: "Ouverture de la collecte officielle des parrainages", candidatSlug: null, categorie: "institutionnel", future: true },
@@ -235,8 +237,8 @@ window.SITE_DATA = {
       bloc: "gradicale",
       fiche: true,
       statut: "en_lice",
-      sondage: { label: "~14,8%", niveau: "fort", tendance: "stable" },
-      sondageHistorique: [{ date: "2026-06-25", label: "25 juin", valeur: 14.5, source: "IFOP-Fiducial" }, { date: "2026-07-11", label: "11 juillet", valeur: 14.5, source: "Elabe" }, { date: "2026-08-18", label: "18 août", valeur: 14.8, source: "Agrégat 90 j" }],
+      sondage: { label: "~15,0%", niveau: "fort", tendance: "stable" },
+      sondageHistorique: [{ date: "2026-06-25", label: "25 juin", valeur: 14.5, source: "IFOP-Fiducial" }, { date: "2026-07-11", label: "11 juillet", valeur: 14.5, source: "Elabe" }, { date: "2026-08-18", label: "18 août", valeur: 14.8, source: "Agrégat 90 j" }, { date: "2026-08-31", label: "31 août", valeur: 15, source: "Agrégat 5 sondages" }],
       historique: [
         { annee: 2012, resultat: "11.1%" },
         { annee: 2017, resultat: "19.6%" },
@@ -329,8 +331,8 @@ window.SITE_DATA = {
       bloc: "gprimaire",
       fiche: true,
       statut: "en_lice",
-      sondage: { label: "~4,1%", niveau: "moyen", tendance: "hausse" },
-      sondageHistorique: [{ date: "2026-06-25", label: "25 juin", valeur: 2.5, source: "IFOP-Fiducial" }, { date: "2026-07-11", label: "11 juillet", valeur: 2.5, source: "Elabe" }, { date: "2026-08-18", label: "18 août", valeur: 4.1, source: "Agrégat 90 j" }],
+      sondage: { label: "~3,5%", niveau: "moyen", tendance: "stable" },
+      sondageHistorique: [{ date: "2026-06-25", label: "25 juin", valeur: 2.5, source: "IFOP-Fiducial" }, { date: "2026-07-11", label: "11 juillet", valeur: 2.5, source: "Elabe" }, { date: "2026-08-18", label: "18 août", valeur: 4.1, source: "Agrégat 90 j" }, { date: "2026-08-31", label: "31 août", valeur: 3.5, source: "Agrégat 5 sondages" }],
       historique: [],
       idees: ["Transition écologique", "Justice sociale", "Candidature unitaire gauche"],
       age: "39 ans (née le 23 août 1986)",
@@ -591,8 +593,12 @@ window.SITE_DATA = {
     // ================= GAUCHE — PRIMAIRE PS / PLACE PUBLIQUE =================
     {
       slug: "raphael-glucksmann", nom: "Raphaël Glucksmann", parti: "Place publique", bloc: "gps", fiche: false,
-      sondage: { label: "~10,2%", niveau: "moyen", tendance: "hausse" },
+      sondage: { label: "~9,9%", niveau: "moyen", tendance: "stable" },
       historique: [], idees: ["Ligne pro-européenne", "« Contrat patriotique »", "Opposition à LFI"]
+    },
+    {
+      slug: "olivier-faure", nom: "Olivier Faure", parti: "PS", bloc: "gps", fiche: false,
+      sondage: { label: "< 1%", niveau: "faible", tendance: "stable" }, historique: [], idees: []
     },
     {
       slug: "segolene-royal", nom: "Ségolène Royal", parti: "PS", bloc: "gps", fiche: false,
@@ -616,8 +622,8 @@ window.SITE_DATA = {
       bloc: "centre",
       fiche: true,
       statut: "en_lice",
-      sondage: { label: "~16,4%", niveau: "fort", tendance: "stable" },
-      sondageHistorique: [{ date: "2026-06-25", label: "25 juin", valeur: 16.5, source: "IFOP-Fiducial" }, { date: "2026-07-11", label: "11 juillet", valeur: 17.75, source: "Elabe" }, { date: "2026-08-18", label: "18 août", valeur: 16.4, source: "Agrégat 90 j" }],
+      sondage: { label: "~16,9%", niveau: "fort", tendance: "stable" },
+      sondageHistorique: [{ date: "2026-06-25", label: "25 juin", valeur: 16.5, source: "IFOP-Fiducial" }, { date: "2026-07-11", label: "11 juillet", valeur: 17.75, source: "Elabe" }, { date: "2026-08-18", label: "18 août", valeur: 16.4, source: "Agrégat 90 j" }, { date: "2026-08-31", label: "31 août", valeur: 16.9, source: "Agrégat 5 sondages" }],
       historique: [],
       idees: ["Règle d'or budgétaire", "Refonte école « post-Ferry »", "3 référendums", "Retraite par capitalisation"],
       age: "55 ans (né en 1970 à Rouen)",
@@ -712,8 +718,8 @@ window.SITE_DATA = {
       bloc: "centre",
       fiche: true,
       statut: "en_lice",
-      sondage: { label: "~11,3%", niveau: "moyen", tendance: "hausse" },
-      sondageHistorique: [{ date: "2026-06-25", label: "25 juin", valeur: 8, source: "IFOP-Fiducial" }, { date: "2026-07-11", label: "11 juillet", valeur: 8, source: "Elabe" }, { date: "2026-08-18", label: "18 août", valeur: 11.3, source: "Agrégat 90 j" }],
+      sondage: { label: "~7,7%", niveau: "moyen", tendance: "stable" },
+      sondageHistorique: [{ date: "2026-06-25", label: "25 juin", valeur: 8, source: "IFOP-Fiducial" }, { date: "2026-07-11", label: "11 juillet", valeur: 8, source: "Elabe" }, { date: "2026-08-18", label: "18 août", valeur: 11.3, source: "Agrégat 90 j" }, { date: "2026-08-31", label: "31 août", valeur: 7.7, source: "Agrégat 5 sondages" }],
       historique: [],
       idees: ["« Droit au brut » / salaires", "Brevet obligatoire", "Quotas immigration", "Plan IA 20M salariés"],
       age: "37 ans (né le 16 mars 1989 à Clamart)",
@@ -806,8 +812,8 @@ window.SITE_DATA = {
       bloc: "droite",
       fiche: true,
       statut: "en_lice",
-      sondage: { label: "~8,2%", niveau: "moyen", tendance: "stable" },
-      sondageHistorique: [{ date: "2026-06-25", label: "25 juin", valeur: 8, source: "IFOP-Fiducial" }, { date: "2026-07-11", label: "11 juillet", valeur: 8, source: "Elabe" }, { date: "2026-08-18", label: "18 août", valeur: 8.2, source: "Agrégat 90 j" }],
+      sondage: { label: "~7,6%", niveau: "moyen", tendance: "stable" },
+      sondageHistorique: [{ date: "2026-06-25", label: "25 juin", valeur: 8, source: "IFOP-Fiducial" }, { date: "2026-07-11", label: "11 juillet", valeur: 8, source: "Elabe" }, { date: "2026-08-18", label: "18 août", valeur: 8.2, source: "Agrégat 90 j" }, { date: "2026-08-31", label: "31 août", valeur: 7.6, source: "Agrégat 5 sondages" }],
       historique: [],
       idees: ["Fermeté sécuritaire", "1M logements en 5 ans", "Suppression ZAN", "Immigration restrictive"],
       age: "65 ans (né le 20 novembre 1960 à Cholet)",
@@ -906,8 +912,8 @@ window.SITE_DATA = {
       statut: "en_lice",
       note: "⚖️",
       noteDetail: "Condamnée en appel le 07/07/2026. Pourvoi en cassation annoncé (suspensif) ; décision attendue au plus tard début avril 2027, après la date limite de dépôt des candidatures. Campagne en « binôme » avec J. Bardella.",
-      sondage: { label: "~35,8%", niveau: "fort", tendance: "stable" },
-      sondageHistorique: [{ date: "2026-06-25", label: "25 juin", valeur: 34.5, source: "IFOP-Fiducial" }, { date: "2026-07-11", label: "11 juillet", valeur: 34.75, source: "Elabe" }, { date: "2026-08-18", label: "18 août", valeur: 35.8, source: "Agrégat 90 j" }],
+      sondage: { label: "~35,6%", niveau: "fort", tendance: "stable" },
+      sondageHistorique: [{ date: "2026-06-25", label: "25 juin", valeur: 34.5, source: "IFOP-Fiducial" }, { date: "2026-07-11", label: "11 juillet", valeur: 34.75, source: "Elabe" }, { date: "2026-08-18", label: "18 août", valeur: 35.8, source: "Agrégat 90 j" }, { date: "2026-08-31", label: "31 août", valeur: 35.6, source: "Agrégat 5 sondages" }],
       historique: [
         { annee: 2012, resultat: "17.9%" },
         { annee: 2017, resultat: "21.3%" },

@@ -84,14 +84,16 @@
     if (avecHisto.length < 2) return '';
     if (window.isSilenceElectoral && window.isSilenceElectoral()) return '';
 
-    // Toutes les séries doivent partager les mêmes dates pour être superposables.
-    var refDates = avecHisto[0].sondageHistorique.map(function (p) { return p.date; }).join('|');
-    avecHisto = avecHisto.filter(function (c) {
-      return c.sondageHistorique.map(function (p) { return p.date; }).join('|') === refDates;
+    // Les séries n'ont pas forcément les mêmes relevés (un candidat peut entrer en cours
+    // de route). Chacune est donc tracée sur ses propres points, positionnés selon leur
+    // date réelle sur un axe temporel commun.
+    var posX = S.axeTemps(avecHisto.map(function (c) { return c.sondageHistorique; }));
+    var vues = {};
+    avecHisto.forEach(function (c) {
+      c.sondageHistorique.forEach(function (p) { vues[p.date] = p.label; });
     });
-    if (avecHisto.length < 2) return '';
+    var releves = Object.keys(vues).sort().map(function (d) { return { date: d, label: vues[d] }; });
 
-    var releves = avecHisto[0].sondageHistorique;
     var lo = Infinity, hi = -Infinity;
     avecHisto.forEach(function (c) {
       c.sondageHistorique.forEach(function (p) {
@@ -103,7 +105,7 @@
     lo = Math.max(0, lo - pad); hi = hi + pad;
 
     var W = 100, H = 46;
-    function x(i) { return (W * (releves.length === 1 ? 0.5 : i / (releves.length - 1))).toFixed(2); }
+    function x(p) { return posX(p.date).toFixed(2); }
     function y(v) { return (H * (1 - (v - lo) / (hi - lo))).toFixed(2); }
 
     var svg = '<svg class="sondage-courbe" viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="none" role="img" ' +
@@ -118,10 +120,10 @@
 
     avecHisto.forEach(function (c) {
       var col = blocInfo(c.bloc).couleur;
-      var haut = c.sondageHistorique.map(function (p, i) { return x(i) + ',' + y(p.valeur + S.margeErreur(p.valeur)); });
-      var bas = c.sondageHistorique.map(function (p, i) { return x(i) + ',' + y(p.valeur - S.margeErreur(p.valeur)); }).reverse();
+      var haut = c.sondageHistorique.map(function (p) { return x(p) + ',' + y(p.valeur + S.margeErreur(p.valeur)); });
+      var bas = c.sondageHistorique.map(function (p) { return x(p) + ',' + y(p.valeur - S.margeErreur(p.valeur)); }).reverse();
       svg += '<polygon points="' + haut.concat(bas).join(' ') + '" fill="' + col + '" opacity="0.18"/>';
-      svg += '<polyline points="' + c.sondageHistorique.map(function (p, i) { return x(i) + ',' + y(p.valeur); }).join(' ') +
+      svg += '<polyline points="' + c.sondageHistorique.map(function (p) { return x(p) + ',' + y(p.valeur); }).join(' ') +
         '" fill="none" stroke="' + col + '" stroke-width="2" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>';
     });
     svg += '</svg>';
@@ -129,16 +131,19 @@
     var points = '';
     avecHisto.forEach(function (c) {
       var col = blocInfo(c.bloc).couleur;
-      c.sondageHistorique.forEach(function (p, i) {
-        points += '<span class="courbe-point" style="left:' + x(i) + '%; top:' + (y(p.valeur) / H * 100).toFixed(2) +
+      c.sondageHistorique.forEach(function (p) {
+        points += '<span class="courbe-point" style="left:' + x(p) + '%; top:' + (y(p.valeur) / H * 100).toFixed(2) +
           '%; background:' + col + ';" title="' + c.nom + ' — ' + p.label + ' : ' + S.nb(p.valeur) + ' %"></span>';
       });
     });
 
     var yAxis = '<div class="courbe-yaxis">' +
       [hi, (lo + hi) / 2, lo].map(function (v) { return '<span>' + v.toFixed(0) + '</span>'; }).join('') + '</div>';
-    var xAxis = '<div class="courbe-xaxis">' +
-      releves.map(function (p) { return '<span>' + p.label + '</span>'; }).join('') + '</div>';
+    // Libellés positionnés à leur date, comme les points — un espacement régulier
+    // laisserait croire que les relevés sont équidistants dans le temps.
+    var xAxis = '<div class="courbe-xaxis courbe-xaxis-date">' + releves.map(function (p) {
+      return '<span style="left:' + posX(p.date).toFixed(2) + '%;">' + p.label + '</span>';
+    }).join('') + '</div>';
 
     var legende = '<div class="courbe-legende">' + avecHisto.map(function (c) {
       var v = c.sondageHistorique.map(function (p) { return p.valeur; });
@@ -166,8 +171,8 @@
     note += '</p>';
 
     return '<div class="comparateur-courbes"><h3 class="comparateur-courbes-titre">Évolution comparée des intentions de vote</h3>' +
-      legende + '<div class="courbe-zone">' + yAxis + '<div class="courbe-plot">' + svg + points + '</div></div>' +
-      xAxis + note + '</div>';
+      legende + '<div class="courbe-grid">' + yAxis + '<div class="courbe-plot">' + svg + points + '</div>' +
+      '<div></div>' + xAxis + '</div>' + note + '</div>';
   }
 
   function renderTable(list) {
