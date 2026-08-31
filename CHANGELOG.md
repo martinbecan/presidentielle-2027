@@ -2,6 +2,11 @@
 
 Historique des mises à jour du site. Tenu à jour manuellement à chaque session de travail.
 
+## 2026-08-31 (suite)
+- **Fiche complète pour Raphaël Glucksmann** (11ᵉ fiche) : parcours, programme sur 6 domaines, positions sur les 15 sujets, barème du quiz complet, sources. 4ᵉ des sondages à ~9,9 %, il était le seul candidat de ce niveau sans fiche
+- Les 4 cases « non documenté » du comparateur (Batho ×3, Arthaud ×1) restent en l'état : la recherche confirme qu'aucun programme détaillé n'est publié à ce jour pour Delphine Batho
+- Les 3 questions faiblement discriminantes du quiz ne sont pas modifiées : les réécrire supposerait de noter 11 candidats sur des axes documentés pour 4 à 6 d'entre eux seulement. À reprendre quand les programmes détaillés paraîtront (automne 2026)
+
 ## 2026-08-31
 - **Primaire PS / Place publique : dates corrigées.** Le conseil national du 25/08 a ratifié l'accord (159 pour, 32 contre, 21 abstentions) et fixé les tours aux **9-10 et 16-17 octobre** — le site affichait 10-11 et 17-18, qui n'étaient que pressenties. La GRS s'ajoute aux organisateurs. Dépôt des candidatures du 1er au 15 septembre
 - **Olivier Faure candidat** à la primaire (annonce du 30/08 au 20h de TF1), aux côtés de Glucksmann, Royal, Guedj et Brun

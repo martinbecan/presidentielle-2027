@@ -592,9 +592,102 @@ window.SITE_DATA = {
 
     // ================= GAUCHE — PRIMAIRE PS / PLACE PUBLIQUE =================
     {
-      slug: "raphael-glucksmann", nom: "Raphaël Glucksmann", parti: "Place publique", bloc: "gps", fiche: false,
+      slug: "raphael-glucksmann",
+      nom: "Raphaël Glucksmann",
+      parti: "Place publique",
+      bloc: "gps",
+      fiche: true,
+      statut: "en_lice",
       sondage: { label: "~9,9%", niveau: "moyen", tendance: "stable" },
-      historique: [], idees: ["Ligne pro-européenne", "« Contrat patriotique »", "Opposition à LFI"]
+      sondageHistorique: [
+        { date: "2026-08-18", label: "18 août", valeur: 10.2, source: "Agrégat 90 j" },
+        { date: "2026-08-31", label: "31 août", valeur: 9.9, source: "Agrégat 5 sondages" }
+      ],
+      historique: [],
+      idees: ["Europe fédérale", "Taxation des méga-héritages", "Souveraineté technologique", "Soutien à l'Ukraine"],
+      age: "46 ans (né le 15 octobre 1979 à Boulogne-Billancourt)",
+      fonction_actuelle: "Député européen depuis 2019, coprésident de Place publique, candidat à la primaire commune PS / Place publique / GRS",
+      parcours: {
+        formation: "Sciences Po Paris. Fils du philosophe André Glucksmann, il commence sa carrière comme journaliste et essayiste spécialisé dans les questions géopolitiques.",
+        mandats: [
+          "Conseiller du président géorgien Mikheil Saakachvili (2009-2012)",
+          "Cofondateur et coprésident du mouvement Place publique (2018)",
+          "Député européen depuis 2019 (réélu en 2024)",
+          "Tête de liste PS–Place publique aux européennes de 2024 (13,8 % des voix)"
+        ],
+        faits_marquants: [
+          "Journaliste et essayiste avant la politique, engagé sur les questions de démocratie et de droits humains",
+          "Séjours en Géorgie puis en Ukraine, à l'origine de son engagement contre l'impérialisme russe",
+          "Fonde Place publique en 2018, présenté comme une alternative entre le macronisme et la gauche radicale",
+          "Mène la liste PS–Place publique aux européennes de 2024 et obtient 13,8 %, devançant la liste macroniste",
+          "Présente en juin 2025 un « acte 1 » de 50 propositions centrées sur le travail, élaboré avec 200 experts et 2 000 militants",
+          "Annonce sa candidature le 23 août 2026 au 20h de TF1, en passant par la primaire commune PS / Place publique"
+        ]
+      },
+      programme: {
+        economie: [
+          "Taxation des « méga-héritages » (le 1 % des plus gros patrimoines transmis) pour financer la hausse des salaires nets",
+          "Rééquilibrage de la fiscalité entre travail, capital, retraite et héritage ; harmonisation fiscale européenne et lutte contre l'optimisation des multinationales"
+        ],
+        social: [
+          "Conférences salariales dans tout le pays, en priorité pour les métiers « utiles » marqués par la précarité et la pénibilité",
+          "Fin de la tarification à l'activité à l'hôpital, financement pluriannuel et territorial du système de santé",
+          "Rénovation de 4 000 écoles par an pendant dix ans, en priorité les plus exposées au chaud et au froid"
+        ],
+        ecologie: [
+          "100 milliards d'euros d'investissement public vert sur dix ans pour réindustrialiser par la transition",
+          "Planification écologique à l'échelle européenne, rénovation énergétique et décarbonation de l'industrie"
+        ],
+        securite: [
+          "Politique « sans naïveté » associant répression des trafics et action sur les racines de la délinquance",
+          "Moyens supplémentaires pour la justice et défense de l'État de droit"
+        ],
+        institutions: [
+          "VIe République parlementaire : investiture du Premier ministre par l'Assemblée, motion de censure constructive, suppression du 49.3 et de l'article 16",
+          "Renforcement du droit d'initiative et d'amendement du Parlement"
+        ],
+        europe: [
+          "Europe fédérale : budget commun, fin du droit de veto au Conseil, défense européenne intégrée",
+          "Saisie des 206 milliards d'avoirs publics russes gelés au profit de la résistance ukrainienne, accélération de l'adhésion de l'Ukraine à l'UE"
+        ]
+      },
+      sources: [
+        "https://www.publicsenat.fr/actualites/politique/fiscalite-ecole-immigration-ce-que-propose-raphael-glucksmann",
+        "https://lcp.fr/actualites/presidentielle-raphael-glucksmann-devoile-les-premieres-lignes-de-son-possible-programme",
+        "https://www.france24.com/fr/info-en-continu/20260822-pr%C3%A9sidentielle-fin-du-suspens-pour-rapha%C3%ABl-glucksmann"
+      ],
+      changements_ligne: [],
+      promesses_bilan: [],
+      fact_checks: [],
+      fact_checks_note: "Aucun fact-check dédié d'AFP Factuel, des Décodeurs ou de CheckNews spécifiquement consacré à Raphaël Glucksmann n'a été identifié à ce stade. Sa candidature étant récente (23 août 2026), la vérification de ses affirmations de campagne reste à venir.",
+      positions_10_sujets: {
+        pouvoir_achat: { synthese: "Veut augmenter la rémunération nette des travailleurs en taxant les méga-héritages, et organiser des conférences salariales par branche en commençant par les métiers pénibles et précaires.", direction: "hausse des salaires financée par la fiscalité de l'héritage" },
+        retraites: { synthese: "Annonce une « réforme juste et ambitieuse » fondée sur la reconnaissance de la pénibilité, sans proposer de retour à 60 ans ni de bornes d'âge chiffrées à ce stade.", direction: "réforme par la pénibilité, sans âge chiffré" },
+        securite: { synthese: "Revendique une politique « sans aucune naïveté », combinant répression des trafics et action sur les causes de la délinquance, avec des moyens supplémentaires pour la justice.", direction: "fermeté sur les trafics et prévention combinées" },
+        immigration: { synthese: "Défend le respect du droit d'asile et une intégration renforcée, tout en assumant la lutte contre l'immigration irrégulière et une régulation des flux dans un cadre européen.", direction: "droit d'asile préservé, régulation assumée" },
+        sante: { synthese: "Veut mettre fin à la tarification à l'activité à l'hôpital, contrer la financiarisation du système et bâtir des projets territoriaux de santé associant professionnels, élus et usagers.", direction: "sortie de la tarification à l'activité" },
+        ecologie: { synthese: "100 milliards d'euros d'investissement public vert sur dix ans, planification écologique européenne, rénovation énergétique et décarbonation de l'industrie.", direction: "investissement massif et planification européenne" },
+        education: { synthese: "Rénovation de 4 000 écoles par an pendant dix ans, en priorité les plus exposées aux fortes chaleurs et au froid, et réduction des inégalités scolaires.", direction: "investissement dans le bâti et réduction des inégalités" },
+        europe: { synthese: "Partisan d'une Europe fédérale : budget commun, fin du droit de veto au Conseil, défense intégrée, « pacte de souveraineté » présenté comme l'acte de naissance d'une puissance européenne.", direction: "fédéralisme européen assumé" },
+        dette: { synthese: "Privilégie l'emprunt commun européen pour financer les investissements stratégiques (défense, transition) plutôt que la réduction de la dette comme objectif premier.", direction: "emprunt commun européen plutôt que désendettement" },
+        institutions: { synthese: "VIe République parlementaire : investiture du Premier ministre par l'Assemblée, motion de censure constructive, suppression du 49.3 et de l'article 16, droits d'initiative du Parlement renforcés.", direction: "rééquilibrage vers le Parlement" },
+        laicite: { synthese: "Défend une laïcité républicaine centrée sur la neutralité de l'État et non des usagers : opposé aux signes religieux à l'école et aux accommodements dans les services publics, mais considère leur port dans la rue comme une liberté dès lors qu'il n'est pas contraint.", direction: "neutralité de l'État, pas d'interdiction dans l'espace public" },
+        agriculture: { synthese: "Défend une agriculture durable adossée à une PAC profondément réformée favorisant les pratiques écologiques et les petites fermes ; refuse les méga-bassines au profit de solutions locales négociées avec les agriculteurs.", direction: "réorientation écologique de la PAC" },
+        numerique: { synthese: "Fait de la reconquête de la souveraineté technologique une « bataille existentielle » : investissements publics et privés massifs pour une IA souveraine, dont l'intégration serait encadrée par la puissance publique. Critique frontalement les géants du numérique.", direction: "souveraineté technologique et IA encadrée" },
+        logement: { synthese: "Considère le logement comme un droit fondamental et défend une politique ambitieuse de construction associée à un encadrement des loyers.", direction: "construction et encadrement des loyers" },
+        defense: { synthese: "Veut une défense européenne intégrée financée par un fonds de 100 milliards d'euros levé par emprunt commun, la saisie des 206 milliards d'avoirs russes gelés au profit de l'Ukraine, et appelle à « passer en économie de guerre ».", direction: "réarmement européen par l'emprunt commun" }
+      },
+      soutiens: [
+        { nom: "Yannick Jadot", fonction: "Sénateur, ancien candidat écologiste à la présidentielle", type: "officiel" },
+        { nom: "Place publique", fonction: "Mouvement dont il est coprésident", type: "officiel" }
+      ],
+      soutiens_note: "Sa candidature datant du 23 août 2026, les ralliements sont encore en cours de constitution. Des membres de Place publique ont publiquement regretté que les négociateurs socialistes aient refusé d'inscrire dans la charte de la primaire le principe de non-alliance avec La France Insoumise.",
+      quizCompatScores: {
+        retraites_1: -1, retraites_2: -1, immigration_1: 0, immigration_2: 1, securite_1: 0, securite_2: 0,
+        ecologie_1: 0, ecologie_2: 2, ecologie_3: 2, laicite_1: 0, agriculture_1: -2, numerique_1: 2, logement_1: 2, defense_1: 2,
+        pouvoir_achat_1: 1, pouvoir_achat_2: -1, dette_1: -1,
+        europe_1: -2, europe_2: 2, institutions_1: 0, institutions_2: 2, education_1: 0, education_2: 1, sante_1: 2
+      }
     },
     {
       slug: "olivier-faure", nom: "Olivier Faure", parti: "PS", bloc: "gps", fiche: false,
