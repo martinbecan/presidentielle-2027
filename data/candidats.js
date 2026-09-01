@@ -9,7 +9,7 @@
  * ouvrant index.html directement depuis l'explorateur de fichiers (partage par email, clé USB, etc.).
  */
 window.SITE_DATA = {
-  derniere_maj: "31 août 2026",
+  derniere_maj: "1er septembre 2026",
   derniere_maj_sondages: "31/08/2026",
 
   alerte: {
@@ -25,7 +25,7 @@ window.SITE_DATA = {
   blocs: [
     { id: "exgauche",    label: "Extrême gauche",                                      couleur: "#dc2626" },
     { id: "gradicale",   label: "Gauche radicale",                                     couleur: "#ef4444" },
-    { id: "gprimaire",   label: "Gauche — Primaire « Front populaire 2027 » (11 oct.)", couleur: "#f97316" },
+    { id: "gprimaire",   label: "Gauche — Ex-Front populaire (candidatures autonomes)", couleur: "#f97316" },
     { id: "gps",         label: "Gauche — Primaire PS / Place publique (oct.)",        couleur: "#ec4899" },
     { id: "ghors",       label: "Gauche — Hors primaire",                              couleur: "#eab308" },
     { id: "centre",      label: "Bloc central",                                        couleur: "#3b82f6" },
@@ -96,9 +96,12 @@ window.SITE_DATA = {
     { date: "2026-08-23", dateLabel: "23 août 2026", titre: "Raphaël Glucksmann officialise sa candidature au 20h de TF1 et annonce qu'il passera par la primaire commune PS / Place publique", candidatSlug: "raphael-glucksmann", categorie: "candidature", future: false },
     { date: "2026-08-25", dateLabel: "25 août 2026", titre: "Le conseil national du PS ratifie l'accord de primaire commune avec Place publique et la GRS (159 pour, 32 contre, 21 abstentions)", candidatSlug: null, categorie: "institutionnel", future: false },
     { date: "2026-08-30", dateLabel: "30 août 2026", titre: "Olivier Faure, premier secrétaire du PS, annonce sa candidature à la primaire au 20h de TF1", candidatSlug: "olivier-faure", categorie: "candidature", future: false },
+    { date: "2026-08-26", dateLabel: "26 août 2026", titre: "Karim Bouamrane refuse de participer à la primaire PS / Place publique, qu'il juge fermée, et maintient une candidature autonome en visant les 500 parrainages", candidatSlug: "karim-bouamrane", categorie: "candidature", future: false },
+    { date: "2026-08-27", dateLabel: "27 août 2026", titre: "Premier débat de la campagne : sept candidats (Attal, Glucksmann, Le Pen, Mélenchon, Philippe, Retailleau, Tondelier) confrontés aux chefs d'entreprise pendant trois heures à Roland-Garros, à l'invitation du Medef et en direct sur LCI", candidatSlug: null, categorie: "campagne", future: false, majeur: true },
+    { date: "2026-08-27", dateLabel: "27 août 2026", titre: "Bruno Retailleau structure sa campagne pour la rentrée : le préfet Franck Robine devient directeur de campagne et le programme est resserré autour du pouvoir d'achat", candidatSlug: "bruno-retailleau", categorie: "campagne", future: false },
+    { date: "2026-08-31", dateLabel: "31 août 2026", titre: "Séminaire de rentrée du gouvernement Lecornu consacré au budget 2027, sous menace de censure — LFI l'a annoncée, le RN ne l'exclut pas ; le projet de loi de finances est attendu fin septembre", candidatSlug: null, categorie: "institutionnel", future: false },
     { date: "2026-09-01", dateLabel: "1er-15 septembre 2026", titre: "Dépôt des candidatures à la primaire PS / Place publique", candidatSlug: null, categorie: "institutionnel", future: true },
     { date: "2026-10-09", dateLabel: "9-10 et 16-17 octobre 2026", titre: "Primaire commune Parti socialiste / Place publique / GRS — 1er tour les 9-10 octobre, 2nd tour les 16-17 octobre", candidatSlug: null, categorie: "institutionnel", future: true },
-    { date: "2026-10-11", dateLabel: "11 octobre 2026", titre: "Primaire « Front populaire 2027 » (Écologistes et Debout !, sans le PS ni LFI)", candidatSlug: null, categorie: "institutionnel", future: true },
     { date: "2026-10", dateLabel: "Automne 2026", titre: "Publication des programmes détaillés des candidats", candidatSlug: null, categorie: "institutionnel", future: true },
     { date: "2027-01", dateLabel: "Début 2027", titre: "Ouverture de la collecte officielle des parrainages", candidatSlug: null, categorie: "institutionnel", future: true },
     { date: "2027-03", dateLabel: "~Mars 2027", titre: "Publication de la liste officielle des candidats (Conseil constitutionnel)", candidatSlug: null, categorie: "institutionnel", future: true },

@@ -2,6 +2,14 @@
 
 Historique des mises à jour du site. Tenu à jour manuellement à chaque session de travail.
 
+## 2026-09-01
+- **Correction : la primaire du 11 octobre n'existe plus.** Le site l'annonçait encore comme une échéance à venir et en avait fait un bloc politique (« Gauche — Primaire Front populaire 2027 »). Elle a en réalité été abandonnée en juillet 2026, après le vote des adhérents socialistes pour une primaire fermée — ce que notre propre frise indiquait déjà par ailleurs. L'échéance est supprimée, le bloc devient « Gauche — Ex-Front populaire (candidatures autonomes) » et l'encart pédagogique de l'accueil est réécrit : il ne reste qu'une seule primaire à gauche, celle du PS / Place publique / GRS
+- **Premier débat de la campagne, le 27 août** : sept candidats (Attal, Glucksmann, Le Pen, Mélenchon, Philippe, Retailleau, Tondelier) face aux chefs d'entreprise pendant trois heures à Roland-Garros, à l'invitation du Medef et en direct sur LCI. Marqué comme événement majeur dans la frise — c'est la première confrontation directe des principaux candidats
+- **Karim Bouamrane refuse la primaire PS / Place publique** (26/08), qu'il juge fermée, et maintient une candidature autonome en visant les 500 parrainages
+- Séminaire de rentrée du gouvernement Lecornu sur le budget 2027 (31/08), sous menace de censure ; Bruno Retailleau structure sa campagne (27/08)
+- Conditions de participation à la primaire socialiste précisées sur l'accueil (parrainages d'élus requis, adhésion à 15 € ou 10 € au tarif social)
+- Pas de nouveau relevé de sondages : le précédent date du 31/08, un point supplémentaire le lendemain ne mesurerait rien
+
 ## 2026-08-31 (suite)
 - **Fiche complète pour Raphaël Glucksmann** (11ᵉ fiche) : parcours, programme sur 6 domaines, positions sur les 15 sujets, barème du quiz complet, sources. 4ᵉ des sondages à ~9,9 %, il était le seul candidat de ce niveau sans fiche
 - Les 4 cases « non documenté » du comparateur (Batho ×3, Arthaud ×1) restent en l'état : la recherche confirme qu'aucun programme détaillé n'est publié à ce jour pour Delphine Batho
