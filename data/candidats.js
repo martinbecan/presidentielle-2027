@@ -9,7 +9,7 @@
  * ouvrant index.html directement depuis l'explorateur de fichiers (partage par email, clé USB, etc.).
  */
 window.SITE_DATA = {
-  derniere_maj: "1er septembre 2026",
+  derniere_maj: "5 septembre 2026",
   derniere_maj_sondages: "31/08/2026",
 
   alerte: {
@@ -100,6 +100,9 @@ window.SITE_DATA = {
     { date: "2026-08-27", dateLabel: "27 août 2026", titre: "Premier débat de la campagne : sept candidats (Attal, Glucksmann, Le Pen, Mélenchon, Philippe, Retailleau, Tondelier) confrontés aux chefs d'entreprise pendant trois heures à Roland-Garros, à l'invitation du Medef et en direct sur LCI", candidatSlug: null, categorie: "campagne", future: false, majeur: true },
     { date: "2026-08-27", dateLabel: "27 août 2026", titre: "Bruno Retailleau structure sa campagne pour la rentrée : le préfet Franck Robine devient directeur de campagne et le programme est resserré autour du pouvoir d'achat", candidatSlug: "bruno-retailleau", categorie: "campagne", future: false },
     { date: "2026-08-31", dateLabel: "31 août 2026", titre: "Séminaire de rentrée du gouvernement Lecornu consacré au budget 2027, sous menace de censure — LFI l'a annoncée, le RN ne l'exclut pas ; le projet de loi de finances est attendu fin septembre", candidatSlug: null, categorie: "institutionnel", future: false },
+    { date: "2026-09-03", dateLabel: "3 septembre 2026", titre: "Fabien Verdier, ancien maire de Châteaudun, se porte candidat à la primaire pour défendre « la justice territoriale » et la France des sous-préfectures", candidatSlug: "fabien-verdier", categorie: "candidature", future: false },
+    { date: "2026-09-03", dateLabel: "3 septembre 2026", titre: "Gabriel Attal présente une équipe de campagne sans poids lourds — cinq porte-parole peu connus et un trio de direction — en assumant de ne pas rechercher le soutien de ceux qui ont déjà exercé le pouvoir", candidatSlug: "gabriel-attal", categorie: "campagne", future: false },
+    { date: "2026-09-04", dateLabel: "4 septembre 2026", titre: "Emmanuel Maurel (Gauche républicaine et socialiste) devient le septième candidat déclaré à la primaire PS / Place publique / GRS", candidatSlug: "emmanuel-maurel", categorie: "candidature", future: false },
     { date: "2026-09-01", dateLabel: "1er-15 septembre 2026", titre: "Dépôt des candidatures à la primaire PS / Place publique", candidatSlug: null, categorie: "institutionnel", future: true },
     { date: "2026-10-09", dateLabel: "9-10 et 16-17 octobre 2026", titre: "Primaire commune Parti socialiste / Place publique / GRS — 1er tour les 9-10 octobre, 2nd tour les 16-17 octobre", candidatSlug: null, categorie: "institutionnel", future: true },
     { date: "2026-10", dateLabel: "Automne 2026", titre: "Publication des programmes détaillés des candidats", candidatSlug: null, categorie: "institutionnel", future: true },
@@ -707,6 +710,16 @@ window.SITE_DATA = {
     },
     {
       slug: "philippe-brun", nom: "Philippe Brun", parti: "PS", bloc: "gps", fiche: false,
+      sondage: { label: "< 0.5%", niveau: "faible", tendance: "stable" }, historique: [], idees: []
+    },
+    {
+      slug: "emmanuel-maurel", nom: "Emmanuel Maurel", parti: "GRS", bloc: "gps", fiche: false,
+      sondage: { label: "< 0.5%", niveau: "faible", tendance: "stable" }, historique: [], idees: []
+    },
+    {
+      slug: "fabien-verdier", nom: "Fabien Verdier", parti: "Divers gauche", bloc: "gps", fiche: false,
+      note: "ℹ️",
+      noteDetail: "Ancien secrétaire national du PS, qu'il a quitté vers 2017, et ancien maire de Châteaudun. Doit encore réunir les parrainages d'élus exigés pour concourir à la primaire — il n'y était pas parvenu en 2016.",
       sondage: { label: "< 0.5%", niveau: "faible", tendance: "stable" }, historique: [], idees: []
     },
 

@@ -2,7 +2,15 @@
 
 Historique des mises à jour du site. Tenu à jour manuellement à chaque session de travail.
 
-## 2026-09-01
+## 2026-09-05
+- **Correction de date** : la mise à jour précédente était estampillée « 1er septembre » alors qu'elle a été faite le 5. Date rectifiée
+- **Emmanuel Maurel (GRS)** rejoint la primaire PS / Place publique le 04/09 — il en est le septième candidat déclaré
+- **Fabien Verdier**, ancien maire de Châteaudun et ancien secrétaire national du PS, candidat à la primaire le 03/09 sur le thème de la « justice territoriale ». Une note signale qu'il doit encore réunir les parrainages d'élus, ce qu'il n'avait pas obtenu en 2016
+- **Gabriel Attal présente son équipe de campagne** (03/09), sans personnalité de premier plan, en assumant de ne pas solliciter ceux qui ont déjà exercé le pouvoir
+- Encart pédagogique de l'accueil mis à jour : sept candidats à la primaire au lieu de cinq
+- Toujours pas de nouveau relevé de sondages : le dernier date du 31/08 et aucun institut n'a publié depuis le 29/08
+
+## 2026-09-01 (publié le 5 septembre)
 - **Correction : la primaire du 11 octobre n'existe plus.** Le site l'annonçait encore comme une échéance à venir et en avait fait un bloc politique (« Gauche — Primaire Front populaire 2027 »). Elle a en réalité été abandonnée en juillet 2026, après le vote des adhérents socialistes pour une primaire fermée — ce que notre propre frise indiquait déjà par ailleurs. L'échéance est supprimée, le bloc devient « Gauche — Ex-Front populaire (candidatures autonomes) » et l'encart pédagogique de l'accueil est réécrit : il ne reste qu'une seule primaire à gauche, celle du PS / Place publique / GRS
 - **Premier débat de la campagne, le 27 août** : sept candidats (Attal, Glucksmann, Le Pen, Mélenchon, Philippe, Retailleau, Tondelier) face aux chefs d'entreprise pendant trois heures à Roland-Garros, à l'invitation du Medef et en direct sur LCI. Marqué comme événement majeur dans la frise — c'est la première confrontation directe des principaux candidats
 - **Karim Bouamrane refuse la primaire PS / Place publique** (26/08), qu'il juge fermée, et maintient une candidature autonome en visant les 500 parrainages
