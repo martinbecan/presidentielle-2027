@@ -3,6 +3,11 @@
 Historique des mises à jour du site. Tenu à jour manuellement à chaque session de travail.
 
 ## 2026-09-05
+- **Promesses de parrainages en entête des fiches candidats** : jauge sur 500, chiffre, origine et lien de vérification, pour Mélenchon (un peu plus de 200) et Le Pen (plus de 400). Le champ `parrainagesPromesses` est un tableau dès le premier relevé, comme `sondageHistorique` : l'évolution s'affichera d'elle-même au deuxième point, aucune retouche de structure à prévoir. Avec un seul relevé, rien n'est dit sur une trajectoire — un point n'en est pas une
+- Trois annonces du 02/09 ajoutées à la frise : Lisnard (500 promesses, à l'AFP), Aliot pour le RN (plus de 400, sur BFMTV), Mélenchon (un peu plus de 200, enquête franceinfo). Formulées comme des déclarations attribuées, pas comme des mesures
+- **Encart « Les conditions » réécrit** : il promettait un suivi en temps réel sans expliquer ce qu'est un parrainage. Il distingue désormais la promesse — déclarative, retirable, comptée différemment par chacun — du parrainage déposé auprès du Conseil constitutionnel, dont la collecte n'ouvre qu'en janvier 2027
+- Pas de tableau comparatif des promesses : trois candidats sur vingt-sept ont un chiffre public, issu de sources de natures différentes (deux auto-déclarations, une enquête de presse). Les aligner suggérerait une mesure commune qui n'existe pas
+- Contraste de la jauge porté à 4,7:1 (seuil WCAG de 3:1 pour un indicateur non textuel)
 - **Correction de date** : la mise à jour précédente était estampillée « 1er septembre » alors qu'elle a été faite le 5. Date rectifiée
 - **Emmanuel Maurel (GRS)** rejoint la primaire PS / Place publique le 04/09 — il en est le septième candidat déclaré
 - **Fabien Verdier**, ancien maire de Châteaudun et ancien secrétaire national du PS, candidat à la primaire le 03/09 sur le thème de la « justice territoriale ». Une note signale qu'il doit encore réunir les parrainages d'élus, ce qu'il n'avait pas obtenu en 2016

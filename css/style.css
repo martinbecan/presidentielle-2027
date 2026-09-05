@@ -1494,3 +1494,64 @@ a.quiz-next-btn { display: inline-block; text-decoration: none; text-align: cent
   .fiche-header { flex-direction: column; align-items: flex-start; }
   .hero-entries { grid-template-columns: repeat(2, 1fr); }
 }
+
+/* ---- Promesses de parrainages (entête de fiche) ---- */
+/* Présentation volontairement plus sobre que celle des sondages : ces chiffres sont
+   déclaratifs et non comparables entre candidats. La jauge situe par rapport au seuil
+   de 500 sans suggérer une mesure officielle. */
+.parrainages-bandeau {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-left: 3px solid #94a3b8;
+  border-radius: 6px;
+  padding: 0.9rem 1rem;
+  margin: 1rem 0 0.4rem;
+}
+.parrainages-entete {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: 0.55rem;
+}
+.parrainages-chiffre {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text);
+}
+.parrainages-sur {
+  font-size: 0.82rem;
+  color: var(--text-dim);
+}
+.parrainages-jauge {
+  height: 7px;
+  /* Piste volontairement plus sombre que --border : le contraste avec la barre
+     passait sous le seuil WCAG de 3:1 pour un indicateur non textuel. */
+  background: var(--border-soft);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.parrainages-barre {
+  height: 100%;
+  background: #94a3b8;
+  border-radius: 4px;
+}
+.parrainages-jauge-atteint .parrainages-barre { background: #10b981; }
+.parrainages-evolution {
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  margin: 0.5rem 0 0;
+}
+.parrainages-avertissement {
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--text-dim);
+  margin: 0.65rem 0 0;
+}
+.parrainages-avertissement strong { color: var(--text); }
+.parrainages-source {
+  font-size: 0.76rem;
+  color: var(--text-dim);
+  margin: 0.45rem 0 0;
+}
+.parrainages-source a { overflow-wrap: anywhere; }

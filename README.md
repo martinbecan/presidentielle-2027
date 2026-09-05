@@ -143,3 +143,30 @@ Ce n'est pas nécessaire quand seul `data/candidats.js` change… mais ce fichie
 ## Neutralité
 
 Ce site est un outil pédagogique et factuel. Les indicateurs "position" (pour/contre/nuancé) sur les grands clivages sont une synthèse éditoriale simplifiée à partir de sources publiques (citées dans chaque fiche) — ils ne remplacent pas la lecture des programmes complets des candidats.
+
+### Promesses de parrainages
+
+Champ `parrainagesPromesses` sur un candidat, tableau ordonné du plus ancien au plus récent :
+
+```js
+parrainagesPromesses: [
+  { date: "2026-09-02", label: "2 septembre 2026", valeur: 200,
+    libelle: "un peu plus de 200",       // texte affiché, fidèle à la source
+    origine: "presse",                    // "presse" ou "declaration"
+    source: "franceinfo, d'après ...", url: "https://..." }
+]
+```
+
+`valeur` sert uniquement à la jauge ; `libelle` est ce que lit le visiteur, et doit
+reprendre la formulation de la source (« plus de 400 » et non « 400 »).
+`origine` change la phrase d'attribution : une auto-déclaration de campagne et une
+enquête de presse ne se lisent pas de la même façon.
+
+Le bandeau n'affiche une évolution qu'à partir de deux relevés. Ne pas remplacer le
+tableau par un nombre simple : la structure existe pour que la progression devienne
+lisible sans réécriture.
+
+**Ces chiffres ne sont pas des parrainages officiels.** Le décompte du Conseil
+constitutionnel n'ouvre qu'en janvier 2027 (dépôt jusqu'au 12 mars). Lui seul est
+comparable d'un candidat à l'autre ; c'est à ce moment qu'un tableau comparatif aura
+un sens.

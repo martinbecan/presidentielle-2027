@@ -39,6 +39,52 @@
   // Calculs statistiques mutualisés avec le comparateur — voir js/sondages.js
   var margeErreur = window.SONDAGES.margeErreur;
 
+  // Promesses de parrainages. Volontairement distinct des sondages : ce ne sont ni des
+  // parrainages déposés ni des chiffres comparables entre eux. Lisnard et Le Pen annoncent
+  // leur propre score, celui de Mélenchon vient d'une enquête de presse — la mention de
+  // l'origine n'est donc pas un détail, c'est ce qui permet de lire le chiffre.
+  // Le champ est un tableau dès le premier relevé, pour que l'évolution s'affiche d'elle-même
+  // quand un deuxième point arrivera, sans avoir à retoucher la structure.
+  var SEUIL_PARRAINAGES = 500;
+  function renderParrainages(c) {
+    var h = c.parrainagesPromesses;
+    if (!h || !h.length) return '';
+    var dernier = h[h.length - 1];
+    var pct = Math.min(100, dernier.valeur / SEUIL_PARRAINAGES * 100);
+    var atteint = dernier.valeur >= SEUIL_PARRAINAGES;
+
+    var html = '<div class="parrainages-bandeau">';
+    html += '<div class="parrainages-entete">';
+    html += '<span class="parrainages-chiffre">' + dernier.libelle + '</span>';
+    html += '<span class="parrainages-sur">promesses de parrainages sur ' + SEUIL_PARRAINAGES + ' requis</span>';
+    html += '</div>';
+
+    html += '<div class="parrainages-jauge' + (atteint ? ' parrainages-jauge-atteint' : '') + '">';
+    html += '<div class="parrainages-barre" style="width:' + pct.toFixed(1) + '%;"></div>';
+    html += '</div>';
+
+    // Évolution : rien à afficher tant qu'il n'y a qu'un seul relevé. Un point unique
+    // ne décrit pas une trajectoire, et l'écrire laisserait croire le contraire.
+    if (h.length >= 2) {
+      var d = dernier.valeur - h[0].valeur;
+      var sens = d > 0 ? '+' : '';
+      html += '<p class="parrainages-evolution">' + sens + d + ' depuis le ' + h[0].label +
+        ' (' + h.length + ' relevés).</p>';
+    }
+
+    var origine = dernier.origine === 'presse'
+      ? 'Chiffre rapporté par la presse'
+      : 'Chiffre annoncé par le candidat ou son parti';
+    html += '<p class="parrainages-avertissement"><strong>Une promesse n\'est pas un parrainage.</strong> ' +
+      'La collecte officielle du Conseil constitutionnel n\'ouvre qu\'en janvier 2027 et se clôt le 12 mars ; ' +
+      'd\'ici là une promesse peut être retirée. Les chiffres des différents candidats ne sont pas comptés ' +
+      'de la même façon et ne sont donc pas comparables entre eux.</p>';
+    html += '<p class="parrainages-source">' + origine + ' — ' + dernier.source + ', le ' + dernier.label + '. ' +
+      '<a href="' + dernier.url + '" target="_blank" rel="noopener noreferrer" class="source-verify-link">🔍 Vérifier cette source</a></p>';
+    html += '</div>';
+    return html;
+  }
+
   // Courbe d'évolution des intentions de vote, construite à partir des relevés successifs
   // du site (un point par mise à jour des sondages). La bande grise matérialise la marge
   // d'erreur : tant que la courbe reste dedans, la variation n'est pas interprétable.
@@ -158,6 +204,8 @@
   html += '</div>';
   html += '<div class="sondage-box"><div><div class="chiffre">' + c.sondage.label + '</div><div class="libelle">Intentions de vote¹</div></div></div>';
   html += '</div>';
+
+  html += renderParrainages(c);
 
   html += '<a class="back-link" href="../comparateur.html?c=' + c.slug + '">🔀 Comparer avec un autre candidat</a>';
 

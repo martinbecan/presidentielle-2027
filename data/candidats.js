@@ -19,7 +19,7 @@ window.SITE_DATA = {
 
   parrainages: {
     statut: "pas_encore_ouvert",
-    message: "Les parrainages ne sont pas encore collectés — la période officielle démarre fin janvier 2027. Ce site affichera le suivi en temps réel dès l'ouverture, grâce à l'open data du Conseil constitutionnel."
+    message: "Attention à une confusion fréquente : les chiffres qui circulent aujourd'hui sont des promesses de parrainages, annoncées par les candidats eux-mêmes ou rapportées par la presse. Ce ne sont pas des parrainages déposés. La collecte officielle n'ouvre qu'en janvier 2027 et se clôt le 12 mars ; d'ici là, une promesse peut être retirée sans que personne ne le sache. Ce site affichera le décompte officiel, seul comparable d'un candidat à l'autre, dès sa publication par le Conseil constitutionnel."
   },
 
   blocs: [
@@ -100,6 +100,9 @@ window.SITE_DATA = {
     { date: "2026-08-27", dateLabel: "27 août 2026", titre: "Premier débat de la campagne : sept candidats (Attal, Glucksmann, Le Pen, Mélenchon, Philippe, Retailleau, Tondelier) confrontés aux chefs d'entreprise pendant trois heures à Roland-Garros, à l'invitation du Medef et en direct sur LCI", candidatSlug: null, categorie: "campagne", future: false, majeur: true },
     { date: "2026-08-27", dateLabel: "27 août 2026", titre: "Bruno Retailleau structure sa campagne pour la rentrée : le préfet Franck Robine devient directeur de campagne et le programme est resserré autour du pouvoir d'achat", candidatSlug: "bruno-retailleau", categorie: "campagne", future: false },
     { date: "2026-08-31", dateLabel: "31 août 2026", titre: "Séminaire de rentrée du gouvernement Lecornu consacré au budget 2027, sous menace de censure — LFI l'a annoncée, le RN ne l'exclut pas ; le projet de loi de finances est attendu fin septembre", candidatSlug: null, categorie: "institutionnel", future: false },
+    { date: "2026-09-02", dateLabel: "2 septembre 2026", titre: "David Lisnard annonce à l'AFP avoir réuni 500 promesses de parrainages, qu'il devra faire confirmer officiellement en février 2027", candidatSlug: "david-lisnard", categorie: "campagne", future: false },
+    { date: "2026-09-02", dateLabel: "2 septembre 2026", titre: "Louis Aliot affirme sur BFMTV que le RN dispose de plus de 400 promesses de parrainages pour Marine Le Pen, tout en jugeant le système « très imparfait »", candidatSlug: "marine-le-pen", categorie: "campagne", future: false },
+    { date: "2026-09-02", dateLabel: "2 septembre 2026", titre: "Selon franceinfo, Jean-Luc Mélenchon ne réunit qu'un peu plus de 200 promesses de parrainages, LFI ne comptant qu'environ 200 élus habilités à parrainer", candidatSlug: "jean-luc-melenchon", categorie: "campagne", future: false },
     { date: "2026-09-03", dateLabel: "3 septembre 2026", titre: "Fabien Verdier, ancien maire de Châteaudun, se porte candidat à la primaire pour défendre « la justice territoriale » et la France des sous-préfectures", candidatSlug: "fabien-verdier", categorie: "candidature", future: false },
     { date: "2026-09-03", dateLabel: "3 septembre 2026", titre: "Gabriel Attal présente une équipe de campagne sans poids lourds — cinq porte-parole peu connus et un trio de direction — en assumant de ne pas rechercher le soutien de ceux qui ont déjà exercé le pouvoir", candidatSlug: "gabriel-attal", categorie: "campagne", future: false },
     { date: "2026-09-04", dateLabel: "4 septembre 2026", titre: "Emmanuel Maurel (Gauche républicaine et socialiste) devient le septième candidat déclaré à la primaire PS / Place publique / GRS", candidatSlug: "emmanuel-maurel", categorie: "candidature", future: false },
@@ -245,6 +248,9 @@ window.SITE_DATA = {
       statut: "en_lice",
       sondage: { label: "~15,0%", niveau: "fort", tendance: "stable" },
       sondageHistorique: [{ date: "2026-06-25", label: "25 juin", valeur: 14.5, source: "IFOP-Fiducial" }, { date: "2026-07-11", label: "11 juillet", valeur: 14.5, source: "Elabe" }, { date: "2026-08-18", label: "18 août", valeur: 14.8, source: "Agrégat 90 j" }, { date: "2026-08-31", label: "31 août", valeur: 15, source: "Agrégat 5 sondages" }],
+      parrainagesPromesses: [
+        { date: "2026-09-02", label: "2 septembre 2026", valeur: 200, libelle: "un peu plus de 200", origine: "presse", source: "franceinfo, d'après des sources concordantes au sein de LFI", url: "https://www.franceinfo.fr/politique/melenchon/info-franceinfo-jean-luc-melenchon-n-a-recueilli-pour-l-instant-qu-un-peu-plus-de-200-promesses-de-parrainages-en-vue-de-la-presidentielle-loin-des-500-necessaires_8172731.html" }
+      ],
       historique: [
         { annee: 2012, resultat: "11.1%" },
         { annee: 2017, resultat: "19.6%" },
@@ -1008,7 +1014,11 @@ window.SITE_DATA = {
     },
     {
       slug: "david-lisnard", nom: "David Lisnard", parti: "Nouvelle Énergie", bloc: "droite", fiche: false,
-      sondage: { label: "< 1%", niveau: "faible", tendance: "stable" }, historique: [], idees: []
+      sondage: { label: "< 1%", niveau: "faible", tendance: "stable" },
+      parrainagesPromesses: [
+        { date: "2026-09-02", label: "2 septembre 2026", valeur: 500, libelle: "500", origine: "declaration", source: "David Lisnard, à l'AFP", url: "https://www.epochtimes.fr/presidentielle-david-lisnard-affiche-500-promesses-de-parrainages-et-vise-plus-de-notoriete-3339118.html" }
+      ],
+      historique: [], idees: []
     },
 
     // ================= EXTRÊME DROITE =================
@@ -1023,6 +1033,9 @@ window.SITE_DATA = {
       noteDetail: "Condamnée en appel le 07/07/2026. Pourvoi en cassation annoncé (suspensif) ; décision attendue au plus tard début avril 2027, après la date limite de dépôt des candidatures. Campagne en « binôme » avec J. Bardella.",
       sondage: { label: "~35,6%", niveau: "fort", tendance: "stable" },
       sondageHistorique: [{ date: "2026-06-25", label: "25 juin", valeur: 34.5, source: "IFOP-Fiducial" }, { date: "2026-07-11", label: "11 juillet", valeur: 34.75, source: "Elabe" }, { date: "2026-08-18", label: "18 août", valeur: 35.8, source: "Agrégat 90 j" }, { date: "2026-08-31", label: "31 août", valeur: 35.6, source: "Agrégat 5 sondages" }],
+      parrainagesPromesses: [
+        { date: "2026-09-02", label: "2 septembre 2026", valeur: 400, libelle: "plus de 400", origine: "declaration", source: "Louis Aliot (RN), sur BFMTV", url: "https://www.shango.media/bfm-tv-presidentielle-2027-louis-aliot-affirme-que-le-rn-a-deja-plus-de-400-parrainages-delus-mais-deplore-un-systeme-tres-imparfait-11798914" }
+      ],
       historique: [
         { annee: 2012, resultat: "17.9%" },
         { annee: 2017, resultat: "21.3%" },
