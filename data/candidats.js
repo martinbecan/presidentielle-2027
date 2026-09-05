@@ -1013,8 +1013,118 @@ window.SITE_DATA = {
       }
     },
     {
-      slug: "david-lisnard", nom: "David Lisnard", parti: "Nouvelle Énergie", bloc: "droite", fiche: false,
+      slug: "david-lisnard",
+      nom: "David Lisnard",
+      parti: "Nouvelle Énergie",
+      bloc: "droite",
+      fiche: true,
+      statut: "en_lice",
+      age: "57 ans (né le 2 février 1969 à Limoges)",
+      fonction_actuelle: "Maire de Cannes depuis 2014 et président de l'Association des maires de France depuis 2021",
       sondage: { label: "< 1%", niveau: "faible", tendance: "stable" },
+      idees: ["Baisse massive de la dépense publique", "Décentralisation en provinces", "Retraite à 65 ans et capitalisation", "Immigration divisée par huit"],
+      parcours: {
+        formation: "Études à Limoges puis à Cannes, avant l'Institut d'études politiques de Bordeaux (promotion 1992).",
+        mandats: [
+          "Chef de cabinet et attaché parlementaire de Jacques Pélissard, député-maire de Lons-le-Saunier (1996)",
+          "Conseiller municipal de Cannes à partir de 2001",
+          "Maire de Cannes depuis 2014, réélu en 2020 et en 2026",
+          "Président de l'Association des maires de France depuis novembre 2021",
+          "Fondateur du mouvement Nouvelle Énergie en juin 2021"
+        ],
+        faits_marquants: [
+          "Se définit comme libéral et anti-bureaucratique, une orientation peu représentée dans la vie politique française",
+          "Revendique une baisse de 76,6 M€ de la dette de Cannes et 56 M€ d'économies de fonctionnement pendant ses mandats",
+          "Arrêtés municipaux interdisant le burkini à Cannes en 2016, annulés en référé par le Conseil d'État",
+          "A quitté Les Républicains en annonçant sa candidature le 31 mars 2026, tout en se disant favorable à une primaire ouverte à droite",
+          "Annonce le 2 septembre 2026 avoir réuni 500 promesses de parrainages, qui devront être confirmées en février 2027"
+        ]
+      },
+      programme: {
+        economie: [
+          "Réduction de la dépense publique sous 50 % du PIB en dix ans, avec une « règle d'or » plafonnant les déficits de fonctionnement sans contraindre l'investissement",
+          "Suppression de la C3S et de la CVAE pour ramener les impôts de production de 2 % à 1 % du PIB",
+          "Contrat de travail unique fusionnant CDI et CDD, avec indemnités de rupture progressives",
+          "Division par deux des contraintes administratives imposées aux entreprises et aux citoyens"
+        ],
+        social: [
+          "Âge légal de la retraite porté à 65 ans, présenté comme un préalable financier à toute réforme de fond",
+          "Passage progressif à un système combinant répartition et capitalisation, en huit tranches, jusqu'à 116 Md€ capitalisés — environ 40 % du montant total des retraites",
+          "Doublement du nombre d'étudiants en médecine d'ici 2030 et suppression de Parcoursup",
+          "Suppression des ARS et retour de la présidence des conseils d'administration hospitaliers aux élus locaux"
+        ],
+        ecologie: [
+          "Nucléaire — EPR de nouvelle génération et petits réacteurs modulaires — comme socle de la politique énergétique",
+          "Rejet d'une écologie qu'il qualifie de punitive, au profit de solutions technologiques : capture du CO₂, hydrogène par électrolyse, piles à combustible au méthanol",
+          "Fin de la surtransposition française des normes environnementales agricoles et clauses miroirs sur les produits importés"
+        ],
+        securite: [
+          "« Une infraction, une sanction » : fin des réductions de peine automatiques, rétablissement des peines planchers pour les récidivistes",
+          "Abaissement de la majorité pénale de 18 à 16 ans et inversion de l'excuse de minorité dès 13 ans",
+          "50 % au moins des effectifs de police sur le terrain, contre 37 % aujourd'hui",
+          "Division par huit de la délivrance des titres de séjour, rétention administrative portée à 24 mois, fin du droit du sol automatique et suppression de l'AME"
+        ],
+        institutions: [
+          "Découpage en 40 à 50 provinces fusionnant départements et régions, validé par référendum constitutionnel",
+          "Renforcement du contrôle du gouvernement par le Parlement et recentrage du Président sur ses fonctions constitutionnelles",
+          "Redéploiement de 450 000 fonctionnaires des bureaux vers le terrain"
+        ],
+        europe: [
+          "Démocratisation des institutions européennes — Commission, Cour de justice, BCE",
+          "Redéfinition des compétences de l'Union selon le principe de subsidiarité",
+          "Coopération renforcée sur le spatial, le numérique et l'énergie décarbonée",
+          "Inscription dans la Constitution de la primauté du droit national en matière migratoire"
+        ]
+      },
+      positions_10_sujets: {
+        pouvoir_achat: { synthese: "Mise sur la baisse des prélèvements pesant sur le travail et les entreprises plutôt que sur une hausse des salaires imposée : suppression de la C3S et de la CVAE, impôts de production ramenés de 2 % à 1 % du PIB.", direction: "baisse des prélèvements plutôt que hausse des salaires" },
+        retraites: { synthese: "Porte l'âge légal à 65 ans, qu'il présente comme un impératif financier urgent, puis fait basculer une part du système vers la capitalisation — environ 40 % du montant total des retraites, en huit tranches. Une pension minimale reste garantie par répartition.", direction: "65 ans, puis capitalisation partielle" },
+        securite: { synthese: "Défend une réponse pénale systématique : fin des réductions de peine automatiques, peines planchers pour les récidivistes, majorité pénale abaissée à 16 ans et inversion de l'excuse de minorité dès 13 ans.", direction: "fermeté pénale, y compris pour les mineurs" },
+        immigration: { synthese: "Propose de diviser par huit la délivrance de titres de séjour, de porter la rétention administrative à 24 mois, de supprimer l'AME et le droit du sol automatique, et d'inscrire la primauté du droit national en matière migratoire dans la Constitution.", direction: "restriction forte" },
+        sante: { synthese: "Attribue la crise à un problème d'organisation plutôt que de moyens, la France dépensant selon lui plus que ses voisins. Veut doubler le nombre d'étudiants en médecine d'ici 2030, supprimer les ARS et rendre aux maires la présidence des conseils d'administration hospitaliers.", direction: "réorganisation et décentralisation plutôt que hausse des dépenses" },
+        ecologie: { synthese: "Fait du nucléaire — EPR de nouvelle génération et petits réacteurs modulaires — le socle de la politique énergétique, et rejette une écologie qu'il qualifie de punitive au profit de solutions technologiques comme la capture du CO₂ et l'hydrogène.", direction: "nucléaire et technologies, contre l'écologie contraignante" },
+        education: { synthese: "Veut donner aux chefs d'établissement la liberté de recruter leur équipe et de gérer leur budget, supprimer la carte scolaire et instaurer un « chèque-éducation » utilisable dans le public comme dans le privé. Prévoit +20 % de rémunération enseignante sur cinq ans, en contrepartie d'évaluations régulières.", direction: "autonomie des établissements et libre choix" },
+        europe: { synthese: "Veut une Europe recentrée par la subsidiarité et des institutions démocratisées, avec une coopération renforcée sur le spatial, le numérique et l'énergie décarbonée. Refuse tout transfert de souveraineté fiscale et veut inscrire la primauté du droit national en matière migratoire.", direction: "coopération sur projets, souveraineté nationale préservée" },
+        dette: { synthese: "En fait le cœur de son projet : ramener la dépense publique sous 50 % du PIB en dix ans, instaurer une « règle d'or » plafonnant les déficits de fonctionnement, et viser de l'ordre de 200 Md€ d'économies.", direction: "priorité absolue à la réduction de la dépense" },
+        institutions: { synthese: "Propose un schéma à trois niveaux — État, provinces, bloc communal — avec 40 à 50 provinces issues de la fusion des départements et des régions, validé par référendum constitutionnel. Veut renforcer le contrôle parlementaire et recentrer le Président sur ses fonctions constitutionnelles.", direction: "décentralisation profonde et rééquilibrage vers le Parlement" },
+        laicite: { synthese: "Dit combattre « la dynamique de l'islamisme » et voit dans le voile une forme de patriarcat, mais rejette la proposition du RN de sanctionner financièrement les femmes voilées, qu'il juge inapplicable et relevant de la « politique politicienne ». Propose d'interdire les tenues qu'il qualifie d'uniformes islamistes et le voile pour les accompagnants scolaires.", direction: "fermeté sur l'islamisme, opposé à une sanction financière généralisée" },
+        agriculture: { synthese: "Veut mettre fin à la surtransposition française des normes européennes et imposer des clauses miroirs aux produits importés. Propose de réorienter la PAC de l'environnement vers la souveraineté alimentaire et de rémunérer les services environnementaux rendus par les agriculteurs.", direction: "allègement des normes, souveraineté alimentaire" },
+        numerique: { synthese: "Inscrit l'intelligence artificielle, la cybersécurité, la robotique et les data sciences parmi les secteurs stratégiques à soutenir, en reliant recherche, formation universitaire et investissement industriel, en lien avec Bruxelles.", direction: "soutien aux filières stratégiques" },
+        logement: { synthese: "Propose de supprimer l'article 55 de la loi SRU, qui impose aux communes 20 % — bientôt 25 % — de logements sociaux, estimant qu'il n'a pas fait progresser la mixité sociale. Veut une politique du logement qui ne repose plus sur le seul logement social.", direction: "fin des quotas de logements sociaux" },
+        defense: { synthese: "Range la défense parmi les missions régaliennes à restaurer en priorité et relève que les dépenses régaliennes traditionnelles ne représentent plus qu'un cinquième du budget de l'État. Son programme publié ne fixe pas de cible budgétaire chiffrée.", direction: "priorité régalienne, sans chiffrage publié" }
+      },
+      sources: [
+        "https://www.unenouvelleenergie.fr/notre-programme/",
+        "https://www.unenouvelleenergie.fr/notre-programme/etre-maitre-de-notre-destin/",
+        "https://www.unenouvelleenergie.fr/notre-programme/reussir-une-nouvelle-ambition-francaise/",
+        "https://www.unenouvelleenergie.fr/notre-programme/generer-un-renouveau-civique/",
+        "https://www.unenouvelleenergie.fr/notre-programme/immigration/",
+        "https://www.unenouvelleenergie.fr/notre-programme/securite/",
+        "https://www.unenouvelleenergie.fr/notre-programme/sante/",
+        "https://www.unenouvelleenergie.fr/notre-programme/education/",
+        "https://www.unenouvelleenergie.fr/notre-programme/agriculture/",
+        "https://www.europe1.fr/politique/il-faut-casser-les-ressorts-de-lislamisme-david-lisnard-reagit-a-la-proposition-du-rn-de-sanctionner-le-port-du-voile-dans-lespace-public-1052360",
+        "https://www.epochtimes.fr/presidentielle-david-lisnard-affiche-500-promesses-de-parrainages-et-vise-plus-de-notoriete-3339118.html"
+      ],
+      fact_checks_note: "Aucun fact-check publié à ce jour sur ses déclarations de campagne. La rubrique s'ouvrira dès qu'une vérification sourcée sera disponible.",
+      soutiens_note: "Aucun soutien politique d'envergure nationale n'a été rendu public à ce jour. Il a quitté Les Républicains en annonçant sa candidature et se dit favorable à une primaire ouverte à droite.",
+      quizCompatScores: {
+        retraites_1: -2, retraites_2: 2,
+        immigration_1: 2, immigration_2: -2,
+        securite_1: 2, securite_2: -1,
+        ecologie_1: 2, ecologie_2: -1, ecologie_3: -1,
+        laicite_1: 1,
+        agriculture_1: 2,
+        numerique_1: 1,
+        logement_1: -2,
+        defense_1: 1,
+        pouvoir_achat_1: -1, pouvoir_achat_2: 2,
+        dette_1: 2,
+        europe_1: 2, europe_2: -1,
+        institutions_1: 1, institutions_2: 1,
+        education_1: 2, education_2: 1,
+        sante_1: 0
+      },
       parrainagesPromesses: [
         { date: "2026-09-02", label: "2 septembre 2026", valeur: 500, libelle: "500", origine: "declaration", source: "David Lisnard, à l'AFP", url: "https://www.epochtimes.fr/presidentielle-david-lisnard-affiche-500-promesses-de-parrainages-et-vise-plus-de-notoriete-3339118.html" }
       ],

@@ -3,6 +3,9 @@
 Historique des mises à jour du site. Tenu à jour manuellement à chaque session de travail.
 
 ## 2026-09-05
+- **Fiche complète pour David Lisnard** (12ᵉ fiche) : parcours, programme sur 6 domaines, 15 positions, barème du quiz complet, 11 sources. Il annonce 500 promesses de parrainages tout en pesant moins de 1 % dans les sondages — la fiche montre les deux
+- Positions établies à partir du programme publié par Nouvelle Énergie (pages officielles par thème) plutôt que des sites agrégateurs, dont plusieurs reprenaient des chiffres invérifiables
+- Défense : la cible de 3 à 3,5 % du PIB, avancée par plusieurs agrégateurs, n'apparaît nulle part dans le programme publié et n'a pas pu être recoupée. La position indique donc la priorité régalienne et précise qu'aucun chiffrage n'est publié, plutôt que de reprendre un nombre non vérifié
 - **Promesses de parrainages en entête des fiches candidats** : jauge sur 500, chiffre, origine et lien de vérification, pour Mélenchon (un peu plus de 200) et Le Pen (plus de 400). Le champ `parrainagesPromesses` est un tableau dès le premier relevé, comme `sondageHistorique` : l'évolution s'affichera d'elle-même au deuxième point, aucune retouche de structure à prévoir. Avec un seul relevé, rien n'est dit sur une trajectoire — un point n'en est pas une
 - Trois annonces du 02/09 ajoutées à la frise : Lisnard (500 promesses, à l'AFP), Aliot pour le RN (plus de 400, sur BFMTV), Mélenchon (un peu plus de 200, enquête franceinfo). Formulées comme des déclarations attribuées, pas comme des mesures
 - **Encart « Les conditions » réécrit** : il promettait un suivi en temps réel sans expliquer ce qu'est un parrainage. Il distingue désormais la promesse — déclarative, retirable, comptée différemment par chacun — du parrainage déposé auprès du Conseil constitutionnel, dont la collecte n'ouvre qu'en janvier 2027
