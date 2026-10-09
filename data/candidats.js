@@ -9,8 +9,8 @@
  * ouvrant index.html directement depuis l'explorateur de fichiers (partage par email, clé USB, etc.).
  */
 window.SITE_DATA = {
-  derniere_maj: "5 septembre 2026",
-  derniere_maj_sondages: "31/08/2026",
+  derniere_maj: "9 octobre 2026",
+  derniere_maj_sondages: "29/09/2026",
 
   alerte: {
     titre: "⚡ 7 juillet 2026",
@@ -35,17 +35,15 @@ window.SITE_DATA = {
   ],
 
   pressentis: [
-    { nom: "É. Zemmour", sondage: "~3,4%" },
-    { nom: "F. Roussel", sondage: "~2,3%" },
     { nom: "L. Castets", sondage: "" },
     { nom: "M. Pigasse", sondage: "" },
     { nom: "F. Hollande", sondage: "" },
     { nom: "B. Cazeneuve", sondage: "" },
     { nom: "D. de Villepin", sondage: "" },
-    { nom: "X. Bertrand", sondage: "" }
+    { nom: "G. Darmanin", sondage: "" }
   ],
 
-  sourcesSondages: "Agrégat des 5 sondages les plus récents (IFOP, Ipsos, Elabe, OpinionWay, Harris, Verian), 31/08/2026. Marge ±2–3 pts selon le score. Les intentions RN correspondent aux hypothèses Le Pen ou Bardella.",
+  sourcesSondages: "IFOP, terrain du 25 au 29 septembre 2026, 1 527 personnes inscrites sur les listes électorales. Marge ±2–3 pts selon le score. Relevé d'un seul institut et non d'un agrégat : les sondages récents testent des hypothèses trop différentes pour être moyennés sans en fausser la lecture.",
 
   // Frise chronologique de la campagne. `candidatSlug` sert à colorer le point selon le bloc
   // politique (et à créer un lien si le candidat a une fiche) ; laisser null pour un événement
@@ -106,9 +104,26 @@ window.SITE_DATA = {
     { date: "2026-09-03", dateLabel: "3 septembre 2026", titre: "Fabien Verdier, ancien maire de Châteaudun, se porte candidat à la primaire pour défendre « la justice territoriale » et la France des sous-préfectures", candidatSlug: "fabien-verdier", categorie: "candidature", future: false },
     { date: "2026-09-03", dateLabel: "3 septembre 2026", titre: "Gabriel Attal présente une équipe de campagne sans poids lourds — cinq porte-parole peu connus et un trio de direction — en assumant de ne pas rechercher le soutien de ceux qui ont déjà exercé le pouvoir", candidatSlug: "gabriel-attal", categorie: "campagne", future: false },
     { date: "2026-09-04", dateLabel: "4 septembre 2026", titre: "Emmanuel Maurel (Gauche républicaine et socialiste) devient le septième candidat déclaré à la primaire PS / Place publique / GRS", candidatSlug: "emmanuel-maurel", categorie: "candidature", future: false },
-    { date: "2026-09-01", dateLabel: "1er-15 septembre 2026", titre: "Dépôt des candidatures à la primaire PS / Place publique", candidatSlug: null, categorie: "institutionnel", future: true },
+    { date: "2026-09-01", dateLabel: "1er-15 septembre 2026", titre: "Dépôt des candidatures à la primaire PS / Place publique", candidatSlug: null, categorie: "institutionnel", future: false },
+    { date: "2026-08-27", dateLabel: "27 août 2026", titre: "Xavier Bertrand annonce aux universités d'été du Medef qu'il sera candidat, en dehors des Républicains et sans passer par une primaire", candidatSlug: "xavier-bertrand", categorie: "candidature", future: false },
+    { date: "2026-09-06", dateLabel: "6 septembre 2026", titre: "Fabien Roussel est désigné candidat du PCF par 72 % des adhérents consultés, et officialise sa candidature au 20h de TF1", candidatSlug: "fabien-roussel", categorie: "candidature", future: false },
+    { date: "2026-09-15", dateLabel: "15 septembre 2026", titre: "Clôture des parrainages de la primaire PS : cinq candidats sur sept réunissent les soutiens d'élus requis — Fabien Verdier échoue à les obtenir", candidatSlug: null, categorie: "institutionnel", future: false },
+    { date: "2026-09-16", dateLabel: "16 septembre 2026", titre: "Philippe Brun est suspendu du PS à titre conservatoire après des accusations de violences et écarté de la primaire, alors qu'il avait réuni ses parrainages", candidatSlug: "philippe-brun", categorie: "candidature", future: false },
+    { date: "2026-09-17", dateLabel: "17 septembre 2026", titre: "Éric Zemmour déclare sur BFMTV être candidat à la présidence de la République, une déclaration formelle restant annoncée pour l'automne", candidatSlug: "eric-zemmour", categorie: "candidature", future: false },
+    { date: "2026-09-18", dateLabel: "18 septembre 2026", titre: "Début du mouvement lycéen au lycée Saint-Exupéry de Créteil, à la suite d'une grève des enseignants sur le manque de postes", candidatSlug: null, categorie: "campagne", future: false },
+    { date: "2026-09-19", dateLabel: "19 septembre 2026", titre: "Nicolas Dupont-Aignan officialise sa candidature dans un entretien au Journal du dimanche", candidatSlug: "nicolas-dupont-aignan", categorie: "candidature", future: false },
+    { date: "2026-09-23", dateLabel: "23 septembre 2026", titre: "Le référé de Philippe Brun pour être réintégré est rejeté : le tribunal juge le bureau national du PS compétent pour prononcer sa suspension", candidatSlug: "philippe-brun", categorie: "justice", future: false },
+    { date: "2026-09-23", dateLabel: "23 septembre 2026", titre: "Premier des trois débats télévisés de la primaire PS / Place publique", candidatSlug: null, categorie: "campagne", future: false },
+    { date: "2026-09-29", dateLabel: "29 septembre 2026", titre: "Journée de mobilisation de la fonction publique pour les salaires ; 338 établissements scolaires perturbés et 45 bloqués selon le ministère", candidatSlug: null, categorie: "campagne", future: false },
+    { date: "2026-10-01", dateLabel: "1er octobre 2026", titre: "Acte 2 du mouvement lycéen : plus de 900 actions et blocages recensés, le mouvement gagne les universités", candidatSlug: null, categorie: "campagne", future: false },
+    { date: "2026-10-01", dateLabel: "1er octobre 2026", titre: "Deuxième débat de la primaire PS / Place publique, suivi par 1,8 million de téléspectateurs", candidatSlug: null, categorie: "campagne", future: false },
+    { date: "2026-10-02", dateLabel: "2 octobre 2026", titre: "Mira Markovic, cofondatrice du Parti animaliste, est désignée candidate du mouvement", candidatSlug: "mira-markovic", categorie: "candidature", future: false },
+    { date: "2026-10-03", dateLabel: "3 octobre 2026", titre: "Le PS juge le budget 2027 « pas acceptable » et maintient sa menace de censure ; le RN ne s'interdit rien, Marine Le Pen conditionnant son vote à l'usage du 49.3", candidatSlug: null, categorie: "institutionnel", future: false },
+    { date: "2026-10-06", dateLabel: "6 octobre 2026", titre: "Acte 3 du mouvement lycéen et étudiant : 256 000 manifestants selon le ministère de l'Intérieur, jusqu'à 450 000 selon les organisateurs", candidatSlug: null, categorie: "campagne", future: false },
+    { date: "2026-10-09", dateLabel: "9 octobre 2026", titre: "Ouverture du 1er tour de la primaire PS / Place publique / GRS : la plateforme de vote en ligne est visée par une cyberattaque par déni de service dès 8 h. Le scrutin se poursuit, l'intégrité des votes n'est pas compromise, l'ANSSI est saisie", candidatSlug: null, categorie: "institutionnel", future: false },
     { date: "2026-10-09", dateLabel: "9-10 et 16-17 octobre 2026", titre: "Primaire commune Parti socialiste / Place publique / GRS — 1er tour les 9-10 octobre, 2nd tour les 16-17 octobre", candidatSlug: null, categorie: "institutionnel", future: true },
     { date: "2026-10", dateLabel: "Automne 2026", titre: "Publication des programmes détaillés des candidats", candidatSlug: null, categorie: "institutionnel", future: true },
+    { date: "2026-10-15", dateLabel: "15 octobre 2026", titre: "Date limite de dépôt des mémoires devant la Cour de cassation dans l'affaire des assistants parlementaires du RN", candidatSlug: "marine-le-pen", categorie: "justice", future: true },
     { date: "2027-01", dateLabel: "Début 2027", titre: "Ouverture de la collecte officielle des parrainages", candidatSlug: null, categorie: "institutionnel", future: true },
     { date: "2027-03", dateLabel: "~Mars 2027", titre: "Publication de la liste officielle des candidats (Conseil constitutionnel)", candidatSlug: null, categorie: "institutionnel", future: true },
     { date: "2027-04-18", dateLabel: "18 avril 2027", titre: "1er tour de l'élection présidentielle", candidatSlug: null, categorie: "institutionnel", majeur: true, future: true },
@@ -160,8 +175,8 @@ window.SITE_DATA = {
       bloc: "exgauche",
       fiche: true,
       statut: "en_lice",
-      sondage: { label: "~0.5%", niveau: "faible", tendance: "stable" },
-      sondageHistorique: [{ date: "2026-06-25", label: "25 juin", valeur: 0.5, source: "IFOP-Fiducial" }, { date: "2026-07-11", label: "11 juillet", valeur: 0.5, source: "Elabe" }, { date: "2026-08-18", label: "18 août", valeur: 0.5, source: "Agrégat 90 j" }],
+      sondage: { label: "~0,5%", niveau: "faible", tendance: "stable" },
+      sondageHistorique: [{ date: "2026-06-25", label: "25 juin", valeur: 0.5, source: "IFOP-Fiducial" }, { date: "2026-07-11", label: "11 juillet", valeur: 0.5, source: "Elabe" }, { date: "2026-08-18", label: "18 août", valeur: 0.5, source: "Agrégat 90 j" }, { date: "2026-09-29", label: "29 sept.", valeur: 0.5, source: "IFOP" }],
       historique: [
         { annee: 2012, resultat: "0.6%" },
         { annee: 2017, resultat: "0.6%" },
@@ -246,8 +261,8 @@ window.SITE_DATA = {
       bloc: "gradicale",
       fiche: true,
       statut: "en_lice",
-      sondage: { label: "~15,0%", niveau: "fort", tendance: "stable" },
-      sondageHistorique: [{ date: "2026-06-25", label: "25 juin", valeur: 14.5, source: "IFOP-Fiducial" }, { date: "2026-07-11", label: "11 juillet", valeur: 14.5, source: "Elabe" }, { date: "2026-08-18", label: "18 août", valeur: 14.8, source: "Agrégat 90 j" }, { date: "2026-08-31", label: "31 août", valeur: 15, source: "Agrégat 5 sondages" }],
+      sondage: { label: "~15%", niveau: "fort", tendance: "stable" },
+      sondageHistorique: [{ date: "2026-06-25", label: "25 juin", valeur: 14.5, source: "IFOP-Fiducial" }, { date: "2026-07-11", label: "11 juillet", valeur: 14.5, source: "Elabe" }, { date: "2026-08-18", label: "18 août", valeur: 14.8, source: "Agrégat 90 j" }, { date: "2026-08-31", label: "31 août", valeur: 15, source: "Agrégat 5 sondages" }, { date: "2026-09-29", label: "29 sept.", valeur: 15, source: "IFOP" }],
       parrainagesPromesses: [
         { date: "2026-09-02", label: "2 septembre 2026", valeur: 200, libelle: "un peu plus de 200", origine: "presse", source: "franceinfo, d'après des sources concordantes au sein de LFI", url: "https://www.franceinfo.fr/politique/melenchon/info-franceinfo-jean-luc-melenchon-n-a-recueilli-pour-l-instant-qu-un-peu-plus-de-200-promesses-de-parrainages-en-vue-de-la-presidentielle-loin-des-500-necessaires_8172731.html" }
       ],
@@ -343,8 +358,8 @@ window.SITE_DATA = {
       bloc: "gprimaire",
       fiche: true,
       statut: "en_lice",
-      sondage: { label: "~3,5%", niveau: "moyen", tendance: "stable" },
-      sondageHistorique: [{ date: "2026-06-25", label: "25 juin", valeur: 2.5, source: "IFOP-Fiducial" }, { date: "2026-07-11", label: "11 juillet", valeur: 2.5, source: "Elabe" }, { date: "2026-08-18", label: "18 août", valeur: 4.1, source: "Agrégat 90 j" }, { date: "2026-08-31", label: "31 août", valeur: 3.5, source: "Agrégat 5 sondages" }],
+      sondage: { label: "~3%", niveau: "moyen", tendance: "stable" },
+      sondageHistorique: [{ date: "2026-06-25", label: "25 juin", valeur: 2.5, source: "IFOP-Fiducial" }, { date: "2026-07-11", label: "11 juillet", valeur: 2.5, source: "Elabe" }, { date: "2026-08-18", label: "18 août", valeur: 4.1, source: "Agrégat 90 j" }, { date: "2026-08-31", label: "31 août", valeur: 3.5, source: "Agrégat 5 sondages" }, { date: "2026-09-29", label: "29 sept.", valeur: 3, source: "IFOP" }],
       historique: [],
       idees: ["Transition écologique", "Justice sociale", "Candidature unitaire gauche"],
       age: "39 ans (née le 23 août 1986)",
@@ -430,8 +445,8 @@ window.SITE_DATA = {
       bloc: "gprimaire",
       fiche: true,
       statut: "en_lice",
-      sondage: { label: "~2–3%", niveau: "moyen", tendance: "stable" },
-      sondageHistorique: [{ date: "2026-06-25", label: "25 juin", valeur: 2.5, source: "IFOP-Fiducial" }, { date: "2026-07-11", label: "11 juillet", valeur: 2.5, source: "Elabe" }, { date: "2026-08-18", label: "18 août", valeur: 2.5, source: "Agrégat 90 j" }],
+      sondage: { label: "~1%", niveau: "faible", tendance: "baisse" },
+      sondageHistorique: [{ date: "2026-06-25", label: "25 juin", valeur: 2.5, source: "IFOP-Fiducial" }, { date: "2026-07-11", label: "11 juillet", valeur: 2.5, source: "Elabe" }, { date: "2026-08-18", label: "18 août", valeur: 2.5, source: "Agrégat 90 j" }, { date: "2026-09-29", label: "29 sept.", valeur: 1, source: "IFOP" }],
       historique: [],
       idees: ["France populaire", "Réindustrialisation verte", "Lutte contre la pauvreté"],
       age: "50 ans (né le 18 octobre 1975 à Calais)",
@@ -598,6 +613,12 @@ window.SITE_DATA = {
       }
     },
     {
+      slug: "fabien-roussel", nom: "Fabien Roussel", parti: "PCF", bloc: "ghors", fiche: false,
+      sondage: { label: "~2,5%", niveau: "faible", tendance: "stable" },
+      sondageHistorique: [{ date: "2026-09-29", label: "29 sept.", valeur: 2.5, source: "IFOP" }],
+      historique: [], idees: []
+    },
+    {
       slug: "karim-bouamrane", nom: "Karim Bouamrane", parti: "PS", bloc: "ghors", fiche: false,
       sondage: { label: "< 1%", niveau: "faible", tendance: "stable" }, historique: [], idees: []
     },
@@ -610,11 +631,10 @@ window.SITE_DATA = {
       bloc: "gps",
       fiche: true,
       statut: "en_lice",
-      sondage: { label: "~9,9%", niveau: "moyen", tendance: "stable" },
+      sondage: { label: "~11%", niveau: "moyen", tendance: "stable" },
       sondageHistorique: [
         { date: "2026-08-18", label: "18 août", valeur: 10.2, source: "Agrégat 90 j" },
-        { date: "2026-08-31", label: "31 août", valeur: 9.9, source: "Agrégat 5 sondages" }
-      ],
+        { date: "2026-08-31", label: "31 août", valeur: 9.9, source: "Agrégat 5 sondages" }, { date: "2026-09-29", label: "29 sept.", valeur: 11, source: "IFOP" }],
       historique: [],
       idees: ["Europe fédérale", "Taxation des méga-héritages", "Souveraineté technologique", "Soutien à l'Ukraine"],
       age: "46 ans (né le 15 octobre 1979 à Boulogne-Billancourt)",
@@ -716,6 +736,10 @@ window.SITE_DATA = {
     },
     {
       slug: "philippe-brun", nom: "Philippe Brun", parti: "PS", bloc: "gps", fiche: false,
+      statut: "retire",
+      statutDetail: "écarté de la primaire le 16/09/2026",
+      note: "ℹ️",
+      noteDetail: "Suspendu du PS à titre conservatoire le 16 septembre 2026, à la suite d'accusations de violences portées par une ancienne collaboratrice, et de ce fait écarté de la primaire alors qu'il avait réuni les parrainages requis. Il déclare avoir appris sa suspension le matin même, ignorer les faits qui lui sont reprochés et n'avoir été entendu par aucune commission. Son recours en référé pour être réintégré a été rejeté le 23 septembre, le tribunal jugeant le bureau national compétent. Aucune décision de justice n'a été rendue sur le fond à ce jour.",
       sondage: { label: "< 0.5%", niveau: "faible", tendance: "stable" }, historique: [], idees: []
     },
     {
@@ -724,8 +748,10 @@ window.SITE_DATA = {
     },
     {
       slug: "fabien-verdier", nom: "Fabien Verdier", parti: "Divers gauche", bloc: "gps", fiche: false,
+      statut: "retire",
+      statutDetail: "faute de parrainages, 15/09/2026",
       note: "ℹ️",
-      noteDetail: "Ancien secrétaire national du PS, qu'il a quitté vers 2017, et ancien maire de Châteaudun. Doit encore réunir les parrainages d'élus exigés pour concourir à la primaire — il n'y était pas parvenu en 2016.",
+      noteDetail: "Ancien secrétaire national du PS, qu'il a quitté vers 2017, et ancien maire de Châteaudun. N'a pas réuni les parrainages d'élus exigés avant la clôture du 15 septembre 2026 et ne figure pas parmi les cinq candidats retenus — comme en 2016, où il avait déjà échoué à ce stade.",
       sondage: { label: "< 0.5%", niveau: "faible", tendance: "stable" }, historique: [], idees: []
     },
 
@@ -737,8 +763,8 @@ window.SITE_DATA = {
       bloc: "centre",
       fiche: true,
       statut: "en_lice",
-      sondage: { label: "~16,9%", niveau: "fort", tendance: "stable" },
-      sondageHistorique: [{ date: "2026-06-25", label: "25 juin", valeur: 16.5, source: "IFOP-Fiducial" }, { date: "2026-07-11", label: "11 juillet", valeur: 17.75, source: "Elabe" }, { date: "2026-08-18", label: "18 août", valeur: 16.4, source: "Agrégat 90 j" }, { date: "2026-08-31", label: "31 août", valeur: 16.9, source: "Agrégat 5 sondages" }],
+      sondage: { label: "~16%", niveau: "fort", tendance: "stable" },
+      sondageHistorique: [{ date: "2026-06-25", label: "25 juin", valeur: 16.5, source: "IFOP-Fiducial" }, { date: "2026-07-11", label: "11 juillet", valeur: 17.75, source: "Elabe" }, { date: "2026-08-18", label: "18 août", valeur: 16.4, source: "Agrégat 90 j" }, { date: "2026-08-31", label: "31 août", valeur: 16.9, source: "Agrégat 5 sondages" }, { date: "2026-09-29", label: "29 sept.", valeur: 16, source: "IFOP" }],
       historique: [],
       idees: ["Règle d'or budgétaire", "Refonte école « post-Ferry »", "3 référendums", "Retraite par capitalisation"],
       age: "55 ans (né en 1970 à Rouen)",
@@ -833,8 +859,8 @@ window.SITE_DATA = {
       bloc: "centre",
       fiche: true,
       statut: "en_lice",
-      sondage: { label: "~7,7%", niveau: "moyen", tendance: "stable" },
-      sondageHistorique: [{ date: "2026-06-25", label: "25 juin", valeur: 8, source: "IFOP-Fiducial" }, { date: "2026-07-11", label: "11 juillet", valeur: 8, source: "Elabe" }, { date: "2026-08-18", label: "18 août", valeur: 11.3, source: "Agrégat 90 j" }, { date: "2026-08-31", label: "31 août", valeur: 7.7, source: "Agrégat 5 sondages" }],
+      sondage: { label: "~8%", niveau: "moyen", tendance: "stable" },
+      sondageHistorique: [{ date: "2026-06-25", label: "25 juin", valeur: 8, source: "IFOP-Fiducial" }, { date: "2026-07-11", label: "11 juillet", valeur: 8, source: "Elabe" }, { date: "2026-08-18", label: "18 août", valeur: 11.3, source: "Agrégat 90 j" }, { date: "2026-08-31", label: "31 août", valeur: 7.7, source: "Agrégat 5 sondages" }, { date: "2026-09-29", label: "29 sept.", valeur: 8, source: "IFOP" }],
       historique: [],
       idees: ["« Droit au brut » / salaires", "Brevet obligatoire", "Quotas immigration", "Plan IA 20M salariés"],
       age: "37 ans (né le 16 mars 1989 à Clamart)",
@@ -927,8 +953,8 @@ window.SITE_DATA = {
       bloc: "droite",
       fiche: true,
       statut: "en_lice",
-      sondage: { label: "~7,6%", niveau: "moyen", tendance: "stable" },
-      sondageHistorique: [{ date: "2026-06-25", label: "25 juin", valeur: 8, source: "IFOP-Fiducial" }, { date: "2026-07-11", label: "11 juillet", valeur: 8, source: "Elabe" }, { date: "2026-08-18", label: "18 août", valeur: 8.2, source: "Agrégat 90 j" }, { date: "2026-08-31", label: "31 août", valeur: 7.6, source: "Agrégat 5 sondages" }],
+      sondage: { label: "~7%", niveau: "moyen", tendance: "stable" },
+      sondageHistorique: [{ date: "2026-06-25", label: "25 juin", valeur: 8, source: "IFOP-Fiducial" }, { date: "2026-07-11", label: "11 juillet", valeur: 8, source: "Elabe" }, { date: "2026-08-18", label: "18 août", valeur: 8.2, source: "Agrégat 90 j" }, { date: "2026-08-31", label: "31 août", valeur: 7.6, source: "Agrégat 5 sondages" }, { date: "2026-09-29", label: "29 sept.", valeur: 7, source: "IFOP" }],
       historique: [],
       idees: ["Fermeté sécuritaire", "1M logements en 5 ans", "Suppression ZAN", "Immigration restrictive"],
       age: "65 ans (né le 20 novembre 1960 à Cholet)",
@@ -1011,6 +1037,13 @@ window.SITE_DATA = {
         ecologie_1: 2, ecologie_2: -2, ecologie_3: -1, laicite_1: 2, agriculture_1: 2, logement_1: -2, defense_1: 2, pouvoir_achat_1: -1, pouvoir_achat_2: 2, dette_1: 2,
         europe_1: 1, europe_2: -2, institutions_1: 1, institutions_2: -1, education_1: 0, education_2: 0, sante_1: -1
       }
+    },
+    {
+      slug: "xavier-bertrand", nom: "Xavier Bertrand", parti: "Nous France", bloc: "droite", fiche: false,
+      note: "ℹ️",
+      noteDetail: "Président de la région Hauts-de-France. Se présente en dehors des Républicains, dont Bruno Retailleau est le candidat désigné, et refuse de participer à une primaire de la droite et du centre.",
+      sondage: { label: "non testé", niveau: "faible", tendance: "stable" },
+      historique: [], idees: []
     },
     {
       slug: "david-lisnard",
@@ -1141,8 +1174,8 @@ window.SITE_DATA = {
       statut: "en_lice",
       note: "⚖️",
       noteDetail: "Condamnée en appel le 07/07/2026. Pourvoi en cassation annoncé (suspensif) ; décision attendue au plus tard début avril 2027, après la date limite de dépôt des candidatures. Campagne en « binôme » avec J. Bardella.",
-      sondage: { label: "~35,6%", niveau: "fort", tendance: "stable" },
-      sondageHistorique: [{ date: "2026-06-25", label: "25 juin", valeur: 34.5, source: "IFOP-Fiducial" }, { date: "2026-07-11", label: "11 juillet", valeur: 34.75, source: "Elabe" }, { date: "2026-08-18", label: "18 août", valeur: 35.8, source: "Agrégat 90 j" }, { date: "2026-08-31", label: "31 août", valeur: 35.6, source: "Agrégat 5 sondages" }],
+      sondage: { label: "~32%", niveau: "fort", tendance: "stable" },
+      sondageHistorique: [{ date: "2026-06-25", label: "25 juin", valeur: 34.5, source: "IFOP-Fiducial" }, { date: "2026-07-11", label: "11 juillet", valeur: 34.75, source: "Elabe" }, { date: "2026-08-18", label: "18 août", valeur: 35.8, source: "Agrégat 90 j" }, { date: "2026-08-31", label: "31 août", valeur: 35.6, source: "Agrégat 5 sondages" }, { date: "2026-09-29", label: "29 sept.", valeur: 32, source: "IFOP" }],
       parrainagesPromesses: [
         { date: "2026-09-02", label: "2 septembre 2026", valeur: 400, libelle: "plus de 400", origine: "declaration", source: "Louis Aliot (RN), sur BFMTV", url: "https://www.shango.media/bfm-tv-presidentielle-2027-louis-aliot-affirme-que-le-rn-a-deja-plus-de-400-parrainages-delus-mais-deplore-un-systeme-tres-imparfait-11798914" }
       ],
@@ -1235,8 +1268,8 @@ window.SITE_DATA = {
       bloc: "exdroite",
       fiche: true,
       statut: "en_lice",
-      sondage: { label: "~2%", niveau: "moyen", tendance: "stable" },
-      sondageHistorique: [{ date: "2026-06-25", label: "25 juin", valeur: 2, source: "IFOP-Fiducial" }, { date: "2026-07-11", label: "11 juillet", valeur: 2, source: "Elabe" }, { date: "2026-08-18", label: "18 août", valeur: 2, source: "Agrégat 90 j" }],
+      sondage: { label: "~1%", niveau: "faible", tendance: "stable" },
+      sondageHistorique: [{ date: "2026-06-25", label: "25 juin", valeur: 2, source: "IFOP-Fiducial" }, { date: "2026-07-11", label: "11 juillet", valeur: 2, source: "Elabe" }, { date: "2026-08-18", label: "18 août", valeur: 2, source: "Agrégat 90 j" }, { date: "2026-09-29", label: "29 sept.", valeur: 1, source: "IFOP" }],
       historique: [
         { annee: 2012, resultat: "1.8%" },
         { annee: 2017, resultat: "4.7%" },
@@ -1321,6 +1354,14 @@ window.SITE_DATA = {
       }
     },
     {
+      slug: "eric-zemmour", nom: "Éric Zemmour", parti: "Reconquête", bloc: "exdroite", fiche: false,
+      note: "ℹ️",
+      noteDetail: "A déclaré le 17 septembre 2026 sur BFMTV « je suis candidat à la présidence de la République ». Son entourage annonce une déclaration formelle de candidature à l'automne.",
+      sondage: { label: "~4%", niveau: "faible", tendance: "stable" },
+      sondageHistorique: [{ date: "2026-09-29", label: "29 sept.", valeur: 4, source: "IFOP" }],
+      historique: [{ annee: 2022, resultat: "7.07%" }], idees: [],
+    },
+    {
       slug: "florian-philippot", nom: "Florian Philippot", parti: "Les Patriotes", bloc: "exdroite", fiche: false,
       sondage: { label: "< 0.5%", niveau: "faible", tendance: "stable" }, historique: [], idees: []
     },
@@ -1338,6 +1379,11 @@ window.SITE_DATA = {
     {
       slug: "antoine-mikolajczak", nom: "Antoine Mikolajczak", parti: "Équinoxe", bloc: "inclassable", fiche: false,
       sondage: { label: "< 0.5%", niveau: "faible", tendance: "stable" }, historique: [], idees: []
+    },
+    {
+      slug: "mira-markovic", nom: "Mira Markovic", parti: "Parti animaliste", bloc: "inclassable", fiche: false,
+      sondage: { label: "non testé", niveau: "faible", tendance: "stable" },
+      historique: [], idees: []
     },
     {
       slug: "francis-lalanne", nom: "Francis Lalanne", parti: "France Libre", bloc: "inclassable", fiche: false,

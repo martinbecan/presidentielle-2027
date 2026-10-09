@@ -2,6 +2,17 @@
 
 Historique des mises à jour du site. Tenu à jour manuellement à chaque session de travail.
 
+## 2026-10-09
+- **Quatre candidatures requalifiées de « pressenties » à déclarées** : Xavier Bertrand (27/08, hors LR et sans primaire — nous l'avions manqué le 5 septembre), Fabien Roussel (06/09, désigné par 72 % des adhérents du PCF), Éric Zemmour (17/09 sur BFMTV, déclaration formelle encore annoncée) et Mira Markovic pour le Parti animaliste (02/10)
+- **Primaire PS : sept candidats déclarés, cinq retenus.** Fabien Verdier n'a pas réuni les parrainages d'élus avant la clôture du 15/09. Philippe Brun, qui les avait obtenus, a été suspendu du PS à titre conservatoire le 16/09 après des accusations de violences et écarté du scrutin ; son référé en réintégration a été rejeté le 23/09. Sa fiche rappelle qu'aucune décision n'a été rendue sur le fond et qu'il conteste la procédure
+- **Mouvement lycéen et étudiant** entré dans la frise : départ de Créteil le 18/09, 1 027 lycées touchés le 02/10, 256 000 manifestants le 06/10 selon l'Intérieur. Le premier mouvement social d'ampleur de la pré-campagne
+- **1er tour de la primaire ouvert le 09/10**, visé dès 8 h par une cyberattaque par déni de service ; le scrutin s'est poursuivi, l'intégrité des votes n'est pas compromise, l'ANSSI est saisie. 140 282 inscrits
+- Budget 2027 : menace de censure maintenue par le PS (03/10), le RN conditionnant son vote à l'usage du 49.3. Échéance du 15/10 ajoutée pour les mémoires devant la Cour de cassation
+- **5ᵉ relevé de sondages** (IFOP, 25-29/09) : Le Pen 32 %, Philippe 16 %, Mélenchon 15 %, Glucksmann 11 %, Attal 8 %, Retailleau 7 %, Zemmour 4 %, Tondelier 3 %, Roussel 2,5 %
+- **Changement de méthode sur les sondages : un institut au lieu d'un agrégat.** Les cinq sondages les plus récents totalisaient 101, 112, 118, 119 et 122 % selon l'extraction — ils mélangent des hypothèses incompatibles (Philippe seul ou face à Attal, Le Pen ou Bardella). Les moyenner aurait produit un chiffre faux présenté comme plus solide. Le relevé cite donc l'IFOP seul, terrain et échantillon précisés
+- **Flèche de tendance de François Ruffin passée à « baisse »** : −1,5 pt sur la période, au-delà du seuil de 1,1 — la seule évolution statistiquement établie à ce jour. Son niveau et celui de Dupont-Aignan passent de « moyen » à « faible », conformes à leur score actuel
+- Correction : l'échéance « dépôt des candidatures à la primaire » restait affichée parmi les événements à venir alors qu'elle s'est close le 15 septembre
+
 ## 2026-09-05
 - **Fiche complète pour David Lisnard** (12ᵉ fiche) : parcours, programme sur 6 domaines, 15 positions, barème du quiz complet, 11 sources. Il annonce 500 promesses de parrainages tout en pesant moins de 1 % dans les sondages — la fiche montre les deux
 - Positions établies à partir du programme publié par Nouvelle Énergie (pages officielles par thème) plutôt que des sites agrégateurs, dont plusieurs reprenaient des chiffres invérifiables
