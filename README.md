@@ -170,3 +170,47 @@ lisible sans réécriture.
 constitutionnel n'ouvre qu'en janvier 2027 (dépôt jusqu'au 12 mars). Lui seul est
 comparable d'un candidat à l'autre ; c'est à ce moment qu'un tableau comparatif aura
 un sens.
+
+### Engagements de campagne
+
+Champ `engagements` sur un candidat : les déclarations **datées et sourcées** prises
+pendant cette campagne. À ne pas confondre avec `positions_10_sujets`, qui dit ce que le
+candidat défend *aujourd'hui* — ici on empile l'historique, pour pouvoir le confronter plus tard.
+
+```js
+engagements: [
+  {
+    date: "2026-09-29", label: "29 septembre 2026",
+    theme: "retraites",            // une des 15 clés de positions_10_sujets, ou "autre"
+    resume: "...",                 // paraphrase, jamais une citation littérale
+    chiffrage: "30 Md€ par an selon son équipe",   // optionnel
+    contexte: "Présentation de son projet de réforme",
+    source: { nom: "Public Sénat", url: "https://..." },
+    statut: "pris",                // pris | reaffirme | nuance | abandonne
+                                   // après l'élection : tenu | partiel | non_tenu
+    divergence: {                  // optionnel, voir ci-dessous
+      parRapportA: "2026-08-27",
+      nature: "nuance",            // nuance | revirement | precision
+      constat: "..."
+    }
+  }
+]
+```
+
+Un candidat sans engagement documenté porte `engagements_note` à la place : la section
+s'affiche quand même, en disant pourquoi elle est vide.
+
+**La `divergence` se pose uniquement sur l'engagement le plus récent**, et pointe vers un
+engagement antérieur du même candidat sur le même thème par sa `date`. Le bandeau affiche
+alors les deux, datés et sourcés : le constat doit être vérifiable par le lecteur, pas cru
+sur parole. Ne jamais en poser une sans que les deux engagements soient publiés sur la fiche.
+
+Procédure à chaque mise à jour :
+1. Ajouter les engagements datés relevés depuis la dernière fois.
+2. Relire les engagements antérieurs du même candidat **sur le même thème**. Si le nouveau
+   s'en écarte, poser une `divergence` et décrire l'écart de façon factuelle — ce qui change,
+   pas ce qu'il faut en penser.
+3. Vérifier que `positions_10_sujets` reflète toujours la position la plus récente. C'est ce
+   contrôle qui a révélé, le 09/10/2026, que la position d'Édouard Philippe sur les retraites
+   était restée à « 64 ans, capitalisation par référendum » alors qu'il défendait depuis le
+   29 septembre 65 ans, 45 annuités et une capitalisation obligatoire.

@@ -242,6 +242,7 @@ window.SITE_DATA = {
       soutiens: [
         { nom: "Lutte Ouvrière (parti)", fonction: "Organisation désignant sa candidate via vote de congrès (décembre 2025)", type: "officiel" }
       ],
+      engagements_note: "Aucun engagement daté et sourcé relevé à ce stade de la campagne.",
       quizCompatScores: {
         retraites_1: 2, retraites_2: -2, immigration_1: -2, immigration_2: 2, securite_1: -1, securite_2: 2,
         ecologie_1: 0, ecologie_2: 1, ecologie_3: 0, laicite_1: -1, agriculture_1: 0, defense_1: -2, pouvoir_achat_1: 2, pouvoir_achat_2: -2, dette_1: -2,
@@ -343,6 +344,15 @@ window.SITE_DATA = {
         { nom: "Clémence Guetté", fonction: "Députée LFI", type: "officiel" },
         { nom: "Sophia Chikirou", fonction: "Députée européenne LFI", type: "officiel" }
       ],
+      engagements: [
+        {
+          date: "2026-08-27", label: "27 août 2026", theme: "retraites",
+          resume: "Défend un retour à 62 ans, puis à 60 ans « le plus vite possible » — une mise en œuvre en deux temps là où son programme affiche les 60 ans comme objectif direct.",
+          contexte: "Premier débat de la campagne, organisé par le Medef et diffusé sur LCI",
+          source: { nom: "franceinfo", url: "https://www.franceinfo.fr/elections/presidentielle/dette-publique-retraites-reindustrialisation-ce-qu-il-faut-retenir-du-premier-debat-des-principaux-candidats-a-la-presidentielle_8165342.html" },
+          statut: "pris"
+        }
+      ],
       quizCompatScores: {
         retraites_1: 2, retraites_2: -2, immigration_1: -2, immigration_2: 2, securite_1: -2, securite_2: 2,
         ecologie_1: -2, ecologie_2: 2, ecologie_3: 2, laicite_1: -2, agriculture_1: -2, numerique_1: 2, logement_1: 2, defense_1: 0, pouvoir_achat_1: 2, pouvoir_achat_2: -2, dette_1: -2,
@@ -432,6 +442,15 @@ window.SITE_DATA = {
         { nom: "Benjamin Lucas", fonction: "Député, Génération·s", type: "officiel" },
         { nom: "Sandrine Rousseau", fonction: "Députée écologiste de Paris", type: "presume — critique en interne d'une candidature autonome jugée facteur de fragmentation" }
       ],
+      engagements: [
+        {
+          date: "2026-08-27", label: "27 août 2026", theme: "pouvoir_achat",
+          resume: "Porte le SMIC à 2 000 € brut, accompagné d'un plan de soutien aux TPE et PME. Défend l'idée que le coût du travail est d'abord le revenu et le pouvoir d'achat des Français.",
+          contexte: "Premier débat de la campagne, organisé par le Medef et diffusé sur LCI",
+          source: { nom: "franceinfo", url: "https://www.franceinfo.fr/elections/presidentielle/dette-publique-retraites-reindustrialisation-ce-qu-il-faut-retenir-du-premier-debat-des-principaux-candidats-a-la-presidentielle_8165342.html" },
+          statut: "pris"
+        }
+      ],
       quizCompatScores: {
         retraites_1: 1, retraites_2: -1, immigration_1: -2, immigration_2: 2, securite_1: -1, securite_2: 2,
         ecologie_1: -2, ecologie_2: 2, ecologie_3: 2, laicite_1: -2, agriculture_1: -2, numerique_1: 1, logement_1: 1, defense_1: 1, pouvoir_achat_1: 2, pouvoir_achat_2: -2, dette_1: -1,
@@ -514,6 +533,7 @@ window.SITE_DATA = {
         { nom: "Laurent Baumel", fonction: "Parlementaire, Parti socialiste", type: "officiel" },
         { nom: "Mathieu Bosque", fonction: "Ex-LFI, ancien président du mouvement (2024-2025)", type: "officiel" }
       ],
+      engagements_note: "Aucun engagement daté et sourcé relevé à ce stade de la campagne.",
       quizCompatScores: {
         retraites_1: 1, retraites_2: -1, immigration_1: 1, immigration_2: 1, securite_1: -1, securite_2: 1,
         ecologie_1: -1, ecologie_2: 2, ecologie_3: 2, laicite_1: -2, agriculture_1: -1, logement_1: 2, defense_1: 1, pouvoir_achat_1: 2, pouvoir_achat_2: -2, dette_1: -2,
@@ -606,6 +626,7 @@ window.SITE_DATA = {
         defense: { synthese: "Aucune position spécifique identifiée sur la défense ou les questions militaires à ce stade.", direction: "non documenté" }
       },
       soutiens: [],
+      engagements_note: "Aucun engagement daté et sourcé relevé à ce stade de la campagne.",
       quizCompatScores: {
         retraites_1: 1, retraites_2: -1, immigration_1: -2, immigration_2: 1, securite_1: -1, securite_2: 1,
         ecologie_1: -2, ecologie_2: 2, ecologie_3: 1, laicite_1: 2, agriculture_1: -2, pouvoir_achat_1: 1, pouvoir_achat_2: -1, dette_1: -1,
@@ -714,6 +735,22 @@ window.SITE_DATA = {
         { nom: "Place publique", fonction: "Mouvement dont il est coprésident", type: "officiel" }
       ],
       soutiens_note: "Sa candidature datant du 23 août 2026, les ralliements sont encore en cours de constitution. Des membres de Place publique ont publiquement regretté que les négociateurs socialistes aient refusé d'inscrire dans la charte de la primaire le principe de non-alliance avec La France Insoumise.",
+      engagements: [
+        {
+          date: "2026-09-05", label: "5 septembre 2026", theme: "agriculture",
+          resume: "Annonce un « grand plan d'adaptation agricole » lors de sa visite à la foire de Châlons-en-Champagne.",
+          contexte: "Foire de Châlons-en-Champagne",
+          source: { nom: "franceinfo", url: "https://www.franceinfo.fr/politique/raphael-glucksmann/" },
+          statut: "pris"
+        },
+        {
+          date: "2026-09-21", label: "21 septembre 2026", theme: "pouvoir_achat",
+          resume: "Triple le chèque carburant pour le porter à 500 € et l'étend aux classes moyennes.",
+          contexte: "Entretien sur franceinfo",
+          source: { nom: "franceinfo", url: "https://www.franceinfo.fr/politique/raphael-glucksmann/" },
+          statut: "pris"
+        }
+      ],
       quizCompatScores: {
         retraites_1: -1, retraites_2: -1, immigration_1: 0, immigration_2: 1, securite_1: 0, securite_2: 0,
         ecologie_1: 0, ecologie_2: 2, ecologie_3: 2, laicite_1: 0, agriculture_1: -2, numerique_1: 2, logement_1: 2, defense_1: 2,
@@ -821,7 +858,7 @@ window.SITE_DATA = {
       fact_checks_note: "Aucun fact-check d'AFP Factuel, Les Décodeurs ou CheckNews trouvé sur Édouard Philippe pour 2025-2026. Élément factuel judiciaire notable à signaler pour la neutralité : le Parquet national financier a ouvert début mai 2026 une enquête visant Édouard Philippe pour détournement de fonds publics, favoritisme et prise illégale d'intérêts, concernant le financement (2,154 M€) d'une association gérant la « Cité numérique » du Havre ; faits contestés par l'intéressé, enquête en cours, sans mise en examen ni jugement à ce stade.",
       positions_10_sujets: {
         pouvoir_achat: { synthese: "Prime exceptionnelle ciblée sur les classes moyennes et indexation des retraites et minima sociaux sur l'inflation réelle.", direction: "soutien ciblé classes moyennes" },
-        retraites: { synthese: "Maintien de l'âge légal à 64 ans, incitations fortes à travailler plus longtemps, contribution accrue des retraités et introduction d'une dose de capitalisation soumise à référendum.", direction: "maintien à 64 ans, capitalisation par référendum" },
+        retraites: { synthese: "Porte l'âge légal à 65 ans et la durée de cotisation à 45 annuités en moins de dix ans, avec un départ maintenu entre 60 et 64 ans pour environ un actif sur trois, et un fonds de capitalisation collectif obligatoire. Position annoncée le 29 septembre 2026 ; il défendait jusque-là le maintien à 64 ans et une capitalisation soumise à référendum.", direction: "65 ans, 45 annuités et capitalisation obligatoire" },
         securite: { synthese: "Renforcement de la sécurité au quotidien présenté comme un des piliers de campagne, aux côtés de l'école et des retraites.", direction: "fermeté" },
         immigration: { synthese: "Immigration « choisie et contrôlée » : quotas ciblés sur les métiers en tension, mais durcissement du regroupement familial.", direction: "immigration choisie et contrôlée" },
         sante: { synthese: "Recrutement massif de personnels soignants et création d'un grand service public de santé décentralisé.", direction: "renforcement du service public" },
@@ -845,6 +882,45 @@ window.SITE_DATA = {
         { nom: "Laurent Wauquiez", fonction: "Président du groupe Droite Républicaine à l'Assemblée", type: "officiel" },
         { nom: "Maud Bregeon", fonction: "Porte-parole du gouvernement", type: "officiel" },
         { nom: "Gérald Darmanin", fonction: "Ministre de la Justice", type: "officiel" }
+      ],
+      engagements: [
+        {
+          date: "2026-09-29", label: "29 septembre 2026", theme: "retraites",
+          resume: "Porte l'âge légal à 65 ans et la durée de cotisation à 45 annuités, par étapes étalées sur moins de dix ans. Environ un actif sur trois pourrait continuer à partir entre 60 et 64 ans selon l'âge de début de carrière, la pénibilité ou l'état de santé. Y ajoute une dose de capitalisation obligatoire, via un fonds collectif alimenté par les excédents de l'Agirc-Arrco.",
+          chiffrage: "30 Md€ par an selon son équipe, dont 10 pour le système de retraite et 20 pour les finances publiques",
+          contexte: "Présentation de l'architecture de son projet de réforme des retraites",
+          source: { nom: "Public Sénat", url: "https://www.publicsenat.fr/actualites/politique/retraites-edouard-philippe-sort-du-bois-et-propose-un-age-de-depart-a-65-ans" },
+          statut: "pris"
+        },
+        {
+          date: "2026-10-09", label: "9 octobre 2026", theme: "dette",
+          resume: "Supprime environ 250 000 postes dans la fonction publique en cinq ans, en ne remplaçant qu'un départ à la retraite sur trois.",
+          contexte: "Présentation de son programme",
+          source: { nom: "Euronews", url: "https://fr.euronews.com/2026/10/09/presidentielle-2027-edouard-philippe-mise-sur-le-travail-et-la-reduction-des-depenses-publ" },
+          statut: "pris"
+        },
+        {
+          date: "2026-10-09", label: "9 octobre 2026", theme: "pouvoir_achat",
+          resume: "Exonère de cotisations sociales deux heures supplémentaires par semaine, et remplace les allocations familiales actuelles par une allocation unique de 350 € par mois dès le premier enfant, dégressive selon l'impôt sur le revenu. Réduit par ailleurs la durée d'indemnisation du chômage de 18 à 12 mois pour les moins de 50 ans.",
+          chiffrage: "Environ 1 000 € de gain annuel pour un salarié au SMIC",
+          contexte: "Présentation de son programme",
+          source: { nom: "Euronews", url: "https://fr.euronews.com/2026/10/09/presidentielle-2027-edouard-philippe-mise-sur-le-travail-et-la-reduction-des-depenses-publ" },
+          statut: "pris"
+        },
+        {
+          date: "2026-10-09", label: "9 octobre 2026", theme: "immigration",
+          resume: "Divise par deux l'immigration légale, en visant un nombre de titres de séjour annuels « largement inférieur à 200 000 ».",
+          contexte: "Présentation de son programme",
+          source: { nom: "Euronews", url: "https://fr.euronews.com/2026/10/09/presidentielle-2027-edouard-philippe-mise-sur-le-travail-et-la-reduction-des-depenses-publ" },
+          statut: "pris"
+        },
+        {
+          date: "2026-10-09", label: "9 octobre 2026", theme: "ecologie",
+          resume: "Crée un fonds d'adaptation au changement climatique doté de deux milliards d'euros par an.",
+          contexte: "Présentation de son programme",
+          source: { nom: "Euronews", url: "https://fr.euronews.com/2026/10/09/presidentielle-2027-edouard-philippe-mise-sur-le-travail-et-la-reduction-des-depenses-publ" },
+          statut: "pris"
+        }
       ],
       quizCompatScores: {
         retraites_1: -2, retraites_2: 2, immigration_1: 1, immigration_2: 0, securite_1: 1, securite_2: -1,
@@ -938,6 +1014,15 @@ window.SITE_DATA = {
         { nom: "François Bayrou", fonction: "Président du MoDem, ex-Premier ministre — ne s'est positionné pour aucun des deux candidats du bloc central", type: "presume" }
       ],
       soutiens_note: "Gérald Darmanin, un temps cité comme indécis entre Gabriel Attal et Édouard Philippe, a officialisé son soutien à ce dernier le 17 août 2026 — il ne figure donc pas parmi les soutiens d'Attal.",
+      engagements: [
+        {
+          date: "2026-08-27", label: "27 août 2026", theme: "retraites",
+          resume: "Propose un « nouveau système universel » fondé sur la durée de cotisation plutôt que sur un âge légal.",
+          contexte: "Premier débat de la campagne, organisé par le Medef et diffusé sur LCI",
+          source: { nom: "franceinfo", url: "https://www.franceinfo.fr/elections/presidentielle/dette-publique-retraites-reindustrialisation-ce-qu-il-faut-retenir-du-premier-debat-des-principaux-candidats-a-la-presidentielle_8165342.html" },
+          statut: "pris"
+        }
+      ],
       quizCompatScores: {
         retraites_1: -1, retraites_2: 2, immigration_1: 0, immigration_2: -1, securite_1: 0, securite_2: 0,
         ecologie_1: 2, ecologie_2: -1, ecologie_3: 1, laicite_1: 2, agriculture_1: 1, numerique_1: 2, logement_1: -1, defense_1: 1, pouvoir_achat_1: -1, pouvoir_achat_2: 1, dette_1: 2,
@@ -1032,6 +1117,7 @@ window.SITE_DATA = {
         { nom: "François-Xavier Ceccoli", fonction: "Député LR de Haute-Corse", type: "officiel" }
       ],
       soutiens_note: "Contrairement à une idée reçue, Laurent Wauquiez n'est PAS un soutien : il s'est opposé à la tenue du vote interne LR, a publiquement invité Retailleau à « savoir se retirer » si sa candidature ne décolle pas, et penche plutôt vers Édouard Philippe. Xavier Bertrand et Michel Barnier ne sont pas non plus des soutiens confirmés.",
+      engagements_note: "Son programme a été présenté par étapes depuis le lancement de sa campagne en février 2026, sans annonce datée isolable à ce jour. Ses positions figurent ci-dessus ; les engagements datés seront ajoutés dès qu'une déclaration précise et sourcée pourra l'être.",
       quizCompatScores: {
         retraites_1: -2, retraites_2: 1, immigration_1: 2, immigration_2: -2, securite_1: 2, securite_2: -2,
         ecologie_1: 2, ecologie_2: -2, ecologie_3: -1, laicite_1: 2, agriculture_1: 2, logement_1: -2, defense_1: 2, pouvoir_achat_1: -1, pouvoir_achat_2: 2, dette_1: 2,
@@ -1141,6 +1227,7 @@ window.SITE_DATA = {
       ],
       fact_checks_note: "Aucun fact-check publié à ce jour sur ses déclarations de campagne. La rubrique s'ouvrira dès qu'une vérification sourcée sera disponible.",
       soutiens_note: "Aucun soutien politique d'envergure nationale n'a été rendu public à ce jour. Il a quitté Les Républicains en annonçant sa candidature et se dit favorable à une primaire ouverte à droite.",
+      engagements_note: "Son programme est publié par thème sur le site de Nouvelle Énergie, sans date d'annonce par mesure. Les engagements datés seront ajoutés au fil de ses déclarations publiques.",
       quizCompatScores: {
         retraites_1: -2, retraites_2: 2,
         immigration_1: 2, immigration_2: -2,
@@ -1255,6 +1342,16 @@ window.SITE_DATA = {
         { nom: "Marion Maréchal", fonction: "Députée européenne, présidente d'Identité-Libertés", type: "presume" }
       ],
       soutiens_note: "La divergence Bardella/Le Pen sur les retraites (mai-juillet 2026) est le principal point de tension interne identifié.",
+      engagements: [
+        {
+          date: "2026-08-27", label: "27 août 2026", theme: "retraites",
+          resume: "Ouvre un départ à 60 ans à ceux qui ont commencé à travailler avant 20 ans, avec un objectif de 42 annuités de cotisation, et fixe l'âge légal à 62 ans pour les autres.",
+          chiffrage: "Environ 9 Md€ par an selon elle ; l'Institut Montaigne chiffre la mesure à 26,5 Md€",
+          contexte: "Premier débat de la campagne, organisé par le Medef et diffusé sur LCI",
+          source: { nom: "franceinfo", url: "https://www.franceinfo.fr/elections/presidentielle/dette-publique-retraites-reindustrialisation-ce-qu-il-faut-retenir-du-premier-debat-des-principaux-candidats-a-la-presidentielle_8165342.html" },
+          statut: "pris"
+        }
+      ],
       quizCompatScores: {
         retraites_1: 2, retraites_2: -1, immigration_1: 2, immigration_2: -2, securite_1: 2, securite_2: -2,
         ecologie_1: 2, ecologie_2: -1, ecologie_3: -2, laicite_1: 2, agriculture_1: 2, numerique_1: 2, defense_1: 2, pouvoir_achat_1: 0, pouvoir_achat_2: 1, dette_1: 0,
@@ -1347,6 +1444,7 @@ window.SITE_DATA = {
         { nom: "François Guillaume", fonction: "Membre d'honneur de Debout la France, ancien ministre", type: "officiel" }
       ],
       soutiens_note: "A publiquement appelé Florian Philippot et François Asselineau à le rejoindre pour unifier le camp souverainiste, mais aucun ralliement officiel n'est confirmé à ce jour.",
+      engagements_note: "Aucun engagement daté et sourcé relevé à ce stade de la campagne.",
       quizCompatScores: {
         retraites_1: 1, retraites_2: -1, immigration_1: 2, immigration_2: -2, securite_1: 1, securite_2: -1,
         ecologie_1: 2, ecologie_2: -1, ecologie_3: -1, laicite_1: 1, agriculture_1: 0, numerique_1: 2, logement_1: -1, pouvoir_achat_1: 0, pouvoir_achat_2: 0, dette_1: -1,

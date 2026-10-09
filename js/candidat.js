@@ -174,6 +174,7 @@
   }
   // Sujets 2027 dont 4 recoupent les "grands clivages" déjà en base (positions{}) — on retombe
   // sur cette donnée quand la recherche dédiée aux 10 sujets n'a rien apporté de neuf.
+  var SUJETS;
   var SUJET_FALLBACK_KEYS = ['retraites', 'immigration', 'europe', 'dette'];
   function resolveSujet(candidat, key) {
     var s10 = candidat.positions_10_sujets && candidat.positions_10_sujets[key];
@@ -276,9 +277,85 @@
   }
   html += '</section>';
 
+  // Engagements de campagne : déclarations datées et sourcées prises PENDANT cette campagne.
+  // Volontairement distinct de positions_10_sujets, qui dit ce que le candidat défend
+  // aujourd'hui : ici on empile l'historique, pour pouvoir confronter plus tard.
+  // Un engagement porte une `divergence` quand il s'écarte d'un engagement antérieur du
+  // même candidat sur le même thème — le bandeau affiche alors les deux, datés et sourcés,
+  // pour que le lecteur vérifie le constat au lieu de le croire sur parole.
+  var STATUTS_ENGAGEMENT = {
+    pris: { label: 'Engagement pris', cls: 'eng-pris' },
+    reaffirme: { label: 'Réaffirmé', cls: 'eng-pris' },
+    nuance: { label: 'Nuancé depuis', cls: 'eng-nuance' },
+    abandonne: { label: 'Abandonné', cls: 'eng-abandonne' },
+    tenu: { label: 'Tenu', cls: 'eng-tenu' },
+    partiel: { label: 'Partiellement tenu', cls: 'eng-nuance' },
+    non_tenu: { label: 'Non tenu', cls: 'eng-abandonne' }
+  };
+  var NATURES_DIVERGENCE = {
+    nuance: 'Nuance',
+    revirement: 'Revirement',
+    precision: 'Précision'
+  };
+
+  function renderEngagements(c) {
+    var liste = c.engagements;
+    if ((!liste || !liste.length) && !c.engagements_note) return '';
+
+    var html = '<section class="fiche-section"><h2>Engagements de campagne</h2>';
+    html += '<p class="engagements-intro">Déclarations datées et sourcées prises depuis le début de la campagne. ' +
+      'Elles s\'ajoutent au fil des mises à jour : ce suivi ne vaut que par l\'accumulation, et permettra de ' +
+      'confronter ce qui est dit aujourd\'hui à ce qui le sera demain.</p>';
+
+    if (!liste || !liste.length) {
+      html += '<p class="no-data">' + c.engagements_note + '</p></section>';
+      return html;
+    }
+
+    // Regroupement par thème, dans l'ordre des 15 sujets ; « autre » en dernier.
+    var parTheme = {};
+    liste.forEach(function (e) {
+      (parTheme[e.theme] = parTheme[e.theme] || []).push(e);
+    });
+    var ordre = SUJETS.map(function (x) { return x[0]; }).concat(['autre']);
+    var libelle = {};
+    SUJETS.forEach(function (x) { libelle[x[0]] = x[1]; });
+    libelle.autre = 'Autres engagements marquants';
+
+    ordre.forEach(function (theme) {
+      var evs = parTheme[theme];
+      if (!evs) return;
+      evs.sort(function (a, b) { return a.date < b.date ? -1 : 1; });
+      html += '<div class="engagement-theme"><h3>' + libelle[theme] + '</h3>';
+      evs.forEach(function (e) {
+        var st = STATUTS_ENGAGEMENT[e.statut] || STATUTS_ENGAGEMENT.pris;
+        html += '<div class="engagement">';
+        html += '<div class="engagement-entete"><span class="engagement-date">' + e.label + '</span>';
+        html += '<span class="engagement-statut ' + st.cls + '">' + st.label + '</span></div>';
+        html += '<p class="engagement-resume">' + e.resume + '</p>';
+        if (e.chiffrage) html += '<p class="engagement-chiffrage">Chiffrage annoncé : ' + e.chiffrage + '</p>';
+        if (e.divergence) {
+          var anterieur = evs.filter(function (x) { return x.date === e.divergence.parRapportA; })[0];
+          html += '<div class="engagement-divergence">';
+          html += '<span class="engagement-divergence-tag">↪ ' + (NATURES_DIVERGENCE[e.divergence.nature] || 'Écart') + '</span> ';
+          html += e.divergence.constat;
+          if (anterieur) html += ' <span class="engagement-divergence-ref">(à comparer avec le ' + anterieur.label + ', ci-dessus)</span>';
+          html += '</div>';
+        }
+        html += '<p class="engagement-source">' + e.contexte + ' — ' +
+          '<a href="' + e.source.url + '" target="_blank" rel="noopener noreferrer" class="source-verify-link">🔍 ' + e.source.nom + '</a></p>';
+        html += '</div>';
+      });
+      html += '</div>';
+    });
+
+    html += '</section>';
+    return html;
+  }
+
   // Positions sur les sujets qui comptent (10 thématiques V2 + nouveaux thèmes V5, ajoutés
   // au fil des recherches — un thème sans donnée pour un candidat est simplement omis)
-  var sujets = [
+  SUJETS = [
     ['pouvoir_achat', 'Pouvoir d\'achat / salaires'], ['retraites', 'Retraites'], ['securite', 'Sécurité / justice'],
     ['immigration', 'Immigration'], ['sante', 'Santé / hôpital'], ['ecologie', 'Écologie / énergie'],
     ['education', 'Éducation'], ['europe', 'Europe / international'], ['dette', 'Dette / fiscalité'],
@@ -291,7 +368,7 @@
     html += '<p class="positions-sources-note"><a href="#fiche-sources" class="source-verify-link">🔍 Vérifier les sources de cette fiche</a></p>';
   }
   html += '<div class="positions-grid">';
-  sujets.forEach(function (s) {
+  SUJETS.forEach(function (s) {
     var r = resolveSujet(c, s[0]);
     if (!r) return;
     html += '<div class="position-card"><div class="label">' + s[1] + '</div>';
@@ -326,6 +403,8 @@
     html += '<p class="no-data" style="margin-top:0.8rem;">' + c.fact_checks_note + '</p>';
   }
   html += '</section>';
+
+  html += renderEngagements(c);
 
   // Soutiens politiques
   html += '<section class="fiche-section"><h2>Soutiens politiques</h2>';
