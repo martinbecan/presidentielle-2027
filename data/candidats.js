@@ -9,7 +9,7 @@
  * ouvrant index.html directement depuis l'explorateur de fichiers (partage par email, clé USB, etc.).
  */
 window.SITE_DATA = {
-  derniere_maj: "9 octobre 2026",
+  derniere_maj: "11 octobre 2026",
   derniere_maj_sondages: "29/09/2026",
 
   alerte: {
@@ -26,7 +26,7 @@ window.SITE_DATA = {
     { id: "exgauche",    label: "Extrême gauche",                                      couleur: "#dc2626" },
     { id: "gradicale",   label: "Gauche radicale",                                     couleur: "#ef4444" },
     { id: "gprimaire",   label: "Gauche — Ex-Front populaire (candidatures autonomes)", couleur: "#f97316" },
-    { id: "gps",         label: "Gauche — Primaire PS / Place publique (oct.)",        couleur: "#ec4899" },
+    { id: "gps",         label: "Gauche — PS / Place publique / GRS",        couleur: "#ec4899" },
     { id: "ghors",       label: "Gauche — Hors primaire",                              couleur: "#eab308" },
     { id: "centre",      label: "Bloc central",                                        couleur: "#3b82f6" },
     { id: "droite",      label: "Droite",                                              couleur: "#8b5cf6" },
@@ -121,8 +121,12 @@ window.SITE_DATA = {
     { date: "2026-10-03", dateLabel: "3 octobre 2026", titre: "Le PS juge le budget 2027 « pas acceptable » et maintient sa menace de censure ; le RN ne s'interdit rien, Marine Le Pen conditionnant son vote à l'usage du 49.3", candidatSlug: null, categorie: "institutionnel", future: false },
     { date: "2026-10-06", dateLabel: "6 octobre 2026", titre: "Acte 3 du mouvement lycéen et étudiant : 256 000 manifestants selon le ministère de l'Intérieur, jusqu'à 450 000 selon les organisateurs", candidatSlug: null, categorie: "campagne", future: false },
     { date: "2026-10-09", dateLabel: "9 octobre 2026", titre: "Ouverture du 1er tour de la primaire PS / Place publique / GRS : la plateforme de vote en ligne est visée par une cyberattaque par déni de service dès 8 h. Le scrutin se poursuit, l'intégrité des votes n'est pas compromise, l'ANSSI est saisie", candidatSlug: null, categorie: "institutionnel", future: false },
-    { date: "2026-10-09", dateLabel: "9-10 et 16-17 octobre 2026", titre: "Primaire commune Parti socialiste / Place publique / GRS — 1er tour les 9-10 octobre, 2nd tour les 16-17 octobre", candidatSlug: null, categorie: "institutionnel", future: true },
+    { date: "2026-10-09", dateLabel: "9 au 11 octobre 2026", titre: "Primaire commune Parti socialiste / Place publique / GRS — vote en ligne prolongé jusqu'au dimanche 11 octobre après la cyberattaque, et tranché dès le premier tour : le second tour prévu les 16-17 octobre n'a pas lieu", candidatSlug: null, categorie: "institutionnel", future: false },
     { date: "2026-10", dateLabel: "Automne 2026", titre: "Publication des programmes détaillés des candidats", candidatSlug: null, categorie: "institutionnel", future: true },
+    { date: "2026-10-02", dateLabel: "début octobre 2026", titre: "Des propos vulgaires de Raphaël Glucksmann visant Jean-Luc Mélenchon et Marine Le Pen, tenus le 17 septembre en réunion interne, sont rendus publics et provoquent une polémique à quelques jours du vote", candidatSlug: "raphael-glucksmann", categorie: "campagne", future: false },
+    { date: "2026-10-04", dateLabel: "4 octobre 2026", titre: "Troisième et dernier débat télévisé de la primaire PS / Place publique", candidatSlug: null, categorie: "campagne", future: false },
+    { date: "2026-10-10", dateLabel: "10 octobre 2026", titre: "Le parquet de Paris ouvre une enquête préliminaire sur la cyberattaque visant la primaire ; le vote est prolongé jusqu'au dimanche 18 h en accord avec les candidats", candidatSlug: null, categorie: "justice", future: false },
+    { date: "2026-10-11", dateLabel: "11 octobre 2026", titre: "Raphaël Glucksmann remporte la primaire dès le premier tour avec 66,13 % des voix, devant Olivier Faure (14,48 %), Ségolène Royal (7,62 %), Emmanuel Maurel (5,92 %) et Jérôme Guedj (5,83 %). Il devient le candidat commun du PS, de Place publique et de la GRS", candidatSlug: "raphael-glucksmann", categorie: "institutionnel", future: false, majeur: true },
     { date: "2026-10-15", dateLabel: "15 octobre 2026", titre: "Date limite de dépôt des mémoires devant la Cour de cassation dans l'affaire des assistants parlementaires du RN", candidatSlug: "marine-le-pen", categorie: "justice", future: true },
     { date: "2027-01", dateLabel: "Début 2027", titre: "Ouverture de la collecte officielle des parrainages", candidatSlug: null, categorie: "institutionnel", future: true },
     { date: "2027-03", dateLabel: "~Mars 2027", titre: "Publication de la liste officielle des candidats (Conseil constitutionnel)", candidatSlug: null, categorie: "institutionnel", future: true },
@@ -649,6 +653,8 @@ window.SITE_DATA = {
       slug: "raphael-glucksmann",
       nom: "Raphaël Glucksmann",
       parti: "Place publique",
+      note: "★",
+      noteDetail: "Désigné candidat commun du Parti socialiste, de Place publique et de la Gauche républicaine et socialiste le 11 octobre 2026, avec 66,13 % des voix au premier tour de leur primaire (120 587 votants sur 140 282 inscrits).",
       bloc: "gps",
       fiche: true,
       statut: "en_lice",
@@ -760,20 +766,26 @@ window.SITE_DATA = {
     },
     {
       slug: "olivier-faure", nom: "Olivier Faure", parti: "PS", bloc: "gps", fiche: false,
+      statut: "non_retenu",
+      statutDetail: "14,48 % à la primaire du 11/10/2026",
       sondage: { label: "< 1%", niveau: "faible", tendance: "stable" }, historique: [], idees: []
     },
     {
       slug: "segolene-royal", nom: "Ségolène Royal", parti: "PS", bloc: "gps", fiche: false,
+      statut: "non_retenu",
+      statutDetail: "7,62 % à la primaire du 11/10/2026",
       sondage: { label: "< 1%", niveau: "faible", tendance: "stable" },
       historique: [{ annee: 2007, resultat: "25.9%" }], idees: []
     },
     {
       slug: "jerome-guedj", nom: "Jérôme Guedj", parti: "PS", bloc: "gps", fiche: false,
+      statut: "non_retenu",
+      statutDetail: "5,83 % à la primaire du 11/10/2026",
       sondage: { label: "< 1%", niveau: "faible", tendance: "stable" }, historique: [], idees: []
     },
     {
       slug: "philippe-brun", nom: "Philippe Brun", parti: "PS", bloc: "gps", fiche: false,
-      statut: "retire",
+      statut: "non_retenu",
       statutDetail: "écarté de la primaire le 16/09/2026",
       note: "ℹ️",
       noteDetail: "Suspendu du PS à titre conservatoire le 16 septembre 2026, à la suite d'accusations de violences portées par une ancienne collaboratrice, et de ce fait écarté de la primaire alors qu'il avait réuni les parrainages requis. Il déclare avoir appris sa suspension le matin même, ignorer les faits qui lui sont reprochés et n'avoir été entendu par aucune commission. Son recours en référé pour être réintégré a été rejeté le 23 septembre, le tribunal jugeant le bureau national compétent. Aucune décision de justice n'a été rendue sur le fond à ce jour.",
@@ -781,11 +793,13 @@ window.SITE_DATA = {
     },
     {
       slug: "emmanuel-maurel", nom: "Emmanuel Maurel", parti: "GRS", bloc: "gps", fiche: false,
+      statut: "non_retenu",
+      statutDetail: "5,92 % à la primaire du 11/10/2026",
       sondage: { label: "< 0.5%", niveau: "faible", tendance: "stable" }, historique: [], idees: []
     },
     {
       slug: "fabien-verdier", nom: "Fabien Verdier", parti: "Divers gauche", bloc: "gps", fiche: false,
-      statut: "retire",
+      statut: "non_retenu",
       statutDetail: "faute de parrainages, 15/09/2026",
       note: "ℹ️",
       noteDetail: "Ancien secrétaire national du PS, qu'il a quitté vers 2017, et ancien maire de Châteaudun. N'a pas réuni les parrainages d'élus exigés avant la clôture du 15 septembre 2026 et ne figure pas parmi les cinq candidats retenus — comme en 2016, où il avait déjà échoué à ce stade.",

@@ -1636,3 +1636,4 @@ a.quiz-next-btn { display: inline-block; text-decoration: none; text-align: cent
   margin: 0.4rem 0 0;
 }
 .engagement-source a { overflow-wrap: anywhere; }
+.statut-nonretenu { background: rgba(113,113,122,0.18); color: var(--text-dimmer); }

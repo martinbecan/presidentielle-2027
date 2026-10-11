@@ -31,6 +31,9 @@
     if (c.statut === 'qualifie_2nd_tour') return '<span class="statut-pill statut-qualifie">🟢 Qualifié·e pour le 2nd tour</span>';
     if (c.statut === 'elimine_1er_tour') return '<span class="statut-pill statut-elimine">⚪ Éliminé·e au 1er tour' + (c.score_1er_tour ? ' (' + c.score_1er_tour + ')' : '') + '</span>';
     if (c.statut === 'retire') return '<span class="statut-pill statut-retire">🚫 Candidature retirée' + (c.statutDetail ? ' — ' + c.statutDetail : '') + '</span>';
+    // « Non retenu » couvre ceux qui n'ont pas renoncé mais que le processus a écartés :
+    // battus à la primaire, parrainages manquants, candidature invalidée.
+    if (c.statut === 'non_retenu') return '<span class="statut-pill statut-nonretenu">⚪ Non retenu·e' + (c.statutDetail ? ' — ' + c.statutDetail : '') + '</span>';
     return '';
   }
 
@@ -122,7 +125,7 @@
     var tdName = document.createElement('td');
     var nameHtml = '<span class="candidat-name">' + c.nom + '</span>' +
       (c.note ? ' <span class="note-icon" title="' + (c.noteDetail || '') + '">' + c.note + '</span>' : '') +
-      ((hasSecondTour || c.statut === 'retire') ? '<br>' + statutBadge(c) : '');
+      ((hasSecondTour || c.statut === 'retire' || c.statut === 'non_retenu') ? '<br>' + statutBadge(c) : '');
     if (c.fiche) {
       tdName.innerHTML = '<a class="candidat-link" href="candidats/' + c.slug + '.html">' + nameHtml + '</a>';
     } else {

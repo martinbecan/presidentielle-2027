@@ -2,6 +2,14 @@
 
 Historique des mises à jour du site. Tenu à jour manuellement à chaque session de travail.
 
+## 2026-10-11
+- **Raphaël Glucksmann remporte la primaire dès le premier tour** avec 66,13 % des voix (79 613 sur 120 587 votants), devant Faure 14,48 %, Royal 7,62 %, Maurel 5,92 % et Guedj 5,83 %. Le second tour des 16-17 octobre n'a pas lieu. Il est le candidat commun du PS, de Place publique et de la GRS
+- Le vote, ouvert le 9 octobre, a été prolongé jusqu'au dimanche 18 h après la cyberattaque par déni de service ; le parquet de Paris a ouvert une enquête préliminaire le 10 octobre
+- **Nouveau statut `non_retenu`** : « candidature retirée » était inexact pour des candidats qui n'ont pas renoncé mais que le processus a écartés. Appliqué aux quatre battus de la primaire, avec leur score, ainsi qu'à Philippe Brun et Fabien Verdier
+- Bloc politique renommé « Gauche — PS / Place publique / GRS » : il ne désigne plus une primaire à venir mais une candidature désignée
+- Polémique sur des propos vulgaires de Glucksmann visant Mélenchon et Le Pen, tenus le 17 septembre en réunion interne et rendus publics début octobre, ajoutée à la frise — le site décrit les propos sans les reproduire
+- **Pas de réactions publiées à cette heure** : le résultat a été proclamé dans la journée. Elles seront ajoutées à la prochaine mise à jour
+
 ## 2026-10-09
 - **Suivi des engagements de campagne** sur les fiches candidats : chaque déclaration datée et sourcée prise depuis le début de la campagne, regroupée par thème et classée chronologiquement. 11 engagements documentés pour 6 candidats ; les 6 autres fiches portent une note disant pourquoi la section est vide
 - Le champ `engagements` est volontairement distinct de `positions_10_sujets` : le second dit ce que le candidat défend aujourd'hui, le premier empile l'historique pour pouvoir le confronter plus tard. Un champ `divergence` permet de signaler qu'un engagement s'écarte d'un engagement antérieur du même candidat sur le même thème — le bandeau affiche alors les deux, datés et sourcés, pour que le constat soit vérifiable et non cru sur parole
