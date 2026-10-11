@@ -72,11 +72,15 @@
     return c.nom.toLowerCase().indexOf(q) !== -1 || c.parti.toLowerCase().indexOf(q) !== -1;
   }
 
+  function estEcarte(c) { return c.statut === 'retire' || c.statut === 'non_retenu'; }
+
   function render() {
     var query = searchInput ? searchInput.value.trim() : '';
     var bloc = blocSelect ? blocSelect.value : '';
 
-    var list = DATA.candidats.filter(function (c) { return matchesFilter(c, query, bloc); });
+    var tous = DATA.candidats.filter(function (c) { return matchesFilter(c, query, bloc); });
+    var list = tous.filter(function (c) { return !estEcarte(c); });
+    var ecartes = tous.filter(estEcarte);
 
     if (sortState.key) {
       list.sort(function (a, b) {
@@ -106,6 +110,29 @@
 
     countEl.textContent = list.length;
     if (countLabelEl) countLabelEl.textContent = list.length > 1 ? 'candidats' : 'candidat';
+
+    renderEcartes(ecartes);
+  }
+
+  function renderEcartes(ecartes) {
+    var hote = document.getElementById('candidats-ecartes');
+    if (!hote) return;
+    if (!ecartes.length) { hote.innerHTML = ''; return; }
+
+    // Du plus récemment écarté au plus ancien, quand la date est lisible dans le motif.
+    var lignes = ecartes.map(function (c) {
+      var motif = c.statutDetail || (c.statut === 'retire' ? 'candidature retirée' : 'non retenue');
+      return '<li class="ecarte-item"><span class="ecarte-nom">' + c.nom + '</span>' +
+        '<span class="ecarte-parti">' + c.parti + '</span>' +
+        '<span class="ecarte-motif">' + motif + '</span></li>';
+    }).join('');
+
+    hote.innerHTML = '<details class="ecartes-box">' +
+      '<summary><strong>' + ecartes.length + ' candidature' + (ecartes.length > 1 ? 's' : '') +
+      ' écartée' + (ecartes.length > 1 ? 's' : '') + ' ou retirée' + (ecartes.length > 1 ? 's' : '') +
+      '</strong> <span class="chevron">▸</span></summary>' +
+      '<p class="ecartes-intro">Ces candidatures ne figurent plus dans le tableau ci-dessus, mais restent listées ici avec leur motif : une candidature écartée n\'est pas une candidature qui n\'a jamais existé.</p>' +
+      '<ul class="ecartes-liste">' + lignes + '</ul></details>';
   }
 
   function rowBlocHeader(bloc) {

@@ -3,6 +3,12 @@
 Historique des mises à jour du site. Tenu à jour manuellement à chaque session de travail.
 
 ## 2026-10-11
+- **Les candidatures écartées sortent du tableau principal** et rejoignent une section repliée, « 7 candidatures écartées ou retirées », qui donne le motif de chacune. Un filtre qui les aurait simplement masquées aurait laissé un trou silencieux : impossible de distinguer un candidat qui n'a jamais existé d'un candidat qui a été écarté. Le tableau répond désormais à « qui est en lice ? », la section à « qui a été écarté, et pourquoi ? »
+- Le compteur passe de « 31 candidats officiellement déclarés » à « 24 candidats encore en lice » — 31 se sont déclarés, 24 restent en course
+- **Page Engagements : filtre par candidat**, combinable avec le filtre par thème. Le filtre par thème compare les candidats entre eux ; le filtre par candidat suit un parcours dans le temps, seul angle depuis lequel une divergence se voit. Les deux décomptes suivent la combinaison, et un croisement sans résultat le dit au lieu d'afficher une page vide
+- Correction : les deux compteurs divergeaient — l'accueil comptait les 31 candidatures déclarées, la page Candidats les 24 en lice. Les deux affichent désormais le même chiffre
+- Correction : le menu déroulant des blocs débordait de 42 px sur mobile depuis que les libellés se sont allongés — un `select` se dimensionne sur son option la plus longue
+
 - **Positions des candidats sur le mouvement lycéen**, premier mouvement social d'ampleur de la pré-campagne. Mélenchon (28/09) accuse le gouvernement de réprimer le mouvement ; Retailleau (01/10) demande d'étudier l'interdiction de LFI ; Le Pen réclame le rétablissement de l'ordre ; Attal dit comprendre les lycéens tout en mettant en cause LFI. Quatre positions datées, sourcées sur franceinfo et le JDD
 - Le filtre « Sécurité / justice » de la page Engagements met désormais Le Pen et Mélenchon face à face sur le même événement, à trois jours d'écart
 - **Nouvelle page « Engagements »**, qui rassemble tous les engagements datés, tous candidats confondus, rangés par thème et filtrables. Le filtre « Retraites » met aujourd'hui côte à côte Philippe, Mélenchon, Attal et Le Pen : c'est la comparaison que les fiches individuelles ne permettaient pas

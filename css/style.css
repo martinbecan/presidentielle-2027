@@ -364,6 +364,9 @@ h1 {
   border-radius: 6px;
   font-size: 0.85rem;
   font-family: inherit;
+  /* Un <select> se dimensionne sur son option la plus longue et débordait de l'écran
+     sur mobile depuis que les libellés de blocs se sont allongés. */
+  max-width: 100%;
 }
 
 /* ---------- Table ---------- */
@@ -1722,4 +1725,70 @@ a.quiz-next-btn { display: inline-block; text-decoration: none; text-align: cent
   border-top: 1px solid var(--border-soft);
   padding-top: 0.9rem;
   margin-top: 0.5rem;
+}
+
+/* ---- Filtres combinés de la page Engagements ---- */
+.engagements-filtre-groupe {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.6rem;
+}
+.engagements-filtre-titre {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-dimmer);
+  min-width: 4.5rem;
+}
+/* Un filtre qui ne ramènerait rien en combinaison reste cliquable mais s'efface :
+   le masquer ferait disparaître des thèmes sans que le lecteur sache pourquoi. */
+.engagement-filtre.vide { opacity: 0.4; }
+
+/* ---- Candidatures écartées ---- */
+.ecartes-box {
+  background: var(--card-bg);
+  border: 1px solid var(--border-soft);
+  border-radius: 6px;
+  padding: 0.8rem 1rem;
+  margin: 1.2rem 0;
+}
+.ecartes-box summary {
+  cursor: pointer;
+  font-size: 0.88rem;
+  color: var(--text-dim);
+  list-style: none;
+}
+.ecartes-box summary::-webkit-details-marker { display: none; }
+.ecartes-box summary strong { color: var(--text); }
+.ecartes-box[open] summary .chevron { transform: rotate(90deg); }
+.ecartes-box summary .chevron {
+  display: inline-block;
+  transition: transform 0.15s;
+  color: var(--text-dimmer);
+}
+.ecartes-intro {
+  font-size: 0.8rem;
+  line-height: 1.55;
+  color: var(--text-dim);
+  margin: 0.8rem 0 0.7rem;
+}
+.ecartes-liste { list-style: none; margin: 0; padding: 0; }
+.ecarte-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.45rem 0;
+  border-top: 1px solid var(--border-soft);
+  font-size: 0.84rem;
+}
+.ecarte-nom { font-weight: 600; color: var(--text); }
+.ecarte-parti { color: var(--text-dimmer); font-size: 0.78rem; }
+.ecarte-motif {
+  color: var(--text-dim);
+  font-size: 0.78rem;
+  font-style: italic;
+  flex: 1 1 14rem;
 }

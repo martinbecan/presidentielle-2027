@@ -45,16 +45,44 @@
     return tous.some(function (x) { return x.e.theme === s[0]; });
   });
 
-  var filtreActif = '';
+  var filtreTheme = '';
+  var filtreCandidat = '';
+
+  // Les candidats sont listés dans l'ordre de data/candidats.js, qui suit l'échiquier
+  // politique : le filtre se lit alors de gauche à droite comme le tableau du site.
+  var candidatsPresents = DATA.candidats.filter(function (c) {
+    return tous.some(function (x) { return x.c.slug === c.slug; });
+  });
 
   function renderFiltres() {
     if (!filtresEl) return;
-    var html = '<button type="button" class="engagement-filtre' + (filtreActif ? '' : ' actif') + '" data-theme="">Tous les thèmes</button>';
+
+    var html = '<div class="engagements-filtre-groupe"><span class="engagements-filtre-titre">Thème</span>';
+    html += '<button type="button" class="engagement-filtre' + (filtreTheme ? '' : ' actif') + '" data-theme="">Tous</button>';
     themesPresents.forEach(function (s) {
-      var n = tous.filter(function (x) { return x.e.theme === s[0]; }).length;
-      html += '<button type="button" class="engagement-filtre' + (filtreActif === s[0] ? ' actif' : '') +
-        '" data-theme="' + s[0] + '">' + s[1] + ' <span class="engagement-filtre-nb">' + n + '</span></button>';
+      var n = tous.filter(function (x) {
+        return x.e.theme === s[0] && (!filtreCandidat || x.c.slug === filtreCandidat);
+      }).length;
+      html += '<button type="button" class="engagement-filtre' + (filtreTheme === s[0] ? ' actif' : '') +
+        (n ? '' : ' vide') + '" data-theme="' + s[0] + '">' + s[1] +
+        ' <span class="engagement-filtre-nb">' + n + '</span></button>';
     });
+    html += '</div>';
+
+    html += '<div class="engagements-filtre-groupe"><span class="engagements-filtre-titre">Candidat</span>';
+    html += '<button type="button" class="engagement-filtre' + (filtreCandidat ? '' : ' actif') + '" data-candidat="">Tous</button>';
+    candidatsPresents.forEach(function (c) {
+      var n = tous.filter(function (x) {
+        return x.c.slug === c.slug && (!filtreTheme || x.e.theme === filtreTheme);
+      }).length;
+      var couleur = blocInfo(c.bloc).couleur;
+      var style = filtreCandidat === c.slug ? ' style="border-color:' + couleur + '; background:' + couleur + '22; color:' + couleur + ';"' : '';
+      html += '<button type="button" class="engagement-filtre' + (filtreCandidat === c.slug ? ' actif' : '') +
+        (n ? '' : ' vide') + '" data-candidat="' + c.slug + '"' + style + '>' + c.nom +
+        ' <span class="engagement-filtre-nb">' + n + '</span></button>';
+    });
+    html += '</div>';
+
     filtresEl.innerHTML = html;
   }
 
@@ -95,10 +123,14 @@
 
   function render() {
     var html = '';
-    var themes = filtreActif ? themesPresents.filter(function (s) { return s[0] === filtreActif; }) : themesPresents;
+    var themes = filtreTheme ? themesPresents.filter(function (s) { return s[0] === filtreTheme; }) : themesPresents;
+    // Le décompte doit refléter ce qui est réellement affiché : les deux filtres se combinent.
+    var retenus = tous.filter(function (x) {
+      return (!filtreCandidat || x.c.slug === filtreCandidat) && (!filtreTheme || x.e.theme === filtreTheme);
+    });
 
     themes.forEach(function (s) {
-      var lot = tous.filter(function (x) { return x.e.theme === s[0]; });
+      var lot = retenus.filter(function (x) { return x.e.theme === s[0]; });
       if (!lot.length) return;
       // Du plus récent au plus ancien : l'actualité d'abord, l'historique dessous.
       lot.sort(function (a, b) { return a.e.date < b.e.date ? 1 : a.e.date > b.e.date ? -1 : 0; });
@@ -114,8 +146,15 @@
       html += '</section>';
     });
 
-    var divergences = tous.filter(function (x) { return x.e.divergence; }).length;
-    html += '<p class="engagements-bilan">' + tous.length + ' engagements relevés, ' +
+    if (!html) {
+      html = '<p class="no-data">Aucun engagement ne correspond à ce croisement de filtres.</p>';
+      root.innerHTML = html;
+      return;
+    }
+
+    var divergences = retenus.filter(function (x) { return x.e.divergence; }).length;
+    html += '<p class="engagements-bilan">' + retenus.length + ' engagement' + (retenus.length > 1 ? 's' : '') +
+      (filtreCandidat || filtreTheme ? ' affiché' + (retenus.length > 1 ? 's' : '') + ' sur ' + tous.length + ' relevés' : ' relevés') + ', ' +
       (divergences ? divergences + ' écart' + (divergences > 1 ? 's' : '') + ' signalé' + (divergences > 1 ? 's' : '') + '.'
         : 'aucun écart signalé à ce jour — avec un seul engagement par thème pour la plupart des candidats, il n\'y a rien à confronter.') +
       '</p>';
@@ -127,7 +166,8 @@
     filtresEl.addEventListener('click', function (ev) {
       var btn = ev.target.closest('.engagement-filtre');
       if (!btn) return;
-      filtreActif = btn.getAttribute('data-theme');
+      if (btn.hasAttribute('data-theme')) filtreTheme = btn.getAttribute('data-theme');
+      else if (btn.hasAttribute('data-candidat')) filtreCandidat = btn.getAttribute('data-candidat');
       renderFiltres();
       render();
     });
