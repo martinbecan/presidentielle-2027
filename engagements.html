@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Engagements de campagne — Présidentielle 2027</title>
+<meta property="og:title" content="Engagements de campagne — Présidentielle 2027">
+<meta property="og:description" content="Ce que chaque candidat a promis, daté et sourcé, thème par thème. Pour pouvoir le confronter à ce qui sera dit demain.">
+<meta property="og:image" content="https://martinbecan.github.io/presidentielle-2027/assets/og-image.svg">
+<meta property="og:url" content="https://martinbecan.github.io/presidentielle-2027/engagements.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<link rel="stylesheet" href="css/style.css?v=20261011">
+<script data-goatcounter="https://martinbecan-presidentielle2027.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</head>
+<body>
+<div class="container">
+
+<nav class="site-nav">
+  <a href="index.html" class="site-nav-brand">🇫🇷 Présidentielle 2027</a>
+  <div class="site-nav-links">
+    <a href="index.html">Accueil</a>
+    <a href="candidats.html">Candidats</a>
+    <a href="comparateur.html">Comparateur</a>
+    <a href="engagements.html" class="active">Engagements</a>
+    <a href="quiz-compatibilite.html">Quel candidat ?</a>
+    <a href="timeline.html">Timeline</a>
+    <a href="quiz-vrai-faux.html">Vrai/Faux</a>
+    <a href="apropos.html">À propos</a>
+  </div>
+</nav>
+
+<main>
+
+<header>
+  <h1>Engagements de campagne</h1>
+  <p class="subtitle">Ce que chaque candidat a promis publiquement depuis le début de la campagne, daté et sourcé. Rangé par thème, pour pouvoir comparer — et confronter plus tard ce qui est dit aujourd'hui à ce qui le sera demain.</p>
+</header>
+
+<div class="countdown-bar" id="countdown-bar"></div>
+
+<div class="engagements-methode">
+  <p><strong>Comment lire cette page.</strong> Chaque ligne est une déclaration publique datée, reformulée et accompagnée de sa source. Ce n'est ni un programme officiel ni une promesse d'action : c'est ce qui a été dit, quand, et devant qui.</p>
+  <p>Un engagement signalé par <span class="engagement-divergence-tag">↪</span> s'écarte d'un engagement antérieur du même candidat sur le même thème. Les deux sont alors affichés, datés et sourcés, pour que vous puissiez vérifier le constat plutôt que nous croire sur parole. Nous décrivons ce qui change, pas ce qu'il faut en penser.</p>
+  <p class="engagements-methode-limite">L'absence d'engagement ne signifie pas qu'un candidat n'a rien dit, mais que rien de daté et de sourçable n'a encore été relevé. Ce suivi ne vaut que par l'accumulation : il s'étoffera jusqu'au scrutin.</p>
+</div>
+
+<div class="engagements-filtres" id="engagements-filtres"></div>
+
+<div id="engagements-root">
+  <p class="no-data">Chargement…</p>
+</div>
+
+<noscript>
+  <p style="margin-top:1.5rem; color:#f59e0b; font-size:0.85rem;">Cette page nécessite JavaScript. Les engagements de chaque candidat figurent aussi sur sa <a href="candidats.html">fiche individuelle</a>.</p>
+</noscript>
+
+<div class="signalement-widget" data-contexte="Engagements">
+  <button type="button" class="signalement-toggle">🚩 Signaler une erreur</button>
+  <div class="signalement-form" hidden>
+    <textarea class="signalement-textarea" maxlength="1000" placeholder="Décrivez l'erreur constatée…" aria-label="Décrivez l'erreur constatée"></textarea>
+    <div class="signalement-footer">
+      <span class="signalement-counter">0/1000</span>
+      <button type="button" class="signalement-send" disabled>Envoyer</button>
+    </div>
+    <p class="signalement-status" hidden></p>
+  </div>
+</div>
+
+</main>
+
+<footer>
+</footer>
+
+</div>
+<script src="data/candidats.js?v=20261011"></script>
+<script src="js/engagements.js?v=20261011"></script>
+<script src="js/countdown.js?v=20261011"></script>
+<script src="js/signalement.js?v=20261011"></script>
+<script src="js/footer-meta.js?v=20261011"></script>
+</body>
+</html>

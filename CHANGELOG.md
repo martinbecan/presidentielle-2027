@@ -3,6 +3,10 @@
 Historique des mises à jour du site. Tenu à jour manuellement à chaque session de travail.
 
 ## 2026-10-11
+- **Nouvelle page « Engagements »**, qui rassemble tous les engagements datés, tous candidats confondus, rangés par thème et filtrables. Le filtre « Retraites » met aujourd'hui côte à côte Philippe, Mélenchon, Attal et Le Pen : c'est la comparaison que les fiches individuelles ne permettaient pas
+- Un encart de méthode ouvre la page : ce qu'est un engagement, ce que signale un écart, et surtout ce que l'absence d'engagement ne veut pas dire. Le bilan en bas de page affiche le nombre d'écarts signalés — zéro aujourd'hui, et la page le dit plutôt que de masquer la ligne
+- Quand un écart est signalé, l'engagement antérieur est reproduit dessous avec sa date et sa source, pas seulement référencé. Le lecteur doit pouvoir vérifier le constat sans quitter la page
+- Lien « Engagements » ajouté à la navigation des 20 pages du site
 - **Raphaël Glucksmann remporte la primaire dès le premier tour** avec 66,13 % des voix (79 613 sur 120 587 votants), devant Faure 14,48 %, Royal 7,62 %, Maurel 5,92 % et Guedj 5,83 %. Le second tour des 16-17 octobre n'a pas lieu. Il est le candidat commun du PS, de Place publique et de la GRS
 - Le vote, ouvert le 9 octobre, a été prolongé jusqu'au dimanche 18 h après la cyberattaque par déni de service ; le parquet de Paris a ouvert une enquête préliminaire le 10 octobre
 - **Nouveau statut `non_retenu`** : « candidature retirée » était inexact pour des candidats qui n'ont pas renoncé mais que le processus a écartés. Appliqué aux quatre battus de la primaire, avec leur score, ainsi qu'à Philippe Brun et Fabien Verdier

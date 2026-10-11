@@ -1637,3 +1637,89 @@ a.quiz-next-btn { display: inline-block; text-decoration: none; text-align: cent
 }
 .engagement-source a { overflow-wrap: anywhere; }
 .statut-nonretenu { background: rgba(113,113,122,0.18); color: var(--text-dimmer); }
+
+/* ---- Page d'agrégation des engagements ---- */
+.engagements-methode {
+  background: var(--card-bg);
+  border: 1px solid var(--border-soft);
+  border-radius: 6px;
+  padding: 1rem 1.1rem;
+  margin: 1rem 0 1.2rem;
+}
+.engagements-methode p {
+  font-size: 0.84rem;
+  line-height: 1.6;
+  color: var(--text-dim);
+  margin: 0 0 0.6rem;
+}
+.engagements-methode p:last-child { margin-bottom: 0; }
+.engagements-methode strong { color: var(--text); }
+.engagements-methode-limite {
+  border-top: 1px solid var(--border-soft);
+  padding-top: 0.6rem;
+  font-style: italic;
+}
+.engagements-filtres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1.4rem;
+}
+.engagement-filtre {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  font: inherit;
+  font-size: 0.78rem;
+  padding: 0.3rem 0.65rem;
+  border-radius: 999px;
+  cursor: pointer;
+}
+.engagement-filtre:hover { border-color: var(--accent); color: var(--text); }
+.engagement-filtre.actif {
+  border-color: var(--accent);
+  background: rgba(245, 158, 11, 0.12);
+  color: var(--accent);
+  font-weight: 600;
+}
+.engagement-filtre-nb { opacity: 0.65; }
+.engagements-section { margin-bottom: 2rem; }
+.engagements-section h2 {
+  font-size: 1.05rem;
+  margin: 0 0 0.2rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--border-soft);
+}
+.engagements-compte {
+  font-size: 0.76rem;
+  color: var(--text-dimmer);
+  margin: 0 0 0.9rem;
+}
+.engagement-agrege {
+  border-left-width: 3px;
+  background: var(--card-bg);
+  border-radius: 0 5px 5px 0;
+  padding: 0.75rem 0.9rem;
+  margin-bottom: 0.7rem;
+}
+.engagement-candidat {
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+.engagement-candidat:hover { text-decoration: underline; }
+.engagement-divergence-anterieur {
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px dashed var(--border);
+  font-size: 0.8rem;
+  color: var(--text-dim);
+}
+.engagements-bilan {
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  font-style: italic;
+  border-top: 1px solid var(--border-soft);
+  padding-top: 0.9rem;
+  margin-top: 0.5rem;
+}
