@@ -3,6 +3,8 @@
 Historique des mises à jour du site. Tenu à jour manuellement à chaque session de travail.
 
 ## 2026-10-11
+- **Positions des candidats sur le mouvement lycéen**, premier mouvement social d'ampleur de la pré-campagne. Mélenchon (28/09) accuse le gouvernement de réprimer le mouvement ; Retailleau (01/10) demande d'étudier l'interdiction de LFI ; Le Pen réclame le rétablissement de l'ordre ; Attal dit comprendre les lycéens tout en mettant en cause LFI. Quatre positions datées, sourcées sur franceinfo et le JDD
+- Le filtre « Sécurité / justice » de la page Engagements met désormais Le Pen et Mélenchon face à face sur le même événement, à trois jours d'écart
 - **Nouvelle page « Engagements »**, qui rassemble tous les engagements datés, tous candidats confondus, rangés par thème et filtrables. Le filtre « Retraites » met aujourd'hui côte à côte Philippe, Mélenchon, Attal et Le Pen : c'est la comparaison que les fiches individuelles ne permettaient pas
 - Un encart de méthode ouvre la page : ce qu'est un engagement, ce que signale un écart, et surtout ce que l'absence d'engagement ne veut pas dire. Le bilan en bas de page affiche le nombre d'écarts signalés — zéro aujourd'hui, et la page le dit plutôt que de masquer la ligne
 - Quand un écart est signalé, l'engagement antérieur est reproduit dessous avec sa date et sa source, pas seulement référencé. Le lecteur doit pouvoir vérifier le constat sans quitter la page

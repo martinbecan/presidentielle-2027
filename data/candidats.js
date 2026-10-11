@@ -123,6 +123,8 @@ window.SITE_DATA = {
     { date: "2026-10-09", dateLabel: "9 octobre 2026", titre: "Ouverture du 1er tour de la primaire PS / Place publique / GRS : la plateforme de vote en ligne est visée par une cyberattaque par déni de service dès 8 h. Le scrutin se poursuit, l'intégrité des votes n'est pas compromise, l'ANSSI est saisie", candidatSlug: null, categorie: "institutionnel", future: false },
     { date: "2026-10-09", dateLabel: "9 au 11 octobre 2026", titre: "Primaire commune Parti socialiste / Place publique / GRS — vote en ligne prolongé jusqu'au dimanche 11 octobre après la cyberattaque, et tranché dès le premier tour : le second tour prévu les 16-17 octobre n'a pas lieu", candidatSlug: null, categorie: "institutionnel", future: false },
     { date: "2026-10", dateLabel: "Automne 2026", titre: "Publication des programmes détaillés des candidats", candidatSlug: null, categorie: "institutionnel", future: true },
+    { date: "2026-09-28", dateLabel: "28 septembre 2026", titre: "Jean-Luc Mélenchon accuse le gouvernement d'ordonner une répression du mouvement lycéen et lui prête un « arrière-goût raciste » ; Sébastien Lecornu y voit une insulte et dénonce une surenchère irresponsable des élus insoumis", candidatSlug: "jean-luc-melenchon", categorie: "campagne", future: false },
+    { date: "2026-10-01", dateLabel: "1er octobre 2026", titre: "Trois candidats à la présidentielle mettent en cause LFI dans le blocage des lycées : Bruno Retailleau demande d'étudier son interdiction, Marine Le Pen réclame le rétablissement de l'ordre, Gabriel Attal dit comprendre les lycéens mais accuse le mouvement insoumis", candidatSlug: null, categorie: "campagne", future: false },
     { date: "2026-10-02", dateLabel: "début octobre 2026", titre: "Des propos vulgaires de Raphaël Glucksmann visant Jean-Luc Mélenchon et Marine Le Pen, tenus le 17 septembre en réunion interne, sont rendus publics et provoquent une polémique à quelques jours du vote", candidatSlug: "raphael-glucksmann", categorie: "campagne", future: false },
     { date: "2026-10-04", dateLabel: "4 octobre 2026", titre: "Troisième et dernier débat télévisé de la primaire PS / Place publique", candidatSlug: null, categorie: "campagne", future: false },
     { date: "2026-10-10", dateLabel: "10 octobre 2026", titre: "Le parquet de Paris ouvre une enquête préliminaire sur la cyberattaque visant la primaire ; le vote est prolongé jusqu'au dimanche 18 h en accord avec les candidats", candidatSlug: null, categorie: "justice", future: false },
@@ -354,6 +356,13 @@ window.SITE_DATA = {
           resume: "Défend un retour à 62 ans, puis à 60 ans « le plus vite possible » — une mise en œuvre en deux temps là où son programme affiche les 60 ans comme objectif direct.",
           contexte: "Premier débat de la campagne, organisé par le Medef et diffusé sur LCI",
           source: { nom: "franceinfo", url: "https://www.franceinfo.fr/elections/presidentielle/dette-publique-retraites-reindustrialisation-ce-qu-il-faut-retenir-du-premier-debat-des-principaux-candidats-a-la-presidentielle_8165342.html" },
+          statut: "pris"
+        },
+        {
+          date: "2026-09-28", label: "28 septembre 2026", theme: "securite",
+          resume: "Accuse le gouvernement d'ordonner une répression du mouvement lycéen et lui prête un « arrière-goût raciste ». Appelle les élus et militants de LFI à s'impliquer dans la mobilisation. Sébastien Lecornu qualifie l'accusation d'insulte et dénonce une surenchère irresponsable des élus insoumis.",
+          contexte: "Publication sur X, après plusieurs jours de blocages en Île-de-France",
+          source: { nom: "Le JDD", url: "https://www.lejdd.fr/politique/blocage-des-lycees-melenchon-accuse-le-gouvernement-de-repression-a-larriere-gout-raciste-184647" },
           statut: "pris"
         }
       ],
@@ -1035,6 +1044,13 @@ window.SITE_DATA = {
           contexte: "Premier débat de la campagne, organisé par le Medef et diffusé sur LCI",
           source: { nom: "franceinfo", url: "https://www.franceinfo.fr/elections/presidentielle/dette-publique-retraites-reindustrialisation-ce-qu-il-faut-retenir-du-premier-debat-des-principaux-candidats-a-la-presidentielle_8165342.html" },
           statut: "pris"
+        },
+        {
+          date: "2026-10-01", label: "1er octobre 2026", theme: "education",
+          resume: "Dit comprendre les revendications et la mobilisation des lycéens, mais accuse LFI de mettre en danger les personnels de l'Éducation nationale, les équipements publics et les jeunes eux-mêmes. Demande à Jean-Luc Mélenchon et aux députés insoumis de cesser d'utiliser les jeunes.",
+          contexte: "Entretien sur franceinfo",
+          source: { nom: "franceinfo", url: "https://www.franceinfo.fr/societe/education/blocage-des-lycees/bruno-retailleau-marine-le-pen-gabriel-attal-plusieurs-candidats-a-la-presidentielle-attaquent-la-france-insoumise-sur-sa-responsabilite-dans-le-blocage-des-lycees_8218180.html" },
+          statut: "pris"
         }
       ],
       quizCompatScores: {
@@ -1131,7 +1147,15 @@ window.SITE_DATA = {
         { nom: "François-Xavier Ceccoli", fonction: "Député LR de Haute-Corse", type: "officiel" }
       ],
       soutiens_note: "Contrairement à une idée reçue, Laurent Wauquiez n'est PAS un soutien : il s'est opposé à la tenue du vote interne LR, a publiquement invité Retailleau à « savoir se retirer » si sa candidature ne décolle pas, et penche plutôt vers Édouard Philippe. Xavier Bertrand et Michel Barnier ne sont pas non plus des soutiens confirmés.",
-      engagements_note: "Son programme a été présenté par étapes depuis le lancement de sa campagne en février 2026, sans annonce datée isolable à ce jour. Ses positions figurent ci-dessus ; les engagements datés seront ajoutés dès qu'une déclaration précise et sourcée pourra l'être.",
+      engagements: [
+        {
+          date: "2026-10-01", label: "1er octobre 2026", theme: "institutions",
+          resume: "Demande que soit étudiée l'interdiction de La France insoumise, qu'il accuse de chercher à organiser l'insurrection, tout en reconnaissant que la mesure serait très difficile en droit. Ne se prononce pas sur les revendications des lycéens. Éric Coquerel (LFI) lui répond qu'une telle interdiction relèverait de la dictature.",
+          contexte: "Entretien sur BFMTV-RMC",
+          source: { nom: "franceinfo", url: "https://www.franceinfo.fr/societe/education/blocage-des-lycees/bruno-retailleau-marine-le-pen-gabriel-attal-plusieurs-candidats-a-la-presidentielle-attaquent-la-france-insoumise-sur-sa-responsabilite-dans-le-blocage-des-lycees_8218180.html" },
+          statut: "pris"
+        }
+      ],
       quizCompatScores: {
         retraites_1: -2, retraites_2: 1, immigration_1: 2, immigration_2: -2, securite_1: 2, securite_2: -2,
         ecologie_1: 2, ecologie_2: -2, ecologie_3: -1, laicite_1: 2, agriculture_1: 2, logement_1: -2, defense_1: 2, pouvoir_achat_1: -1, pouvoir_achat_2: 2, dette_1: 2,
@@ -1363,6 +1387,13 @@ window.SITE_DATA = {
           chiffrage: "Environ 9 Md€ par an selon elle ; l'Institut Montaigne chiffre la mesure à 26,5 Md€",
           contexte: "Premier débat de la campagne, organisé par le Medef et diffusé sur LCI",
           source: { nom: "franceinfo", url: "https://www.franceinfo.fr/elections/presidentielle/dette-publique-retraites-reindustrialisation-ce-qu-il-faut-retenir-du-premier-debat-des-principaux-candidats-a-la-presidentielle_8165342.html" },
+          statut: "pris"
+        },
+        {
+          date: "2026-10-01", label: "1er octobre 2026", theme: "securite",
+          resume: "Juge que l'ordre doit être rétabli et tient Jean-Luc Mélenchon pour largement responsable de la situation. Décrit des émeutes organisées par des professionnels et encadrées par des députés LFI.",
+          contexte: "Messages publiés sur X",
+          source: { nom: "franceinfo", url: "https://www.franceinfo.fr/societe/education/blocage-des-lycees/bruno-retailleau-marine-le-pen-gabriel-attal-plusieurs-candidats-a-la-presidentielle-attaquent-la-france-insoumise-sur-sa-responsabilite-dans-le-blocage-des-lycees_8218180.html" },
           statut: "pris"
         }
       ],
