@@ -16,6 +16,9 @@
   }
 
   var questions = shuffleArray(DATA.quizCompatQuestions);
+  // Le nombre annoncé dans le sous-titre était écrit en dur et avait dérivé des données.
+  var nbEl = document.getElementById('quiz-nb-questions');
+  if (nbEl) nbEl.textContent = DATA.quizCompatQuestions.length;
   var extensionQuestions = shuffleArray(DATA.quizCompatExtensionQuestions || []);
   var candidats = DATA.candidats.filter(function (c) { return c.fiche && c.quizCompatScores; });
   var currentExt = 0;

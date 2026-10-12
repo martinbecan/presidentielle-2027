@@ -2,6 +2,16 @@
 
 Historique des mises à jour du site. Tenu à jour manuellement à chaque session de travail.
 
+## 2026-10-12
+Audit d'ergonomie et d'accessibilité. Cinq défauts mesurés et corrigés :
+- **L'accueil n'avait pas de `<h1>`** — seule page du site dans ce cas, et la plus consultée. Ni lecteur d'écran ni moteur de recherche n'y trouvait de titre principal
+- **Aucune des 20 pages n'avait de meta description.** L'og:description existait (partage sur les réseaux) mais pas la balise que Google affiche sous le lien. Générée depuis l'og:description sur les 20 pages
+- **Contraste : 31 éléments sous le seuil WCAG AA** sur une fiche candidat, dont 27 imputables à deux variables de texte secondaire à 4,42 et 3,77 pour un minimum de 4,5. Relevées à #8d8d96 : il n'en reste qu'un
+- **Le focus clavier n'était visible que sur 3 sélecteurs.** Navigation, portes d'entrée, filtres et boutons de quiz s'en remettaient à l'anneau par défaut du navigateur, peu lisible sur fond sombre. Règle globale ajoutée
+- **Le quiz annonçait « 18 questions » et affichait « Question 1/19 »** : un nombre écrit en dur qui avait dérivé des données. Il se lit désormais dans `data/candidats.js`
+
+Reste identifié, non corrigé : la pastille de bloc (10,9 px) est à 3,24:1. L'assombrir corrigerait 7 blocs sur 9 ; les deux autres demanderaient de modifier les couleurs d'identité, ce qui dépasse une correction d'accessibilité.
+
 ## 2026-10-11
 - **Les candidatures écartées sortent du tableau principal** et rejoignent une section repliée, « 7 candidatures écartées ou retirées », qui donne le motif de chacune. Un filtre qui les aurait simplement masquées aurait laissé un trou silencieux : impossible de distinguer un candidat qui n'a jamais existé d'un candidat qui a été écarté. Le tableau répond désormais à « qui est en lice ? », la section à « qui a été écarté, et pourquoi ? »
 - Le compteur passe de « 31 candidats officiellement déclarés » à « 24 candidats encore en lice » — 31 se sont déclarés, 24 restent en course
