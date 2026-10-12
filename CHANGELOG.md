@@ -3,6 +3,11 @@
 Historique des mises à jour du site. Tenu à jour manuellement à chaque session de travail.
 
 ## 2026-10-12
+- **Correction : « Automne 2026 — Publication des programmes détaillés » n'existait pas.** Cette échéance figurait dans la frise sans source. Vérification faite, aucune règle ni aucun usage ne fixe de date de publication des programmes : chaque équipe avance à son rythme, et rien n'oblige un candidat à en publier un. L'entrée est supprimée
+- À sa place, le **seul jalon commun réel** : l'ouverture de la campagne officielle le **lundi 5 avril 2027**, deuxième lundi précédant le scrutin, quand les professions de foi sont homologuées par la Commission nationale de contrôle puis diffusées. C'est le seul moment où tous les candidats présentent leur projet au même format et à la même date
+- Nouvel encart pédagogique sur l'accueil, « Quand connaît-on les programmes ? », qui explique pourquoi il n'y a pas de réponse simple — et pourquoi le site date et source chaque position plutôt que d'attendre un document unique qui ne viendra pas
+- Conséquence sur notre propre suivi : les 6 barèmes de quiz incomplets et les 4 cases « non documenté » n'attendent pas une échéance, mais la publication éventuelle de chaque candidat. Ils peuvent rester en l'état jusqu'au scrutin
+
 - **6ᵉ relevé de sondages** (Toluna Harris Interactive pour M6/RTL, vague 7, terrain du 5 au 8 octobre, 2 004 inscrits) : Le Pen 35 %, Mélenchon 18 %, Philippe 13 %, Glucksmann 10 %, Retailleau 7 %, Attal 5 %, Zemmour 5 %. Source primaire, dont le total des onze candidats testés fait exactement 100 % — aucune reconstruction de notre part
 - **Trois évolutions franchissent le seuil de distinguabilité** : la hausse de Mélenchon (+3,5 pts depuis juin, seuil 3,2), la baisse de Philippe (−3,5, seuil 3,1) et celle d'Attal (−3,0, seuil 2,2). Avec Ruffin, quatre évolutions sont désormais établies, contre une seule au relevé précédent
 - Le relevé IFOP du 29/09 plaçait Le Pen à 32 %, encadré par 35,6 et 35 : c'était un écart d'institut, pas un mouvement. Sur l'ensemble de la période elle reste à +0,5 pt, non significatif
