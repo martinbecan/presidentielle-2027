@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sondages — Présidentielle 2027</title>
+<meta name="description" content="L'évolution des intentions de vote depuis juin 2026, et ce que la marge d'erreur permet réellement d'en conclure.">
+<meta property="og:title" content="Sondages — Présidentielle 2027">
+<meta property="og:description" content="L'évolution des intentions de vote depuis juin 2026, et ce que la marge d'erreur permet réellement d'en conclure.">
+<meta property="og:image" content="https://martinbecan.github.io/presidentielle-2027/assets/og-image.svg">
+<meta property="og:url" content="https://martinbecan.github.io/presidentielle-2027/sondages.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<link rel="stylesheet" href="css/style.css?v=20261012d">
+<script data-goatcounter="https://martinbecan-presidentielle2027.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</head>
+<body>
+<div class="container">
+
+<nav class="site-nav">
+  <a href="index.html" class="site-nav-brand">🇫🇷 Présidentielle 2027</a>
+  <div class="site-nav-links">
+    <a href="index.html">Accueil</a>
+    <a href="candidats.html">Candidats</a>
+    <a href="comparateur.html">Comparateur</a>
+    <a href="engagements.html">Engagements</a>
+    <a href="sondages.html" class="active">Sondages</a>
+    <a href="quiz-compatibilite.html">Quel candidat ?</a>
+    <a href="timeline.html">Timeline</a>
+    <a href="quiz-vrai-faux.html">Vrai/Faux</a>
+  </div>
+</nav>
+
+<main>
+
+<header>
+  <h1>Sondages</h1>
+  <p class="subtitle">L'évolution des intentions de vote depuis juin 2026 — et ce que la marge d'erreur permet réellement d'en conclure.</p>
+</header>
+
+<div class="countdown-bar" id="countdown-bar"></div>
+
+<details class="pedagogie-box">
+  <summary>📖 Comment lire un sondage <span class="chevron">▸</span></summary>
+  <div class="pedagogie-content">
+    <div class="pedagogie-bloc">
+      <h3>Ce qu'un sondage mesure</h3>
+      <p>Des <strong>intentions de vote déclarées</strong> à un instant donné, sur un échantillon d'environ 1 000 personnes. Ce n'est pas une prédiction du résultat, et ce n'est pas un vote.</p>
+    </div>
+    <div class="pedagogie-bloc">
+      <h3>La marge d'erreur dépend du score</h3>
+      <p>Elle n'est pas la même pour tout le monde : environ <strong>±3,0 points</strong> autour de 35 %, mais seulement <strong>±1,1 point</strong> autour de 3 %. Un mouvement de 2 points est donc du bruit pour un candidat à 35 %, et un signal réel pour un candidat à 3 %.</p>
+    </div>
+    <div class="pedagogie-bloc">
+      <h3>Pourquoi deux chiffres peuvent être « identiques »</h3>
+      <p>Pour que deux relevés soient distinguables, leur écart doit dépasser la marge de chacun combinée — soit environ <strong>1,4 fois la marge</strong>. En dessous, dire qu'un candidat « monte » ou « descend » n'est pas soutenu par la mesure. C'est ce calcul qui alimente la colonne « Établie ? » du tableau.</p>
+    </div>
+    <div class="pedagogie-bloc">
+      <h3>Le piège de l'axe commun</h3>
+      <p>Le graphique place tout le monde sur la même échelle, seule façon de comparer des niveaux. Revers : l'écart entre un candidat à 32 % et un candidat à 3 % écrase visuellement les mouvements du second. Une variation invisible ici peut être significative sur sa fiche, où elle est tracée à son échelle.</p>
+    </div>
+    <div class="pedagogie-bloc">
+      <h3>D'où viennent ces chiffres</h3>
+      <p>Chaque relevé correspond à une mise à jour du site, pas à une moyenne glissante. Les quatre premiers sont des agrégats, le cinquième provient d'un institut unique : les sondages de septembre testaient des hypothèses trop différentes pour être moyennés sans fausser la lecture. La source exacte est indiquée en bas de page.</p>
+    </div>
+  </div>
+</details>
+
+<div id="sondages-root">
+  <p class="no-data">Chargement…</p>
+</div>
+
+<noscript>
+  <p style="margin-top:1.5rem; color:#f59e0b; font-size:0.85rem;">Cette page nécessite JavaScript. Les sondages de chaque candidat figurent aussi sur sa <a href="candidats.html">fiche individuelle</a>.</p>
+</noscript>
+
+<div class="signalement-widget" data-contexte="Sondages">
+  <button type="button" class="signalement-toggle">🚩 Signaler une erreur</button>
+  <div class="signalement-form" hidden>
+    <textarea class="signalement-textarea" maxlength="1000" placeholder="Décrivez l'erreur constatée…" aria-label="Décrivez l'erreur constatée"></textarea>
+    <div class="signalement-footer">
+      <span class="signalement-counter">0/1000</span>
+      <button type="button" class="signalement-send" disabled>Envoyer</button>
+    </div>
+    <p class="signalement-status" hidden></p>
+  </div>
+</div>
+
+</main>
+
+<footer>
+  <p class="footer-liens"><a href="apropos.html">À propos, méthodologie et sources</a></p>
+</footer>
+
+</div>
+<script src="data/candidats.js?v=20261012d"></script>
+<script src="js/silence-electoral.js?v=20261012d"></script>
+<script src="js/sondages.js?v=20261012d"></script>
+<script src="js/page-sondages.js?v=20261012d"></script>
+<script src="js/countdown.js?v=20261012d"></script>
+<script src="js/signalement.js?v=20261012d"></script>
+<script src="js/footer-meta.js?v=20261012d"></script>
+</body>
+</html>

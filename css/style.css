@@ -1808,3 +1808,141 @@ summary:focus-visible,
   outline-offset: 2px;
   border-radius: 3px;
 }
+
+/* ---- Sommaire collant des pages longues ---- */
+/* Une fiche candidat fait une dizaine d'écrans sur mobile. La barre colle sous
+   l'en-tête et défile horizontalement : elle ne vole qu'une ligne, et le lecteur
+   sait en permanence où il se trouve. */
+/* La propriété sticky porte sur le conteneur, pas sur la barre : un élément
+   collant ne peut dépasser les limites de son parent direct, et #sommaire-root
+   ne fait que la hauteur de la barre — elle se décollait aussitôt. */
+#sommaire-root {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+.sommaire {
+  background: var(--bg);
+  border-bottom: 1px solid var(--border-soft);
+  margin: 0 0 1rem;
+  padding: 0.45rem 0;
+}
+.sommaire ul {
+  display: flex;
+  gap: 0.3rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.sommaire ul::-webkit-scrollbar { display: none; }
+.sommaire li { flex: 0 0 auto; }
+.sommaire a {
+  display: block;
+  white-space: nowrap;
+  font-size: 0.76rem;
+  color: var(--text-dim);
+  text-decoration: none;
+  padding: 0.3rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+}
+.sommaire a:hover { color: var(--text); border-color: var(--border); }
+.sommaire a.actif {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: rgba(245, 158, 11, 0.1);
+  font-weight: 600;
+}
+/* Le saut d'ancre doit dégager la hauteur de la barre, sinon le titre visé
+   se retrouve caché dessous. */
+.fiche-section { scroll-margin-top: 3.2rem; }
+.fiche-section:focus { outline: none; }
+
+/* ---- Ordre de l'accueil sur mobile ---- */
+/* L'actualité commençait à 829 px sur un écran de 812 : la raison de revenir sur
+   le site était invisible à l'arrivée. Sur petit écran elle passe devant les
+   portes d'entrée, qui restent accessibles juste en dessous. L'ordre du DOM, lui,
+   ne bouge pas : il reste celui que lit un lecteur d'écran sans CSS. */
+@media (max-width: 700px) {
+  main { display: flex; flex-direction: column; }
+  main > .hero-accroche    { order: 1; }
+  main > .countdown-bar    { order: 2; }
+  main > .actualites-section { order: 3; }
+  main > .hero-entries     { order: 4; }
+  main > header            { order: 5; }
+  main > .pedagogie-box    { order: 6; }
+  main > .voter-banner     { order: 7; }
+  main > *                 { order: 8; }
+  /* La description de l'accroche prenait cinq lignes avant tout contenu utile. */
+  .hero-desc { font-size: 0.86rem; }
+}
+
+/* ---- Page Sondages ---- */
+.sondages-graphe { width: 100%; height: 100%; display: block; }
+#sondages-root .courbe-grid { grid-template-rows: 260px auto; }
+.sondages-bloc { margin: 1.8rem 0; }
+.sondages-bloc h2 {
+  font-size: 1.05rem;
+  margin: 0 0 0.5rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--border-soft);
+}
+.sondages-note {
+  font-size: 0.8rem;
+  line-height: 1.55;
+  color: var(--text-dim);
+  margin: 0 0 0.9rem;
+}
+.sondages-synthese p {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--text-dim);
+  margin: 0 0 0.6rem;
+}
+.sondages-synthese strong { color: var(--text); }
+.sondages-table { width: 100%; border-collapse: collapse; font-size: 0.84rem; }
+.sondages-table th {
+  text-align: left;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-dimmer);
+  padding: 0.4rem 0.5rem;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+.sondages-table td {
+  padding: 0.5rem;
+  border-bottom: 1px solid var(--border-soft);
+  white-space: nowrap;
+}
+.sondages-pastille {
+  display: inline-block;
+  width: 9px; height: 9px;
+  border-radius: 50%;
+  margin-right: 0.4rem;
+  vertical-align: baseline;
+}
+.sondages-vide { color: var(--text-dimmer); }
+.sondages-ecart { font-variant-numeric: tabular-nums; }
+.sondages-oui { color: #6ee7b7; font-weight: 600; }
+.sondages-non { color: var(--text-dimmer); }
+.sondages-nouveaux { list-style: none; margin: 0; padding: 0; font-size: 0.86rem; }
+.sondages-nouveaux li { padding: 0.3rem 0; }
+.sondages-source {
+  font-size: 0.76rem;
+  color: var(--text-dim);
+  border-top: 1px solid var(--border-soft);
+  padding-top: 0.9rem;
+  margin-top: 1.5rem;
+}
+.footer-liens { font-size: 0.82rem; margin: 0 0 0.6rem; }
+
+/* La légende suit directement l'axe des dates sur la page Sondages : sans marge
+   haute, les deux se chevauchaient sur écran étroit. */
+#sondages-root .courbe-legende { margin-top: 1.1rem; }
+#sondages-root .courbe-legende-item { text-decoration: none; color: var(--text); }
+#sondages-root .courbe-legende-item:hover { text-decoration: underline; }
+@media (max-width: 700px) { #sondages-root .courbe-grid { grid-template-rows: 200px auto; } }

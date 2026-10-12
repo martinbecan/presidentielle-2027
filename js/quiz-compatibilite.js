@@ -208,7 +208,7 @@
       var cls = 'quiz-compat-bar-row' + (i > 2 ? ' quiz-compat-bar-reste' : '');
       html += '<a class="' + cls + '" href="candidats/' + r.candidat.slug + '.html">';
       html += '<div class="quiz-compat-rang">' + (i + 1) + '</div>';
-      html += '<div class="avatar" style="width:44px;height:44px;font-size:1rem;background:' + bloc.couleur + '33; color:' + bloc.couleur + ';">' + initials(r.candidat.nom) + '</div>';
+      html += '<div class="avatar" style="width:44px;height:44px;font-size:1rem;background:' + bloc.couleur + '33; color:' + (bloc.couleurTexte || bloc.couleur) + ';">' + initials(r.candidat.nom) + '</div>';
       html += '<div class="quiz-compat-bar-main">';
       var statutTxt = r.candidat.statut === 'qualifie_2nd_tour' ? ' <span class="statut-pill statut-qualifie">🟢 Qualifié·e pour le 2nd tour</span>' :
         (r.candidat.statut === 'elimine_1er_tour' ? ' <span class="statut-pill statut-elimine">⚪ Éliminé·e au 1er tour</span>' : '');

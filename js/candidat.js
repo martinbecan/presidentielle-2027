@@ -194,14 +194,14 @@
 
   // Header
   html += '<div class="fiche-header">';
-  html += '<div class="avatar" style="background:' + bloc.couleur + '33; color:' + bloc.couleur + ';">' + initials(c.nom) + '</div>';
+  html += '<div class="avatar" style="background:' + bloc.couleur + '33; color:' + (bloc.couleurTexte || bloc.couleur) + ';">' + initials(c.nom) + '</div>';
   html += '<div class="fiche-identite">';
   html += '<h1>' + c.nom + (c.note ? ' <span class="note-icon" title="' + (c.noteDetail || '') + '">' + c.note + '</span>' : '') + '</h1>';
   html += '<div class="fiche-meta">';
   html += '<strong>' + c.parti + '</strong>' + (c.age ? ' · ' + c.age : '') + '<br>';
   if (c.fonction_actuelle) html += c.fonction_actuelle;
   html += '</div>';
-  html += '<span class="bloc-pill" style="background:' + bloc.couleur + '33; color:' + bloc.couleur + '; border:1px solid ' + bloc.couleur + '55;">' + bloc.label + '</span>';
+  html += '<span class="bloc-pill" style="background:' + bloc.couleur + '33; color:' + (bloc.couleurTexte || bloc.couleur) + '; border:1px solid ' + bloc.couleur + '55;">' + bloc.label + '</span>';
   html += '</div>';
   html += '<div class="sondage-box"><div><div class="chiffre">' + c.sondage.label + '</div><div class="libelle">Intentions de vote¹</div></div></div>';
   html += '</div>';

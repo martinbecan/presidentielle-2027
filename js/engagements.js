@@ -93,7 +93,7 @@
 
     var html = '<div class="engagement engagement-agrege" style="border-left-color:' + couleur + ';">';
     html += '<div class="engagement-entete">';
-    html += '<a class="engagement-candidat" href="candidats/' + c.slug + '.html" style="color:' + couleur + ';">' + c.nom + '</a>';
+    html += '<a class="engagement-candidat" href="candidats/' + c.slug + '.html" style="color:' + (blocInfo(c.bloc).couleurTexte || couleur) + ';">' + c.nom + '</a>';
     html += '<span class="engagement-date">' + e.label + '</span>';
     html += '<span class="engagement-statut ' + st.cls + '">' + st.label + '</span>';
     html += '</div>';

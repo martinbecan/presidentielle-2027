@@ -3,6 +3,13 @@
 Historique des mises à jour du site. Tenu à jour manuellement à chaque session de travail.
 
 ## 2026-10-12
+- **Page Sondages** : les 11 séries sur un axe commun, le tableau des 5 relevés avec l'écart et une colonne « Établie ? » qui applique le seuil de distinguabilité, et un encart « Comment lire un sondage » — y compris le piège de l'axe commun, qui écrase visuellement les mouvements des petits candidats. Le travail statistique du site était jusqu'ici enterré dans les fiches
+- **Sommaire collant sur les 12 fiches candidats.** Une fiche fait 10,9 écrans sur mobile : les 10 sections sont désormais accessibles d'un geste, et la section en cours de lecture est mise en évidence pendant le défilement
+- **L'actualité passe devant les portes d'entrée sur mobile.** Elle commençait à 829 px sur un écran de 812 : la raison de revenir sur le site était invisible à l'arrivée. L'ordre du DOM ne bouge pas, seul l'affichage est réordonné
+- **Navigation : « Sondages » entre, « À propos » passe en pied de page.** Une 9ᵉ entrée faisait passer le menu à 3 lignes et 20 % de l'écran mobile, mesure à l'appui. « À propos » est une page que l'on consulte une fois, pas une destination où l'on revient : sa place est dans le pied de page, comme partout ailleurs. Le menu reste à 8 entrées et 2 lignes
+- **Contraste des couleurs de blocs** : chaque bloc gagne une `couleurTexte` éclaircie juste assez pour atteindre 4,5:1, utilisée uniquement là où la couleur sert de texte. L'identité reste intacte pour les pastilles, les barres et les courbes. Le dernier élément sous le seuil disparaît : **31 → 0**
+- Divergence relevée au passage : trois blocs ont une couleur différente dans `data/candidats.js` et dans le CSS. Sans incidence sur le contraste, mais à unifier
+
 Audit d'ergonomie et d'accessibilité. Cinq défauts mesurés et corrigés :
 - **L'accueil n'avait pas de `<h1>`** — seule page du site dans ce cas, et la plus consultée. Ni lecteur d'écran ni moteur de recherche n'y trouvait de titre principal
 - **Aucune des 20 pages n'avait de meta description.** L'og:description existait (partage sur les réseaux) mais pas la balise que Google affiche sous le lien. Générée depuis l'og:description sur les 20 pages

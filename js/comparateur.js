@@ -183,10 +183,10 @@
     list.forEach(function (c) {
       var bloc = blocInfo(c.bloc);
       html += '<div class="comparateur-cell comparateur-cell-header">';
-      html += '<div class="avatar" style="width:48px;height:48px;font-size:1.05rem;background:' + bloc.couleur + '33; color:' + bloc.couleur + ';">' + initials(c.nom) + '</div>';
+      html += '<div class="avatar" style="width:48px;height:48px;font-size:1.05rem;background:' + bloc.couleur + '33; color:' + (bloc.couleurTexte || bloc.couleur) + ';">' + initials(c.nom) + '</div>';
       html += '<div class="comparateur-card-nom">' + c.nom + '</div>';
       html += '<div class="comparateur-card-parti">' + c.parti + '</div>';
-      html += '<span class="bloc-pill" style="background:' + bloc.couleur + '33; color:' + bloc.couleur + '; border:1px solid ' + bloc.couleur + '55;">' + bloc.label + '</span>';
+      html += '<span class="bloc-pill" style="background:' + bloc.couleur + '33; color:' + (bloc.couleurTexte || bloc.couleur) + '; border:1px solid ' + bloc.couleur + '55;">' + bloc.label + '</span>';
       html += '<div class="comparateur-sondage">' + ((window.isSilenceElectoral && window.isSilenceElectoral()) ? '<span class="silence-note">🔇 masqué</span>' : c.sondage.label) + '</div>';
       html += '</div>';
     });

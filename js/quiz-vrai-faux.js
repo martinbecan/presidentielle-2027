@@ -118,7 +118,7 @@
     if (item.fc.mecanisme) html += '<p class="quiz-reveal-mecanisme">🔍 <strong>Mécanique repérée :</strong> ' + item.fc.mecanisme + '</p>';
     html += '<p class="quiz-reveal-source">' + renderSources(item.fc.sources) + (item.fc.date ? ' · ' + item.fc.date : '') + '</p>';
     html += '<div class="quiz-reveal-candidat">';
-    html += '<div class="avatar" style="width:40px;height:40px;font-size:0.95rem;background:' + bloc.couleur + '33; color:' + bloc.couleur + ';">' + initials(item.candidat.nom) + '</div>';
+    html += '<div class="avatar" style="width:40px;height:40px;font-size:0.95rem;background:' + bloc.couleur + '33; color:' + (bloc.couleurTexte || bloc.couleur) + ';">' + initials(item.candidat.nom) + '</div>';
     html += '<div>Prononcé par <a href="candidats/' + item.candidat.slug + '.html">' + item.candidat.nom + '</a> (' + item.candidat.parti + ')</div>';
     html += '</div>';
     html += '<button type="button" class="quiz-next-btn" id="quiz-next-btn">' + (current + 1 < pool.length ? 'Question suivante →' : 'Voir mon score →') + '</button>';

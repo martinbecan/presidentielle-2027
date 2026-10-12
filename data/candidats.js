@@ -23,15 +23,15 @@ window.SITE_DATA = {
   },
 
   blocs: [
-    { id: "exgauche",    label: "Extrême gauche",                                      couleur: "#dc2626" },
-    { id: "gradicale",   label: "Gauche radicale",                                     couleur: "#ef4444" },
-    { id: "gprimaire",   label: "Gauche — Ex-Front populaire (candidatures autonomes)", couleur: "#f97316" },
-    { id: "gps",         label: "Gauche — PS / Place publique / GRS",        couleur: "#ec4899" },
-    { id: "ghors",       label: "Gauche — Hors primaire",                              couleur: "#eab308" },
-    { id: "centre",      label: "Bloc central",                                        couleur: "#3b82f6" },
-    { id: "droite",      label: "Droite",                                              couleur: "#8b5cf6" },
-    { id: "exdroite",    label: "Extrême droite / Souverainisme",                      couleur: "#64748b" },
-    { id: "inclassable", label: "Candidatures indépendantes",                          couleur: "#6b7280" }
+    { id: "exgauche",    label: "Extrême gauche",                                      couleur: "#dc2626", couleurTexte: "#ea7e7e" },
+    { id: "gradicale",   label: "Gauche radicale",                                     couleur: "#ef4444", couleurTexte: "#f47a7a" },
+    { id: "gprimaire",   label: "Gauche — Ex-Front populaire (candidatures autonomes)", couleur: "#f97316", couleurTexte: "#fa8737" },
+    { id: "gps",         label: "Gauche — PS / Place publique / GRS",        couleur: "#ec4899", couleurTexte: "#f178b4" },
+    { id: "ghors",       label: "Gauche — Hors primaire",                              couleur: "#eab308", couleurTexte: "#eab308" },
+    { id: "centre",      label: "Bloc central",                                        couleur: "#3b82f6", couleurTexte: "#6ea3f8" },
+    { id: "droite",      label: "Droite",                                              couleur: "#8b5cf6", couleurTexte: "#ae8df9" },
+    { id: "exdroite",    label: "Extrême droite / Souverainisme",                      couleur: "#64748b", couleurTexte: "#9aa6b8" },
+    { id: "inclassable", label: "Candidatures indépendantes",                          couleur: "#6b7280", couleurTexte: "#9fa4ad" }
   ],
 
   pressentis: [
