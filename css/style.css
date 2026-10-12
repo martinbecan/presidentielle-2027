@@ -1960,3 +1960,7 @@ summary:focus-visible,
   margin-top: 0.25rem;
   font-size: 0.72rem;
 }
+
+/* ---- Source attachée à une position ---- */
+.position-source { margin-top: 0.4rem; font-size: 0.72rem; }
+.position-source a { overflow-wrap: anywhere; }

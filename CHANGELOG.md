@@ -3,6 +3,11 @@
 Historique des mises à jour du site. Tenu à jour manuellement à chaque session de travail.
 
 ## 2026-10-12
+- **Source attachée à la position, et non plus à la fiche entière.** Un lecteur qui voulait vérifier « Philippe : 65 ans et 45 annuités » devait parcourir les 3 sources de bas de page en devinant laquelle le disait. Chaque position peut désormais porter la sienne, affichée sous la synthèse et reprise dans le comparateur
+- **20 positions sourcées individuellement** : les 15 de David Lisnard, dont le parti publie un programme thématique complet et accessible, et 5 d'Édouard Philippe issues d'annonces datées couvertes par la presse
+- **Le chantier bute sur la disponibilité des sources, pas sur l'effort.** Vérification faite : le site de Mélenchon publie une table des matières de 18 chapitres dont **toutes les pages renvoient une erreur 404** ; celui d'Édouard Philippe se limite à quatre pages d'orientations, sans santé, laïcité, agriculture, logement ni défense ; le RN n'a pas de page de programme. Les seuls sites qui rangent les positions par thème sont des agrégateurs non fiables, qui se contredisent — l'un place Philippe à 65 ans, l'autre affirme qu'il ne remet pas en cause les 64
+- La suite se fera donc au rythme des publications réelles, position par position, plutôt qu'en un chantier de 176 entrées
+
 - **Passe de sourçage sur les pages qui n'en avaient aucun.** Trois pages affichaient des faits sans moyen de les vérifier : la frise (77 événements, zéro source), le comparateur et le quiz. Le principe « tout est sourcé » valait pour les fiches, pas pour le reste du site
 - **40 des 77 événements de la frise portent désormais leur source**, affichée sous l'événement. Les 37 restants sont antérieurs au suivi du site : ils restent sans source, visiblement, plutôt que de recevoir un lien approximatif. **Les 6 échéances à venir sont toutes sourcées** — Code électoral, Conseil constitutionnel, info.gouv.fr
 - **Comparateur** : un lien « Sources de [candidat] » par colonne, pointant vers la liste de sources de sa fiche. Les positions comparées venaient des fiches sans que le lecteur puisse remonter jusqu'à elles

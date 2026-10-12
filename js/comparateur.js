@@ -204,6 +204,12 @@
         } else if (r) {
           if (r.direction) html += '<div class="stance ' + (r.stanceCls || 'stance-nuance') + '">' + r.direction + '</div>';
           html += '<div class="detail">' + r.synthese + '</div>';
+          // Même source que sur la fiche, affichée ici aussi : le comparateur est
+          // souvent le premier endroit où le lecteur découvre une position.
+          var srcPos = c.positions_10_sujets && c.positions_10_sujets[s[0]] && c.positions_10_sujets[s[0]].source;
+          if (srcPos) {
+            html += '<div class="position-source"><a href="' + srcPos.url + '" target="_blank" rel="noopener noreferrer" class="source-verify-link">🔍 ' + srcPos.nom + '</a></div>';
+          }
         } else {
           html += '<div class="stance stance-nodata">Pas d\'information à ce stade</div>';
         }
