@@ -9,7 +9,7 @@
  * ouvrant index.html directement depuis l'explorateur de fichiers (partage par email, clé USB, etc.).
  */
 window.SITE_DATA = {
-  derniere_maj: "11 octobre 2026",
+  derniere_maj: "12 octobre 2026",
   derniere_maj_sondages: "29/09/2026",
 
   alerte: {
@@ -128,7 +128,11 @@ window.SITE_DATA = {
     { date: "2026-10-02", dateLabel: "début octobre 2026", titre: "Des propos vulgaires de Raphaël Glucksmann visant Jean-Luc Mélenchon et Marine Le Pen, tenus le 17 septembre en réunion interne, sont rendus publics et provoquent une polémique à quelques jours du vote", candidatSlug: "raphael-glucksmann", categorie: "campagne", future: false },
     { date: "2026-10-04", dateLabel: "4 octobre 2026", titre: "Troisième et dernier débat télévisé de la primaire PS / Place publique", candidatSlug: null, categorie: "campagne", future: false },
     { date: "2026-10-10", dateLabel: "10 octobre 2026", titre: "Le parquet de Paris ouvre une enquête préliminaire sur la cyberattaque visant la primaire ; le vote est prolongé jusqu'au dimanche 18 h en accord avec les candidats", candidatSlug: null, categorie: "justice", future: false },
-    { date: "2026-10-11", dateLabel: "11 octobre 2026", titre: "Raphaël Glucksmann remporte la primaire dès le premier tour avec 66,13 % des voix, devant Olivier Faure (14,48 %), Ségolène Royal (7,62 %), Emmanuel Maurel (5,92 %) et Jérôme Guedj (5,83 %). Il devient le candidat commun du PS, de Place publique et de la GRS", candidatSlug: "raphael-glucksmann", categorie: "institutionnel", future: false, majeur: true },
+    { date: "2026-10-11", dateLabel: "11 octobre 2026", titre: "Raphaël Glucksmann remporte la primaire dès le premier tour avec 79 613 voix sur 120 307 suffrages exprimés, soit 66,17 %, devant Olivier Faure (14,48 %), Ségolène Royal (7,62 %), Emmanuel Maurel (5,92 %) et Jérôme Guedj (5,83 %). Il devient le candidat commun du PS, de Place publique et de la GRS", candidatSlug: "raphael-glucksmann", categorie: "institutionnel", future: false, majeur: true },
+    { date: "2026-10-11", dateLabel: "11 octobre 2026", titre: "Dans son discours de victoire, Raphaël Glucksmann se présente comme le candidat de la rupture avec l'hégémonie de Jean-Luc Mélenchon sur la gauche et exclut tout accord avec La France insoumise", candidatSlug: "raphael-glucksmann", categorie: "campagne", future: false },
+    { date: "2026-10-11", dateLabel: "11 octobre 2026", titre: "Marine Tondelier regrette que le vainqueur de la primaire fasse « le choix du repli » et appelle à refuser le clanisme et les gauches irréconciliables ; les Écologistes restent partagés entre candidature autonome et alliance", candidatSlug: "marine-tondelier", categorie: "campagne", future: false },
+    { date: "2026-10-11", dateLabel: "11 octobre 2026", titre: "Jean-Luc Mélenchon réunit plus de 10 000 personnes à Clermont-Ferrand le jour même du scrutin, sans réagir au résultat dans la soirée ; Fabien Roussel ne réagit pas davantage", candidatSlug: "jean-luc-melenchon", categorie: "campagne", future: false },
+    { date: "2026-10-12", dateLabel: "12 octobre 2026", titre: "La faible participation à la primaire — 120 307 suffrages exprimés contre plus de 2 millions à celle de 2017 et près de 3 millions en 2011 — nourrit les interrogations sur la portée de la désignation", candidatSlug: null, categorie: "institutionnel", future: false },
     { date: "2026-10-15", dateLabel: "15 octobre 2026", titre: "Date limite de dépôt des mémoires devant la Cour de cassation dans l'affaire des assistants parlementaires du RN", candidatSlug: "marine-le-pen", categorie: "justice", future: true },
     { date: "2027-01", dateLabel: "Début 2027", titre: "Ouverture de la collecte officielle des parrainages", candidatSlug: null, categorie: "institutionnel", future: true },
     { date: "2027-03", dateLabel: "~Mars 2027", titre: "Publication de la liste officielle des candidats (Conseil constitutionnel)", candidatSlug: null, categorie: "institutionnel", future: true },
@@ -663,7 +667,7 @@ window.SITE_DATA = {
       nom: "Raphaël Glucksmann",
       parti: "Place publique",
       note: "★",
-      noteDetail: "Désigné candidat commun du Parti socialiste, de Place publique et de la Gauche républicaine et socialiste le 11 octobre 2026, avec 66,13 % des voix au premier tour de leur primaire (120 587 votants sur 140 282 inscrits).",
+      noteDetail: "Désigné candidat commun du Parti socialiste, de Place publique et de la Gauche républicaine et socialiste le 11 octobre 2026, avec 79 613 voix sur 120 307 suffrages exprimés, soit 66,17 %, dès le premier tour de leur primaire.",
       bloc: "gps",
       fiche: true,
       statut: "en_lice",
@@ -763,6 +767,20 @@ window.SITE_DATA = {
           resume: "Triple le chèque carburant pour le porter à 500 € et l'étend aux classes moyennes.",
           contexte: "Entretien sur franceinfo",
           source: { nom: "franceinfo", url: "https://www.franceinfo.fr/politique/raphael-glucksmann/" },
+          statut: "pris"
+        },
+        {
+          date: "2026-10-11", label: "11 octobre 2026", theme: "autre",
+          resume: "Exclut tout accord avec La France insoumise pour 2027 et se présente comme le candidat de la rupture avec l'hégémonie de Jean-Luc Mélenchon sur la gauche. Adresse en revanche des signes aux écologistes et aux communistes en parlant de révolution écologique et de justice sociale et fiscale.",
+          contexte: "Discours de victoire puis journal de 20 h de France 2",
+          source: { nom: "France 24", url: "https://www.france24.com/fr/france/20261011-rapha%C3%ABl-glucksmann-officiellement-candidat-un-cap-clair-et-des-zones-d-ombre" },
+          statut: "pris"
+        },
+        {
+          date: "2026-10-11", label: "11 octobre 2026", theme: "pouvoir_achat",
+          resume: "Propose de baisser la CSG pour rapprocher le salaire net du salaire brut — une mesure que ses contradicteurs à gauche jugent proche de positions libérales.",
+          contexte: "Programme présenté au soir de sa désignation",
+          source: { nom: "France 24", url: "https://www.france24.com/fr/france/20261011-rapha%C3%ABl-glucksmann-officiellement-candidat-un-cap-clair-et-des-zones-d-ombre" },
           statut: "pris"
         }
       ],

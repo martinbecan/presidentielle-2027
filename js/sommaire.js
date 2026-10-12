@@ -17,14 +17,30 @@
       .replace(/^-|-$/g, '');
   }
 
+  // Le comparateur rappelle construire() à chaque changement de sélection : sans
+  // déconnexion, chaque reconstruction laisserait derrière elle un observateur
+  // rattaché à des éléments qui n'existent plus.
+  var observateur = null;
+
   function construire() {
     var hote = document.getElementById('sommaire-root');
     if (!hote) return;
+    if (observateur) { observateur.disconnect(); observateur = null; }
+    hote.innerHTML = '';
 
-    var sections = [].slice.call(document.querySelectorAll('.fiche-section'))
+    // Les fiches rangent leur contenu en sections titrées, le comparateur en lignes
+    // de tableau : le conteneur indique quoi cibler et où lire le titre.
+    var selCibles = hote.getAttribute('data-cibles') || '.fiche-section';
+    var selTitre = hote.getAttribute('data-titre') || 'h2';
+
+    var sections = [].slice.call(document.querySelectorAll(selCibles))
       .map(function (s) {
-        var h = s.querySelector('h2');
-        return h ? { el: s, titre: h.textContent.trim() } : null;
+        // ":self" : l'élément ciblé porte lui-même son titre. Nécessaire pour le
+        // comparateur, dont les lignes sont en display:contents — elles n'ont pas de
+        // boîte, donc ni ancre ni observation possibles : on vise la cellule de libellé.
+        var h = selTitre === ':self' ? s : s.querySelector(selTitre);
+        var t = h ? h.textContent.trim() : '';
+        return t ? { el: s, titre: t } : null;
       })
       .filter(Boolean);
 
@@ -52,7 +68,7 @@
     // Mise en évidence de la section courante. IntersectionObserver plutôt qu'un
     // écouteur de défilement : pas de calcul à chaque pixel parcouru.
     var visibles = {};
-    var obs = new IntersectionObserver(function (entrees) {
+    observateur = new IntersectionObserver(function (entrees) {
       entrees.forEach(function (e) { visibles[e.target.id] = e.isIntersecting; });
       var courante = sections.filter(function (s) { return visibles[s.el.id]; })[0];
       Object.keys(liens).forEach(function (id) {
@@ -69,7 +85,7 @@
       }
     }, { rootMargin: '-25% 0px -60% 0px' });
 
-    sections.forEach(function (s) { obs.observe(s.el); });
+    sections.forEach(function (s) { observateur.observe(s.el); });
   }
 
   // candidat.js et comparateur.js écrivent leur contenu de façon synchrone au

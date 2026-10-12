@@ -16,15 +16,18 @@
   --accent: #f59e0b;
   --card-bg: #262632;
 
-  --c-exgauche: #e14444;
+  /* Ces valeurs doivent rester identiques aux couleurs de data/candidats.js :
+     les deux alimentent le même repère visuel, l'une en CSS, l'autre en style
+     inline, et elles avaient divergé pour trois blocs. */
+  --c-exgauche: #dc2626;
   --c-gradicale: #ef4444;
   --c-gprimaire: #f97316;
   --c-gps: #ec4899;
   --c-ghors: #eab308;
   --c-centre: #3b82f6;
   --c-droite: #8b5cf6;
-  --c-exdroite: #7c8ba3;
-  --c-inclassable: #818793;
+  --c-exdroite: #64748b;
+  --c-inclassable: #6b7280;
 
   --quiz-vf: #38bdf8;
   --quiz-compat: #a78bfa;
@@ -1857,8 +1860,10 @@ summary:focus-visible,
 }
 /* Le saut d'ancre doit dégager la hauteur de la barre, sinon le titre visé
    se retrouve caché dessous. */
-.fiche-section { scroll-margin-top: 3.2rem; }
-.fiche-section:focus { outline: none; }
+.fiche-section,
+.comparateur-cell-label { scroll-margin-top: 3.2rem; }
+.fiche-section:focus,
+.comparateur-cell-label:focus { outline: none; }
 
 /* ---- Ordre de l'accueil sur mobile ---- */
 /* L'actualité commençait à 829 px sur un écran de 812 : la raison de revenir sur

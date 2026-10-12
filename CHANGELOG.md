@@ -3,6 +3,12 @@
 Historique des mises à jour du site. Tenu à jour manuellement à chaque session de travail.
 
 ## 2026-10-12
+- **Réactions à la désignation de Glucksmann** : il se présente comme le candidat de la rupture avec l'hégémonie de Mélenchon et exclut tout accord avec LFI ; Marine Tondelier regrette « le choix du repli » ; Mélenchon réunit 10 000 personnes à Clermont-Ferrand le jour même sans réagir au résultat. Deux engagements ajoutés à sa fiche, dont la baisse de la CSG
+- **Correction du score de Glucksmann : 66,17 % et non 66,13 %.** Les sources donnaient les deux. Seul 66,17 % se reconstitue à partir des décomptes publiés — 79 613 voix sur 120 307 suffrages exprimés. Le site indique désormais la base de calcul plutôt qu'un pourcentage seul
+- Participation ajoutée au récit : 120 307 suffrages exprimés, contre plus de 2 millions à la primaire socialiste de 2017 et près de 3 millions en 2011
+- **Sommaire collant sur le comparateur** : les 15 thèmes en ancres. Le module de sommaire devient paramétrable, les deux pages n'ayant pas la même structure. Ses lignes étant en `display: contents`, elles n'ont pas de boîte et ne pouvaient servir ni d'ancre ni de cible d'observation : l'ancrage porte sur la cellule de libellé. L'observateur est déconnecté à chaque reconstruction, le comparateur se redessinant à chaque changement de sélection
+- **Couleurs unifiées** : trois blocs avaient une valeur différente dans `data/candidats.js` et dans le CSS. Le CSS s'aligne sur les données, qui restent au-dessus du seuil de 3:1 sur le fond d'en-tête
+
 - **Page Sondages** : les 11 séries sur un axe commun, le tableau des 5 relevés avec l'écart et une colonne « Établie ? » qui applique le seuil de distinguabilité, et un encart « Comment lire un sondage » — y compris le piège de l'axe commun, qui écrase visuellement les mouvements des petits candidats. Le travail statistique du site était jusqu'ici enterré dans les fiches
 - **Sommaire collant sur les 12 fiches candidats.** Une fiche fait 10,9 écrans sur mobile : les 10 sections sont désormais accessibles d'un geste, et la section en cours de lecture est mise en évidence pendant le défilement
 - **L'actualité passe devant les portes d'entrée sur mobile.** Elle commençait à 829 px sur un écran de 812 : la raison de revenir sur le site était invisible à l'arrivée. L'ordre du DOM ne bouge pas, seul l'affichage est réordonné

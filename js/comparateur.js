@@ -233,6 +233,9 @@
     }
     var selectedCandidats = uniqueSlugs.map(function (slug) { return candidats.find(function (c) { return c.slug === slug; }); }).filter(Boolean);
     resultEl.innerHTML = renderCourbesComparees(selectedCandidats) + renderTable(selectedCandidats);
+    // Le sommaire est construit sur le DOM rendu : il doit suivre chaque changement
+    // de sélection, sans quoi ses ancres pointeraient vers l'ancienne comparaison.
+    if (window.rebuildSommaire) window.rebuildSommaire();
     var tableEl = resultEl.querySelector('.comparateur-table');
     if (tableEl) tableEl.style.gridTemplateColumns = '150px repeat(' + selectedCandidats.length + ', 1fr)';
     shareBtn.disabled = false;
