@@ -3,6 +3,9 @@
 Historique des mises à jour du site. Tenu à jour manuellement à chaque session de travail.
 
 ## 2026-10-12
+- **« À propos » revient dans la navigation.** Je l'avais déplacée en pied de page ce matin pour éviter une 3ᵉ ligne de menu sur mobile. Martin ne l'a pas retrouvée — et si le propriétaire du site ne la trouve pas, un visiteur encore moins. Nouvelle mesure : le retour en navigation coûte 44 px et laisse l'actualité largement au-dessus de la ligne de flottaison (559 px sur un écran de 812). Mon objection était surévaluée. Le lien descriptif reste aussi en pied de page
+- Le raisonnement initial — « une page qu'on consulte une fois n'est pas une destination » — vaut pour un site ordinaire, pas pour celui-ci : sa crédibilité tient à sa méthode, et « qui a fait ça, et comment ? » est une question de première visite
+
 - **Source attachée à la position, et non plus à la fiche entière.** Un lecteur qui voulait vérifier « Philippe : 65 ans et 45 annuités » devait parcourir les 3 sources de bas de page en devinant laquelle le disait. Chaque position peut désormais porter la sienne, affichée sous la synthèse et reprise dans le comparateur
 - **20 positions sourcées individuellement** : les 15 de David Lisnard, dont le parti publie un programme thématique complet et accessible, et 5 d'Édouard Philippe issues d'annonces datées couvertes par la presse
 - **Le chantier bute sur la disponibilité des sources, pas sur l'effort.** Vérification faite : le site de Mélenchon publie une table des matières de 18 chapitres dont **toutes les pages renvoient une erreur 404** ; celui d'Édouard Philippe se limite à quatre pages d'orientations, sans santé, laïcité, agriculture, logement ni défense ; le RN n'a pas de page de programme. Les seuls sites qui rangent les positions par thème sont des agrégateurs non fiables, qui se contredisent — l'un place Philippe à 65 ans, l'autre affirme qu'il ne remet pas en cause les 64
