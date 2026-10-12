@@ -70,8 +70,12 @@
         c.nom + ' <strong>' + nb(d) + ' %</strong></a>';
     }).join('') + '</div>';
 
-    return '<div class="courbe-grid"><div class="courbe-yaxis-col">' + yAxis + '</div>' +
-      '<div class="courbe-plot courbe-plot-grand">' + svg + '</div>' +
+    // L'axe vertical doit être un enfant direct de la grille : enveloppé dans un
+    // conteneur, il n'est plus étiré à la hauteur de la ligne et son
+    // justify-content: space-between n'a plus rien à répartir — les graduations se
+    // tassaient alors dans le haut du graphique.
+    return '<div class="courbe-grid">' + yAxis +
+      '<div class="courbe-plot">' + svg + '</div>' +
       '<div></div><div>' + xAxis + '</div></div>' + legende;
   }
 

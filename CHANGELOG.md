@@ -3,6 +3,12 @@
 Historique des mises à jour du site. Tenu à jour manuellement à chaque session de travail.
 
 ## 2026-10-12
+- **6ᵉ relevé de sondages** (Toluna Harris Interactive pour M6/RTL, vague 7, terrain du 5 au 8 octobre, 2 004 inscrits) : Le Pen 35 %, Mélenchon 18 %, Philippe 13 %, Glucksmann 10 %, Retailleau 7 %, Attal 5 %, Zemmour 5 %. Source primaire, dont le total des onze candidats testés fait exactement 100 % — aucune reconstruction de notre part
+- **Trois évolutions franchissent le seuil de distinguabilité** : la hausse de Mélenchon (+3,5 pts depuis juin, seuil 3,2), la baisse de Philippe (−3,5, seuil 3,1) et celle d'Attal (−3,0, seuil 2,2). Avec Ruffin, quatre évolutions sont désormais établies, contre une seule au relevé précédent
+- Le relevé IFOP du 29/09 plaçait Le Pen à 32 %, encadré par 35,6 et 35 : c'était un écart d'institut, pas un mouvement. Sur l'ensemble de la période elle reste à +0,5 pt, non significatif
+- **Correction d'un bug de l'axe vertical de la page Sondages** : les graduations se tassaient dans le haut du graphique au lieu d'être réparties sur sa hauteur. L'axe était enveloppé dans un conteneur superflu, qui l'empêchait d'être étiré à la hauteur de la ligne de grille — son `justify-content: space-between` n'avait alors plus rien à répartir. Les fiches candidats n'étaient pas touchées
+- Niveaux ajustés : Tondelier redescend au niveau d'Arthaud et de Roussel, Zemmour monte à celui d'Attal
+
 - **Réactions à la désignation de Glucksmann** : il se présente comme le candidat de la rupture avec l'hégémonie de Mélenchon et exclut tout accord avec LFI ; Marine Tondelier regrette « le choix du repli » ; Mélenchon réunit 10 000 personnes à Clermont-Ferrand le jour même sans réagir au résultat. Deux engagements ajoutés à sa fiche, dont la baisse de la CSG
 - **Correction du score de Glucksmann : 66,17 % et non 66,13 %.** Les sources donnaient les deux. Seul 66,17 % se reconstitue à partir des décomptes publiés — 79 613 voix sur 120 307 suffrages exprimés. Le site indique désormais la base de calcul plutôt qu'un pourcentage seul
 - Participation ajoutée au récit : 120 307 suffrages exprimés, contre plus de 2 millions à la primaire socialiste de 2017 et près de 3 millions en 2011
