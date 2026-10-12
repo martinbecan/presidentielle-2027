@@ -36,7 +36,7 @@
     var sections = [].slice.call(document.querySelectorAll(selCibles))
       .map(function (s) {
         // ":self" : l'élément ciblé porte lui-même son titre. Nécessaire pour le
-        // comparateur, dont les lignes sont en display:contents — elles n'ont pas de
+        // comparateur, dont les lignes sont en display:contents, elles n'ont pas de
         // boîte, donc ni ancre ni observation possibles : on vise la cellule de libellé.
         var h = selTitre === ':self' ? s : s.querySelector(selTitre);
         var t = h ? h.textContent.trim() : '';

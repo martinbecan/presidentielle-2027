@@ -9,7 +9,7 @@
       return '<span class="source-badge source-unconfirmed">Source à confirmer</span>';
     }
     var links = sources.map(function (s) {
-      return '<a href="' + s.url + '" target="_blank" rel="noopener noreferrer" class="source-verify-link">🔍 Vérifier cette source' + (sources.length > 1 ? ' (' + s.nom + ')' : '') + '</a>';
+      return '<a href="' + s.url + '" target="_blank" rel="noopener noreferrer" class="source-verify-link">Vérifier cette source' + (sources.length > 1 ? ' (' + s.nom + ')' : '') + '</a>';
     }).join(' · ');
     if (sources.length >= 2) links += ' <span class="source-crossref">' + sources.length + ' sources indépendantes</span>';
     return links;
@@ -18,7 +18,7 @@
     return nom.split(' ').filter(function (w) { return /^[A-ZÀ-Ý]/.test(w); }).map(function (w) { return w[0]; }).slice(0, 2).join('');
   }
 
-  // Construit le pool à partir des fact_checks déjà présents dans data/candidats.js —
+  // Construit le pool à partir des fact_checks déjà présents dans data/candidats.js,
   // pas de fichier séparé, une seule source de vérité.
   function buildPool() {
     var pool = [];
@@ -57,7 +57,7 @@
     return 'stance-nuance';
   }
   // Une affirmation "partiellement vraie" est comptée juste si l'utilisateur répond
-  // Vrai OU Trompeur (les deux sont des lectures raisonnables d'une vérité nuancée) —
+  // Vrai OU Trompeur (les deux sont des lectures raisonnables d'une vérité nuancée),
   // seul "Faux" est compté faux dans ce cas. Voir la note méthodologique affichée en fin de quiz.
   function isCorrect(verdict, choice) {
     if (verdict === 'partiellement_vrai') return choice === 'vrai' || choice === 'trompeur';
@@ -94,7 +94,7 @@
 
     // Le contenu est régénéré à chaque question (innerHTML) : sans repositionner le focus,
     // un utilisateur au clavier perdrait le focus (renvoyé en haut de page) à chaque clic/Entrée
-    // et devrait retabuler depuis le début — on ramène donc le focus sur le premier choix.
+    // et devrait retabuler depuis le début, on ramène donc le focus sur le premier choix.
     var firstChoice = root.querySelector('.quiz-choice-btn');
     if (firstChoice) firstChoice.focus();
   }
@@ -131,7 +131,7 @@
       render();
     });
     // Idem : le bouton cliqué vient d'être désactivé (les choix sont verrouillés après réponse),
-    // ce qui renvoie le focus en haut de page — on le ramène directement sur l'action à suivre.
+    // ce qui renvoie le focus en haut de page, on le ramène directement sur l'action à suivre.
     nextBtn.focus();
   }
 
@@ -144,9 +144,9 @@
     if (ratio >= 0.8) {
       message = "Très bon œil critique. Le réflexe de vérifier une affirmation avant de la partager reste utile même quand on a l'habitude de bien deviner.";
     } else if (ratio >= 0.5) {
-      message = "Un bon score. Ni les intuitions ni les a priori politiques ne garantissent de repérer une affirmation trompeuse — la vérification systématique des sources reste le réflexe le plus fiable.";
+      message = "Un bon score. Ni les intuitions ni les a priori politiques ne garantissent de repérer une affirmation trompeuse, la vérification systématique des sources reste le réflexe le plus fiable.";
     } else {
-      message = "Repérer une affirmation trompeuse à l'oreille est difficile pour tout le monde, quel que soit le bord politique du candidat qui la prononce — c'est justement pour ça que la vérification des sources compte.";
+      message = "Repérer une affirmation trompeuse à l'oreille est difficile pour tout le monde, quel que soit le bord politique du candidat qui la prononce, c'est justement pour ça que la vérification des sources compte.";
     }
 
     var html = '<div class="quiz-end">';

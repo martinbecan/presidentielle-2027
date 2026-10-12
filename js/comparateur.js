@@ -47,7 +47,7 @@
     var selected = getSelectedSlugs();
     slots.forEach(function (select, idx) {
       var current = select.value;
-      select.innerHTML = '<option value="">— Choisir —</option>';
+      select.innerHTML = '<option value="">Choisir un candidat</option>';
       candidats.forEach(function (c) {
         var takenByOther = selected.indexOf(c.slug) !== -1 && c.slug !== current;
         if (takenByOther) return;
@@ -73,7 +73,7 @@
 
   // Tableau construit avec CSS Grid + `display:contents` sur chaque "ligne" : toutes les
   // cellules d'une même ligne (même sujet) partagent alors la même rangée de grille, donc la
-  // même hauteur, quelle que soit la longueur du texte — l'alignement est garanti par le CSS,
+  // même hauteur, quelle que soit la longueur du texte, l'alignement est garanti par le CSS,
   // pas par du bricolage de hauteurs fixes.
   // Courbes de sondage superposées. Axe commun et absolu, volontairement : réétaler
   // chaque candidat sur sa propre échelle rendrait les lignes « comparables » en
@@ -133,13 +133,13 @@
       var col = blocInfo(c.bloc).couleur;
       c.sondageHistorique.forEach(function (p) {
         points += '<span class="courbe-point" style="left:' + x(p) + '%; top:' + (y(p.valeur) / H * 100).toFixed(2) +
-          '%; background:' + col + ';" title="' + c.nom + ' — ' + p.label + ' : ' + S.nb(p.valeur) + ' %"></span>';
+          '%; background:' + col + ';" title="' + c.nom + ', ' + p.label + ' : ' + S.nb(p.valeur) + ' %"></span>';
       });
     });
 
     var yAxis = '<div class="courbe-yaxis">' +
       [hi, (lo + hi) / 2, lo].map(function (v) { return '<span>' + v.toFixed(0) + '</span>'; }).join('') + '</div>';
-    // Libellés positionnés à leur date, comme les points — un espacement régulier
+    // Libellés positionnés à leur date, comme les points, un espacement régulier
     // laisserait croire que les relevés sont équidistants dans le temps.
     var xAxis = '<div class="courbe-xaxis courbe-xaxis-date">' + releves.map(function (p) {
       return '<span style="left:' + posX(p.date).toFixed(2) + '%;">' + p.label + '</span>';
@@ -166,7 +166,7 @@
       'les zones colorées sont les marges d\'erreur.';
     if (ecrases.length) {
       note += ' <strong class="courbe-verdict-non">Attention</strong> : l\'écart de niveau entre les candidats écrase visuellement ' +
-        'l\'évolution de ' + ecrases.join(' et ') + ', pourtant statistiquement établie — sa fiche la montre à son échelle.';
+        'l\'évolution de ' + ecrases.join(' et ') + ', pourtant statistiquement établie, sa fiche la montre à son échelle.';
     }
     note += '</p>';
 
@@ -208,7 +208,7 @@
           // souvent le premier endroit où le lecteur découvre une position.
           var srcPos = c.positions_10_sujets && c.positions_10_sujets[s[0]] && c.positions_10_sujets[s[0]].source;
           if (srcPos) {
-            html += '<div class="position-source"><a href="' + srcPos.url + '" target="_blank" rel="noopener noreferrer" class="source-verify-link">🔍 ' + srcPos.nom + '</a></div>';
+            html += '<div class="position-source"><a href="' + srcPos.url + '" target="_blank" rel="noopener noreferrer" class="source-verify-link">' + srcPos.nom + '</a></div>';
           }
         } else {
           html += '<div class="stance stance-nodata">Pas d\'information à ce stade</div>';
@@ -224,7 +224,7 @@
       // Les positions affichées ici viennent des fiches, qui portent leurs sources.
       // Sans renvoi explicite, le lecteur du comparateur n'avait aucun moyen de vérifier.
       html += '<div class="comparateur-cell">' +
-        '<a class="source-verify-link" href="candidats/' + c.slug + '.html#fiche-sources">🔍 Sources de ' + c.nom + '</a><br>' +
+        '<a class="source-verify-link" href="candidats/' + c.slug + '.html#fiche-sources">Sources de ' + c.nom + '</a><br>' +
         '<a class="back-link" href="candidats/' + c.slug + '.html">Voir la fiche complète →</a></div>';
     });
     html += '</div>';
@@ -255,7 +255,7 @@
     var params = new URLSearchParams(window.location.search);
     var slugs = (params.get('c') || '').split(',').map(function (s) { return s.trim(); }).filter(Boolean);
 
-    // Après le 1er tour, défaut intelligent : les 2 qualifiés pré-sélectionnés — sauf si
+    // Après le 1er tour, défaut intelligent : les 2 qualifiés pré-sélectionnés, sauf si
     // l'utilisateur a explicitement demandé une autre comparaison via l'URL (?c=...).
     if (!slugs.length) {
       var qualifies = candidats.filter(function (c) { return c.statut === 'qualifie_2nd_tour'; });
@@ -289,7 +289,7 @@
     }
 
     // Le lien reste toujours visible et copiable manuellement (Ctrl+C), quel que soit
-    // le succès de la copie automatique — l'API Clipboard est bloquée dans certains
+    // le succès de la copie automatique, l'API Clipboard est bloquée dans certains
     // navigateurs/contextes sans avertissement.
     if (shareLinkInput) {
       shareLinkInput.value = url;
@@ -302,7 +302,7 @@
       navigator.clipboard.writeText(url).then(function () {
         showFeedback('Lien copié dans le presse-papiers !');
       }, function () {
-        showFeedback('Copie automatique indisponible — le lien est sélectionné ci-dessous, faites Ctrl+C.');
+        showFeedback('Copie automatique indisponible, le lien est sélectionné ci-dessous, faites Ctrl+C.');
       });
     } else {
       showFeedback('Le lien est sélectionné ci-dessous, faites Ctrl+C.');

@@ -10,7 +10,7 @@
     return;
   }
 
-  document.title = c.nom + ' — Présidentielle 2027';
+  document.title = c.nom + ', Présidentielle 2027';
 
   function blocInfo(id) { return DATA.blocs.find(function (b) { return b.id === id; }); }
   function initials(nom) {
@@ -26,7 +26,7 @@
       return '<span class="source-badge source-unconfirmed">Source à confirmer</span>';
     }
     var links = sources.map(function (s) {
-      return '<a href="' + s.url + '" target="_blank" rel="noopener noreferrer" class="source-verify-link">🔍 Vérifier cette source' + (sources.length > 1 ? ' (' + s.nom + ')' : '') + '</a>';
+      return '<a href="' + s.url + '" target="_blank" rel="noopener noreferrer" class="source-verify-link">Vérifier cette source' + (sources.length > 1 ? ' (' + s.nom + ')' : '') + '</a>';
     }).join(' · ');
     if (sources.length >= 2) links += ' <span class="source-crossref">' + sources.length + ' sources indépendantes</span>';
     return links;
@@ -36,12 +36,12 @@
     if (t === 'baisse') return { arrow: '↘', cls: 'tendance-baisse', label: 'En baisse' };
     return { arrow: '→', cls: 'tendance-stable', label: 'Stable' };
   }
-  // Calculs statistiques mutualisés avec le comparateur — voir js/sondages.js
+  // Calculs statistiques mutualisés avec le comparateur, voir js/sondages.js
   var margeErreur = window.SONDAGES.margeErreur;
 
   // Promesses de parrainages. Volontairement distinct des sondages : ce ne sont ni des
   // parrainages déposés ni des chiffres comparables entre eux. Lisnard et Le Pen annoncent
-  // leur propre score, celui de Mélenchon vient d'une enquête de presse — la mention de
+  // leur propre score, celui de Mélenchon vient d'une enquête de presse, la mention de
   // l'origine n'est donc pas un détail, c'est ce qui permet de lire le chiffre.
   // Le champ est un tableau dès le premier relevé, pour que l'évolution s'affiche d'elle-même
   // quand un deuxième point arrivera, sans avoir à retoucher la structure.
@@ -79,8 +79,8 @@
       'La collecte officielle du Conseil constitutionnel n\'ouvre qu\'en janvier 2027 et se clôt le 12 mars ; ' +
       'd\'ici là une promesse peut être retirée. Les chiffres des différents candidats ne sont pas comptés ' +
       'de la même façon et ne sont donc pas comparables entre eux.</p>';
-    html += '<p class="parrainages-source">' + origine + ' — ' + dernier.source + ', le ' + dernier.label + '. ' +
-      '<a href="' + dernier.url + '" target="_blank" rel="noopener noreferrer" class="source-verify-link">🔍 Vérifier cette source</a></p>';
+    html += '<p class="parrainages-source">' + origine + ', ' + dernier.source + ', le ' + dernier.label + '. ' +
+      '<a href="' + dernier.url + '" target="_blank" rel="noopener noreferrer" class="source-verify-link">Vérifier cette source</a></p>';
     html += '</div>';
     return html;
   }
@@ -128,7 +128,7 @@
     var points = h.map(function (p, i) {
       return '<span class="courbe-point" style="left:' + x(i) + '%; top:' + (y(p.valeur) / H * 100).toFixed(2) + '%;" ' +
         'title="' + p.label + ' : ' + String(p.valeur).replace('.', ',') + ' % (± ' +
-        marges[i].toFixed(1).replace('.', ',') + ') — ' + p.source + '"></span>';
+        marges[i].toFixed(1).replace('.', ',') + '), ' + p.source + '"></span>';
     }).join('');
 
     var yAxis = '<div class="courbe-yaxis">' +
@@ -150,7 +150,7 @@
     return '<div class="sondage-courbe-wrap">' +
       '<div class="courbe-grid">' + yAxis + '<div class="courbe-plot">' + svg + points + '</div><div></div>' + xAxis + '</div>' +
       '<p class="sondage-courbe-note"><strong>Zone grisée</strong> : marge d\'erreur (± ' +
-      marges[marges.length - 1].toFixed(1).replace('.', ',') + ' pts) — deux relevés qui s\'y chevauchent ' +
+      marges[marges.length - 1].toFixed(1).replace('.', ',') + ' pts), deux relevés qui s\'y chevauchent ' +
       'ne sont pas distinguables. ' + lecture + '</p></div>';
   }
 
@@ -172,7 +172,7 @@
   function verdictLabel(v) {
     return (v || '').replace(/_/g, ' ').replace(/^./, function (c) { return c.toUpperCase(); });
   }
-  // Sujets 2027 dont 4 recoupent les "grands clivages" déjà en base (positions{}) — on retombe
+  // Sujets 2027 dont 4 recoupent les "grands clivages" déjà en base (positions{}), on retombe
   // sur cette donnée quand la recherche dédiée aux 10 sujets n'a rien apporté de neuf.
   var SUJETS;
   var SUJET_FALLBACK_KEYS = ['retraites', 'immigration', 'europe', 'dette'];
@@ -273,7 +273,7 @@
     }).join('');
     html += '</tbody></table>';
   } else {
-    html += '<p class="no-data">N\'a jamais exercé de fonction exécutive nationale — pas de bilan de gouvernance à établir.</p>';
+    html += '<p class="no-data">N\'a jamais exercé de fonction exécutive nationale, pas de bilan de gouvernance à établir.</p>';
   }
   html += '</section>';
 
@@ -281,7 +281,7 @@
   // Volontairement distinct de positions_10_sujets, qui dit ce que le candidat défend
   // aujourd'hui : ici on empile l'historique, pour pouvoir confronter plus tard.
   // Un engagement porte une `divergence` quand il s'écarte d'un engagement antérieur du
-  // même candidat sur le même thème — le bandeau affiche alors les deux, datés et sourcés,
+  // même candidat sur le même thème, le bandeau affiche alors les deux, datés et sourcés,
   // pour que le lecteur vérifie le constat au lieu de le croire sur parole.
   var STATUTS_ENGAGEMENT = {
     pris: { label: 'Engagement pris', cls: 'eng-pris' },
@@ -342,8 +342,8 @@
           if (anterieur) html += ' <span class="engagement-divergence-ref">(à comparer avec le ' + anterieur.label + ', ci-dessus)</span>';
           html += '</div>';
         }
-        html += '<p class="engagement-source">' + e.contexte + ' — ' +
-          '<a href="' + e.source.url + '" target="_blank" rel="noopener noreferrer" class="source-verify-link">🔍 ' + e.source.nom + '</a></p>';
+        html += '<p class="engagement-source">' + e.contexte + ', ' +
+          '<a href="' + e.source.url + '" target="_blank" rel="noopener noreferrer" class="source-verify-link">' + e.source.nom + '</a></p>';
         html += '</div>';
       });
       html += '</div>';
@@ -354,7 +354,7 @@
   }
 
   // Positions sur les sujets qui comptent (10 thématiques V2 + nouveaux thèmes V5, ajoutés
-  // au fil des recherches — un thème sans donnée pour un candidat est simplement omis)
+  // au fil des recherches, un thème sans donnée pour un candidat est simplement omis)
   SUJETS = [
     ['pouvoir_achat', 'Pouvoir d\'achat / salaires'], ['retraites', 'Retraites'], ['securite', 'Sécurité / justice'],
     ['immigration', 'Immigration'], ['sante', 'Santé / hôpital'], ['ecologie', 'Écologie / énergie'],
@@ -365,7 +365,7 @@
   ];
   html += '<section class="fiche-section"><h2>Positions sur les sujets qui comptent</h2>';
   if (c.sources && c.sources.length) {
-    html += '<p class="positions-sources-note"><a href="#fiche-sources" class="source-verify-link">🔍 Vérifier les sources de cette fiche</a></p>';
+    html += '<p class="positions-sources-note"><a href="#fiche-sources" class="source-verify-link">Vérifier les sources de cette fiche</a></p>';
   }
   html += '<div class="positions-grid">';
   SUJETS.forEach(function (s) {
@@ -384,7 +384,7 @@
     // le lecteur n'a plus à deviner lequel des liens de bas de page dit quoi.
     var src = c.positions_10_sujets && c.positions_10_sujets[s[0]] && c.positions_10_sujets[s[0]].source;
     if (src) {
-      html += '<div class="position-source"><a href="' + src.url + '" target="_blank" rel="noopener noreferrer" class="source-verify-link">🔍 ' + src.nom + '</a></div>';
+      html += '<div class="position-source"><a href="' + src.url + '" target="_blank" rel="noopener noreferrer" class="source-verify-link">' + src.nom + '</a></div>';
     }
     html += '</div>';
   });
@@ -395,10 +395,10 @@
   if (c.fact_checks && c.fact_checks.length) {
     html += '<div class="factcheck-list">' + c.fact_checks.map(function (f) {
       var sourceNames = f.sources && f.sources.length ? f.sources.map(function (s) { return s.nom; }).join(' / ') : '';
-      var contexteFc = 'Vérification des affirmations — ' + c.nom + ' — « ' + f.affirmation.slice(0, 90) + (f.affirmation.length > 90 ? '…' : '') + ' »';
+      var contexteFc = 'Vérification des affirmations, ' + c.nom + ', « ' + f.affirmation.slice(0, 90) + (f.affirmation.length > 90 ? '…' : '') + ' »';
       return '<div class="factcheck-card"><div class="detail" style="margin-bottom:0.5rem;">' + f.affirmation + '</div>' +
         '<span class="stance ' + verdictClass(f.verdict) + '">' + verdictLabel(f.verdict) + '</span>' +
-        (sourceNames ? ' <span class="factcheck-source">— ' + sourceNames + (f.date ? ' · ' + f.date : '') + '</span>' : '') +
+        (sourceNames ? ' <span class="factcheck-source">Source : ' + sourceNames + (f.date ? ' · ' + f.date : '') + '</span>' : '') +
         '<br>' + renderSources(f.sources) +
         (window.renderSignalement ? window.renderSignalement(contexteFc) : '') +
         '</div>';
@@ -439,7 +439,7 @@
     var t = tendanceLabel(c.sondage.tendance);
     html += '<div class="sondage-entete"><h2>Dynamique sondagière</h2>';
     html += '<div class="tendance-box"><span class="tendance-arrow ' + t.cls + '">' + t.arrow + '</span>';
-    html += '<span>' + c.sondage.label + ' — <strong class="' + t.cls + '">' + t.label + '</strong></span>';
+    html += '<span>' + c.sondage.label + ', <strong class="' + t.cls + '">' + t.label + '</strong></span>';
     if (DATA.derniere_maj_sondages) html += '<span class="sondage-maj">maj ' + DATA.derniere_maj_sondages + '</span>';
     html += '</div></div>';
     html += renderCourbeSondages(c);
@@ -457,7 +457,7 @@
 
   // Signalement d'erreur (générique, page entière)
   if (window.renderSignalement) {
-    html += '<section class="fiche-section">' + window.renderSignalement('Fiche candidat — ' + c.nom) + '</section>';
+    html += '<section class="fiche-section">' + window.renderSignalement('Fiche candidat, ' + c.nom) + '</section>';
   }
 
   root.innerHTML = html;

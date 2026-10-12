@@ -8,7 +8,7 @@
   }
 
   function mailtoFallback(contexte, message) {
-    var subject = encodeURIComponent('Signalement — ' + contexte);
+    var subject = encodeURIComponent('Signalement, ' + contexte);
     var body = encodeURIComponent(message + '\n\n---\nContexte : ' + contexte + '\nPage : ' + window.location.href);
     window.location.href = 'mailto:' + FALLBACK_EMAIL + '?subject=' + subject + '&body=' + body;
   }
@@ -73,7 +73,7 @@
             message: message,
             contexte: contexte,
             page: window.location.href,
-            _subject: 'Signalement — ' + contexte
+            _subject: 'Signalement, ' + contexte
           })
         }).then(function (res) {
           if (!res.ok) throw new Error('Formspree error ' + res.status);
@@ -85,7 +85,7 @@
           sendBtn.textContent = 'Envoyer';
           sendBtn.disabled = true;
         }).catch(function () {
-          statusEl.textContent = 'Envoi direct impossible — ouverture de votre client mail avec le message pré-rempli.';
+          statusEl.textContent = 'Envoi direct impossible, ouverture de votre client mail avec le message pré-rempli.';
           statusEl.className = 'signalement-status signalement-status-fallback';
           statusEl.hidden = false;
           sendBtn.textContent = 'Envoyer';

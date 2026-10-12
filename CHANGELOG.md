@@ -3,6 +3,12 @@
 Historique des mises à jour du site. Tenu à jour manuellement à chaque session de travail.
 
 ## 2026-10-12
+- **Le tiret cadratin disparaît du site.** Règle posée par Martin : le signe est interdit dans tout ce que voit le visiteur. 253 occurrences remplacées, presque toutes par une virgule, qui est son équivalent naturel en français dans ces positions
+- Les emplois décoratifs ont reçu un vrai libellé plutôt qu'un autre signe : « Choisir un candidat » dans les menus du comparateur, « n.d. » pour une absence de mesure dans le tableau des sondages, « Source : » devant les sources de fact-check, et une puce ronde dessinée en CSS à la place du tiret qui ouvrait les listes de parcours
+- **Textes de section justifiés**, avec césure automatique, sur la page À propos, les encarts pédagogiques et les notes de méthode. La justification est retirée sous 600 px, où elle creuse des blancs entre les mots
+- **Références de source redessinées.** Elles étaient des liens soulignés, qui dans la frise tombaient dans la colonne de date et débordaient sur deux lignes : on les prenait pour des liens cassés. Elles deviennent des pastilles arrondies discrètes, placées dans la colonne du titre qu'elles documentent, et se révèlent au survol
+- L'icône de source passe du balisage au CSS : une seule définition pour tout le site, et plus d'emoji dont le dessin varie d'un système à l'autre
+
 - **« À propos » revient dans la navigation.** Je l'avais déplacée en pied de page ce matin pour éviter une 3ᵉ ligne de menu sur mobile. Martin ne l'a pas retrouvée — et si le propriétaire du site ne la trouve pas, un visiteur encore moins. Nouvelle mesure : le retour en navigation coûte 44 px et laisse l'actualité largement au-dessus de la ligne de flottaison (559 px sur un écran de 812). Mon objection était surévaluée. Le lien descriptif reste aussi en pied de page
 - Le raisonnement initial — « une page qu'on consulte une fois n'est pas une destination » — vaut pour un site ordinaire, pas pour celui-ci : sa crédibilité tient à sa méthode, et « qui a fait ça, et comment ? » est une question de première visite
 

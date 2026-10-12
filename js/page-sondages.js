@@ -72,7 +72,7 @@
 
     // L'axe vertical doit être un enfant direct de la grille : enveloppé dans un
     // conteneur, il n'est plus étiré à la hauteur de la ligne et son
-    // justify-content: space-between n'a plus rien à répartir — les graduations se
+    // justify-content: space-between n'a plus rien à répartir, les graduations se
     // tassaient alors dans le haut du graphique.
     return '<div class="courbe-grid">' + yAxis +
       '<div class="courbe-plot">' + svg + '</div>' +
@@ -107,7 +107,7 @@
         '<span class="sondages-pastille" style="background:' + b.couleur + ';"></span>' + c.nom + '</a></td>';
       dates.forEach(function (d) {
         var p = h.filter(function (x) { return x.date === d.date; })[0];
-        html += '<td>' + (p ? nb(p.valeur) + '&nbsp;%' : '<span class="sondages-vide" title="Non mesuré à cette date">—</span>') + '</td>';
+        html += '<td>' + (p ? nb(p.valeur) + '&nbsp;%' : '<span class="sondages-vide" title="Non mesuré à cette date">n.d.</span>') + '</td>';
       });
       html += '<td class="sondages-ecart">' + (ecart > 0 ? '+' : '') + nb(ecart.toFixed(1)) + '</td>';
       html += '<td>' + (etablie
@@ -160,7 +160,7 @@
       unSeulPoint.map(function (c) {
         var p = c.sondageHistorique[0];
         return '<li><span class="sondages-pastille" style="background:' + blocInfo(c.bloc).couleur + ';"></span>' +
-          c.nom + ' — <strong>' + nb(p.valeur) + ' %</strong> au ' + p.label + '</li>';
+          c.nom + ', <strong>' + nb(p.valeur) + ' %</strong> au ' + p.label + '</li>';
       }).join('') + '</ul></section>';
   }
 

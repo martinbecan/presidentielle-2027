@@ -384,7 +384,7 @@ table {
 }
 
 /* Le min-width force le défilement horizontal uniquement pour le grand tableau
-   récapitulatif de l'accueil (dans .table-wrap) — pas pour les tableaux des fiches candidats. */
+   récapitulatif de l'accueil (dans .table-wrap), pas pour les tableaux des fiches candidats. */
 .table-wrap table {
   min-width: 780px;
 }
@@ -598,10 +598,14 @@ section.fiche-section h2 {
   margin-bottom: 0.4rem;
 }
 .parcours-list li::before, .faits-list li::before {
-  content: "—";
+  content: "";
   position: absolute;
-  left: 0;
-  color: var(--text-dimmer);
+  left: 0.1rem;
+  top: 0.55em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--text-dimmer);
 }
 
 .historique-table {
@@ -650,8 +654,39 @@ section.fiche-section h2 {
 .factcheck-source { font-size: 0.75rem; color: var(--text-dimmer); }
 
 /* ---------- Vérification des sources ---------- */
-.source-verify-link { font-size: 0.75rem; color: var(--text-dim); display: inline-block; margin-top: 0.4rem; text-decoration: none; border-bottom: 1px solid var(--border); }
-.source-verify-link:hover { color: var(--accent); border-color: var(--accent); }
+/* Les références de source sont des pastilles discrètes, pas des liens soulignés :
+   elles accompagnent une information sans la concurrencer, et se révèlent au survol.
+   L'icône est en CSS plutôt que dans le balisage, une seule définition, un rendu
+   identique partout, et plus d'emoji dont le dessin varie selon le système. */
+.source-verify-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.34rem;
+  max-width: 100%;
+  font-size: 0.72rem;
+  line-height: 1.35;
+  color: var(--text-dim);
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid var(--border-soft);
+  border-radius: 999px;
+  padding: 0.2rem 0.62rem;
+  margin-top: 0.4rem;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+.source-verify-link::before {
+  content: "↗";
+  font-size: 0.78em;
+  opacity: 0.75;
+  flex-shrink: 0;
+}
+.source-verify-link:hover,
+.source-verify-link:focus-visible {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: rgba(245, 158, 11, 0.1);
+}
+.source-verify-link:hover::before { opacity: 1; }
 .source-crossref { font-size: 0.7rem; color: var(--text-dimmer); font-style: italic; margin-left: 0.3rem; }
 .source-badge.source-unconfirmed {
   display: inline-block;
@@ -981,7 +1016,7 @@ section.fiche-section h2 {
 
 /* Tableau construit en CSS Grid : chaque .comparateur-row utilise display:contents pour que
    ses cellules deviennent des enfants directs de la grille et partagent la rangée avec les
-   cellules des autres candidats — la hauteur de chaque ligne (sujet) s'aligne alors
+   cellules des autres candidats, la hauteur de chaque ligne (sujet) s'aligne alors
    automatiquement sur son contenu le plus long, quel que soit le candidat. */
 .comparateur-table {
   display: grid;
@@ -1092,7 +1127,7 @@ section.fiche-section h2 {
 .timeline-filter:not(.active) .timeline-filter-count { text-decoration: line-through; }
 
 /* La frise se lit en deux temps : ce qui arrive, puis ce qui s'est passé
-   (du plus récent au plus ancien) — l'actualité reste ainsi en haut de page. */
+   (du plus récent au plus ancien), l'actualité reste ainsi en haut de page. */
 .timeline-section { margin-bottom: 2.4rem; }
 .timeline-section:last-child { margin-bottom: 0; }
 .timeline-section-titre {
@@ -1115,7 +1150,7 @@ section.fiche-section h2 {
 }
 
 /* Bloc compact des échéances à venir : deux colonnes, sans frise ni années.
-   Traitement volontairement plus léger que la frise — ce sont des dates connues,
+   Traitement volontairement plus léger que la frise, ce sont des dates connues,
    sans récit, et leur donner la même hauteur repoussait l'actualité trop bas. */
 .echeances {
   list-style: none;
@@ -1140,7 +1175,7 @@ section.fiche-section h2 {
 }
 .echeance-titre { font-size: 0.85rem; color: var(--text); line-height: 1.45; }
 /* Les deux tours du scrutin restent distingués, ici par la couleur d'accent
-   plutôt que par un point plus gros — il n'y a pas de point dans ce bloc. */
+   plutôt que par un point plus gros, il n'y a pas de point dans ce bloc. */
 .echeance.majeur .echeance-date,
 .echeance.majeur .echeance-titre { color: var(--accent); font-weight: 600; }
 
@@ -1818,7 +1853,7 @@ summary:focus-visible,
    sait en permanence où il se trouve. */
 /* La propriété sticky porte sur le conteneur, pas sur la barre : un élément
    collant ne peut dépasser les limites de son parent direct, et #sommaire-root
-   ne fait que la hauteur de la barre — elle se décollait aussitôt. */
+   ne fait que la hauteur de la barre, elle se décollait aussitôt. */
 #sommaire-root {
   position: sticky;
   top: 0;
@@ -1955,12 +1990,40 @@ summary:focus-visible,
 /* ---- Sources dans la frise ---- */
 .timeline-source { margin-top: 0.35rem; font-size: 0.74rem; }
 .timeline-source a { overflow-wrap: anywhere; }
+/* Troisième élément de la grille, elle se plaçait en colonne 1, sous la date, à
+   côté de rien. Elle appartient à la colonne du titre, qu'elle documente. */
 .echeance-source {
-  display: block;
-  margin-top: 0.25rem;
-  font-size: 0.72rem;
+  grid-column: 2;
+  justify-self: start;
+  margin-top: 0.3rem;
+}
+@media (max-width: 620px) {
+  .echeance-source { grid-column: 1; }
 }
 
 /* ---- Source attachée à une position ---- */
 .position-source { margin-top: 0.4rem; font-size: 0.72rem; }
 .position-source a { overflow-wrap: anywhere; }
+
+/* ---- Justification des textes de section ---- */
+/* La justification n'est appliquée qu'aux blocs de prose suffisamment larges.
+   Sur écran étroit elle creuse des blancs entre les mots : on la retire sous 600 px.
+   hyphens: auto permet la césure, sans laquelle la justification étire les lignes. */
+.fiche-section > .detail,
+.pedagogie-bloc p,
+.engagements-methode p,
+.sondages-synthese p,
+.hero-desc {
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}
+@media (max-width: 600px) {
+  .fiche-section > .detail,
+  .pedagogie-bloc p,
+  .engagements-methode p,
+  .sondages-synthese p,
+  .hero-desc {
+    text-align: left;
+  }
+}

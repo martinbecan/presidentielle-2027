@@ -18,7 +18,7 @@
   var sortState = { key: null, dir: 1 };
 
   // Si le 1er tour a eu lieu (2 candidats marqués "qualifie_2nd_tour" dans les données),
-  // le site bascule automatiquement en mode "2 qualifiés" — rien à faire manuellement
+  // le site bascule automatiquement en mode "2 qualifiés", rien à faire manuellement
   // le jour venu, il suffit de mettre à jour le champ `statut` dans data/candidats.js.
   var hasSecondTour = DATA.candidats.some(function (c) { return c.statut === 'qualifie_2nd_tour'; });
 
@@ -30,10 +30,10 @@
   function statutBadge(c) {
     if (c.statut === 'qualifie_2nd_tour') return '<span class="statut-pill statut-qualifie">🟢 Qualifié·e pour le 2nd tour</span>';
     if (c.statut === 'elimine_1er_tour') return '<span class="statut-pill statut-elimine">⚪ Éliminé·e au 1er tour' + (c.score_1er_tour ? ' (' + c.score_1er_tour + ')' : '') + '</span>';
-    if (c.statut === 'retire') return '<span class="statut-pill statut-retire">🚫 Candidature retirée' + (c.statutDetail ? ' — ' + c.statutDetail : '') + '</span>';
+    if (c.statut === 'retire') return '<span class="statut-pill statut-retire">🚫 Candidature retirée' + (c.statutDetail ? ', ' + c.statutDetail : '') + '</span>';
     // « Non retenu » couvre ceux qui n'ont pas renoncé mais que le processus a écartés :
     // battus à la primaire, parrainages manquants, candidature invalidée.
-    if (c.statut === 'non_retenu') return '<span class="statut-pill statut-nonretenu">⚪ Non retenu·e' + (c.statutDetail ? ' — ' + c.statutDetail : '') + '</span>';
+    if (c.statut === 'non_retenu') return '<span class="statut-pill statut-nonretenu">⚪ Non retenu·e' + (c.statutDetail ? ', ' + c.statutDetail : '') + '</span>';
     return '';
   }
 
@@ -222,7 +222,7 @@
 
   function fillHeader() {
     if (alertBox && DATA.alerte) {
-      alertBox.innerHTML = '<strong>' + DATA.alerte.titre + '</strong> — ' + DATA.alerte.texte;
+      alertBox.innerHTML = '<strong>' + DATA.alerte.titre + '</strong>, ' + DATA.alerte.texte;
     }
     if (updatedEl) updatedEl.textContent = DATA.derniere_maj;
     if (parrainagesEl && DATA.parrainages) parrainagesEl.textContent = DATA.parrainages.message;

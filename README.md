@@ -1,4 +1,4 @@
-# Présidentielle 2027 — mini-site
+# Présidentielle 2027, mini-site
 
 Mini-site statique, sans framework ni build, qui récapitule les candidats déclarés à l'élection présidentielle française de 2027. Fait pour être partagé à des proches (par lien GitHub Pages ou en envoyant simplement le dossier).
 
@@ -23,7 +23,7 @@ presidentielle-2027/
 
 **Il n'y a qu'un seul fichier à modifier pour changer les données affichées : [`data/candidats.js`](data/candidats.js).**
 
-Ce fichier contient un objet JavaScript `window.SITE_DATA` avec la même structure que du JSON (clés entre guillemets, tableaux, etc.) — vous pouvez l'éditer avec n'importe quel éditeur de texte sans connaître JavaScript.
+Ce fichier contient un objet JavaScript `window.SITE_DATA` avec la même structure que du JSON (clés entre guillemets, tableaux, etc.), vous pouvez l'éditer avec n'importe quel éditeur de texte sans connaître JavaScript.
 
 ### Changer un sondage
 
@@ -34,8 +34,8 @@ sondage: { label: "33–36%", niveau: "fort", tendance: "stable" },
 ```
 
 - `label` : le texte affiché tel quel dans le tableau
-- `niveau` : `"fort"`, `"moyen"` ou `"faible"` — contrôle la mise en valeur visuelle (gras, taille)
-- `tendance` : `"hausse"`, `"baisse"` ou `"stable"` — affiche une flèche ▲ ▼ →
+- `niveau` : `"fort"`, `"moyen"` ou `"faible"`, contrôle la mise en valeur visuelle (gras, taille)
+- `tendance` : `"hausse"`, `"baisse"` ou `"stable"`, affiche une flèche ▲ ▼ →
 
 ### Ajouter un relevé de sondage à la courbe
 
@@ -55,7 +55,7 @@ sondageHistorique: [
 
 **Attention à la cohérence des hypothèses.** Les sondages testent des scénarios différents (Le Pen candidate / Bardella candidat, configurations de gauche variables). Un même candidat peut apparaître à 36 % dans une hypothèse et 17 % dans une autre le même jour. Ne relever que des points issus de la **même hypothèse**, sinon la courbe montre des variations qui n'existent pas.
 
-**Vérifier les flèches de tendance.** `sondage.tendance` ne doit indiquer « hausse » ou « baisse » que si l'écart dépasse la marge d'erreur — laquelle dépend du score (±3,0 pts autour de 35 %, ±1,1 pt autour de 3 %). Le seuil pour distinguer deux mesures vaut `marge × √2`. La note sous la courbe calcule et affiche ce verdict automatiquement ; la flèche doit s'y conformer.
+**Vérifier les flèches de tendance.** `sondage.tendance` ne doit indiquer « hausse » ou « baisse » que si l'écart dépasse la marge d'erreur, laquelle dépend du score (±3,0 pts autour de 35 %, ±1,1 pt autour de 3 %). Le seuil pour distinguer deux mesures vaut `marge × √2`. La note sous la courbe calcule et affiche ce verdict automatiquement ; la flèche doit s'y conformer.
 
 ### Ajouter un nouveau candidat (sans fiche détaillée)
 
@@ -89,7 +89,7 @@ Tout le reste (mise en page, sections, styles) se génère automatiquement à pa
 
 ### Les blocs politiques disponibles
 
-`exgauche`, `gradicale`, `gprimaire`, `ghors`, `centre`, `droite`, `exdroite`, `inclassable` — définis avec leur couleur et leur libellé tout en haut de `data/candidats.js` (`blocs: [...]`). Vous pouvez renommer un libellé ou changer une couleur à cet endroit, ça se répercute partout.
+`exgauche`, `gradicale`, `gprimaire`, `ghors`, `centre`, `droite`, `exdroite`, `inclassable`, définis avec leur couleur et leur libellé tout en haut de `data/candidats.js` (`blocs: [...]`). Vous pouvez renommer un libellé ou changer une couleur à cet endroit, ça se répercute partout.
 
 ### Le bandeau d'alerte en haut de page
 
@@ -105,7 +105,7 @@ Les navigateurs bloquent par défaut les requêtes `fetch()`/`XMLHttpRequest` ve
 
 ## Sans JavaScript
 
-Si un visiteur a désactivé JavaScript, `index.html` affiche un tableau simplifié statique (via `<noscript>`), et chaque fiche candidat affiche un résumé minimal (nom, parti, sondage, idées phares). C'est volontairement moins riche que la version avec JavaScript — la quasi-totalité des visiteurs l'ont activé.
+Si un visiteur a désactivé JavaScript, `index.html` affiche un tableau simplifié statique (via `<noscript>`), et chaque fiche candidat affiche un résumé minimal (nom, parti, sondage, idées phares). C'est volontairement moins riche que la version avec JavaScript, la quasi-totalité des visiteurs l'ont activé.
 
 ⚠️ Ce contenu de secours est écrit à la main et ne se met pas à jour automatiquement. Si vous changez un sondage important, pensez à mettre à jour manuellement le `<noscript>` correspondant dans `index.html` (et, plus rarement, dans la fiche candidat concernée) si vous voulez qu'il reste exact pour les rares visiteurs sans JS.
 
@@ -113,7 +113,7 @@ Si un visiteur a désactivé JavaScript, `index.html` affiche un tableau simplif
 
 - Recherche par nom ou parti (page d'accueil)
 - Filtre par bloc politique
-- Tri du tableau par colonne (nom, parti, sondage) — cliquez sur l'en-tête
+- Tri du tableau par colonne (nom, parti, sondage), cliquez sur l'en-tête
 - Flèches de tendance sondagière (▲ hausse, ▼ baisse, → stable)
 - Fiches candidats avec parcours, programme par thème, positions sur les grands clivages, dynamique sondagière et sources
 
@@ -130,7 +130,7 @@ Toutes les pages appellent leurs feuilles de style et scripts avec un suffixe de
 <script src="js/timeline.js?v=20260824"></script>
 ```
 
-Sans ce suffixe, un visiteur déjà venu continue d'utiliser l'ancien CSS/JS gardé en cache par son navigateur, parfois plusieurs jours — il voit alors un site à moitié à jour (nouvelles données, ancien affichage).
+Sans ce suffixe, un visiteur déjà venu continue d'utiliser l'ancien CSS/JS gardé en cache par son navigateur, parfois plusieurs jours, il voit alors un site à moitié à jour (nouvelles données, ancien affichage).
 
 **Après toute modification d'un fichier dans `css/` ou `js/`, il faut donc incrémenter ce numéro sur les 17 pages HTML.** Format retenu : la date du jour, `AAAAMMJJ`. Commande (à lancer depuis la racine du projet, en remplaçant l'ancienne et la nouvelle valeur) :
 
@@ -142,7 +142,7 @@ Ce n'est pas nécessaire quand seul `data/candidats.js` change… mais ce fichie
 
 ## Neutralité
 
-Ce site est un outil pédagogique et factuel. Les indicateurs "position" (pour/contre/nuancé) sur les grands clivages sont une synthèse éditoriale simplifiée à partir de sources publiques (citées dans chaque fiche) — ils ne remplacent pas la lecture des programmes complets des candidats.
+Ce site est un outil pédagogique et factuel. Les indicateurs "position" (pour/contre/nuancé) sur les grands clivages sont une synthèse éditoriale simplifiée à partir de sources publiques (citées dans chaque fiche), ils ne remplacent pas la lecture des programmes complets des candidats.
 
 ### Promesses de parrainages
 
@@ -175,7 +175,7 @@ un sens.
 
 Champ `engagements` sur un candidat : les déclarations **datées et sourcées** prises
 pendant cette campagne. À ne pas confondre avec `positions_10_sujets`, qui dit ce que le
-candidat défend *aujourd'hui* — ici on empile l'historique, pour pouvoir le confronter plus tard.
+candidat défend *aujourd'hui*, ici on empile l'historique, pour pouvoir le confronter plus tard.
 
 ```js
 engagements: [
@@ -208,7 +208,7 @@ sur parole. Ne jamais en poser une sans que les deux engagements soient publiés
 Procédure à chaque mise à jour :
 1. Ajouter les engagements datés relevés depuis la dernière fois.
 2. Relire les engagements antérieurs du même candidat **sur le même thème**. Si le nouveau
-   s'en écarte, poser une `divergence` et décrire l'écart de façon factuelle — ce qui change,
+   s'en écarte, poser une `divergence` et décrire l'écart de façon factuelle, ce qui change,
    pas ce qu'il faut en penser.
 3. Vérifier que `positions_10_sujets` reflète toujours la position la plus récente. C'est ce
    contrôle qui a révélé, le 09/10/2026, que la position d'Édouard Philippe sur les retraites

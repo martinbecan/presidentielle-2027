@@ -25,8 +25,8 @@
   }
 
   // Les filtres ne portent que sur le passé, et sont affichés juste au-dessus de lui.
-  // Les faire agir aussi sur le bloc « Prochaines échéances » n'apportait rien — ses
-  // 8 entrées sont presque toutes de la même catégorie, donc c'était un tout-ou-rien —
+  // Les faire agir aussi sur le bloc « Prochaines échéances » n'apportait rien, ses
+  // 8 entrées sont presque toutes de la même catégorie, donc c'était un tout-ou-rien,
   // et cela aurait modifié du contenu situé hors du champ de vision de la commande.
   function filtresHtml(passeComplet) {
     if (!categories.length) return '';
@@ -71,7 +71,7 @@
     // la page. Les événements antérieurs au suivi du site n'ont pas encore de source :
     // l'absence est visible plutôt que masquée.
     if (ev.source) {
-      html += '<div class="timeline-source"><a href="' + ev.source.url + '" target="_blank" rel="noopener noreferrer" class="source-verify-link">🔍 ' + ev.source.nom + '</a></div>';
+      html += '<div class="timeline-source"><a href="' + ev.source.url + '" target="_blank" rel="noopener noreferrer" class="source-verify-link">' + ev.source.nom + '</a></div>';
     }
     html += '</div></div>';
     return html;
@@ -104,7 +104,7 @@
         html += '<span class="echeance-date">' + ev.dateLabel + '</span>';
         html += '<span class="echeance-titre">' + ev.titre + '</span>';
         if (ev.source) {
-          html += '<a class="echeance-source source-verify-link" href="' + ev.source.url + '" target="_blank" rel="noopener noreferrer">🔍 ' + ev.source.nom + '</a>';
+          html += '<a class="echeance-source source-verify-link" href="' + ev.source.url + '" target="_blank" rel="noopener noreferrer">' + ev.source.nom + '</a>';
         }
         html += '</li>';
       });
@@ -116,7 +116,7 @@
     function renderPasse(liste) {
       html += '<section class="timeline-section">';
       html += '<h2 class="timeline-section-titre">Déjà passé' +
-        '<span class="timeline-section-note">du plus récent au plus ancien — aujourd\'hui, ' +
+        '<span class="timeline-section-note">du plus récent au plus ancien, aujourd\'hui, ' +
         aujourdhuiLabel() + '</span></h2>';
       html += filtresHtml(passeComplet);
 

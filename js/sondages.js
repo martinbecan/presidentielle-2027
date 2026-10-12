@@ -6,7 +6,7 @@
 (function () {
   // Taille d'échantillon usuelle des sondages politiques français. Si un institut publie
   // sur un échantillon plus large, la marge réelle est plus étroite et le site est donc
-  // légèrement trop prudent — c'est le bon sens de l'erreur sur un sujet pareil.
+  // légèrement trop prudent, c'est le bon sens de l'erreur sur un sujet pareil.
   var TAILLE_ECHANTILLON = 1000;
 
   // Marge d'erreur à 95 %. Elle dépend du score : ±3,0 points autour de 35 %, mais

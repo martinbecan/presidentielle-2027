@@ -109,14 +109,14 @@
       html += '<span class="engagement-divergence-tag">↪ ' + (NATURES[e.divergence.nature] || 'Écart') + '</span> ';
       html += e.divergence.constat;
       if (anterieur) {
-        html += '<div class="engagement-divergence-anterieur"><strong>' + anterieur.label + '</strong> — ' + anterieur.resume +
-          ' <a href="' + anterieur.source.url + '" target="_blank" rel="noopener noreferrer" class="source-verify-link">🔍 ' + anterieur.source.nom + '</a></div>';
+        html += '<div class="engagement-divergence-anterieur"><strong>' + anterieur.label + '</strong>, ' + anterieur.resume +
+          ' <a href="' + anterieur.source.url + '" target="_blank" rel="noopener noreferrer" class="source-verify-link">' + anterieur.source.nom + '</a></div>';
       }
       html += '</div>';
     }
 
-    html += '<p class="engagement-source">' + e.contexte + ' — ' +
-      '<a href="' + e.source.url + '" target="_blank" rel="noopener noreferrer" class="source-verify-link">🔍 ' + e.source.nom + '</a></p>';
+    html += '<p class="engagement-source">' + e.contexte + ', ' +
+      '<a href="' + e.source.url + '" target="_blank" rel="noopener noreferrer" class="source-verify-link">' + e.source.nom + '</a></p>';
     html += '</div>';
     return html;
   }
@@ -156,7 +156,7 @@
     html += '<p class="engagements-bilan">' + retenus.length + ' engagement' + (retenus.length > 1 ? 's' : '') +
       (filtreCandidat || filtreTheme ? ' affiché' + (retenus.length > 1 ? 's' : '') + ' sur ' + tous.length + ' relevés' : ' relevés') + ', ' +
       (divergences ? divergences + ' écart' + (divergences > 1 ? 's' : '') + ' signalé' + (divergences > 1 ? 's' : '') + '.'
-        : 'aucun écart signalé à ce jour — avec un seul engagement par thème pour la plupart des candidats, il n\'y a rien à confronter.') +
+        : 'aucun écart signalé à ce jour, avec un seul engagement par thème pour la plupart des candidats, il n\'y a rien à confronter.') +
       '</p>';
 
     root.innerHTML = html;

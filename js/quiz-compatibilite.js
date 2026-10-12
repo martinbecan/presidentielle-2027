@@ -69,7 +69,7 @@
     var pct = Math.round((current / questions.length) * 100);
     var selected = answers.hasOwnProperty(q.id) ? answers[q.id] : null;
 
-    trackEvent('quiz-compat/question-' + (current + 1), 'Quiz compatibilité — Question ' + (current + 1) + '/' + questions.length);
+    trackEvent('quiz-compat/question-' + (current + 1), 'Quiz compatibilité, Question ' + (current + 1) + '/' + questions.length);
 
     var html = '';
     html += '<div class="quiz-progress quiz-progress-compat"><div class="quiz-progress-bar" style="width:' + pct + '%"></div></div>';
@@ -111,14 +111,14 @@
 
     // Le contenu est régénéré à chaque question (innerHTML) : sans repositionner le focus,
     // un utilisateur au clavier perdrait le focus à chaque Suivant/Précédent et devrait
-    // retabuler depuis le début — on ramène le focus sur le choix déjà sélectionné (ou le 1er).
+    // retabuler depuis le début, on ramène le focus sur le choix déjà sélectionné (ou le 1er).
     var toFocus = root.querySelector('.quiz-choice-selected') || root.querySelector('.quiz-choice-btn');
     if (toFocus) toFocus.focus();
   }
 
   // Questions d'extension (thèmes V5) : posées uniquement si l'utilisateur clique "Affiner
   // mon résultat" après les résultats. Les réponses s'ajoutent au même objet `answers` que
-  // le quiz principal — computeScores() n'a pas besoin de logique séparée pour en tenir compte.
+  // le quiz principal, computeScores() n'a pas besoin de logique séparée pour en tenir compte.
   function renderExtensionQuestion() {
     var q = extensionQuestions[currentExt];
     var pct = Math.round((currentExt / extensionQuestions.length) * 100);
@@ -186,10 +186,10 @@
   }
 
   function renderResults() {
-    trackEvent('quiz-compat/complete', 'Quiz compatibilité — terminé');
+    trackEvent('quiz-compat/complete', 'Quiz compatibilité, terminé');
     var answeredCount = Object.keys(answers).filter(function (k) { return answers[k] !== 0; }).length;
     if (answeredCount === 0) {
-      root.innerHTML = '<p class="no-data" tabindex="-1">Vous avez répondu « neutre » à toutes les questions — impossible de calculer une compatibilité. <a href="quiz-compatibilite.html">Recommencer</a></p>';
+      root.innerHTML = '<p class="no-data" tabindex="-1">Vous avez répondu « neutre » à toutes les questions, impossible de calculer une compatibilité. <a href="quiz-compatibilite.html">Recommencer</a></p>';
       root.querySelector('.no-data').focus();
       return;
     }
@@ -203,7 +203,7 @@
     var html = '<div class="quiz-compat-results">';
     html += '<h2 class="quiz-compat-results-title" tabindex="-1">Vos 3 candidats les plus compatibles</h2>';
     html += '<p class="quiz-compat-methode">Ces pourcentages comparent vos réponses aux positions documentées de chaque candidat. ' +
-      'Chaque position est sourcée sur sa fiche — cliquez sur un nom pour la vérifier. ' +
+      'Chaque position est sourcée sur sa fiche, cliquez sur un nom pour la vérifier. ' +
       'Un candidat dont la position n\'est pas documentée sur une question en est exclu pour celle-là : ' +
       'son score se calcule alors sur les autres, sans qu\'il soit avantagé ni pénalisé.</p>';
     html += '<div class="quiz-compat-bars">';
@@ -232,7 +232,7 @@
 
     if (results.length > 1) {
       var ecart = results[0].pct - results[results.length - 1].pct;
-      html += '<p class="quiz-compat-ecart">Vos trois premiers sont proches les uns des autres — c\'est normal, ce sont justement les plus proches de vous. L\'écart qui compte est ailleurs : <strong>' +
+      html += '<p class="quiz-compat-ecart">Vos trois premiers sont proches les uns des autres, c\'est normal, ce sont justement les plus proches de vous. L\'écart qui compte est ailleurs : <strong>' +
         ecart + ' points</strong> séparent ' + results[0].candidat.nom + ' (' + results[0].pct + ' %) de ' +
         results[results.length - 1].candidat.nom + ' (' + results[results.length - 1].pct + ' %).</p>';
     }
@@ -273,7 +273,7 @@
       html += '<button type="button" class="quiz-back-btn quiz-compat-extend-btn" id="quiz-extend-btn">➕ Affiner mon résultat avec ' + extensionQuestions.length + ' question' + (extensionQuestions.length > 1 ? 's' : '') + ' supplémentaire' + (extensionQuestions.length > 1 ? 's' : '') + '</button>';
     }
 
-    html += '<p class="quiz-compat-disclaimer">Ce résultat est une aide à la réflexion basée sur vos réponses à quelques questions clés, pas un verdict. Ce site vous donne des sources, pas des vérités toutes faites : cliquez, recoupez, doutez — explorez les fiches candidats avant de vous décider, c\'est ça, voter en conscience.</p>';
+    html += '<p class="quiz-compat-disclaimer">Ce résultat est une aide à la réflexion basée sur vos réponses à quelques questions clés, pas un verdict. Ce site vous donne des sources, pas des vérités toutes faites : cliquez, recoupez, doutez, explorez les fiches candidats avant de vous décider, c\'est ça, voter en conscience.</p>';
 
     html += '<details class="quiz-compat-methodo"><summary>Comment ce score est calculé ? <span class="chevron">▸</span></summary>';
     html += '<div class="quiz-compat-methodo-content">';
@@ -327,7 +327,7 @@
 
     var html = '<div class="memo-card">';
     html += '<div class="memo-header">';
-    html += '<div class="memo-header-title" tabindex="-1">🇫🇷 Mon mémo personnel — Présidentielle 2027</div>';
+    html += '<div class="memo-header-title" tabindex="-1">🇫🇷 Mon mémo personnel, Présidentielle 2027</div>';
     html += '<div class="memo-header-date">Généré le ' + today + '</div>';
     html += '</div>';
 
@@ -347,9 +347,9 @@
 
     html += '<h3 class="memo-section-title">Dates clés</h3>';
     html += '<ul class="memo-dates">';
-    html += '<li><strong>Vendredi 12 mars 2027</strong> — date limite d\'inscription sur les listes électorales</li>';
-    html += '<li><strong>Dimanche 18 avril 2027</strong> — 1er tour</li>';
-    html += '<li><strong>Dimanche 2 mai 2027</strong> — 2nd tour</li>';
+    html += '<li><strong>Vendredi 12 mars 2027</strong>, date limite d\'inscription sur les listes électorales</li>';
+    html += '<li><strong>Dimanche 18 avril 2027</strong>, 1er tour</li>';
+    html += '<li><strong>Dimanche 2 mai 2027</strong>, 2nd tour</li>';
     html += '</ul>';
 
     html += '<p class="memo-disclaimer">Ce mémo est une aide personnelle basée sur vos réponses à 18 questions. Pensez à explorer les programmes complets avant de vous décider.</p>';
@@ -376,6 +376,6 @@
     return;
   }
 
-  trackEvent('quiz-compat/start', 'Quiz compatibilité — démarré');
+  trackEvent('quiz-compat/start', 'Quiz compatibilité, démarré');
   renderQuestion();
 })();
