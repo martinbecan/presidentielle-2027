@@ -95,50 +95,50 @@ window.SITE_DATA = {
     { date: "2026-08-25", dateLabel: "25 août 2026", titre: "Le conseil national du PS ratifie l'accord de primaire commune avec Place publique et la GRS (159 pour, 32 contre, 21 abstentions)", candidatSlug: null, categorie: "institutionnel", future: false },
     { date: "2026-08-30", dateLabel: "30 août 2026", titre: "Olivier Faure, premier secrétaire du PS, annonce sa candidature à la primaire au 20h de TF1", candidatSlug: "olivier-faure", categorie: "candidature", future: false },
     { date: "2026-08-26", dateLabel: "26 août 2026", titre: "Karim Bouamrane refuse de participer à la primaire PS / Place publique, qu'il juge fermée, et maintient une candidature autonome en visant les 500 parrainages", candidatSlug: "karim-bouamrane", categorie: "candidature", future: false },
-    { date: "2026-08-27", dateLabel: "27 août 2026", titre: "Premier débat de la campagne : sept candidats (Attal, Glucksmann, Le Pen, Mélenchon, Philippe, Retailleau, Tondelier) confrontés aux chefs d'entreprise pendant trois heures à Roland-Garros, à l'invitation du Medef et en direct sur LCI", candidatSlug: null, categorie: "campagne", future: false, majeur: true },
+    { date: "2026-08-27", dateLabel: "27 août 2026", titre: "Premier débat de la campagne : sept candidats (Attal, Glucksmann, Le Pen, Mélenchon, Philippe, Retailleau, Tondelier) confrontés aux chefs d'entreprise pendant trois heures à Roland-Garros, à l'invitation du Medef et en direct sur LCI", candidatSlug: null, source: { nom: "franceinfo", url: "https://www.franceinfo.fr/elections/presidentielle/dette-publique-retraites-reindustrialisation-ce-qu-il-faut-retenir-du-premier-debat-des-principaux-candidats-a-la-presidentielle_8165342.html" }, categorie: "campagne", future: false, majeur: true },
     { date: "2026-08-27", dateLabel: "27 août 2026", titre: "Bruno Retailleau structure sa campagne pour la rentrée : le préfet Franck Robine devient directeur de campagne et le programme est resserré autour du pouvoir d'achat", candidatSlug: "bruno-retailleau", categorie: "campagne", future: false },
     { date: "2026-08-31", dateLabel: "31 août 2026", titre: "Séminaire de rentrée du gouvernement Lecornu consacré au budget 2027, sous menace de censure — LFI l'a annoncée, le RN ne l'exclut pas ; le projet de loi de finances est attendu fin septembre", candidatSlug: null, categorie: "institutionnel", future: false },
-    { date: "2026-09-02", dateLabel: "2 septembre 2026", titre: "David Lisnard annonce à l'AFP avoir réuni 500 promesses de parrainages, qu'il devra faire confirmer officiellement en février 2027", candidatSlug: "david-lisnard", categorie: "campagne", future: false },
-    { date: "2026-09-02", dateLabel: "2 septembre 2026", titre: "Louis Aliot affirme sur BFMTV que le RN dispose de plus de 400 promesses de parrainages pour Marine Le Pen, tout en jugeant le système « très imparfait »", candidatSlug: "marine-le-pen", categorie: "campagne", future: false },
-    { date: "2026-09-02", dateLabel: "2 septembre 2026", titre: "Selon franceinfo, Jean-Luc Mélenchon ne réunit qu'un peu plus de 200 promesses de parrainages, LFI ne comptant qu'environ 200 élus habilités à parrainer", candidatSlug: "jean-luc-melenchon", categorie: "campagne", future: false },
-    { date: "2026-09-03", dateLabel: "3 septembre 2026", titre: "Fabien Verdier, ancien maire de Châteaudun, se porte candidat à la primaire pour défendre « la justice territoriale » et la France des sous-préfectures", candidatSlug: "fabien-verdier", categorie: "candidature", future: false },
-    { date: "2026-09-03", dateLabel: "3 septembre 2026", titre: "Gabriel Attal présente une équipe de campagne sans poids lourds — cinq porte-parole peu connus et un trio de direction — en assumant de ne pas rechercher le soutien de ceux qui ont déjà exercé le pouvoir", candidatSlug: "gabriel-attal", categorie: "campagne", future: false },
-    { date: "2026-09-04", dateLabel: "4 septembre 2026", titre: "Emmanuel Maurel (Gauche républicaine et socialiste) devient le septième candidat déclaré à la primaire PS / Place publique / GRS", candidatSlug: "emmanuel-maurel", categorie: "candidature", future: false },
-    { date: "2026-09-01", dateLabel: "1er-15 septembre 2026", titre: "Dépôt des candidatures à la primaire PS / Place publique", candidatSlug: null, categorie: "institutionnel", future: false },
-    { date: "2026-08-27", dateLabel: "27 août 2026", titre: "Xavier Bertrand annonce aux universités d'été du Medef qu'il sera candidat, en dehors des Républicains et sans passer par une primaire", candidatSlug: "xavier-bertrand", categorie: "candidature", future: false },
-    { date: "2026-09-06", dateLabel: "6 septembre 2026", titre: "Fabien Roussel est désigné candidat du PCF par 72 % des adhérents consultés, et officialise sa candidature au 20h de TF1", candidatSlug: "fabien-roussel", categorie: "candidature", future: false },
-    { date: "2026-09-15", dateLabel: "15 septembre 2026", titre: "Clôture des parrainages de la primaire PS : cinq candidats sur sept réunissent les soutiens d'élus requis — Fabien Verdier échoue à les obtenir", candidatSlug: null, categorie: "institutionnel", future: false },
-    { date: "2026-09-16", dateLabel: "16 septembre 2026", titre: "Philippe Brun est suspendu du PS à titre conservatoire après des accusations de violences et écarté de la primaire, alors qu'il avait réuni ses parrainages", candidatSlug: "philippe-brun", categorie: "candidature", future: false },
-    { date: "2026-09-17", dateLabel: "17 septembre 2026", titre: "Éric Zemmour déclare sur BFMTV être candidat à la présidence de la République, une déclaration formelle restant annoncée pour l'automne", candidatSlug: "eric-zemmour", categorie: "candidature", future: false },
-    { date: "2026-09-18", dateLabel: "18 septembre 2026", titre: "Début du mouvement lycéen au lycée Saint-Exupéry de Créteil, à la suite d'une grève des enseignants sur le manque de postes", candidatSlug: null, categorie: "campagne", future: false },
+    { date: "2026-09-02", dateLabel: "2 septembre 2026", titre: "David Lisnard annonce à l'AFP avoir réuni 500 promesses de parrainages, qu'il devra faire confirmer officiellement en février 2027", candidatSlug: "david-lisnard", source: { nom: "Epoch Times", url: "https://www.epochtimes.fr/presidentielle-david-lisnard-affiche-500-promesses-de-parrainages-et-vise-plus-de-notoriete-3339118.html" }, categorie: "campagne", future: false },
+    { date: "2026-09-02", dateLabel: "2 septembre 2026", titre: "Louis Aliot affirme sur BFMTV que le RN dispose de plus de 400 promesses de parrainages pour Marine Le Pen, tout en jugeant le système « très imparfait »", candidatSlug: "marine-le-pen", source: { nom: "BFMTV", url: "https://www.shango.media/bfm-tv-presidentielle-2027-louis-aliot-affirme-que-le-rn-a-deja-plus-de-400-parrainages-delus-mais-deplore-un-systeme-tres-imparfait-11798914" }, categorie: "campagne", future: false },
+    { date: "2026-09-02", dateLabel: "2 septembre 2026", titre: "Selon franceinfo, Jean-Luc Mélenchon ne réunit qu'un peu plus de 200 promesses de parrainages, LFI ne comptant qu'environ 200 élus habilités à parrainer", candidatSlug: "jean-luc-melenchon", source: { nom: "franceinfo", url: "https://www.franceinfo.fr/politique/melenchon/info-franceinfo-jean-luc-melenchon-n-a-recueilli-pour-l-instant-qu-un-peu-plus-de-200-promesses-de-parrainages-en-vue-de-la-presidentielle-loin-des-500-necessaires_8172731.html" }, categorie: "campagne", future: false },
+    { date: "2026-09-03", dateLabel: "3 septembre 2026", titre: "Fabien Verdier, ancien maire de Châteaudun, se porte candidat à la primaire pour défendre « la justice territoriale » et la France des sous-préfectures", candidatSlug: "fabien-verdier", source: { nom: "franceinfo", url: "https://www.franceinfo.fr/elections/presidentielle/l-ancien-maire-de-chateaudun-fabien-verdier-candidat-a-la-primaire-de-la-gauche-pour-porter-la-voix-des-sous-prefectures_8176064.html" }, categorie: "candidature", future: false },
+    { date: "2026-09-03", dateLabel: "3 septembre 2026", titre: "Gabriel Attal présente une équipe de campagne sans poids lourds — cinq porte-parole peu connus et un trio de direction — en assumant de ne pas rechercher le soutien de ceux qui ont déjà exercé le pouvoir", candidatSlug: "gabriel-attal", source: { nom: "LCP", url: "https://lcp.fr/actualites/presidentielle-gabriel-attal-presente-son-equipe-de-campagne-et-promet-de-ne-pas-faire" }, categorie: "campagne", future: false },
+    { date: "2026-09-04", dateLabel: "4 septembre 2026", titre: "Emmanuel Maurel (Gauche républicaine et socialiste) devient le septième candidat déclaré à la primaire PS / Place publique / GRS", candidatSlug: "emmanuel-maurel", source: { nom: "franceinfo", url: "https://www.franceinfo.fr/politique/ps/primaire-socialiste/le-depute-emmanuel-maurel-annonce-sa-candidature-a-la-primaire-socialiste-pour-l-election-presidentielle_8176532.html" }, categorie: "candidature", future: false },
+    { date: "2026-09-01", dateLabel: "1er-15 septembre 2026", titre: "Dépôt des candidatures à la primaire PS / Place publique", candidatSlug: null, source: { nom: "franceinfo", url: "https://www.franceinfo.fr/politique/ps/candidats-dates-cout-cinq-questions-sur-la-primaire-du-parti-socialiste-en-vue-de-la-presidentielle-de-2027_8133077.html" }, categorie: "institutionnel", future: false },
+    { date: "2026-08-27", dateLabel: "27 août 2026", titre: "Xavier Bertrand annonce aux universités d'été du Medef qu'il sera candidat, en dehors des Républicains et sans passer par une primaire", candidatSlug: "xavier-bertrand", source: { nom: "CNews", url: "https://www.cnews.fr/france/2026-08-27/presidentielle-2027-xavier-bertrand-annonce-quil-sera-candidat-1910093" }, categorie: "candidature", future: false },
+    { date: "2026-09-06", dateLabel: "6 septembre 2026", titre: "Fabien Roussel est désigné candidat du PCF par 72 % des adhérents consultés, et officialise sa candidature au 20h de TF1", candidatSlug: "fabien-roussel", source: { nom: "France 24", url: "https://www.france24.com/fr/france/20260906-pr%C3%A9sidentielle-2027-fabien-roussel-officialise-sa-candidature-avec-le-pcf" }, categorie: "candidature", future: false },
+    { date: "2026-09-15", dateLabel: "15 septembre 2026", titre: "Clôture des parrainages de la primaire PS : cinq candidats sur sept réunissent les soutiens d'élus requis — Fabien Verdier échoue à les obtenir", candidatSlug: null, source: { nom: "Wikipédia — primaire socialiste 2026", url: "https://fr.wikipedia.org/wiki/Primaire_pr%C3%A9sidentielle_socialiste_fran%C3%A7aise_de_2026" }, categorie: "institutionnel", future: false },
+    { date: "2026-09-16", dateLabel: "16 septembre 2026", titre: "Philippe Brun est suspendu du PS à titre conservatoire après des accusations de violences et écarté de la primaire, alors qu'il avait réuni ses parrainages", candidatSlug: "philippe-brun", source: { nom: "France 24", url: "https://www.france24.com/fr/france/20260916-philippe-brun-suspendu-du-ps-et-%C3%A9cart%C3%A9-de-la-primaire-pour-des-accusations-de-violence" }, categorie: "candidature", future: false },
+    { date: "2026-09-17", dateLabel: "17 septembre 2026", titre: "Éric Zemmour déclare sur BFMTV être candidat à la présidence de la République, une déclaration formelle restant annoncée pour l'automne", candidatSlug: "eric-zemmour", source: { nom: "L'Avenir", url: "https://www.lavenir.net/actu/monde/2026/09/18/zemmour-confirme-quil-sera-candidat-a-lelection-presidentielle-en-france-et-durcit-encore-son-discours-sur-limmigration-5OFMOVM6CVCDFHY4B3GI5QID3Q/" }, categorie: "candidature", future: false },
+    { date: "2026-09-18", dateLabel: "18 septembre 2026", titre: "Début du mouvement lycéen au lycée Saint-Exupéry de Créteil, à la suite d'une grève des enseignants sur le manque de postes", candidatSlug: null, source: { nom: "Wikipédia — mouvement lycéen 2026", url: "https://fr.wikipedia.org/wiki/Mouvement_et_blocus_lyc%C3%A9en_et_%C3%A9tudiant_de_2026_en_France" }, categorie: "campagne", future: false },
     { date: "2026-09-19", dateLabel: "19 septembre 2026", titre: "Nicolas Dupont-Aignan officialise sa candidature dans un entretien au Journal du dimanche", candidatSlug: "nicolas-dupont-aignan", categorie: "candidature", future: false },
-    { date: "2026-09-23", dateLabel: "23 septembre 2026", titre: "Le référé de Philippe Brun pour être réintégré est rejeté : le tribunal juge le bureau national du PS compétent pour prononcer sa suspension", candidatSlug: "philippe-brun", categorie: "justice", future: false },
-    { date: "2026-09-23", dateLabel: "23 septembre 2026", titre: "Premier des trois débats télévisés de la primaire PS / Place publique", candidatSlug: null, categorie: "campagne", future: false },
-    { date: "2026-09-29", dateLabel: "29 septembre 2026", titre: "Journée de mobilisation de la fonction publique pour les salaires ; 338 établissements scolaires perturbés et 45 bloqués selon le ministère", candidatSlug: null, categorie: "campagne", future: false },
-    { date: "2026-10-01", dateLabel: "1er octobre 2026", titre: "Acte 2 du mouvement lycéen : plus de 900 actions et blocages recensés, le mouvement gagne les universités", candidatSlug: null, categorie: "campagne", future: false },
-    { date: "2026-10-01", dateLabel: "1er octobre 2026", titre: "Deuxième débat de la primaire PS / Place publique, suivi par 1,8 million de téléspectateurs", candidatSlug: null, categorie: "campagne", future: false },
-    { date: "2026-10-02", dateLabel: "2 octobre 2026", titre: "Mira Markovic, cofondatrice du Parti animaliste, est désignée candidate du mouvement", candidatSlug: "mira-markovic", categorie: "candidature", future: false },
+    { date: "2026-09-23", dateLabel: "23 septembre 2026", titre: "Le référé de Philippe Brun pour être réintégré est rejeté : le tribunal juge le bureau national du PS compétent pour prononcer sa suspension", candidatSlug: "philippe-brun", source: { nom: "Wikipédia — primaire socialiste 2026", url: "https://fr.wikipedia.org/wiki/Primaire_pr%C3%A9sidentielle_socialiste_fran%C3%A7aise_de_2026" }, categorie: "justice", future: false },
+    { date: "2026-09-23", dateLabel: "23 septembre 2026", titre: "Premier des trois débats télévisés de la primaire PS / Place publique", candidatSlug: null, source: { nom: "Wikipédia — primaire socialiste 2026", url: "https://fr.wikipedia.org/wiki/Primaire_pr%C3%A9sidentielle_socialiste_fran%C3%A7aise_de_2026" }, categorie: "campagne", future: false },
+    { date: "2026-09-29", dateLabel: "29 septembre 2026", titre: "Journée de mobilisation de la fonction publique pour les salaires ; 338 établissements scolaires perturbés et 45 bloqués selon le ministère", candidatSlug: null, source: { nom: "Wikipédia — mouvement lycéen 2026", url: "https://fr.wikipedia.org/wiki/Mouvement_et_blocus_lyc%C3%A9en_et_%C3%A9tudiant_de_2026_en_France" }, categorie: "campagne", future: false },
+    { date: "2026-10-01", dateLabel: "1er octobre 2026", titre: "Acte 2 du mouvement lycéen : plus de 900 actions et blocages recensés, le mouvement gagne les universités", candidatSlug: null, source: { nom: "Wikipédia — mouvement lycéen 2026", url: "https://fr.wikipedia.org/wiki/Mouvement_et_blocus_lyc%C3%A9en_et_%C3%A9tudiant_de_2026_en_France" }, categorie: "campagne", future: false },
+    { date: "2026-10-01", dateLabel: "1er octobre 2026", titre: "Deuxième débat de la primaire PS / Place publique, suivi par 1,8 million de téléspectateurs", candidatSlug: null, source: { nom: "franceinfo", url: "https://www.franceinfo.fr/politique/ps/primaire-a-gauche/votants-dates-les-chiffres-de-la-primaire-ps-place-publique-une-semaine-avant-le-premier-tour_8220427.html" }, categorie: "campagne", future: false },
+    { date: "2026-10-02", dateLabel: "2 octobre 2026", titre: "Mira Markovic, cofondatrice du Parti animaliste, est désignée candidate du mouvement", candidatSlug: "mira-markovic", source: { nom: "Parti animaliste", url: "https://parti-animaliste.fr/news/communique-de-presse/mira-markovic-representera-le-parti-animaliste-a-la-presidentielle" }, categorie: "candidature", future: false },
     { date: "2026-10-03", dateLabel: "3 octobre 2026", titre: "Le PS juge le budget 2027 « pas acceptable » et maintient sa menace de censure ; le RN ne s'interdit rien, Marine Le Pen conditionnant son vote à l'usage du 49.3", candidatSlug: null, categorie: "institutionnel", future: false },
-    { date: "2026-10-06", dateLabel: "6 octobre 2026", titre: "Acte 3 du mouvement lycéen et étudiant : 256 000 manifestants selon le ministère de l'Intérieur, jusqu'à 450 000 selon les organisateurs", candidatSlug: null, categorie: "campagne", future: false },
-    { date: "2026-10-09", dateLabel: "9 octobre 2026", titre: "Ouverture du 1er tour de la primaire PS / Place publique / GRS : la plateforme de vote en ligne est visée par une cyberattaque par déni de service dès 8 h. Le scrutin se poursuit, l'intégrité des votes n'est pas compromise, l'ANSSI est saisie", candidatSlug: null, categorie: "institutionnel", future: false },
-    { date: "2026-10-09", dateLabel: "9 au 11 octobre 2026", titre: "Primaire commune Parti socialiste / Place publique / GRS — vote en ligne prolongé jusqu'au dimanche 11 octobre après la cyberattaque, et tranché dès le premier tour : le second tour prévu les 16-17 octobre n'a pas lieu", candidatSlug: null, categorie: "institutionnel", future: false },
-    { date: "2026-09-28", dateLabel: "28 septembre 2026", titre: "Jean-Luc Mélenchon accuse le gouvernement d'ordonner une répression du mouvement lycéen et lui prête un « arrière-goût raciste » ; Sébastien Lecornu y voit une insulte et dénonce une surenchère irresponsable des élus insoumis", candidatSlug: "jean-luc-melenchon", categorie: "campagne", future: false },
-    { date: "2026-10-01", dateLabel: "1er octobre 2026", titre: "Trois candidats à la présidentielle mettent en cause LFI dans le blocage des lycées : Bruno Retailleau demande d'étudier son interdiction, Marine Le Pen réclame le rétablissement de l'ordre, Gabriel Attal dit comprendre les lycéens mais accuse le mouvement insoumis", candidatSlug: null, categorie: "campagne", future: false },
-    { date: "2026-10-02", dateLabel: "début octobre 2026", titre: "Des propos vulgaires de Raphaël Glucksmann visant Jean-Luc Mélenchon et Marine Le Pen, tenus le 17 septembre en réunion interne, sont rendus publics et provoquent une polémique à quelques jours du vote", candidatSlug: "raphael-glucksmann", categorie: "campagne", future: false },
-    { date: "2026-10-04", dateLabel: "4 octobre 2026", titre: "Troisième et dernier débat télévisé de la primaire PS / Place publique", candidatSlug: null, categorie: "campagne", future: false },
-    { date: "2026-10-10", dateLabel: "10 octobre 2026", titre: "Le parquet de Paris ouvre une enquête préliminaire sur la cyberattaque visant la primaire ; le vote est prolongé jusqu'au dimanche 18 h en accord avec les candidats", candidatSlug: null, categorie: "justice", future: false },
-    { date: "2026-10-11", dateLabel: "11 octobre 2026", titre: "Raphaël Glucksmann remporte la primaire dès le premier tour avec 79 613 voix sur 120 307 suffrages exprimés, soit 66,17 %, devant Olivier Faure (14,48 %), Ségolène Royal (7,62 %), Emmanuel Maurel (5,92 %) et Jérôme Guedj (5,83 %). Il devient le candidat commun du PS, de Place publique et de la GRS", candidatSlug: "raphael-glucksmann", categorie: "institutionnel", future: false, majeur: true },
-    { date: "2026-10-11", dateLabel: "11 octobre 2026", titre: "Dans son discours de victoire, Raphaël Glucksmann se présente comme le candidat de la rupture avec l'hégémonie de Jean-Luc Mélenchon sur la gauche et exclut tout accord avec La France insoumise", candidatSlug: "raphael-glucksmann", categorie: "campagne", future: false },
-    { date: "2026-10-11", dateLabel: "11 octobre 2026", titre: "Marine Tondelier regrette que le vainqueur de la primaire fasse « le choix du repli » et appelle à refuser le clanisme et les gauches irréconciliables ; les Écologistes restent partagés entre candidature autonome et alliance", candidatSlug: "marine-tondelier", categorie: "campagne", future: false },
-    { date: "2026-10-11", dateLabel: "11 octobre 2026", titre: "Jean-Luc Mélenchon réunit plus de 10 000 personnes à Clermont-Ferrand le jour même du scrutin, sans réagir au résultat dans la soirée ; Fabien Roussel ne réagit pas davantage", candidatSlug: "jean-luc-melenchon", categorie: "campagne", future: false },
-    { date: "2026-10-12", dateLabel: "12 octobre 2026", titre: "La faible participation à la primaire — 120 307 suffrages exprimés contre plus de 2 millions à celle de 2017 et près de 3 millions en 2011 — nourrit les interrogations sur la portée de la désignation", candidatSlug: null, categorie: "institutionnel", future: false },
-    { date: "2026-10-12", dateLabel: "12 octobre 2026", titre: "Baromètre Toluna Harris Interactive pour M6 et RTL : Le Pen 35 %, Mélenchon 18 %, Philippe 13 %, Glucksmann 10 %. Trois évolutions deviennent statistiquement établies depuis juin — la hausse de Mélenchon, les baisses de Philippe et d'Attal. Terrain du 5 au 8 octobre, antérieur à la primaire", candidatSlug: null, categorie: "campagne", future: false },
-    { date: "2026-10-15", dateLabel: "15 octobre 2026", titre: "Date limite de dépôt des mémoires devant la Cour de cassation dans l'affaire des assistants parlementaires du RN", candidatSlug: "marine-le-pen", categorie: "justice", future: true },
-    { date: "2027-01", dateLabel: "Début 2027", titre: "Ouverture de la collecte officielle des parrainages", candidatSlug: null, categorie: "institutionnel", future: true },
-    { date: "2027-04-05", dateLabel: "5 avril 2027", titre: "Ouverture de la campagne officielle, le deuxième lundi précédant le scrutin. Les professions de foi — le document où chaque candidat résume son projet — sont homologuées par la Commission nationale de contrôle, adressées aux électeurs et mises en ligne. C'est le seul moment où tous les candidats présentent leur projet au même format et à la même date", candidatSlug: null, categorie: "institutionnel", future: true },
-    { date: "2027-03", dateLabel: "~Mars 2027", titre: "Publication de la liste officielle des candidats (Conseil constitutionnel)", candidatSlug: null, categorie: "institutionnel", future: true },
-    { date: "2027-04-18", dateLabel: "18 avril 2027", titre: "1er tour de l'élection présidentielle", candidatSlug: null, categorie: "institutionnel", majeur: true, future: true },
-    { date: "2027-05-02", dateLabel: "2 mai 2027", titre: "2nd tour de l'élection présidentielle", candidatSlug: null, categorie: "institutionnel", majeur: true, future: true }
+    { date: "2026-10-06", dateLabel: "6 octobre 2026", titre: "Acte 3 du mouvement lycéen et étudiant : 256 000 manifestants selon le ministère de l'Intérieur, jusqu'à 450 000 selon les organisateurs", candidatSlug: null, source: { nom: "Wikipédia — mouvement lycéen 2026", url: "https://fr.wikipedia.org/wiki/Mouvement_et_blocus_lyc%C3%A9en_et_%C3%A9tudiant_de_2026_en_France" }, categorie: "campagne", future: false },
+    { date: "2026-10-09", dateLabel: "9 octobre 2026", titre: "Ouverture du 1er tour de la primaire PS / Place publique / GRS : la plateforme de vote en ligne est visée par une cyberattaque par déni de service dès 8 h. Le scrutin se poursuit, l'intégrité des votes n'est pas compromise, l'ANSSI est saisie", candidatSlug: null, source: { nom: "franceinfo", url: "https://www.franceinfo.fr/elections/presidentielle/la-plateforme-de-vote-pour-la-primaire-socialiste-victime-d-une-cyberattaque-depuis-son-ouverture-annonce-la-commission-d-organisation_8229811.html" }, categorie: "institutionnel", future: false },
+    { date: "2026-10-09", dateLabel: "9 au 11 octobre 2026", titre: "Primaire commune Parti socialiste / Place publique / GRS — vote en ligne prolongé jusqu'au dimanche 11 octobre après la cyberattaque, et tranché dès le premier tour : le second tour prévu les 16-17 octobre n'a pas lieu", candidatSlug: null, source: { nom: "Wikipédia — primaire socialiste 2026", url: "https://fr.wikipedia.org/wiki/Primaire_pr%C3%A9sidentielle_socialiste_fran%C3%A7aise_de_2026" }, categorie: "institutionnel", future: false },
+    { date: "2026-09-28", dateLabel: "28 septembre 2026", titre: "Jean-Luc Mélenchon accuse le gouvernement d'ordonner une répression du mouvement lycéen et lui prête un « arrière-goût raciste » ; Sébastien Lecornu y voit une insulte et dénonce une surenchère irresponsable des élus insoumis", candidatSlug: "jean-luc-melenchon", source: { nom: "Le JDD", url: "https://www.lejdd.fr/politique/blocage-des-lycees-melenchon-accuse-le-gouvernement-de-repression-a-larriere-gout-raciste-184647" }, categorie: "campagne", future: false },
+    { date: "2026-10-01", dateLabel: "1er octobre 2026", titre: "Trois candidats à la présidentielle mettent en cause LFI dans le blocage des lycées : Bruno Retailleau demande d'étudier son interdiction, Marine Le Pen réclame le rétablissement de l'ordre, Gabriel Attal dit comprendre les lycéens mais accuse le mouvement insoumis", candidatSlug: null, source: { nom: "franceinfo", url: "https://www.franceinfo.fr/societe/education/blocage-des-lycees/bruno-retailleau-marine-le-pen-gabriel-attal-plusieurs-candidats-a-la-presidentielle-attaquent-la-france-insoumise-sur-sa-responsabilite-dans-le-blocage-des-lycees_8218180.html" }, categorie: "campagne", future: false },
+    { date: "2026-10-02", dateLabel: "début octobre 2026", titre: "Des propos vulgaires de Raphaël Glucksmann visant Jean-Luc Mélenchon et Marine Le Pen, tenus le 17 septembre en réunion interne, sont rendus publics et provoquent une polémique à quelques jours du vote", candidatSlug: "raphael-glucksmann", source: { nom: "Europe 1", url: "https://www.europe1.fr/politique/on-leur-pisse-dessus-les-propos-prives-de-raphael-glucksmann-qui-font-polemique-1120982" }, categorie: "campagne", future: false },
+    { date: "2026-10-04", dateLabel: "4 octobre 2026", titre: "Troisième et dernier débat télévisé de la primaire PS / Place publique", candidatSlug: null, source: { nom: "Wikipédia — primaire socialiste 2026", url: "https://fr.wikipedia.org/wiki/Primaire_pr%C3%A9sidentielle_socialiste_fran%C3%A7aise_de_2026" }, categorie: "campagne", future: false },
+    { date: "2026-10-10", dateLabel: "10 octobre 2026", titre: "Le parquet de Paris ouvre une enquête préliminaire sur la cyberattaque visant la primaire ; le vote est prolongé jusqu'au dimanche 18 h en accord avec les candidats", candidatSlug: null, source: { nom: "Wikipédia — primaire socialiste 2026", url: "https://fr.wikipedia.org/wiki/Primaire_pr%C3%A9sidentielle_socialiste_fran%C3%A7aise_de_2026" }, categorie: "justice", future: false },
+    { date: "2026-10-11", dateLabel: "11 octobre 2026", titre: "Raphaël Glucksmann remporte la primaire dès le premier tour avec 79 613 voix sur 120 307 suffrages exprimés, soit 66,17 %, devant Olivier Faure (14,48 %), Ségolène Royal (7,62 %), Emmanuel Maurel (5,92 %) et Jérôme Guedj (5,83 %). Il devient le candidat commun du PS, de Place publique et de la GRS", candidatSlug: "raphael-glucksmann", source: { nom: "France 24", url: "https://www.france24.com/fr/france/20261011-rapha%C3%ABl-glucksmann-officiellement-candidat-un-cap-clair-et-des-zones-d-ombre" }, categorie: "institutionnel", future: false, majeur: true },
+    { date: "2026-10-11", dateLabel: "11 octobre 2026", titre: "Dans son discours de victoire, Raphaël Glucksmann se présente comme le candidat de la rupture avec l'hégémonie de Jean-Luc Mélenchon sur la gauche et exclut tout accord avec La France insoumise", candidatSlug: "raphael-glucksmann", source: { nom: "France 24", url: "https://www.france24.com/fr/france/20261011-rapha%C3%ABl-glucksmann-officiellement-candidat-un-cap-clair-et-des-zones-d-ombre" }, categorie: "campagne", future: false },
+    { date: "2026-10-11", dateLabel: "11 octobre 2026", titre: "Marine Tondelier regrette que le vainqueur de la primaire fasse « le choix du repli » et appelle à refuser le clanisme et les gauches irréconciliables ; les Écologistes restent partagés entre candidature autonome et alliance", candidatSlug: "marine-tondelier", source: { nom: "France 24", url: "https://www.france24.com/fr/france/20261011-rapha%C3%ABl-glucksmann-officiellement-candidat-un-cap-clair-et-des-zones-d-ombre" }, categorie: "campagne", future: false },
+    { date: "2026-10-11", dateLabel: "11 octobre 2026", titre: "Jean-Luc Mélenchon réunit plus de 10 000 personnes à Clermont-Ferrand le jour même du scrutin, sans réagir au résultat dans la soirée ; Fabien Roussel ne réagit pas davantage", candidatSlug: "jean-luc-melenchon", source: { nom: "France 24", url: "https://www.france24.com/fr/france/20261011-rapha%C3%ABl-glucksmann-officiellement-candidat-un-cap-clair-et-des-zones-d-ombre" }, categorie: "campagne", future: false },
+    { date: "2026-10-12", dateLabel: "12 octobre 2026", titre: "La faible participation à la primaire — 120 307 suffrages exprimés contre plus de 2 millions à celle de 2017 et près de 3 millions en 2011 — nourrit les interrogations sur la portée de la désignation", candidatSlug: null, source: { nom: "France 24", url: "https://www.france24.com/fr/france/20261011-rapha%C3%ABl-glucksmann-officiellement-candidat-un-cap-clair-et-des-zones-d-ombre" }, categorie: "institutionnel", future: false },
+    { date: "2026-10-12", dateLabel: "12 octobre 2026", titre: "Baromètre Toluna Harris Interactive pour M6 et RTL : Le Pen 35 %, Mélenchon 18 %, Philippe 13 %, Glucksmann 10 %. Trois évolutions deviennent statistiquement établies depuis juin — la hausse de Mélenchon, les baisses de Philippe et d'Attal. Terrain du 5 au 8 octobre, antérieur à la primaire", candidatSlug: null, source: { nom: "Toluna Harris Interactive", url: "https://tolunacorporate.com/wp-content/uploads/2026/10/Rapport-Toluna-Barometre-Presidentielle-2027-Vague-7-M6-RTL-12-octobre-2026.pdf" }, categorie: "campagne", future: false },
+    { date: "2026-10-15", dateLabel: "15 octobre 2026", titre: "Date limite de dépôt des mémoires devant la Cour de cassation dans l'affaire des assistants parlementaires du RN", candidatSlug: "marine-le-pen", source: { nom: "franceinfo", url: "https://www.franceinfo.fr/politique/front-national/affaire-des-assistants-fn-au-parlement-europeen/les-avocats-de-marine-le-pen-ont-jusqu-au-15-octobre-pour-justifier-le-pourvoi-dans-l-affaire-des-assistants-d-eurodeputes-fn_8177831.html" }, categorie: "justice", future: true },
+    { date: "2027-01", dateLabel: "Début 2027", titre: "Ouverture de la collecte officielle des parrainages", candidatSlug: null, source: { nom: "Conseil constitutionnel", url: "https://www.conseil-constitutionnel.fr/nouveaux-cahiers-du-conseil-constitutionnel/les-parrainages-a-l-election-presidentielle" }, categorie: "institutionnel", future: true },
+    { date: "2027-04-05", dateLabel: "5 avril 2027", titre: "Ouverture de la campagne officielle, le deuxième lundi précédant le scrutin. Les professions de foi — le document où chaque candidat résume son projet — sont homologuées par la Commission nationale de contrôle, adressées aux électeurs et mises en ligne. C'est le seul moment où tous les candidats présentent leur projet au même format et à la même date", candidatSlug: null, source: { nom: "Code électoral, article L47 A et suivants", url: "https://www.legifrance.gouv.fr/codes/id/LEGISCTA000006148458" }, categorie: "institutionnel", future: true },
+    { date: "2027-03", dateLabel: "~Mars 2027", titre: "Publication de la liste officielle des candidats (Conseil constitutionnel)", candidatSlug: null, source: { nom: "Conseil constitutionnel", url: "https://www.conseil-constitutionnel.fr/nouveaux-cahiers-du-conseil-constitutionnel/les-parrainages-a-l-election-presidentielle" }, categorie: "institutionnel", future: true },
+    { date: "2027-04-18", dateLabel: "18 avril 2027", titre: "1er tour de l'élection présidentielle", candidatSlug: null, source: { nom: "info.gouv.fr", url: "https://www.info.gouv.fr/actualite/election-presidentielle-2027" }, categorie: "institutionnel", majeur: true, future: true },
+    { date: "2027-05-02", dateLabel: "2 mai 2027", titre: "2nd tour de l'élection présidentielle", candidatSlug: null, source: { nom: "info.gouv.fr", url: "https://www.info.gouv.fr/actualite/election-presidentielle-2027" }, categorie: "institutionnel", majeur: true, future: true }
   ],
 
   // Questions du quiz de compatibilité. Chaque candidat porte un score -2..+2 par question
@@ -170,6 +170,8 @@ window.SITE_DATA = {
   // ajoutés thème par thème, proposées seulement si la personne clique "Affiner mon résultat"
   // après les résultats du quiz principal. Mêmes ids utilisés dans quizCompatScores.
   quizCompatExtensionQuestions: [
+    { id: "retraites_3", theme: "retraites", texte: "Il faut conserver un âge légal de départ à la retraite, plutôt qu'un système fondé uniquement sur la durée de cotisation." },
+    { id: "europe_3", theme: "europe", texte: "La France devrait sortir de l'Union européenne." },
     { id: "laicite_1", theme: "laicite", texte: "Le port de signes religieux visibles (voile, kippa, croix...) devrait être davantage restreint dans l'espace public (université, sorties scolaires, services publics)." },
     { id: "agriculture_1", theme: "agriculture", texte: "Les normes environnementales imposées aux agriculteurs devraient être assouplies pour améliorer leur compétitivité." },
     { id: "numerique_1", theme: "numerique", texte: "L'État devrait investir massivement pour renforcer la souveraineté numérique et technologique de la France (intelligence artificielle, cloud, infrastructures) face aux acteurs américains et chinois." },
@@ -255,6 +257,8 @@ window.SITE_DATA = {
       ],
       engagements_note: "Aucun engagement daté et sourcé relevé à ce stade de la campagne.",
       quizCompatScores: {
+        europe_3: -2,
+        retraites_3: 2,
         retraites_1: 2, retraites_2: -2, immigration_1: -2, immigration_2: 2, securite_1: -1, securite_2: 2,
         ecologie_1: 0, ecologie_2: 1, ecologie_3: 0, laicite_1: -1, agriculture_1: 0, defense_1: -2, pouvoir_achat_1: 2, pouvoir_achat_2: -2, dette_1: -2,
         europe_1: 1, europe_2: -2, institutions_1: -1, institutions_2: 1, education_1: -1, education_2: 2, sante_1: 2
@@ -372,6 +376,8 @@ window.SITE_DATA = {
         }
       ],
       quizCompatScores: {
+        europe_3: -2,
+        retraites_3: 2,
         retraites_1: 2, retraites_2: -2, immigration_1: -2, immigration_2: 2, securite_1: -2, securite_2: 2,
         ecologie_1: -2, ecologie_2: 2, ecologie_3: 2, laicite_1: -2, agriculture_1: -2, numerique_1: 2, logement_1: 2, defense_1: 0, pouvoir_achat_1: 2, pouvoir_achat_2: -2, dette_1: -2,
         europe_1: 2, europe_2: -2, institutions_1: 2, institutions_2: 2, education_1: -1, education_2: 2, sante_1: 2
@@ -470,6 +476,7 @@ window.SITE_DATA = {
         }
       ],
       quizCompatScores: {
+        europe_3: -2,
         retraites_1: 1, retraites_2: -1, immigration_1: -2, immigration_2: 2, securite_1: -1, securite_2: 2,
         ecologie_1: -2, ecologie_2: 2, ecologie_3: 2, laicite_1: -2, agriculture_1: -2, numerique_1: 1, logement_1: 1, defense_1: 1, pouvoir_achat_1: 2, pouvoir_achat_2: -2, dette_1: -1,
         europe_1: -2, europe_2: 2, institutions_1: 1, institutions_2: 2, education_1: -1, education_2: 2, sante_1: 2
@@ -553,6 +560,7 @@ window.SITE_DATA = {
       ],
       engagements_note: "Aucun engagement daté et sourcé relevé à ce stade de la campagne.",
       quizCompatScores: {
+        europe_3: -2,
         retraites_1: 1, retraites_2: -1, immigration_1: 1, immigration_2: 1, securite_1: -1, securite_2: 1,
         ecologie_1: -1, ecologie_2: 2, ecologie_3: 2, laicite_1: -2, agriculture_1: -1, logement_1: 2, defense_1: 1, pouvoir_achat_1: 2, pouvoir_achat_2: -2, dette_1: -2,
         europe_1: 2, europe_2: -1, institutions_1: 1, institutions_2: 2, education_1: 0, education_2: 1, sante_1: 2
@@ -646,6 +654,7 @@ window.SITE_DATA = {
       soutiens: [],
       engagements_note: "Aucun engagement daté et sourcé relevé à ce stade de la campagne.",
       quizCompatScores: {
+        europe_3: -2,
         retraites_1: 1, retraites_2: -1, immigration_1: -2, immigration_2: 1, securite_1: -1, securite_2: 1,
         ecologie_1: -2, ecologie_2: 2, ecologie_3: 1, laicite_1: 2, agriculture_1: -2, pouvoir_achat_1: 1, pouvoir_achat_2: -1, dette_1: -1,
         europe_1: -1, europe_2: 0, institutions_1: 0, institutions_2: 2, education_1: -1, education_2: 0, sante_1: 1
@@ -786,6 +795,7 @@ window.SITE_DATA = {
         }
       ],
       quizCompatScores: {
+        europe_3: -2,
         retraites_1: -1, retraites_2: -1, immigration_1: 0, immigration_2: 1, securite_1: 0, securite_2: 0,
         ecologie_1: 0, ecologie_2: 2, ecologie_3: 2, laicite_1: 0, agriculture_1: -2, numerique_1: 2, logement_1: 2, defense_1: 2,
         pouvoir_achat_1: 1, pouvoir_achat_2: -1, dette_1: -1,
@@ -965,6 +975,8 @@ window.SITE_DATA = {
         }
       ],
       quizCompatScores: {
+        europe_3: -2,
+        retraites_3: 2,
         retraites_1: -2, retraites_2: 2, immigration_1: 1, immigration_2: 0, securite_1: 1, securite_2: -1,
         ecologie_1: 1, ecologie_2: 0, ecologie_3: 1, laicite_1: 1, agriculture_1: 1, numerique_1: 1, logement_1: -1, defense_1: 2, pouvoir_achat_1: -1, pouvoir_achat_2: 2, dette_1: 2,
         europe_1: -1, europe_2: 1, institutions_1: 2, institutions_2: -1, education_1: 1, education_2: 0, sante_1: 0
@@ -1073,6 +1085,8 @@ window.SITE_DATA = {
         }
       ],
       quizCompatScores: {
+        europe_3: -2,
+        retraites_3: -2,
         retraites_1: -1, retraites_2: 2, immigration_1: 0, immigration_2: -1, securite_1: 0, securite_2: 0,
         ecologie_1: 2, ecologie_2: -1, ecologie_3: 1, laicite_1: 2, agriculture_1: 1, numerique_1: 2, logement_1: -1, defense_1: 1, pouvoir_achat_1: -1, pouvoir_achat_2: 1, dette_1: 2,
         europe_1: -2, europe_2: 1, institutions_1: 0, institutions_2: -1, education_1: 1, education_2: 0, sante_1: -1
@@ -1176,6 +1190,8 @@ window.SITE_DATA = {
         }
       ],
       quizCompatScores: {
+        europe_3: -2,
+        retraites_3: 2,
         retraites_1: -2, retraites_2: 1, immigration_1: 2, immigration_2: -2, securite_1: 2, securite_2: -2,
         ecologie_1: 2, ecologie_2: -2, ecologie_3: -1, laicite_1: 2, agriculture_1: 2, logement_1: -2, defense_1: 2, pouvoir_achat_1: -1, pouvoir_achat_2: 2, dette_1: 2,
         europe_1: 1, europe_2: -2, institutions_1: 1, institutions_2: -1, education_1: 0, education_2: 0, sante_1: -1
@@ -1286,6 +1302,8 @@ window.SITE_DATA = {
       soutiens_note: "Aucun soutien politique d'envergure nationale n'a été rendu public à ce jour. Il a quitté Les Républicains en annonçant sa candidature et se dit favorable à une primaire ouverte à droite.",
       engagements_note: "Son programme est publié par thème sur le site de Nouvelle Énergie, sans date d'annonce par mesure. Les engagements datés seront ajoutés au fil de ses déclarations publiques.",
       quizCompatScores: {
+        europe_3: -2,
+        retraites_3: 2,
         retraites_1: -2, retraites_2: 2,
         immigration_1: 2, immigration_2: -2,
         securite_1: 2, securite_2: -1,
@@ -1417,6 +1435,8 @@ window.SITE_DATA = {
         }
       ],
       quizCompatScores: {
+        europe_3: -2,
+        retraites_3: 2,
         retraites_1: 2, retraites_2: -1, immigration_1: 2, immigration_2: -2, securite_1: 2, securite_2: -2,
         ecologie_1: 2, ecologie_2: -1, ecologie_3: -2, laicite_1: 2, agriculture_1: 2, numerique_1: 2, defense_1: 2, pouvoir_achat_1: 0, pouvoir_achat_2: 1, dette_1: 0,
         europe_1: 2, europe_2: -2, institutions_1: 2, institutions_2: -1, education_1: -1, education_2: 0, sante_1: 1
@@ -1510,6 +1530,8 @@ window.SITE_DATA = {
       soutiens_note: "A publiquement appelé Florian Philippot et François Asselineau à le rejoindre pour unifier le camp souverainiste, mais aucun ralliement officiel n'est confirmé à ce jour.",
       engagements_note: "Aucun engagement daté et sourcé relevé à ce stade de la campagne.",
       quizCompatScores: {
+        europe_3: 2,
+        retraites_3: 2,
         retraites_1: 1, retraites_2: -1, immigration_1: 2, immigration_2: -2, securite_1: 1, securite_2: -1,
         ecologie_1: 2, ecologie_2: -1, ecologie_3: -1, laicite_1: 1, agriculture_1: 0, numerique_1: 2, logement_1: -1, pouvoir_achat_1: 0, pouvoir_achat_2: 0, dette_1: -1,
         europe_1: 2, europe_2: -2, institutions_1: 2, institutions_2: 1, education_1: -1, education_2: 2, sante_1: 1

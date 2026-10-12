@@ -67,6 +67,12 @@
     } else {
       html += '<div class="timeline-titre">' + ev.titre + '</div>';
     }
+    // Chaque fait rapporté doit pouvoir être vérifié par le lecteur sans quitter
+    // la page. Les événements antérieurs au suivi du site n'ont pas encore de source :
+    // l'absence est visible plutôt que masquée.
+    if (ev.source) {
+      html += '<div class="timeline-source"><a href="' + ev.source.url + '" target="_blank" rel="noopener noreferrer" class="source-verify-link">🔍 ' + ev.source.nom + '</a></div>';
+    }
     html += '</div></div>';
     return html;
   }
@@ -97,6 +103,9 @@
         html += '<li class="echeance' + (ev.majeur ? ' majeur' : '') + '">';
         html += '<span class="echeance-date">' + ev.dateLabel + '</span>';
         html += '<span class="echeance-titre">' + ev.titre + '</span>';
+        if (ev.source) {
+          html += '<a class="echeance-source source-verify-link" href="' + ev.source.url + '" target="_blank" rel="noopener noreferrer">🔍 ' + ev.source.nom + '</a>';
+        }
         html += '</li>';
       });
       html += '</ul></section>';

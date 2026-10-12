@@ -215,7 +215,11 @@
     html += '<div class="comparateur-row">';
     html += '<div class="comparateur-cell comparateur-cell-label"></div>';
     list.forEach(function (c) {
-      html += '<div class="comparateur-cell"><a class="back-link" href="candidats/' + c.slug + '.html">Voir la fiche complète →</a></div>';
+      // Les positions affichées ici viennent des fiches, qui portent leurs sources.
+      // Sans renvoi explicite, le lecteur du comparateur n'avait aucun moyen de vérifier.
+      html += '<div class="comparateur-cell">' +
+        '<a class="source-verify-link" href="candidats/' + c.slug + '.html#fiche-sources">🔍 Sources de ' + c.nom + '</a><br>' +
+        '<a class="back-link" href="candidats/' + c.slug + '.html">Voir la fiche complète →</a></div>';
     });
     html += '</div>';
 

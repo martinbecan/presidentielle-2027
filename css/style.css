@@ -1951,3 +1951,12 @@ summary:focus-visible,
 #sondages-root .courbe-legende-item { text-decoration: none; color: var(--text); }
 #sondages-root .courbe-legende-item:hover { text-decoration: underline; }
 @media (max-width: 700px) { #sondages-root .courbe-grid { grid-template-rows: 200px auto; } }
+
+/* ---- Sources dans la frise ---- */
+.timeline-source { margin-top: 0.35rem; font-size: 0.74rem; }
+.timeline-source a { overflow-wrap: anywhere; }
+.echeance-source {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.72rem;
+}

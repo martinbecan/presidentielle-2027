@@ -196,9 +196,16 @@
 
     var results = computeScores();
     var top3 = results.slice(0, 3);
+    // Le barème de chaque candidat dérive de ses positions documentées, qui portent
+    // leurs sources sur sa fiche. Le quiz ne doit pas être le seul endroit du site
+    // où un chiffre apparaît sans moyen de le vérifier.
 
     var html = '<div class="quiz-compat-results">';
     html += '<h2 class="quiz-compat-results-title" tabindex="-1">Vos 3 candidats les plus compatibles</h2>';
+    html += '<p class="quiz-compat-methode">Ces pourcentages comparent vos réponses aux positions documentées de chaque candidat. ' +
+      'Chaque position est sourcée sur sa fiche — cliquez sur un nom pour la vérifier. ' +
+      'Un candidat dont la position n\'est pas documentée sur une question en est exclu pour celle-là : ' +
+      'son score se calcule alors sur les autres, sans qu\'il soit avantagé ni pénalisé.</p>';
     html += '<div class="quiz-compat-bars">';
     results.forEach(function (r, i) {
       var bloc = blocInfo(r.candidat.bloc);
