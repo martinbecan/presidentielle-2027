@@ -9,7 +9,7 @@
  * ouvrant index.html directement depuis l'explorateur de fichiers (partage par email, clé USB, etc.).
  */
 window.SITE_DATA = {
-  derniere_maj: "12 octobre 2026",
+  derniere_maj: "21 octobre 2026",
   derniere_maj_sondages: "08/10/2026",
 
   alerte: {
@@ -133,7 +133,18 @@ window.SITE_DATA = {
     { date: "2026-10-11", dateLabel: "11 octobre 2026", titre: "Jean-Luc Mélenchon réunit plus de 10 000 personnes à Clermont-Ferrand le jour même du scrutin, sans réagir au résultat dans la soirée ; Fabien Roussel ne réagit pas davantage", candidatSlug: "jean-luc-melenchon", source: { nom: "France 24", url: "https://www.france24.com/fr/france/20261011-rapha%C3%ABl-glucksmann-officiellement-candidat-un-cap-clair-et-des-zones-d-ombre" }, categorie: "campagne", future: false },
     { date: "2026-10-12", dateLabel: "12 octobre 2026", titre: "La faible participation à la primaire, 120 307 suffrages exprimés contre plus de 2 millions à celle de 2017 et près de 3 millions en 2011, nourrit les interrogations sur la portée de la désignation", candidatSlug: null, source: { nom: "France 24", url: "https://www.france24.com/fr/france/20261011-rapha%C3%ABl-glucksmann-officiellement-candidat-un-cap-clair-et-des-zones-d-ombre" }, categorie: "institutionnel", future: false },
     { date: "2026-10-12", dateLabel: "12 octobre 2026", titre: "Baromètre Toluna Harris Interactive pour M6 et RTL : Le Pen 35 %, Mélenchon 18 %, Philippe 13 %, Glucksmann 10 %. Trois évolutions deviennent statistiquement établies depuis juin, la hausse de Mélenchon, les baisses de Philippe et d'Attal. Terrain du 5 au 8 octobre, antérieur à la primaire", candidatSlug: null, source: { nom: "Toluna Harris Interactive", url: "https://tolunacorporate.com/wp-content/uploads/2026/10/Rapport-Toluna-Barometre-Presidentielle-2027-Vague-7-M6-RTL-12-octobre-2026.pdf" }, categorie: "campagne", future: false },
-    { date: "2026-10-15", dateLabel: "15 octobre 2026", titre: "Date limite de dépôt des mémoires devant la Cour de cassation dans l'affaire des assistants parlementaires du RN", candidatSlug: "marine-le-pen", source: { nom: "franceinfo", url: "https://www.franceinfo.fr/politique/front-national/affaire-des-assistants-fn-au-parlement-europeen/les-avocats-de-marine-le-pen-ont-jusqu-au-15-octobre-pour-justifier-le-pourvoi-dans-l-affaire-des-assistants-d-eurodeputes-fn_8177831.html" }, categorie: "justice", future: true },
+    { date: "2026-10-15", dateLabel: "15 octobre 2026", titre: "Les avocats de Marine Le Pen et des autres condamnés déposent leurs mémoires devant la Cour de cassation, dernière étape avant l'examen des treize pourvois formés contre l'arrêt d'appel du 7 juillet", candidatSlug: "marine-le-pen", source: { nom: "franceinfo", url: "https://www.franceinfo.fr/politique/front-national/affaire-des-assistants-fn-au-parlement-europeen/les-avocats-de-marine-le-pen-ont-jusqu-au-15-octobre-pour-justifier-le-pourvoi-dans-l-affaire-des-assistants-d-eurodeputes-fn_8177831.html" }, categorie: "justice", future: false },
+    { date: "2026-10-08", dateLabel: "8 octobre 2026", titre: "Gilles Platret, maire divers droite de Chalon-sur-Saône et ancien vice-président des Républicains, s'engage « résolument vers 2027 » devant plusieurs centaines de personnes, sans prononcer le mot de candidat", candidatSlug: "gilles-platret", source: { nom: "France 3 Bourgogne-Franche-Comté", url: "https://france3-regions.franceinfo.fr/bourgogne-franche-comte/saone-et-loire/chalon-sur-saone/gilles-platret-le-maire-de-chalon-sur-saone-se-declare-candidat-a-l-election-presidentielle-je-m-engage-resolument-vers-2027-3430416.html" }, categorie: "candidature", future: false },
+    { date: "2026-10-13", dateLabel: "13 octobre 2026", titre: "Acte 5 du mouvement lycéen et étudiant : 161 500 manifestants selon le ministère de l'Intérieur, 480 000 selon l'intersyndicale des organisations lycéennes et étudiantes. Le ministère de l'Éducation juge le mouvement en recul, avec 94,2 % des lycées ouverts", candidatSlug: null, source: { nom: "France 24", url: "https://www.france24.com/fr/france/20261013-en-direct-france-manifestations-lyceens-acte-v-mouvement" }, categorie: "campagne", future: false },
+    { date: "2026-10-13", dateLabel: "13 octobre 2026", titre: "L'Assemblée nationale entame en séance publique l'examen de la première partie du projet de loi de finances pour 2027, dernier budget avant la présidentielle", candidatSlug: null, source: { nom: "franceinfo", url: "https://www.franceinfo.fr/politique/parlement-francais/assemblee-nationale/les-dates-cles-du-calendrier-parlementaire-pour-le-projet-de-loi-de-finance-2027_8159534.html" }, categorie: "institutionnel", future: false },
+    { date: "2026-10-14", dateLabel: "14 octobre 2026", titre: "L'essayiste et journaliste Natacha Polony annonce sa candidature sur France Inter, sous le slogan « Nous sommes la France », en disant ne pas pouvoir « continuer à regarder mon pays s'effondrer »", candidatSlug: "natacha-polony", source: { nom: "LCP", url: "https://lcp.fr/actualites/natacha-polony-annonce-sa-candidature-a-l-election-presidentielle-443808" }, categorie: "candidature", future: false },
+    { date: "2026-10-14", dateLabel: "14 octobre 2026", titre: "Marine Le Pen réclame la démission de Richard Ferrand de la présidence du Conseil constitutionnel, après que celui-ci a estimé dans un podcast que la Constitution ne peut être révisée par l'article 11, mais seulement par l'article 89. Elle lui reproche de s'être prononcé sur une question dont le Conseil n'est pas saisi. Le Conseil n'a rendu aucune décision à ce stade", candidatSlug: "marine-le-pen", source: { nom: "L'Express, via Orange Actualités", url: "https://actu.orange.fr/france/richard-ferrand-rejette-une-proposition-de-marine-le-pen-elle-appelle-a-sa-demission-de-la-presidence-du-conseil-constitutionnel-l-express-via-6medias-CNT000002sQZcM.html" }, categorie: "institutionnel", future: false },
+    { date: "2026-10-17", dateLabel: "17 octobre 2026", titre: "Mobilisation nationale contre la vie chère, réunissant lycéens, anciens gilets jaunes, militants du climat et syndicats : 550 000 manifestants selon le ministère de l'Intérieur, 800 000 selon les organisateurs. La journée est marquée par des pillages et des dégradations dans plusieurs villes", candidatSlug: null, source: { nom: "franceinfo", url: "https://www.franceinfo.fr/politique/emmanuel-macron/video-nous-ressentons-tous-ce-soir-de-la-colere-de-la-honte-revivez-l-allocution-d-emmanuel-macron-apres-les-violences-en-marge-de-la-mobilisation-du-17-octobre_8243179.html" }, categorie: "campagne", future: false, majeur: true },
+    { date: "2026-10-18", dateLabel: "18 octobre 2026", titre: "Allocution télévisée d'Emmanuel Macron : il dit la « colère » et la « honte », attribue les violences à des « factieux issus de groupuscules d'ultragauche, rejoints par de nombreux délinquants » tout en distinguant les manifestants de leurs auteurs, promet des sanctions et « toute la transparence » sur le maintien de l'ordre, et annonce que les prochaines manifestations pourront être encadrées ou interdites par les préfets en lien avec les mairies", candidatSlug: null, source: { nom: "franceinfo", url: "https://www.franceinfo.fr/politique/emmanuel-macron/video-nous-ressentons-tous-ce-soir-de-la-colere-de-la-honte-revivez-l-allocution-d-emmanuel-macron-apres-les-violences-en-marge-de-la-mobilisation-du-17-octobre_8243179.html" }, categorie: "institutionnel", future: false, majeur: true },
+    { date: "2026-10-19", dateLabel: "19 octobre 2026", titre: "Les candidats se divisent sur la réponse à apporter : Raphaël Glucksmann et Édouard Philippe réclament une fermeté immédiate face aux violences, Marine Tondelier et Jean-Luc Mélenchon jugent que l'apaisement passe d'abord par des réponses sociales, Marine Le Pen dénonce un pouvoir « à bout de souffle ». Les violences se poursuivent après l'allocution", candidatSlug: null, source: { nom: "Euronews", url: "https://fr.euronews.com/2026/10/19/manifestations-du-17-octobre-les-candidats-a-la-presidentielle-critiquent-la-gestion-de-le" }, categorie: "campagne", future: false, majeur: true },
+    { date: "2026-10-19", dateLabel: "mi-octobre 2026", titre: "Les Écologistes renvoient à un référendum interne la décision de maintenir ou non la candidature autonome de Marine Tondelier. La motion de la direction est adoptée à 69,44 % par le parlement interne, contre ceux qui voulaient trancher dès le 15 novembre. Marine Tondelier reste candidate jusqu'au vote", candidatSlug: "marine-tondelier", source: { nom: "LCP", url: "https://lcp.fr/actualites/candidature-a-la-presidentielle-pas-de-choix-definitif-des-ecologistes-avant-la-mi" }, categorie: "candidature", future: false },
+    { date: "2026-10-19", dateLabel: "19 octobre 2026", titre: "Premier sondage depuis la désignation de Raphaël Glucksmann (Elabe pour BFMTV et La Tribune Dimanche, 14 au 16 octobre, 1 701 personnes dont 1 553 inscrits, six hypothèses testées) : il progresse de 2,5 à 4 points selon les hypothèses. Au second tour, Marine Le Pen l'emporterait 53,5 contre 46,5, là où elle était à 57 en août. Les scores de premier tour divergent trop d'une reprise à l'autre pour être repris dans nos relevés", candidatSlug: "raphael-glucksmann", source: { nom: "La Libre", url: "https://lalibre.be/international/europe/elections-france/2026/10/19/qui-gagnerait-lelection-presidentielle-francaise-aujourdhui-ce-que-revele-un-dernier-sondage-QVWNJHMMN5G3FKTYOWJKLRUUPY" }, categorie: "campagne", future: false },
+    { date: "2026-12-10", dateLabel: "10 au 13 décembre 2026", titre: "Référendum interne des Écologistes : les adhérents tranchent entre le maintien de la candidature autonome de Marine Tondelier et un retrait au profit d'un autre candidat de gauche. Le texte des options doit être publié dans la seconde quinzaine de novembre", candidatSlug: "marine-tondelier", source: { nom: "LCP", url: "https://lcp.fr/actualites/candidature-a-la-presidentielle-pas-de-choix-definitif-des-ecologistes-avant-la-mi" }, categorie: "institutionnel", future: true },
     { date: "2027-01", dateLabel: "Début 2027", titre: "Ouverture de la collecte officielle des parrainages", candidatSlug: null, source: { nom: "Conseil constitutionnel", url: "https://www.conseil-constitutionnel.fr/nouveaux-cahiers-du-conseil-constitutionnel/les-parrainages-a-l-election-presidentielle" }, categorie: "institutionnel", future: true },
     { date: "2027-04-05", dateLabel: "5 avril 2027", titre: "Ouverture de la campagne officielle, le deuxième lundi précédant le scrutin. Les professions de foi, le document où chaque candidat résume son projet, sont homologuées par la Commission nationale de contrôle, adressées aux électeurs et mises en ligne. C'est le seul moment où tous les candidats présentent leur projet au même format et à la même date", candidatSlug: null, source: { nom: "Code électoral, article L47 A et suivants", url: "https://www.legifrance.gouv.fr/codes/id/LEGISCTA000006148458" }, categorie: "institutionnel", future: true },
     { date: "2027-03", dateLabel: "~Mars 2027", titre: "Publication de la liste officielle des candidats (Conseil constitutionnel)", candidatSlug: null, source: { nom: "Conseil constitutionnel", url: "https://www.conseil-constitutionnel.fr/nouveaux-cahiers-du-conseil-constitutionnel/les-parrainages-a-l-election-presidentielle" }, categorie: "institutionnel", future: true },
@@ -361,6 +372,20 @@ window.SITE_DATA = {
       ],
       engagements: [
         {
+          date: "2026-10-19", label: "19 octobre 2026", theme: "securite",
+          resume: "Tient le gouvernement pour responsable de l'aggravation de la crise et critique sa stratégie de maintien de l'ordre. Avait auparavant appelé les lycéens et étudiants à s'en tenir à des « stratégies non-violentes » : « Mettre le feu à des poubelles ne fait pas avancer la cause d'un mètre, par contre ça donne des images qui nous desservent. »",
+          contexte: "Après la mobilisation du 17 octobre contre la vie chère et l'allocution d'Emmanuel Macron",
+          source: { nom: "Euronews", url: "https://fr.euronews.com/2026/10/19/manifestations-du-17-octobre-les-candidats-a-la-presidentielle-critiquent-la-gestion-de-le" },
+          statut: "pris"
+        },
+        {
+          date: "2026-10-19", label: "19 octobre 2026", theme: "pouvoir_achat",
+          resume: "Demande à Emmanuel Macron de répondre à la colère sociale, et réclame notamment le blocage des prix des carburants.",
+          contexte: "Après la mobilisation du 17 octobre contre la vie chère",
+          source: { nom: "Euronews", url: "https://fr.euronews.com/2026/10/19/manifestations-du-17-octobre-les-candidats-a-la-presidentielle-critiquent-la-gestion-de-le" },
+          statut: "pris"
+        },
+        {
           date: "2026-08-27", label: "27 août 2026", theme: "retraites",
           resume: "Défend un retour à 62 ans, puis à 60 ans « le plus vite possible », une mise en œuvre en deux temps là où son programme affiche les 60 ans comme objectif direct.",
           contexte: "Premier débat de la campagne, organisé par le Medef et diffusé sur LCI",
@@ -387,6 +412,8 @@ window.SITE_DATA = {
     // ================= GAUCHE, PRIMAIRE =================
     {
       slug: "marine-tondelier",
+      note: "ℹ️",
+      noteDetail: "Sa candidature est suspendue à un référendum interne des Écologistes, prévu du 10 au 13 décembre 2026, qui tranchera entre son maintien et un retrait au profit d'un autre candidat de gauche. Elle reste candidate jusque-là.",
       nom: "Marine Tondelier",
       parti: "Les Écologistes",
       bloc: "gprimaire",
@@ -467,6 +494,13 @@ window.SITE_DATA = {
         { nom: "Sandrine Rousseau", fonction: "Députée écologiste de Paris", type: "presume, critique en interne d'une candidature autonome jugée facteur de fragmentation" }
       ],
       engagements: [
+        {
+          date: "2026-10-19", label: "19 octobre 2026", theme: "securite",
+          resume: "Se dit « sidérée par l'incapacité de ce gouvernement à répondre à la crise sociale » et soutient que l'apaisement de la rue passe par des réponses sociales concrètes, non par la seule fermeté : « Si vous voulez de l'apaisement social, il faut des réponses sociales. » Avait défilé à Paris le 17 octobre.",
+          contexte: "Entretien sur BFMTV, après la mobilisation contre la vie chère et l'allocution d'Emmanuel Macron",
+          source: { nom: "Euronews", url: "https://fr.euronews.com/2026/10/19/manifestations-du-17-octobre-les-candidats-a-la-presidentielle-critiquent-la-gestion-de-le" },
+          statut: "pris"
+        },
         {
           date: "2026-08-27", label: "27 août 2026", theme: "pouvoir_achat",
           resume: "Porte le SMIC à 2 000 € brut, accompagné d'un plan de soutien aux TPE et PME. Défend l'idée que le coût du travail est d'abord le revenu et le pouvoir d'achat des Français.",
@@ -766,6 +800,20 @@ window.SITE_DATA = {
       soutiens_note: "Sa candidature datant du 23 août 2026, les ralliements sont encore en cours de constitution. Des membres de Place publique ont publiquement regretté que les négociateurs socialistes aient refusé d'inscrire dans la charte de la primaire le principe de non-alliance avec La France Insoumise.",
       engagements: [
         {
+          date: "2026-10-14", label: "14 octobre 2026", theme: "pouvoir_achat",
+          resume: "Garantit une rémunération minimale de 1 000 € par mois pour tout stage de plus de deux mois.",
+          contexte: "Vidéo publiée en réponse aux critiques sur son parcours, après la primaire de la gauche",
+          source: { nom: "franceinfo", url: "https://www.franceinfo.fr/elections/presidentielle/presidentielle-2027-glucksmann-boude-par-la-gauche-le-duel-le-pen-bardella-sous-tension-et-l-entree-en-piste-de-david-lisnard_8239339.html" },
+          statut: "pris"
+        },
+        {
+          date: "2026-10-19", label: "19 octobre 2026", theme: "securite",
+          resume: "Appelle à une réponse « extrêmement ferme » des autorités face aux violences commises en marge de la mobilisation du 17 octobre.",
+          contexte: "Déclaration du lundi suivant la mobilisation contre la vie chère",
+          source: { nom: "Euronews", url: "https://fr.euronews.com/2026/10/19/manifestations-du-17-octobre-les-candidats-a-la-presidentielle-critiquent-la-gestion-de-le" },
+          statut: "pris"
+        },
+        {
           date: "2026-09-05", label: "5 septembre 2026", theme: "agriculture",
           resume: "Annonce un « grand plan d'adaptation agricole » lors de sa visite à la foire de Châlons-en-Champagne.",
           contexte: "Foire de Châlons-en-Champagne",
@@ -936,6 +984,13 @@ window.SITE_DATA = {
         { nom: "Gérald Darmanin", fonction: "Ministre de la Justice", type: "officiel" }
       ],
       engagements: [
+        {
+          date: "2026-10-19", label: "19 octobre 2026", theme: "securite",
+          resume: "Réclame une réponse ferme de l'État face aux casseurs, critique la gestion de la crise par l'exécutif et estime que la responsabilité politique de La France insoumise dans les violences doit être examinée.",
+          contexte: "Après la mobilisation du 17 octobre contre la vie chère et l'allocution d'Emmanuel Macron",
+          source: { nom: "Euronews", url: "https://fr.euronews.com/2026/10/19/manifestations-du-17-octobre-les-candidats-a-la-presidentielle-critiquent-la-gestion-de-le" },
+          statut: "pris"
+        },
         {
           date: "2026-09-29", label: "29 septembre 2026", theme: "retraites",
           resume: "Porte l'âge légal à 65 ans et la durée de cotisation à 45 annuités, par étapes étalées sur moins de dix ans. Environ un actif sur trois pourrait continuer à partir entre 60 et 64 ans selon l'âge de début de carrière, la pénibilité ou l'état de santé. Y ajoute une dose de capitalisation obligatoire, via un fonds collectif alimenté par les excédents de l'Agirc-Arrco.",
@@ -1419,6 +1474,20 @@ window.SITE_DATA = {
       soutiens_note: "La divergence Bardella/Le Pen sur les retraites (mai-juillet 2026) est le principal point de tension interne identifié.",
       engagements: [
         {
+          date: "2026-10-14", label: "14 octobre 2026", theme: "institutions",
+          resume: "Réclame la démission de Richard Ferrand de la présidence du Conseil constitutionnel, après que celui-ci a estimé que la Constitution ne peut être révisée par référendum au titre de l'article 11. Maintient son projet de référendum sur l'immigration par cette voie.",
+          contexte: "Le RN et l'UDR saisissent par ailleurs le Conseil pour demander cette démission. Le Conseil n'a rendu aucune décision sur le fond",
+          source: { nom: "L'Express, via Orange Actualités", url: "https://actu.orange.fr/france/richard-ferrand-rejette-une-proposition-de-marine-le-pen-elle-appelle-a-sa-demission-de-la-presidence-du-conseil-constitutionnel-l-express-via-6medias-CNT000002sQZcM.html" },
+          statut: "pris"
+        },
+        {
+          date: "2026-10-19", label: "19 octobre 2026", theme: "autre",
+          resume: "Fustige après l'allocution présidentielle un pouvoir « à bout de souffle, épuisé, désorienté ». Ne formule pas de mesure de maintien de l'ordre à cette occasion.",
+          contexte: "Après la mobilisation du 17 octobre contre la vie chère et l'allocution d'Emmanuel Macron",
+          source: { nom: "Euronews", url: "https://fr.euronews.com/2026/10/19/manifestations-du-17-octobre-les-candidats-a-la-presidentielle-critiquent-la-gestion-de-le" },
+          statut: "pris"
+        },
+        {
           date: "2026-08-27", label: "27 août 2026", theme: "retraites",
           resume: "Ouvre un départ à 60 ans à ceux qui ont commencé à travailler avant 20 ans, avec un objectif de 42 annuités de cotisation, et fixe l'âge légal à 62 ans pour les autres.",
           chiffrage: "Environ 9 Md€ par an selon elle ; l'Institut Montaigne chiffre la mesure à 26,5 Md€",
@@ -1550,7 +1619,22 @@ window.SITE_DATA = {
       sondage: { label: "< 0.5%", niveau: "faible", tendance: "stable" }, historique: [], idees: []
     },
 
+    {
+      slug: "gilles-platret", nom: "Gilles Platret", parti: "Divers droite", bloc: "droite", fiche: false,
+      note: "ℹ️",
+      noteDetail: "Maire de Chalon-sur-Saône et ancien vice-président des Républicains (2019-2023). S'est engagé « résolument vers 2027 » le 8 octobre 2026 en refusant pour le moment de prononcer le mot de candidat, et revendique une candidature indépendante des partis. Doit encore réunir les 500 parrainages.",
+      sondage: { label: "non testé", niveau: "faible", tendance: "stable" },
+      historique: [], idees: ["Suppression des 35 heures", "Rétablissement des frontières nationales", "Interdiction des Frères musulmans en France", "Dette ramenée sous 100 % du PIB"]
+    },
+
     // ================= INCLASSABLES =================
+    {
+      slug: "natacha-polony", nom: "Natacha Polony", parti: "Sans étiquette", bloc: "inclassable", fiche: false,
+      note: "ℹ️",
+      noteDetail: "Essayiste et journaliste, ancienne directrice de Marianne. A annoncé sa candidature le 14 octobre 2026 sur France Inter, sous le slogan « Nous sommes la France », en se présentant comme une candidature de rassemblement distincte des forces qui divisent et des responsables déjà passés au pouvoir.",
+      sondage: { label: "non testé", niveau: "faible", tendance: "stable" },
+      historique: [], idees: ["Reconstruction de la puissance industrielle", "Souveraineté énergétique", "Restauration de l'autorité de l'école", "Lutte contre la corruption"]
+    },
     {
       slug: "francois-asselineau", nom: "François Asselineau", parti: "UPR", bloc: "inclassable", fiche: false,
       sondage: { label: "< 0.5%", niveau: "faible", tendance: "stable" },
