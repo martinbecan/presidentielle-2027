@@ -2,6 +2,18 @@
 
 Historique des mises à jour du site. Tenu à jour manuellement à chaque session de travail.
 
+## 2026-11-02
+- **La courbe des sondages repart après trois semaines d'arrêt.** Le dernier relevé datait du 8 octobre. L'enquête **Ipsos bva avec CESI pour Le Parisien**, terrain des 21 et 22 octobre auprès de 1 500 inscrits, fournit un 7e relevé propre : institut unique, hypothèse identifiée, rapport complet publié. **11 candidats mesurés, dont la somme fait exactement 100,0 %**, ce qui confirme au passage l'attribution des colonnes
+- **Hypothèse retenue : Glucksmann, Attal et Philippe tous candidats**, la même que les relevés précédents, pour que la série reste comparable. L'institut en teste trois autres, aux scores sensiblement différents, qui ne sont pas reprises
+- **Les chiffres sont allés chercher la source primaire.** Un agrégateur consulté en chemin attribuait 33,5 % à Bardella et plaçait Le Pen à 17 %, ce qui contredisait l'institut lui-même. Le rapport PDF d'Ipsos a été téléchargé et dépouillé page à page plutôt que de faire confiance à une reprise
+- **Les tendances sont jugées sur les rappels internes de l'institut, pas sur le relevé précédent.** Marine Tondelier passe de 2 % à 3,5 % entre Toluna et Ipsos, mais Ipsos la donne à 3,5 % en septembre comme en octobre : c'est un effet de maison, pas une progression, et sa tendance reste donc « stable ». Même logique pour Retailleau, Zemmour et Dupont-Aignan
+- **Deux mouvements réels, mesurés à institut constant** : Jean-Luc Mélenchon gagne 2 points et atteint 17 %, présent au second tour dans les quatre hypothèses testées ; Gabriel Attal perd 4,5 points et tombe à 9,5 % en candidat unique du bloc central, et à 4 % quand Édouard Philippe se présente aussi
+
+- **Le gouvernement répond au mouvement lycéen.** Le 26 octobre, Sébastien Lecornu reçoit les organisations lycéennes à Matignon, puis le gouvernement annonce des mesures sur le remplacement des enseignants, le bâti scolaire et les effectifs par classe, portées par amendements au budget 2027, ainsi que le **remplacement progressif de Parcoursup d'ici 2028**. Elles s'appuient sur une consultation en ligne close le 23 octobre, qui a recueilli plus de 100 000 contributions. Les organisations les jugent insuffisantes et appellent à poursuivre la mobilisation
+
+- Contrôle des entrées à venir, comme à chaque passage : les **6 échéances `future: true` portent toutes leur source** et aucune n'est advenue, la plus proche étant le référendum interne des Écologistes du 10 décembre. Rien à basculer cette fois
+- **Frise : 90 événements, dont 53 sourcés** (+2 événements, +2 sources)
+
 ## 2026-10-21
 - **La crise sociale entre dans le site.** Le mouvement lycéen ne s'est pas arrêté à l'acte 3 du 6 octobre, dernier événement que nous avions couvert : acte 5 le 13 octobre (161 500 manifestants selon l'Intérieur, 480 000 selon l'intersyndicale), puis une **mobilisation nationale contre la vie chère le 17 octobre** qui agrège lycéens, anciens gilets jaunes, militants du climat et syndicats, 550 000 à 800 000 personnes selon la source, avec pillages et dégradations dans plusieurs villes
 - **Allocution d'Emmanuel Macron le 18 octobre** : « colère » et « honte », violences attribuées à des « factieux issus de groupuscules d'ultragauche, rejoints par de nombreux délinquants », promesse de sanctions et de transparence sur le maintien de l'ordre, manifestations désormais encadrables ou interdites par les préfets en lien avec les mairies
