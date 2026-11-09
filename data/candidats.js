@@ -195,7 +195,7 @@ window.SITE_DATA = {
   // ajoutés thème par thème, proposées seulement si la personne clique "Affiner mon résultat"
   // après les résultats du quiz principal. Mêmes ids utilisés dans quizCompatScores.
   quizCompatExtensionQuestions: [
-    { id: "retraites_3", theme: "retraites", texte: "Il faut conserver un âge légal de départ à la retraite, plutôt qu'un système fondé uniquement sur la durée de cotisation." },
+    { id: "retraites_3", theme: "retraites", texte: "Il devrait rester un âge minimum de départ à la retraite, même pour ceux qui ont déjà cotisé toutes leurs annuités." },
     { id: "europe_3", theme: "europe", texte: "La France devrait sortir de l'Union européenne." },
     { id: "laicite_1", theme: "laicite", texte: "Le port de signes religieux visibles (voile, kippa, croix...) devrait être davantage restreint dans l'espace public (université, sorties scolaires, services publics)." },
     { id: "agriculture_1", theme: "agriculture", texte: "Les normes environnementales imposées aux agriculteurs devraient être assouplies pour améliorer leur compétitivité." },

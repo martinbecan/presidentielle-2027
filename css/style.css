@@ -2111,3 +2111,19 @@ summary:focus-visible,
 @media (max-width: 600px) {
   .quiz-compat-affiner p { text-align: left; hyphens: manual; }
 }
+
+/* ---- Compteur de candidatures dans la navigation ----
+   Le nombre n'apparaissait que dans le sous-titre de la page Candidats,
+   donc seulement une fois qu'on y était déjà arrivé. */
+.nav-compteur {
+  display: inline-block;
+  font-size: 0.68rem; font-weight: 600; line-height: 1;
+  color: var(--text-dim);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border-soft);
+  border-radius: 999px;
+  padding: 0.16rem 0.38rem;
+  vertical-align: 1px;
+}
+.site-nav-links a.active .nav-compteur,
+.site-nav-links a:hover .nav-compteur { color: var(--text); }

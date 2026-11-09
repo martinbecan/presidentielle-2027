@@ -37,6 +37,9 @@ Historique des mises à jour du site. Tenu à jour manuellement à chaque sessio
 - Elles sont désormais **repliées sous un résumé** « Notes sur 11 candidatures », et **chaque note porte le nom du candidat**, cliquable vers sa fiche quand elle existe
 
 - **Une question du quiz reformulée**, signalée comme peu claire par Martin. « L'intégration européenne devrait être renforcée, y compris par de nouveaux transferts de souveraineté » devient « Davantage de décisions devraient être prises en commun au niveau européen, même si cela réduit ce que la France peut décider seule ». Le sens est strictement conservé, donc les 12 barèmes restent valides : seul le jargon disparaît
+- **Une deuxième question du quiz reformulée**, également signalée par Martin, qui la trouvait peu claire et redondante avec celle sur la retraite à 60 ans. « Il faut conserver un âge légal de départ, plutôt qu'un système fondé uniquement sur la durée de cotisation » devient « Il devrait rester un âge minimum de départ à la retraite, même pour ceux qui ont déjà cotisé toutes leurs annuités ». Elle ne demande pas à quel âge on part, mais s'il doit exister un âge plancher : c'est cette distinction qui ne passait pas
+- **Mesure avant de trancher** : la question n'était pas redondante, elle était mal dite. Elle sépare Gabriel Attal, seul à vouloir supprimer l'âge légal, des sept autres candidats documentés. Sans elle, la paire Attal/Philippe, la plus serrée du site, est indiscernable sur 11,2 % des profils simulés, contre 8,9 % avec. Elle est donc conservée, à barème inchangé
+- **Le nombre de candidatures apparaît dans l'onglet Candidats**, sur les 21 pages : 27 candidatures en lice, hors retraits et non-retenus, même définition que le tableau. Le chiffre n'était visible que dans le sous-titre de la page, donc une fois qu'on y était déjà
 
 
 
