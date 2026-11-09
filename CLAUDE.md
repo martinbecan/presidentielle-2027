@@ -76,3 +76,8 @@ Martin a donné un feu vert permanent pour **publier directement** : nouveaux é
 En cas de doute sur la catégorie, ne pas publier et demander.
 
 S'il n'y a rien de significatif depuis la dernière mise à jour, ne pas forcer une publication. Une mise à jour vide coûte plus qu'elle ne rapporte.
+
+### Affirmations portant sur les concurrents
+Dès qu'une affirmation porte sur **les concurrents** de celui qui la formule, en particulier « le premier à », « le seul à », « aucun autre n'a », la vérifier à la source primaire avant publication, **même lorsqu'elle est reprise par une agence de presse sérieuse**. Une partie n'est jamais un témoin neutre de ce que font les autres.
+
+Précédent : le 9 novembre 2026, le site a publié que Mélenchon était le premier à avoir publié un programme, d'après LFI relayé par l'AFP. Les Écologistes avaient publié le leur quatre mois plus tôt.
