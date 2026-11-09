@@ -2063,3 +2063,30 @@ summary:focus-visible,
 @media (max-width: 600px) {
   .programme-etat-detail, .programme-etat-note { text-align: left; hyphens: manual; }
 }
+
+/* ---- Notes de candidature, repliées ----
+   Une quinzaine de notes dépliées occupaient plus de place que le tableau
+   qu'elles annotent, et aucune ne disait de quel candidat elle parlait. */
+.notes-candidats { margin: 0 0 1rem; }
+.notes-candidats > summary {
+  cursor: pointer; list-style: none;
+  font-size: 0.82rem; font-weight: 600; color: var(--text-soft);
+  padding: 0.3rem 0;
+}
+.notes-candidats > summary::-webkit-details-marker { display: none; }
+.notes-candidats > summary:hover { color: var(--text); }
+.notes-candidats > summary .chevron {
+  display: inline-block; transition: transform .15s; font-size: 0.8em; opacity: .7;
+}
+.notes-candidats[open] > summary .chevron { transform: rotate(90deg); }
+.notes-candidats-liste { list-style: none; margin: 0.5rem 0 0; padding: 0; }
+.notes-candidats-liste li {
+  display: flex; gap: 0.55rem; align-items: flex-start;
+  padding: 0.5rem 0; border-top: 1px solid var(--border-soft);
+  font-size: 0.8rem; line-height: 1.55; color: var(--text-soft);
+  text-align: justify; hyphens: auto;
+}
+.notes-candidats-icone { flex-shrink: 0; }
+@media (max-width: 600px) {
+  .notes-candidats-liste li { text-align: left; hyphens: manual; }
+}

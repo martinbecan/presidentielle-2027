@@ -10,7 +10,7 @@
  */
 window.SITE_DATA = {
   derniere_maj: "9 novembre 2026",
-  derniere_maj_sondages: "22/10/2026",
+  derniere_maj_sondages: "05/11/2026",
 
   alerte: {
     titre: "⚡ 7 juillet 2026",
@@ -43,7 +43,7 @@ window.SITE_DATA = {
     { nom: "G. Darmanin", sondage: "" }
   ],
 
-  sourcesSondages: "Ipsos bva avec CESI École d'ingénieurs pour Le Parisien, terrain en ligne du 21 au 22 octobre 2026 via l'Access panel Ipsos, auprès de 1 500 personnes inscrites sur les listes électorales, représentatives des Français de 18 ans et plus. Représentativité assurée par quotas de sexe, âge, profession, région et catégorie d'agglomération, dans le respect de la norme ISO 20252. Base des intentions de vote : 1 057 personnes certaines d'aller voter et exprimées. Marges d'erreur annoncées par l'institut de plus ou moins 0,4 à 2,8 points selon le score. Hypothèse retenue : Glucksmann, Attal et Philippe tous candidats, la même que pour les relevés précédents, afin que la série reste comparable. L'institut teste trois autres hypothèses, dont les scores diffèrent sensiblement : elles ne sont pas reprises ici.",
+  sourcesSondages: "Toluna Harris Interactive pour M6 et RTL, baromètre « Intentions de vote à l'élection présidentielle », vague 9. Terrain en ligne du 3 au 5 novembre 2026 auprès de 2 101 personnes inscrites sur les listes électorales, issues d'un échantillon de 2 436 personnes représentatif des Français de 18 ans et plus. Quotas et redressement sur le sexe, l'âge, la catégorie socioprofessionnelle, la région et le comportement électoral antérieur. Marge d'erreur annoncée par l'institut de plus ou moins 1,4 à 2,9 points selon le score. Hypothèse retenue : Glucksmann, Attal et Philippe tous candidats, la même que pour les relevés précédents, afin que la série reste comparable. L'institut teste quatre autres hypothèses de premier tour, dont les scores diffèrent : elles ne sont pas reprises ici.",
 
   // Frise chronologique de la campagne. `candidatSlug` sert à colorer le point selon le bloc
   // politique (et à créer un lien si le candidat a une fiche) ; laisser null pour un événement
@@ -155,6 +155,7 @@ window.SITE_DATA = {
     { date: "2026-11-07", dateLabel: "7 novembre 2026", titre: "Meeting de Jean-Luc Mélenchon au Bourget pour la présentation officielle du programme : « Il faut tout changer ». Il y détaille la sortie du nucléaire, la 6e République par l'article 11, la sortie du commandement intégré de l'OTAN et un moratoire sur les équipements numériques étrangers", candidatSlug: "jean-luc-melenchon", source: { nom: "melenchon.fr", url: "https://melenchon.fr/2026/11/07/grand-meeting-du-bourget-notre-programme-de-gouvernement/" }, categorie: "campagne", future: false },
     { date: "2026-11-09", dateLabel: "9 novembre 2026", titre: "Conférence sociale à Matignon : le gouvernement anticipe au 1er décembre la hausse du SMIC et la porte à 1,6 %, soit environ 1 502 € nets contre 1 477,93 €. Le coup de pouce de 0,6 point est le premier depuis 2012. Le plafond d'exonération des heures supplémentaires passe de 7 500 à 10 000 €", candidatSlug: null, source: { nom: "franceinfo", url: "https://www.franceinfo.fr/economie/greve/augmentation-du-smic-allegements-de-charges-pour-les-entreprises-ce-qu-il-faut-retenir-des-annonces-du-gouvernement-a-l-issue-de-la-conference-sociale_8274527.html" }, categorie: "institutionnel", future: false },
     { date: "2026-11-09", dateLabel: "9 novembre 2026", titre: "Le judoka Teddy Riner, quintuple champion olympique, annonce sa candidature sur X et dans Le Parisien : « La résignation n'est pas une option ». Il se dit « ni de droite ni de gauche », veut être « le président qui fédère », lance son site de campagne « La France qu'on veut » et dit travailler avec une équipe d'une vingtaine de personnes", candidatSlug: "teddy-riner", source: { nom: "franceinfo", url: "https://www.franceinfo.fr/elections/presidentielle/la-resignation-n-est-pas-une-option-teddy-riner-annonce-sa-candidature-a-l-election-presidentielle-2027_8274359.html" }, categorie: "candidature", future: false, majeur: true },
+    { date: "2026-11-09", dateLabel: "9 novembre 2026", titre: "Baromètre Toluna Harris Interactive pour M6 et RTL, vague 9, réalisé du 3 au 5 novembre auprès de 2 101 inscrits : Marine Le Pen est en tête dans les cinq hypothèses testées, entre 34 et 36 %, et Jean-Luc Mélenchon se qualifierait pour le second tour dans toutes, entre 18 et 19 %. Édouard Philippe recule. Aux seconds tours testés, Marine Le Pen l'emporterait 68 contre 32 face à Mélenchon, 60 contre 40 face à Glucksmann et 58 contre 42 face à Philippe", candidatSlug: null, source: { nom: "Toluna Harris Interactive, rapport de vague", url: "https://tolunacorporate.com/wp-content/uploads/2026/11/Rapport-Toluna-Barometre-Presidentielle-2027-Vague-9-M6-RTL-9-novembre-2026.pdf" }, categorie: "campagne", future: false },
     { date: "2026-11-17", dateLabel: "17 novembre 2026", titre: "Nouvelle journée de grève et de manifestations dans la fonction publique, à l'appel de l'intersyndicale, qui juge insuffisantes les annonces de la conférence sociale. La CGT élargit l'appel à l'ensemble des salariés, des retraités et des jeunes", candidatSlug: null, source: { nom: "Capital", url: "https://www.capital.fr/economie-politique/greve-du-17-novembre-pourquoi-les-syndicats-rejettent-les-annonces-du-gouvernement-sur-le-smic-1531723" }, categorie: "campagne", future: true },
     { date: "2026-12-06", dateLabel: "6 décembre 2026", titre: "Meeting de lancement de la campagne de Raphaël Glucksmann au Paris Event Center. Son site de campagne n'a publié aucun programme à ce jour", candidatSlug: "raphael-glucksmann", source: { nom: "glucks2027.fr, site officiel", url: "https://glucks2027.fr/" }, categorie: "campagne", future: true },
     { date: "2026-12-10", dateLabel: "10 au 13 décembre 2026", titre: "Référendum interne des Écologistes : les adhérents tranchent entre le maintien de la candidature autonome de Marine Tondelier et un retrait au profit d'un autre candidat de gauche. Le texte des options doit être publié dans la seconde quinzaine de novembre", candidatSlug: "marine-tondelier", source: { nom: "LCP", url: "https://lcp.fr/actualites/candidature-a-la-presidentielle-pas-de-choix-definitif-des-ecologistes-avant-la-mi" }, categorie: "institutionnel", future: true },
@@ -182,7 +183,7 @@ window.SITE_DATA = {
     { id: "pouvoir_achat_2", theme: "pouvoir_achat", texte: "Les impôts de production et les charges des entreprises devraient être réduits pour stimuler l'emploi." },
     { id: "dette_1", theme: "dette", texte: "Réduire la dette publique doit être une priorité pour la France." },
     { id: "europe_1", theme: "europe", texte: "La France devrait pouvoir décider elle-même de certaines règles actuellement fixées au niveau européen." },
-    { id: "europe_2", theme: "europe", texte: "L'intégration européenne devrait être renforcée, y compris par de nouveaux transferts de souveraineté." },
+    { id: "europe_2", theme: "europe", texte: "Davantage de décisions devraient être prises en commun au niveau européen, même si cela réduit ce que la France peut décider seule." },
     { id: "institutions_1", theme: "institutions", texte: "Le Président devrait pouvoir recourir plus souvent au référendum pour trancher les grandes questions." },
     { id: "institutions_2", theme: "institutions", texte: "Le pouvoir devrait être davantage partagé avec le Parlement, plutôt que concentré entre les mains du Président." },
     { id: "education_1", theme: "education", texte: "Les établissements scolaires devraient avoir plus d'autonomie dans leur organisation." },
@@ -212,8 +213,8 @@ window.SITE_DATA = {
       bloc: "exgauche",
       fiche: true,
       statut: "en_lice",
-      sondage: { label: "~0,5%", niveau: "faible", tendance: "stable" },
-      sondageHistorique: [{ date: "2026-06-25", label: "25 juin", valeur: 0.5, source: "IFOP-Fiducial" }, { date: "2026-07-11", label: "11 juillet", valeur: 0.5, source: "Elabe" }, { date: "2026-08-18", label: "18 août", valeur: 0.5, source: "Agrégat 90 j" }, { date: "2026-09-29", label: "29 sept.", valeur: 0.5, source: "IFOP" }, { date: "2026-10-08", label: "8 oct.", valeur: 1, source: "Toluna Harris Interactive" }, { date: "2026-10-22", label: "22 oct.", valeur: 0.5, source: "Ipsos bva" }],
+      sondage: { label: "~1%", niveau: "faible", tendance: "stable" },
+      sondageHistorique: [{ date: "2026-06-25", label: "25 juin", valeur: 0.5, source: "IFOP-Fiducial" }, { date: "2026-07-11", label: "11 juillet", valeur: 0.5, source: "Elabe" }, { date: "2026-08-18", label: "18 août", valeur: 0.5, source: "Agrégat 90 j" }, { date: "2026-09-29", label: "29 sept.", valeur: 0.5, source: "IFOP" }, { date: "2026-10-08", label: "8 oct.", valeur: 1, source: "Toluna Harris Interactive" }, { date: "2026-10-22", label: "22 oct.", valeur: 0.5, source: "Ipsos bva" }, { date: "2026-11-05", label: "5 nov.", valeur: 1, source: "Toluna Harris Interactive" }],
       historique: [
         { annee: 2012, resultat: "0.6%" },
         { annee: 2017, resultat: "0.6%" },
@@ -302,8 +303,8 @@ window.SITE_DATA = {
       bloc: "gradicale",
       fiche: true,
       statut: "en_lice",
-      sondage: { label: "~17%", niveau: "fort", tendance: "hausse" },
-      sondageHistorique: [{ date: "2026-06-25", label: "25 juin", valeur: 14.5, source: "IFOP-Fiducial" }, { date: "2026-07-11", label: "11 juillet", valeur: 14.5, source: "Elabe" }, { date: "2026-08-18", label: "18 août", valeur: 14.8, source: "Agrégat 90 j" }, { date: "2026-08-31", label: "31 août", valeur: 15, source: "Agrégat 5 sondages" }, { date: "2026-09-29", label: "29 sept.", valeur: 15, source: "IFOP" }, { date: "2026-10-08", label: "8 oct.", valeur: 18, source: "Toluna Harris Interactive" }, { date: "2026-10-22", label: "22 oct.", valeur: 17, source: "Ipsos bva" }],
+      sondage: { label: "~18%", niveau: "fort", tendance: "stable" },
+      sondageHistorique: [{ date: "2026-06-25", label: "25 juin", valeur: 14.5, source: "IFOP-Fiducial" }, { date: "2026-07-11", label: "11 juillet", valeur: 14.5, source: "Elabe" }, { date: "2026-08-18", label: "18 août", valeur: 14.8, source: "Agrégat 90 j" }, { date: "2026-08-31", label: "31 août", valeur: 15, source: "Agrégat 5 sondages" }, { date: "2026-09-29", label: "29 sept.", valeur: 15, source: "IFOP" }, { date: "2026-10-08", label: "8 oct.", valeur: 18, source: "Toluna Harris Interactive" }, { date: "2026-10-22", label: "22 oct.", valeur: 17, source: "Ipsos bva" }, { date: "2026-11-05", label: "5 nov.", valeur: 18, source: "Toluna Harris Interactive" }],
       parrainagesPromesses: [
         { date: "2026-09-02", label: "2 septembre 2026", valeur: 200, libelle: "un peu plus de 200", origine: "presse", source: "franceinfo, d'après des sources concordantes au sein de LFI", url: "https://www.franceinfo.fr/politique/melenchon/info-franceinfo-jean-luc-melenchon-n-a-recueilli-pour-l-instant-qu-un-peu-plus-de-200-promesses-de-parrainages-en-vue-de-la-presidentielle-loin-des-500-necessaires_8172731.html" }
       ],
@@ -463,8 +464,8 @@ window.SITE_DATA = {
       bloc: "gprimaire",
       fiche: true,
       statut: "en_lice",
-      sondage: { label: "~3,5%", niveau: "faible", tendance: "stable" },
-      sondageHistorique: [{ date: "2026-06-25", label: "25 juin", valeur: 2.5, source: "IFOP-Fiducial" }, { date: "2026-07-11", label: "11 juillet", valeur: 2.5, source: "Elabe" }, { date: "2026-08-18", label: "18 août", valeur: 4.1, source: "Agrégat 90 j" }, { date: "2026-08-31", label: "31 août", valeur: 3.5, source: "Agrégat 5 sondages" }, { date: "2026-09-29", label: "29 sept.", valeur: 3, source: "IFOP" }, { date: "2026-10-08", label: "8 oct.", valeur: 2, source: "Toluna Harris Interactive" }, { date: "2026-10-22", label: "22 oct.", valeur: 3.5, source: "Ipsos bva" }],
+      sondage: { label: "~2%", niveau: "faible", tendance: "stable" },
+      sondageHistorique: [{ date: "2026-06-25", label: "25 juin", valeur: 2.5, source: "IFOP-Fiducial" }, { date: "2026-07-11", label: "11 juillet", valeur: 2.5, source: "Elabe" }, { date: "2026-08-18", label: "18 août", valeur: 4.1, source: "Agrégat 90 j" }, { date: "2026-08-31", label: "31 août", valeur: 3.5, source: "Agrégat 5 sondages" }, { date: "2026-09-29", label: "29 sept.", valeur: 3, source: "IFOP" }, { date: "2026-10-08", label: "8 oct.", valeur: 2, source: "Toluna Harris Interactive" }, { date: "2026-10-22", label: "22 oct.", valeur: 3.5, source: "Ipsos bva" }, { date: "2026-11-05", label: "5 nov.", valeur: 2, source: "Toluna Harris Interactive" }],
       historique: [],
       idees: ["Transition écologique", "Justice sociale", "Candidature unitaire gauche"],
       age: "39 ans (née le 23 août 1986)",
@@ -741,7 +742,7 @@ window.SITE_DATA = {
     {
       slug: "fabien-roussel", nom: "Fabien Roussel", parti: "PCF", bloc: "ghors", fiche: false,
       sondage: { label: "~2%", niveau: "faible", tendance: "stable" },
-      sondageHistorique: [{ date: "2026-09-29", label: "29 sept.", valeur: 2.5, source: "IFOP" }, { date: "2026-10-08", label: "8 oct.", valeur: 2, source: "Toluna Harris Interactive" }, { date: "2026-10-22", label: "22 oct.", valeur: 2, source: "Ipsos bva" }],
+      sondageHistorique: [{ date: "2026-09-29", label: "29 sept.", valeur: 2.5, source: "IFOP" }, { date: "2026-10-08", label: "8 oct.", valeur: 2, source: "Toluna Harris Interactive" }, { date: "2026-10-22", label: "22 oct.", valeur: 2, source: "Ipsos bva" }, { date: "2026-11-05", label: "5 nov.", valeur: 2, source: "Toluna Harris Interactive" }],
       historique: [], idees: []
     },
     {
@@ -760,10 +761,10 @@ window.SITE_DATA = {
       bloc: "gps",
       fiche: true,
       statut: "en_lice",
-      sondage: { label: "~13%", niveau: "fort", tendance: "hausse" },
+      sondage: { label: "~11%", niveau: "moyen", tendance: "stable" },
       sondageHistorique: [
         { date: "2026-08-18", label: "18 août", valeur: 10.2, source: "Agrégat 90 j" },
-        { date: "2026-08-31", label: "31 août", valeur: 9.9, source: "Agrégat 5 sondages" }, { date: "2026-09-29", label: "29 sept.", valeur: 11, source: "IFOP" }, { date: "2026-10-08", label: "8 oct.", valeur: 10, source: "Toluna Harris Interactive" }, { date: "2026-10-22", label: "22 oct.", valeur: 13, source: "Ipsos bva" }],
+        { date: "2026-08-31", label: "31 août", valeur: 9.9, source: "Agrégat 5 sondages" }, { date: "2026-09-29", label: "29 sept.", valeur: 11, source: "IFOP" }, { date: "2026-10-08", label: "8 oct.", valeur: 10, source: "Toluna Harris Interactive" }, { date: "2026-10-22", label: "22 oct.", valeur: 13, source: "Ipsos bva" }, { date: "2026-11-05", label: "5 nov.", valeur: 11, source: "Toluna Harris Interactive" }],
       historique: [],
       idees: ["Europe fédérale", "Taxation des méga-héritages", "Souveraineté technologique", "Soutien à l'Ukraine"],
       age: "46 ans (né le 15 octobre 1979 à Boulogne-Billancourt)",
@@ -946,8 +947,8 @@ window.SITE_DATA = {
       bloc: "centre",
       fiche: true,
       statut: "en_lice",
-      sondage: { label: "~13%", niveau: "fort", tendance: "baisse" },
-      sondageHistorique: [{ date: "2026-06-25", label: "25 juin", valeur: 16.5, source: "IFOP-Fiducial" }, { date: "2026-07-11", label: "11 juillet", valeur: 17.75, source: "Elabe" }, { date: "2026-08-18", label: "18 août", valeur: 16.4, source: "Agrégat 90 j" }, { date: "2026-08-31", label: "31 août", valeur: 16.9, source: "Agrégat 5 sondages" }, { date: "2026-09-29", label: "29 sept.", valeur: 16, source: "IFOP" }, { date: "2026-10-08", label: "8 oct.", valeur: 13, source: "Toluna Harris Interactive" }, { date: "2026-10-22", label: "22 oct.", valeur: 13, source: "Ipsos bva" }],
+      sondage: { label: "~11%", niveau: "moyen", tendance: "baisse" },
+      sondageHistorique: [{ date: "2026-06-25", label: "25 juin", valeur: 16.5, source: "IFOP-Fiducial" }, { date: "2026-07-11", label: "11 juillet", valeur: 17.75, source: "Elabe" }, { date: "2026-08-18", label: "18 août", valeur: 16.4, source: "Agrégat 90 j" }, { date: "2026-08-31", label: "31 août", valeur: 16.9, source: "Agrégat 5 sondages" }, { date: "2026-09-29", label: "29 sept.", valeur: 16, source: "IFOP" }, { date: "2026-10-08", label: "8 oct.", valeur: 13, source: "Toluna Harris Interactive" }, { date: "2026-10-22", label: "22 oct.", valeur: 13, source: "Ipsos bva" }, { date: "2026-11-05", label: "5 nov.", valeur: 11, source: "Toluna Harris Interactive" }],
       historique: [],
       idees: ["Règle d'or budgétaire", "Refonte école « post-Ferry »", "3 référendums", "Retraite par capitalisation"],
       age: "55 ans (né en 1970 à Rouen)",
@@ -1090,8 +1091,8 @@ window.SITE_DATA = {
       bloc: "centre",
       fiche: true,
       statut: "en_lice",
-      sondage: { label: "~4%", niveau: "moyen", tendance: "baisse" },
-      sondageHistorique: [{ date: "2026-06-25", label: "25 juin", valeur: 8, source: "IFOP-Fiducial" }, { date: "2026-07-11", label: "11 juillet", valeur: 8, source: "Elabe" }, { date: "2026-08-18", label: "18 août", valeur: 11.3, source: "Agrégat 90 j" }, { date: "2026-08-31", label: "31 août", valeur: 7.7, source: "Agrégat 5 sondages" }, { date: "2026-09-29", label: "29 sept.", valeur: 8, source: "IFOP" }, { date: "2026-10-08", label: "8 oct.", valeur: 5, source: "Toluna Harris Interactive" }, { date: "2026-10-22", label: "22 oct.", valeur: 4, source: "Ipsos bva" }],
+      sondage: { label: "~6%", niveau: "moyen", tendance: "stable" },
+      sondageHistorique: [{ date: "2026-06-25", label: "25 juin", valeur: 8, source: "IFOP-Fiducial" }, { date: "2026-07-11", label: "11 juillet", valeur: 8, source: "Elabe" }, { date: "2026-08-18", label: "18 août", valeur: 11.3, source: "Agrégat 90 j" }, { date: "2026-08-31", label: "31 août", valeur: 7.7, source: "Agrégat 5 sondages" }, { date: "2026-09-29", label: "29 sept.", valeur: 8, source: "IFOP" }, { date: "2026-10-08", label: "8 oct.", valeur: 5, source: "Toluna Harris Interactive" }, { date: "2026-10-22", label: "22 oct.", valeur: 4, source: "Ipsos bva" }, { date: "2026-11-05", label: "5 nov.", valeur: 6, source: "Toluna Harris Interactive" }],
       historique: [],
       idees: ["« Droit au brut » / salaires", "Brevet obligatoire", "Quotas immigration", "Plan IA 20M salariés"],
       age: "37 ans (né le 16 mars 1989 à Clamart)",
@@ -1203,8 +1204,8 @@ window.SITE_DATA = {
       bloc: "droite",
       fiche: true,
       statut: "en_lice",
-      sondage: { label: "~7,5%", niveau: "moyen", tendance: "stable" },
-      sondageHistorique: [{ date: "2026-06-25", label: "25 juin", valeur: 8, source: "IFOP-Fiducial" }, { date: "2026-07-11", label: "11 juillet", valeur: 8, source: "Elabe" }, { date: "2026-08-18", label: "18 août", valeur: 8.2, source: "Agrégat 90 j" }, { date: "2026-08-31", label: "31 août", valeur: 7.6, source: "Agrégat 5 sondages" }, { date: "2026-09-29", label: "29 sept.", valeur: 7, source: "IFOP" }, { date: "2026-10-08", label: "8 oct.", valeur: 7, source: "Toluna Harris Interactive" }, { date: "2026-10-22", label: "22 oct.", valeur: 7.5, source: "Ipsos bva" }],
+      sondage: { label: "~7%", niveau: "moyen", tendance: "stable" },
+      sondageHistorique: [{ date: "2026-06-25", label: "25 juin", valeur: 8, source: "IFOP-Fiducial" }, { date: "2026-07-11", label: "11 juillet", valeur: 8, source: "Elabe" }, { date: "2026-08-18", label: "18 août", valeur: 8.2, source: "Agrégat 90 j" }, { date: "2026-08-31", label: "31 août", valeur: 7.6, source: "Agrégat 5 sondages" }, { date: "2026-09-29", label: "29 sept.", valeur: 7, source: "IFOP" }, { date: "2026-10-08", label: "8 oct.", valeur: 7, source: "Toluna Harris Interactive" }, { date: "2026-10-22", label: "22 oct.", valeur: 7.5, source: "Ipsos bva" }, { date: "2026-11-05", label: "5 nov.", valeur: 7, source: "Toluna Harris Interactive" }],
       historique: [],
       idees: ["Fermeté sécuritaire", "1M logements en 5 ans", "Suppression ZAN", "Immigration restrictive"],
       age: "65 ans (né le 20 novembre 1960 à Cholet)",
@@ -1440,8 +1441,8 @@ window.SITE_DATA = {
       statut: "en_lice",
       note: "⚖️",
       noteDetail: "Condamnée en appel le 07/07/2026. Pourvoi en cassation annoncé (suspensif) ; décision attendue au plus tard début avril 2027, après la date limite de dépôt des candidatures. Campagne en « binôme » avec J. Bardella.",
-      sondage: { label: "~33,5%", niveau: "fort", tendance: "stable" },
-      sondageHistorique: [{ date: "2026-06-25", label: "25 juin", valeur: 34.5, source: "IFOP-Fiducial" }, { date: "2026-07-11", label: "11 juillet", valeur: 34.75, source: "Elabe" }, { date: "2026-08-18", label: "18 août", valeur: 35.8, source: "Agrégat 90 j" }, { date: "2026-08-31", label: "31 août", valeur: 35.6, source: "Agrégat 5 sondages" }, { date: "2026-09-29", label: "29 sept.", valeur: 32, source: "IFOP" }, { date: "2026-10-08", label: "8 oct.", valeur: 35, source: "Toluna Harris Interactive" }, { date: "2026-10-22", label: "22 oct.", valeur: 33.5, source: "Ipsos bva" }],
+      sondage: { label: "~36%", niveau: "fort", tendance: "stable" },
+      sondageHistorique: [{ date: "2026-06-25", label: "25 juin", valeur: 34.5, source: "IFOP-Fiducial" }, { date: "2026-07-11", label: "11 juillet", valeur: 34.75, source: "Elabe" }, { date: "2026-08-18", label: "18 août", valeur: 35.8, source: "Agrégat 90 j" }, { date: "2026-08-31", label: "31 août", valeur: 35.6, source: "Agrégat 5 sondages" }, { date: "2026-09-29", label: "29 sept.", valeur: 32, source: "IFOP" }, { date: "2026-10-08", label: "8 oct.", valeur: 35, source: "Toluna Harris Interactive" }, { date: "2026-10-22", label: "22 oct.", valeur: 33.5, source: "Ipsos bva" }, { date: "2026-11-05", label: "5 nov.", valeur: 36, source: "Toluna Harris Interactive" }],
       parrainagesPromesses: [
         { date: "2026-09-02", label: "2 septembre 2026", valeur: 400, libelle: "plus de 400", origine: "declaration", source: "Louis Aliot (RN), sur BFMTV", url: "https://www.shango.media/bfm-tv-presidentielle-2027-louis-aliot-affirme-que-le-rn-a-deja-plus-de-400-parrainages-delus-mais-deplore-un-systeme-tres-imparfait-11798914" }
       ],
@@ -1567,8 +1568,8 @@ window.SITE_DATA = {
       bloc: "exdroite",
       fiche: true,
       statut: "en_lice",
-      sondage: { label: "~1,5%", niveau: "faible", tendance: "stable" },
-      sondageHistorique: [{ date: "2026-06-25", label: "25 juin", valeur: 2, source: "IFOP-Fiducial" }, { date: "2026-07-11", label: "11 juillet", valeur: 2, source: "Elabe" }, { date: "2026-08-18", label: "18 août", valeur: 2, source: "Agrégat 90 j" }, { date: "2026-09-29", label: "29 sept.", valeur: 1, source: "IFOP" }, { date: "2026-10-08", label: "8 oct.", valeur: 2, source: "Toluna Harris Interactive" }, { date: "2026-10-22", label: "22 oct.", valeur: 1.5, source: "Ipsos bva" }],
+      sondage: { label: "~2%", niveau: "faible", tendance: "stable" },
+      sondageHistorique: [{ date: "2026-06-25", label: "25 juin", valeur: 2, source: "IFOP-Fiducial" }, { date: "2026-07-11", label: "11 juillet", valeur: 2, source: "Elabe" }, { date: "2026-08-18", label: "18 août", valeur: 2, source: "Agrégat 90 j" }, { date: "2026-09-29", label: "29 sept.", valeur: 1, source: "IFOP" }, { date: "2026-10-08", label: "8 oct.", valeur: 2, source: "Toluna Harris Interactive" }, { date: "2026-10-22", label: "22 oct.", valeur: 1.5, source: "Ipsos bva" }, { date: "2026-11-05", label: "5 nov.", valeur: 2, source: "Toluna Harris Interactive" }],
       historique: [
         { annee: 2012, resultat: "1.8%" },
         { annee: 2017, resultat: "4.7%" },
@@ -1659,8 +1660,8 @@ window.SITE_DATA = {
       slug: "eric-zemmour", nom: "Éric Zemmour", parti: "Reconquête", bloc: "exdroite", fiche: false,
       note: "ℹ️",
       noteDetail: "A déclaré le 17 septembre 2026 sur BFMTV « je suis candidat à la présidence de la République ». Son entourage annonce une déclaration formelle de candidature à l'automne.",
-      sondage: { label: "~4,5%", niveau: "moyen", tendance: "stable" },
-      sondageHistorique: [{ date: "2026-09-29", label: "29 sept.", valeur: 4, source: "IFOP" }, { date: "2026-10-08", label: "8 oct.", valeur: 5, source: "Toluna Harris Interactive" }, { date: "2026-10-22", label: "22 oct.", valeur: 4.5, source: "Ipsos bva" }],
+      sondage: { label: "~4%", niveau: "moyen", tendance: "stable" },
+      sondageHistorique: [{ date: "2026-09-29", label: "29 sept.", valeur: 4, source: "IFOP" }, { date: "2026-10-08", label: "8 oct.", valeur: 5, source: "Toluna Harris Interactive" }, { date: "2026-10-22", label: "22 oct.", valeur: 4.5, source: "Ipsos bva" }, { date: "2026-11-05", label: "5 nov.", valeur: 4, source: "Toluna Harris Interactive" }],
       historique: [{ annee: 2022, resultat: "7.07%" }], idees: [],
     },
     {

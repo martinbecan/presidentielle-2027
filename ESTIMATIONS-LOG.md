@@ -111,3 +111,9 @@ Moyenne mobile sur les 3 à 5 dernières étapes **avec estimation active**, en 
 ### Post-V5 — Mise à jour actualités #2 (18/08/2026)
 - Non horodaté cette fois (recherche + édition faites sans bracketing `date`) — pas de mesure fiable à consigner, pour ne pas fausser la moyenne mobile avec un chiffre inventé.
 - Soutien Darmanin→Philippe passé de "présumé" à "officiel", ajout de 2 événements timeline (Bayrou, Darmanin), rafraîchissement des sondages de 7 candidats + 3 pressentis à partir d'un agrégat glissant 90 jours. Tâche mécanique une fois la recherche faite, cohérent avec le profil identifié le 01/08.
+
+### Post-V5 — Mise à jour actualités du 02/11/2026
+- **Horodaté** : début 20 h 48, fin de l'édition et push 21 h 10. **Durée réelle (codage actif) : environ 22 min**, dont une part inhabituelle consacrée à la source et non à l'édition.
+- Profil différent des mises à jour précédentes. L'édition elle-même (11 relevés de sondage, 2 événements de frise, changelog, cache) est restée mécanique, conforme au profil « quelques minutes » déjà identifié. Le temps est parti dans la **vérification de la source** : les reprises de presse ne donnaient que des fourchettes par hypothèse, un agrégateur se trompait d'attribution de colonnes, et il a fallu télécharger le rapport PDF d'Ipsos puis l'extraire avec `pdftotext -layout` pour obtenir les chiffres exacts.
+- **Enseignement de calibration** : pour une mise à jour de sondages, le coût n'est pas l'écriture mais l'obtention d'une source primaire exploitable. Estimer 20 à 25 min quand un sondage doit entrer dans la série, contre 5 à 10 min pour une mise à jour d'actualité sans sondage.
+- Deux imprévus non imputables à l'estimation : une insertion ratée sur le seul candidat dont le tableau de relevés tient sur plusieurs lignes (corrigée), et un push refusé par GitHub (GH007) ayant nécessité un arbitrage de Martin.

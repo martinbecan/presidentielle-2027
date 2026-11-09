@@ -231,9 +231,23 @@
     // elle se désynchronisait des fiches à chaque mise à jour (la mention du calendrier
     // de la cassation, ajoutée en août 2026, n'y était jamais remontée).
     if (notesEl) {
-      notesEl.innerHTML = DATA.candidats.filter(function (c) { return c.note && c.noteDetail; })
-        .map(function (c) { return '<strong>' + c.note + '</strong> ' + c.noteDetail + '<br><br>'; })
-        .join('');
+      // Chaque note porte le nom du candidat concerné : sans lui, « sa candidature est
+      // suspendue » ne désigne personne. Et l'ensemble est replié, car une quinzaine de
+      // notes dépliées occupaient plus de place que le tableau qu'elles annotent.
+      var avecNote = DATA.candidats.filter(function (c) { return c.note && c.noteDetail; });
+      if (avecNote.length) {
+        notesEl.innerHTML = '<details class="notes-candidats">' +
+          '<summary>Notes sur ' + avecNote.length + ' candidatures <span class="chevron">▸</span></summary>' +
+          '<ul class="notes-candidats-liste">' +
+          avecNote.map(function (c) {
+            var nom = c.fiche
+              ? '<a href="candidats/' + c.slug + '.html">' + c.nom + '</a>'
+              : c.nom;
+            return '<li><span class="notes-candidats-icone">' + c.note + '</span>' +
+              '<span><strong>' + nom + '</strong> ' + c.noteDetail + '</span></li>';
+          }).join('') +
+          '</ul></details>';
+      }
     }
     if (pressentisEl && DATA.pressentis) {
       pressentisEl.textContent = DATA.pressentis.map(function (p) {

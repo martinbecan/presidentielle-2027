@@ -28,6 +28,17 @@ Historique des mises à jour du site. Tenu à jour manuellement à chaque sessio
 - **Un agrégateur interdit était cité en source** sur la fiche d'Édouard Philippe, elyseescope.com, en contradiction avec nos propres règles. Retiré. Et la source du programme de Mélenchon pointait vers l'édition périmée, corrigée
 - **Nouvelle échéance sourcée** : meeting de lancement de campagne de Raphaël Glucksmann le 6 décembre, relevé sur son site officiel
 
+- **8e relevé de sondage, le jour de sa parution.** Baromètre Toluna Harris Interactive pour M6 et RTL, vague 9, terrain du 3 au 5 novembre auprès de 2 101 inscrits. Même institut et **même hypothèse** que le relevé du 8 octobre, donc série comparable. Chiffres pris dans le rapport PDF de l'institut, somme vérifiée à 100
+- Le Pen 36 %, Mélenchon 18 %, Philippe et Glucksmann 11 %, Retailleau 7 %, Attal 6 %. Aux seconds tours testés, Le Pen l'emporte 68 contre 32 face à Mélenchon, 60 contre 40 face à Glucksmann, 58 contre 42 face à Philippe
+- **Une seule évolution réelle à institut et hypothèse constants : Édouard Philippe, de 13 à 11.** La presse titre sur la progression de Le Pen et Mélenchon, mais d'une vague à l'autre dans cette hypothèse, Le Pen passe de 35 à 36 et Mélenchon reste à 18 : c'est dans la marge. Les tendances du site ne bougent donc pas pour eux
+- Le tableau compte désormais **8 relevés** et la synthèse identifie **3 évolutions statistiquement établies** depuis juin : Mélenchon +3,5 points, Philippe -5,5 points, Ruffin -1,5 point
+
+- **Deux défauts d'affichage corrigés en bas de la page Candidats**, signalés par Martin. Les notes de candidature s'affichaient toutes dépliées, en un bloc plus long que le tableau qu'elles annotent, et surtout **aucune ne disait de quel candidat elle parlait** : on lisait « Sa candidature est suspendue » sans savoir de qui
+- Elles sont désormais **repliées sous un résumé** « Notes sur 11 candidatures », et **chaque note porte le nom du candidat**, cliquable vers sa fiche quand elle existe
+
+- **Une question du quiz reformulée**, signalée comme peu claire par Martin. « L'intégration européenne devrait être renforcée, y compris par de nouveaux transferts de souveraineté » devient « Davantage de décisions devraient être prises en commun au niveau européen, même si cela réduit ce que la France peut décider seule ». Le sens est strictement conservé, donc les 12 barèmes restent valides : seul le jargon disparaît
+
+
 
 ## 2026-11-02
 - **La courbe des sondages repart après trois semaines d'arrêt.** Le dernier relevé datait du 8 octobre. L'enquête **Ipsos bva avec CESI pour Le Parisien**, terrain des 21 et 22 octobre auprès de 1 500 inscrits, fournit un 7e relevé propre : institut unique, hypothèse identifiée, rapport complet publié. **11 candidats mesurés, dont la somme fait exactement 100,0 %**, ce qui confirme au passage l'attribution des colonnes
