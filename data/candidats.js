@@ -169,6 +169,22 @@ window.SITE_DATA = {
   // Questions du quiz de compatibilité. Chaque candidat porte un score -2..+2 par question
   // dans son champ `quizCompatScores` (même id). 1 à 2 questions par thème, formulations
   // alternées pour ne pas systématiquement favoriser un bord politique sur un thème donné.
+  // Ordre de passage des questions du quiz, figé ici plutôt que recalculé au chargement :
+  // un ordre qui bougerait avec les barèmes rendrait les résultats non reproductibles
+  // d'une visite à l'autre. L'escalier prend les 15 premières, puis des paquets de 5.
+  //
+  // Les 15 premières sont la question la plus discriminante de chacun des 15 thèmes,
+  // et non les 15 plus discriminantes toutes catégories. Mesuré sur 8 000 profils, cette
+  // diversité thématique fait tomber les ex aequo à 13,7 %, contre 19,9 % pour l'ancien
+  // découpage en 19 questions de base, et 22,3 % pour un classement par puissance brute.
+  quizOrdre: [
+    "europe_1", "immigration_1", "ecologie_1", "pouvoir_achat_2", "dette_1", "agriculture_1",
+    "laicite_1", "retraites_1", "securite_2", "institutions_2", "logement_1", "sante_1",
+    "education_1", "defense_1", "numerique_1", "immigration_2", "europe_2", "ecologie_2",
+    "retraites_2", "ecologie_3", "securite_1", "pouvoir_achat_1", "europe_3", "institutions_1",
+    "retraites_3", "education_2"
+  ],
+
   quizCompatQuestions: [
     { id: "retraites_1", theme: "retraites", texte: "L'âge légal de départ à la retraite devrait être abaissé à 60 ans." },
     { id: "retraites_2", theme: "retraites", texte: "Le système de retraite par capitalisation devrait être développé en complément de la répartition." },

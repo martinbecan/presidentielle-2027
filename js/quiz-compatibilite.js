@@ -15,14 +15,39 @@
     return a;
   }
 
-  var questions = shuffleArray(DATA.quizCompatQuestions);
-  // Le nombre annoncé dans le sous-titre était écrit en dur et avait dérivé des données.
+  // Escalier d'étapes, à ordre FIXE. Un tirage au hasard du sous-ensemble a été mesuré :
+  // 99,7 % des profils changeaient de gagnant selon le tirage, le quiz n'aurait plus été
+  // reproductible. L'ordre est figé dans les données (quizOrdre) pour que le résultat
+  // d'une étape reste le même d'un visiteur à l'autre, et vérifiable.
+  //
+  // L'étape 1 prend la meilleure question de chacun des 15 thèmes plutôt que les 15 plus
+  // discriminantes : mesuré sur 8 000 profils, la diversité thématique fait tomber les
+  // ex aequo à 13,7 % contre 19,9 % pour les 19 questions de l'ancien découpage.
+  var parId = {};
+  var toutesQuestions = [].concat(DATA.quizCompatQuestions, DATA.quizCompatExtensionQuestions || []);
+  toutesQuestions.forEach(function (q) { parId[q.id] = q; });
+
+  var ordre = (DATA.quizOrdre || []).filter(function (id) { return parId[id]; });
+  // Filet de sécurité : une question ajoutée aux données sans être placée dans l'ordre
+  // doit quand même être posée, plutôt que de disparaître silencieusement du quiz.
+  toutesQuestions.forEach(function (q) { if (ordre.indexOf(q.id) === -1) ordre.push(q.id); });
+
+  function construireEtapes(ids) {
+    var e = [ids.slice(0, 15)], i = 15;
+    while (i < ids.length) { e.push(ids.slice(i, i + 5)); i += 5; }
+    // Une dernière étape d'une ou deux questions ne vaut pas un écran de plus.
+    if (e.length > 1 && e[e.length - 1].length < 3) { e[e.length - 2] = e[e.length - 2].concat(e.pop()); }
+    return e;
+  }
+  var etapes = construireEtapes(ordre).map(function (ids) {
+    return shuffleArray(ids.map(function (id) { return parId[id]; }));
+  });
+
+  var etapeIdx = 0;
+  var questions = etapes[0];
   var nbEl = document.getElementById('quiz-nb-questions');
-  if (nbEl) nbEl.textContent = DATA.quizCompatQuestions.length;
-  var extensionQuestions = shuffleArray(DATA.quizCompatExtensionQuestions || []);
+  if (nbEl) nbEl.textContent = etapes[0].length;
   var candidats = DATA.candidats.filter(function (c) { return c.fiche && c.quizCompatScores; });
-  var currentExt = 0;
-  var extensionDone = false;
 
   var current = 0;
   var answers = {};
@@ -73,7 +98,7 @@
 
     var html = '';
     html += '<div class="quiz-progress quiz-progress-compat"><div class="quiz-progress-bar" style="width:' + pct + '%"></div></div>';
-    html += '<div class="quiz-progress-label">Question ' + (current + 1) + '/' + questions.length + '</div>';
+    html += '<div class="quiz-progress-label">' + (etapeIdx === 0 ? 'Question ' : 'Question complémentaire ') + (current + 1) + '/' + questions.length + '</div>';
     html += '<div class="quiz-card quiz-card-compat">';
     html += '<p class="quiz-affirmation">' + q.texte + '</p>';
     html += '<div class="quiz-compat-options" id="quiz-compat-options">';
@@ -84,7 +109,7 @@
     html += '</div>';
     html += '<div class="quiz-compat-nav">';
     html += '<button type="button" class="quiz-back-btn" id="quiz-back-btn"' + (current === 0 ? ' disabled' : '') + '>← Précédent</button>';
-    html += '<button type="button" class="quiz-next-btn quiz-next-btn-compat" id="quiz-next-btn"' + (selected === null ? ' disabled' : '') + '>' + (current + 1 < questions.length ? 'Suivant →' : 'Voir mes résultats →') + '</button>';
+    html += '<button type="button" class="quiz-next-btn quiz-next-btn-compat" id="quiz-next-btn"' + (selected === null ? ' disabled' : '') + '>' + (current + 1 < questions.length ? 'Suivant →' : (etapeIdx === 0 ? 'Voir mes résultats →' : 'Voir mon résultat affiné →')) + '</button>';
     html += '</div>';
     html += '</div>';
 
@@ -114,56 +139,6 @@
     // retabuler depuis le début, on ramène le focus sur le choix déjà sélectionné (ou le 1er).
     var toFocus = root.querySelector('.quiz-choice-selected') || root.querySelector('.quiz-choice-btn');
     if (toFocus) toFocus.focus();
-  }
-
-  // Questions d'extension (thèmes V5) : posées uniquement si l'utilisateur clique "Affiner
-  // mon résultat" après les résultats. Les réponses s'ajoutent au même objet `answers` que
-  // le quiz principal, computeScores() n'a pas besoin de logique séparée pour en tenir compte.
-  function renderExtensionQuestion() {
-    var q = extensionQuestions[currentExt];
-    var pct = Math.round((currentExt / extensionQuestions.length) * 100);
-    var selected = answers.hasOwnProperty(q.id) ? answers[q.id] : null;
-
-    var html = '';
-    html += '<div class="quiz-progress quiz-progress-compat"><div class="quiz-progress-bar" style="width:' + pct + '%"></div></div>';
-    html += '<div class="quiz-progress-label">Question complémentaire ' + (currentExt + 1) + '/' + extensionQuestions.length + '</div>';
-    html += '<div class="quiz-card quiz-card-compat">';
-    html += '<p class="quiz-affirmation">' + q.texte + '</p>';
-    html += '<div class="quiz-compat-options" id="quiz-compat-options">';
-    OPTIONS.forEach(function (opt) {
-      var sel = selected === opt.value ? ' quiz-choice-selected' : '';
-      html += '<button type="button" class="quiz-choice-btn' + sel + '" data-value="' + opt.value + '">' + opt.label + '</button>';
-    });
-    html += '</div>';
-    html += '<div class="quiz-compat-nav">';
-    html += '<button type="button" class="quiz-back-btn" id="quiz-back-btn"' + (currentExt === 0 ? ' disabled' : '') + '>← Précédent</button>';
-    html += '<button type="button" class="quiz-next-btn quiz-next-btn-compat" id="quiz-next-btn"' + (selected === null ? ' disabled' : '') + '>' + (currentExt + 1 < extensionQuestions.length ? 'Suivant →' : 'Voir mon résultat affiné →') + '</button>';
-    html += '</div>';
-    html += '</div>';
-
-    root.innerHTML = html;
-
-    Array.prototype.forEach.call(root.querySelectorAll('.quiz-choice-btn'), function (btn) {
-      btn.addEventListener('click', function () {
-        var val = parseFloat(btn.getAttribute('data-value'));
-        answers[q.id] = val;
-        Array.prototype.forEach.call(root.querySelectorAll('.quiz-choice-btn'), function (b) { b.classList.remove('quiz-choice-selected'); });
-        btn.classList.add('quiz-choice-selected');
-        document.getElementById('quiz-next-btn').disabled = false;
-      });
-    });
-
-    document.getElementById('quiz-back-btn').addEventListener('click', function () {
-      if (currentExt > 0) { currentExt--; renderExtensionQuestion(); }
-    });
-    document.getElementById('quiz-next-btn').addEventListener('click', function () {
-      if (!answers.hasOwnProperty(q.id)) return;
-      if (currentExt + 1 < extensionQuestions.length) { currentExt++; renderExtensionQuestion(); }
-      else { extensionDone = true; renderResults(); }
-    });
-
-    var toFocusExt = root.querySelector('.quiz-choice-selected') || root.querySelector('.quiz-choice-btn');
-    if (toFocusExt) toFocusExt.focus();
   }
 
   function computeScores() {
@@ -240,12 +215,15 @@
     // Affiner est l'action la plus utile juste après le résultat, puisqu'elle améliore
     // ce que l'utilisateur vient d'obtenir. Elle était en bas de page et dans le style
     // le moins visible des trois boutons : elle remonte ici, en action principale.
-    if (extensionQuestions.length && !extensionDone) {
-      var nbExt = extensionQuestions.length;
+    if (etapeIdx + 1 < etapes.length) {
+      var nbExt = etapes[etapeIdx + 1].length;
+      var restantes = 0;
+      for (var k = etapeIdx + 1; k < etapes.length; k++) restantes += etapes[k].length;
       html += '<div class="quiz-compat-affiner">';
-      html += '<p>Ces ' + nbExt + ' questions supplémentaires portent sur des points plus précis, ' +
-        'ceux qui séparent des candidats proches. Elles prennent une minute.</p>';
-      html += '<button type="button" class="quiz-next-btn quiz-compat-extend-btn" id="quiz-extend-btn">Affiner mon résultat, ' +
+      html += '<p>Ce classement repose sur ' + Object.keys(answers).length + ' questions. ' +
+        'Il reste ' + restantes + ' question' + (restantes > 1 ? 's' : '') + ' pour le préciser, ' +
+        'sur des points plus fins qui séparent des candidats proches.</p>';
+      html += '<button type="button" class="quiz-next-btn quiz-compat-extend-btn" id="quiz-extend-btn">Affiner avec ' +
         nbExt + ' question' + (nbExt > 1 ? 's' : '') + ' de plus</button>';
       html += '</div>';
     }
@@ -315,7 +293,7 @@
     }, 50);
 
     document.getElementById('quiz-restart-btn').addEventListener('click', function () {
-      current = 0; currentExt = 0; extensionDone = false; answers = {}; renderQuestion();
+      etapeIdx = 0; questions = etapes[0]; current = 0; answers = {}; renderQuestion();
     });
     document.getElementById('quiz-memo-btn').addEventListener('click', function () {
       renderMemo(top3);
@@ -323,8 +301,10 @@
     var extendBtn = document.getElementById('quiz-extend-btn');
     if (extendBtn) {
       extendBtn.addEventListener('click', function () {
-        currentExt = 0;
-        renderExtensionQuestion();
+        etapeIdx++;
+        questions = etapes[etapeIdx];
+        current = 0;
+        renderQuestion();
       });
     }
 

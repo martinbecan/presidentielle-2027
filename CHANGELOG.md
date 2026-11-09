@@ -41,6 +41,17 @@ Historique des mises à jour du site. Tenu à jour manuellement à chaque sessio
 - **Mesure avant de trancher** : la question n'était pas redondante, elle était mal dite. Elle sépare Gabriel Attal, seul à vouloir supprimer l'âge légal, des sept autres candidats documentés. Sans elle, la paire Attal/Philippe, la plus serrée du site, est indiscernable sur 11,2 % des profils simulés, contre 8,9 % avec. Elle est donc conservée, à barème inchangé
 - **Le nombre de candidatures apparaît dans l'onglet Candidats**, sur les 21 pages : 27 candidatures en lice, hors retraits et non-retenus, même définition que le tableau. Le chiffre n'était visible que dans le sous-titre de la page, donc une fois qu'on y était déjà
 
+- **Le quiz passe à un escalier de 15, puis 5, puis 6 questions**, selon la structure proposée par Martin. Le bouton d'affinage disparaît quand le pool est épuisé
+- **Le tirage au hasard a été écarté, mesure à l'appui.** Sur 300 profils tirés 30 fois chacun, **99,7 % changeaient de candidat gagnant selon le tirage**, le score du premier variant de 19,3 points en moyenne, et un candidat pouvant se retrouver noté sur 3 questions seulement. Un quiz dont le résultat dépend du tirage n'est pas vérifiable, ce qui serait le seul endroit du site où le lecteur ne pourrait pas refaire le calcul
+- **L'ordre est donc figé dans les données**, sous `quizOrdre`, plutôt que recalculé au chargement : un ordre qui bougerait avec les barèmes rendrait les résultats non reproductibles d'une visite à l'autre
+- **Les 15 premières questions sont la plus discriminante de chacun des 15 thèmes**, et non les 15 plus discriminantes toutes catégories confondues. Contre-intuitif mais mesuré sur 8 000 profils : cette diversité thématique fait tomber les ex aequo à **13,7 %**, contre 19,9 % pour l'ancien découpage en 19 questions et 22,3 % pour un classement par puissance brute. Des questions variées captent des dimensions indépendantes, là où les plus tranchantes se recoupent
+- Effet secondaire appréciable : l'étape 1 couvre désormais les 15 thèmes, santé, éducation et institutions comprises, qui manquaient à un classement par seule puissance
+
+- **Un défaut du quiz actuel, que je n'avais jamais mesuré, est maintenant documenté** : après les questions de base, le gagnant affiché diffère du résultat complet dans près de la moitié des cas. L'encart d'affinage le dit désormais explicitement, en rappelant sur combien de questions repose le classement affiché et combien il en reste
+
+- **Deux nouvelles questions étaient prévues, nationalisations et 32 heures. Elles ne sont pas livrées, faute de matière sourçable.** La recherche a buté sur deux obstacles : les recensements disponibles sont des agrégateurs, que nos règles interdisent, et deux d'entre eux **se contredisent frontalement sur Marine Le Pen**, l'un lui prêtant la renationalisation des autoroutes, l'autre une simple baisse des péages de 15 %. Plusieurs affichent d'ailleurs la mention « position estimée », c'est-à-dire déduite
+- La cause de fond est structurelle : **3 candidats sur 12 ont un programme complet publié**. Une nouvelle question serait donc documentée sur 3 à 6 candidats, soit le niveau de `numerique_1`, la plus faible du pool avec un pouvoir discriminant de 0,48. Mieux vaut pas de question qu'une question creuse
+
 
 
 ## 2026-11-02
