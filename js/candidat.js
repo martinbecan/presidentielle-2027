@@ -364,9 +364,34 @@
     ['logement', 'Logement'], ['defense', 'Défense / politique militaire']
   ];
   html += '<section class="fiche-section"><h2>Positions sur les sujets qui comptent</h2>';
-  if (c.sources && c.sources.length) {
-    html += '<p class="positions-sources-note"><a href="#fiche-sources" class="source-verify-link">Vérifier les sources de cette fiche</a></p>';
+
+  // État de publication du programme, et nombre de positions réellement sourcées.
+  // Sans cela, une fiche très fournie face à une fiche vide se lit comme une
+  // préférence éditoriale, alors qu'elle ne fait que refléter qui publie.
+  var pos = c.positions_10_sujets || {};
+  var nbTotal = 0, nbSrc = 0;
+  SUJETS.forEach(function (s) { if (pos[s[0]]) { nbTotal++; if (pos[s[0]].source) nbSrc++; } });
+  var pp = c.programme_publie;
+  var LIB = { complet: 'Programme complet publié', partiel: 'Orientations partielles publiées', aucun: 'Aucun programme publié à ce jour' };
+  html += '<div class="programme-etat programme-etat-' + (pp ? pp.niveau : 'inconnu') + '">';
+  html += '<div class="programme-etat-tete">';
+  html += '<span class="programme-etat-badge">' + (pp ? LIB[pp.niveau] : 'État du programme non encore vérifié') + '</span>';
+  if (nbTotal) {
+    html += '<span class="programme-etat-compte">' + (nbSrc === 0
+      ? 'Aucune position sourcée sur ' + nbTotal
+      : nbSrc + ' position' + (nbSrc > 1 ? 's' : '') + ' sourcée' + (nbSrc > 1 ? 's' : '') + ' sur ' + nbTotal) + '</span>';
   }
+  html += '</div>';
+  if (pp && pp.detail) html += '<p class="programme-etat-detail">' + pp.detail + '</p>';
+  html += '<p class="programme-etat-note">Le niveau de détail d\'une fiche dépend de ce que le candidat a publié, pas de l\'intérêt que nous lui portons. Tant qu\'un programme n\'est pas publié, les positions reposent sur des déclarations datées, moins complètes par nature.</p>';
+  if (pp && pp.url) {
+    html += '<a href="' + pp.url + '" target="_blank" rel="noopener noreferrer" class="source-verify-link">Consulter le programme</a> ';
+  }
+  if (c.sources && c.sources.length) {
+    html += '<a href="#fiche-sources" class="source-verify-link">Vérifier les sources de cette fiche</a>';
+  }
+  html += '</div>';
+
   html += '<div class="positions-grid">';
   SUJETS.forEach(function (s) {
     var r = resolveSujet(c, s[0]);

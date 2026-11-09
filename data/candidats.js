@@ -89,6 +89,7 @@ window.SITE_DATA = {
     { date: "2026-08-20", dateLabel: "20-22 août 2026", titre: "Journées d'été des Écologistes à Grenoble : Marine Tondelier maintient sa candidature autonome tout en appelant à l'union (« personne n'aura raison seul »)", candidatSlug: "marine-tondelier", categorie: "campagne", future: false },
     { date: "2026-08-20", dateLabel: "20-23 août 2026", titre: "Universités d'été de La France Insoumise à Châteauneuf-sur-Isère (~6 000 militants)", candidatSlug: "jean-luc-melenchon", categorie: "campagne", future: false },
     { date: "2026-08-23", dateLabel: "23 août 2026", titre: "Jean-Luc Mélenchon promet de censurer le gouvernement Lecornu sur le budget 2027", candidatSlug: "jean-luc-melenchon", categorie: "campagne", future: false },
+    { date: "2026-07-13", dateLabel: "13 juillet 2026", titre: "Les Écologistes publient « Pour une prospérité écologique », programme présidentiel porté par Marine Tondelier : 557 mesures issues d'une consultation citoyenne de près de 50 000 contributions, qui ont conduit à modifier 87 % des propositions. C'est le premier programme complet publié de la campagne", candidatSlug: "marine-tondelier", source: { nom: "Les Écologistes, programme officiel", url: "https://marinetondelier.fr/programme-2027" }, categorie: "campagne", future: false, majeur: true },
     { date: "2026-08-18", dateLabel: "18 août 2026", titre: "Le parquet de Paris ouvre une enquête sur des soupçons d'ingérence russe visant Gabriel Attal et Édouard Philippe (deepfakes et fausses unes de presse), l'agence Viginum l'attribue avec un haut degré de confiance au réseau prorusse Matriochka", candidatSlug: "gabriel-attal", categorie: "justice", future: false },
     { date: "2026-08-23", dateLabel: "23 août 2026", titre: "Édouard Philippe appelle à un rassemblement de la droite et du centre « entre novembre et février », Gabriel Attal préférant attendre le début 2027", candidatSlug: "edouard-philippe", categorie: "campagne", future: false },
     { date: "2026-08-23", dateLabel: "23 août 2026", titre: "Raphaël Glucksmann officialise sa candidature au 20h de TF1 et annonce qu'il passera par la primaire commune PS / Place publique", candidatSlug: "raphael-glucksmann", categorie: "candidature", future: false },
@@ -149,12 +150,13 @@ window.SITE_DATA = {
     { date: "2026-11-04", dateLabel: "4 novembre 2026", titre: "L'Assemblée nationale rejette la partie recettes du projet de loi de finances pour 2027 par 458 voix contre zéro, aucun groupe ne votant pour. Le rejet entraîne celui de l'ensemble du texte, qui part au Sénat dans sa version initiale. Le budget de la Sécurité sociale avait déjà été rejeté le 23 octobre", candidatSlug: null, source: { nom: "Éclairage", url: "https://www.eclairagemedia.com/politique/2026-11-06" }, categorie: "institutionnel", future: false, majeur: true },
     { date: "2026-11-05", dateLabel: "5 novembre 2026", titre: "Journée de grève interprofessionnelle contre la vie chère : 575 000 manifestants selon le ministère de l'Intérieur, dont 65 000 à Paris, 1,6 million selon la CGT. Le gouvernement annonce dans la soirée une conférence sociale pour le 9 novembre", candidatSlug: null, source: { nom: "Éclairage", url: "https://www.eclairagemedia.com/politique/2026-11-06" }, categorie: "campagne", future: false },
     { date: "2026-11-05", dateLabel: "5 novembre 2026", titre: "Neuf députés du groupe communiste et ultramarin annoncent soutenir Jean-Luc Mélenchon, dont quatre des huit députés communistes et le président du groupe Stéphane Peu, alors que Fabien Roussel est lui-même candidat pour le PCF", candidatSlug: "jean-luc-melenchon", source: { nom: "Éclairage", url: "https://www.eclairagemedia.com/politique/2026-11-06" }, categorie: "campagne", future: false },
-    { date: "2026-11-06", dateLabel: "6 novembre 2026", titre: "La France insoumise publie L'Avenir en commun, premier programme présidentiel complet de la campagne : 1 069 mesures dont 238 nouvelles, structurées autour de la planification écologique, vendues en librairie 4,90 €. Aucun autre candidat n'a publié de programme à cinq mois du premier tour", candidatSlug: "jean-luc-melenchon", source: { nom: "France 24", url: "https://www.france24.com/fr/france/20261106-france-insoumise-jean-luc-melenchon-presente-programme-presidentielle-2027-fidele-volonte-rupture-lfi" }, categorie: "campagne", future: false, majeur: true },
+    { date: "2026-11-06", dateLabel: "6 novembre 2026", titre: "La France insoumise publie L'Avenir en commun, programme présidentiel de Jean-Luc Mélenchon : 1 069 mesures dont 238 nouvelles, structurées autour de la planification écologique, vendues en librairie 4,90 €. C'est le deuxième programme complet de la campagne, après celui des Écologistes paru en juillet", candidatSlug: "jean-luc-melenchon", source: { nom: "France 24", url: "https://www.france24.com/fr/france/20261106-france-insoumise-jean-luc-melenchon-presente-programme-presidentielle-2027-fidele-volonte-rupture-lfi" }, categorie: "campagne", future: false, majeur: true },
     { date: "2026-11-06", dateLabel: "6 novembre 2026", titre: "Gabriel Attal plaide pour une primaire de la droite et du centre, organisable « rapidement », afin d'éviter un second tour entre Marine Le Pen et Jean-Luc Mélenchon. Bruno Retailleau et David Lisnard s'y disent favorables, Édouard Philippe s'y oppose. Laurent Wauquiez souhaite un candidat unique de droite avant Noël, sans l'extrême droite", candidatSlug: "gabriel-attal", source: { nom: "Éclairage", url: "https://www.eclairagemedia.com/politique/2026-11-06" }, categorie: "campagne", future: false, majeur: true },
     { date: "2026-11-07", dateLabel: "7 novembre 2026", titre: "Meeting de Jean-Luc Mélenchon au Bourget pour la présentation officielle du programme : « Il faut tout changer ». Il y détaille la sortie du nucléaire, la 6e République par l'article 11, la sortie du commandement intégré de l'OTAN et un moratoire sur les équipements numériques étrangers", candidatSlug: "jean-luc-melenchon", source: { nom: "melenchon.fr", url: "https://melenchon.fr/2026/11/07/grand-meeting-du-bourget-notre-programme-de-gouvernement/" }, categorie: "campagne", future: false },
     { date: "2026-11-09", dateLabel: "9 novembre 2026", titre: "Conférence sociale à Matignon : le gouvernement anticipe au 1er décembre la hausse du SMIC et la porte à 1,6 %, soit environ 1 502 € nets contre 1 477,93 €. Le coup de pouce de 0,6 point est le premier depuis 2012. Le plafond d'exonération des heures supplémentaires passe de 7 500 à 10 000 €", candidatSlug: null, source: { nom: "franceinfo", url: "https://www.franceinfo.fr/economie/greve/augmentation-du-smic-allegements-de-charges-pour-les-entreprises-ce-qu-il-faut-retenir-des-annonces-du-gouvernement-a-l-issue-de-la-conference-sociale_8274527.html" }, categorie: "institutionnel", future: false },
     { date: "2026-11-09", dateLabel: "9 novembre 2026", titre: "Le judoka Teddy Riner, quintuple champion olympique, annonce sa candidature sur X et dans Le Parisien : « La résignation n'est pas une option ». Il se dit « ni de droite ni de gauche », veut être « le président qui fédère », lance son site de campagne « La France qu'on veut » et dit travailler avec une équipe d'une vingtaine de personnes", candidatSlug: "teddy-riner", source: { nom: "franceinfo", url: "https://www.franceinfo.fr/elections/presidentielle/la-resignation-n-est-pas-une-option-teddy-riner-annonce-sa-candidature-a-l-election-presidentielle-2027_8274359.html" }, categorie: "candidature", future: false, majeur: true },
     { date: "2026-11-17", dateLabel: "17 novembre 2026", titre: "Nouvelle journée de grève et de manifestations dans la fonction publique, à l'appel de l'intersyndicale, qui juge insuffisantes les annonces de la conférence sociale. La CGT élargit l'appel à l'ensemble des salariés, des retraités et des jeunes", candidatSlug: null, source: { nom: "Capital", url: "https://www.capital.fr/economie-politique/greve-du-17-novembre-pourquoi-les-syndicats-rejettent-les-annonces-du-gouvernement-sur-le-smic-1531723" }, categorie: "campagne", future: true },
+    { date: "2026-12-06", dateLabel: "6 décembre 2026", titre: "Meeting de lancement de la campagne de Raphaël Glucksmann au Paris Event Center. Son site de campagne n'a publié aucun programme à ce jour", candidatSlug: "raphael-glucksmann", source: { nom: "glucks2027.fr, site officiel", url: "https://glucks2027.fr/" }, categorie: "campagne", future: true },
     { date: "2026-12-10", dateLabel: "10 au 13 décembre 2026", titre: "Référendum interne des Écologistes : les adhérents tranchent entre le maintien de la candidature autonome de Marine Tondelier et un retrait au profit d'un autre candidat de gauche. Le texte des options doit être publié dans la seconde quinzaine de novembre", candidatSlug: "marine-tondelier", source: { nom: "LCP", url: "https://lcp.fr/actualites/candidature-a-la-presidentielle-pas-de-choix-definitif-des-ecologistes-avant-la-mi" }, categorie: "institutionnel", future: true },
     { date: "2027-01", dateLabel: "Début 2027", titre: "Ouverture de la collecte officielle des parrainages", candidatSlug: null, source: { nom: "Conseil constitutionnel", url: "https://www.conseil-constitutionnel.fr/nouveaux-cahiers-du-conseil-constitutionnel/les-parrainages-a-l-election-presidentielle" }, categorie: "institutionnel", future: true },
     { date: "2027-04-05", dateLabel: "5 avril 2027", titre: "Ouverture de la campagne officielle, le deuxième lundi précédant le scrutin. Les professions de foi, le document où chaque candidat résume son projet, sont homologuées par la Commission nationale de contrôle, adressées aux électeurs et mises en ligne. C'est le seul moment où tous les candidats présentent leur projet au même format et à la même date", candidatSlug: null, source: { nom: "Code électoral, article L47 A et suivants", url: "https://www.legifrance.gouv.fr/codes/id/LEGISCTA000006148458" }, categorie: "institutionnel", future: true },
@@ -294,6 +296,7 @@ window.SITE_DATA = {
     // ================= GAUCHE RADICALE =================
     {
       slug: "jean-luc-melenchon",
+      programme_publie: { niveau: "complet", detail: "Programme présidentiel « L'Avenir en commun », 1 069 mesures dont 238 nouvelles, publié le 6 novembre 2026. Le chiffrage est annoncé pour le début 2027.", url: "https://melenchon2027.fr/programme/livre/", verifie: "2026-11-09" },
       nom: "Jean-Luc Mélenchon",
       parti: "La France Insoumise",
       bloc: "gradicale",
@@ -343,7 +346,7 @@ window.SITE_DATA = {
         dette:       { stance: "contre", detail: "Propose un rachat par la BCE de la dette sur les marchés et un audit citoyen pour renégocier la part jugée « illégitime », plutôt qu'une réduction stricte." }
       },
       sources: [
-        "https://melenchon2027.fr/programme2025/livre/",
+        "https://melenchon2027.fr/programme/livre/",
         "https://en.wikipedia.org/wiki/Jean-Luc_M%C3%A9lenchon",
         "https://www.publicsenat.fr/actualites/politique/presidentielle-2027-melenchon-et-philippe-au-coude-a-coude-pour-la-qualification-au-second-tour"
       ],
@@ -452,6 +455,7 @@ window.SITE_DATA = {
     // ================= GAUCHE, PRIMAIRE =================
     {
       slug: "marine-tondelier",
+      programme_publie: { niveau: "complet", detail: "Programme présidentiel « Pour une prospérité écologique », 557 mesures, publié en juillet 2026 après une consultation de près de 50 000 contributions.", url: "https://marinetondelier.fr/programme-2027", verifie: "2026-11-09" },
       note: "ℹ️",
       noteDetail: "Sa candidature est suspendue à un référendum interne des Écologistes, prévu du 10 au 13 décembre 2026, qui tranchera entre son maintien et un retrait au profit d'un autre candidat de gauche. Elle reste candidate jusque-là.",
       nom: "Marine Tondelier",
@@ -510,21 +514,21 @@ window.SITE_DATA = {
       ],
       fact_checks_note: "Aucun fact-check dédié d'AFP Factuel, Les Décodeurs ou CheckNews spécifiquement consacré à Marine Tondelier n'a été identifié pour 2025-2026 ; le seul élément vérifiable trouvé est sa propre rectification publique, largement reprise par la presse généraliste.",
       positions_10_sujets: {
-        pouvoir_achat: { synthese: "Cherche à préserver le pouvoir d'achat des classes moyennes et populaires pendant la transition écologique, via un « ISF climatique », une TVA modulée selon l'impact environnemental et une réforme de la fiscalité des transports favorisant le rail.", direction: "fiscalité écologique redistributive" },
-        retraites: { synthese: "S'inscrit dans la ligne de la gauche, opposée à la réforme portant l'âge à 64 ans, sans chiffrage détaillé et confirmé pour 2027.", direction: "opposition à la réforme des 64 ans" },
-        securite: { synthese: "Privilégie la prévention à la répression : police de proximité, justice des mineurs renforcée, insertion professionnelle plutôt que répression.", direction: "prévention / proximité" },
-        immigration: { synthese: "Ligne humaniste : régularisation de travailleurs sans papiers dans les métiers en tension, voies légales pour réfugiés climatiques ; conteste le lien immigration-délinquance.", direction: "accueil / régularisation" },
-        sante: { synthese: "50 000 recrutements hospitaliers, +15% de salaires, plan de 10 000 psychologues dans écoles et entreprises.", direction: "investissement public" },
-        ecologie: { synthese: "Axe central du programme : transition écologique estimée à ~140 Md€/an, articulant mitigation et adaptation.", direction: "transition renforcée" },
-        education: { synthese: "Cours d'écologie obligatoires dès le primaire, +20% de salaires enseignants, classes plafonnées à 20 élèves.", direction: "renforcement des moyens" },
-        europe: { synthese: "Ligne fédéraliste assumée, signataire d'un manifeste pour une Europe fédérale, forte et sociale.", direction: "fédéralisme européen" },
-        dette: { synthese: "Pas de position chiffrée officielle sur la dette ; des analyses externes pointent un risque de financement par la dette de son plan écologique.", direction: "non précisé / critiqué en externe" },
-        institutions: { synthese: "VIe République plus parlementaire, proportionnelle, référendum d'initiative citoyenne.", direction: "VIe République / proportionnelle" },
-        laicite: { synthese: "Défend une lecture libérale de la loi de 1905, centrée sur la neutralité de l'État et la liberté individuelle ; critique l'usage de la laïcité comme prétexte pour viser une religion en particulier.", direction: "laïcité libérale, opposée à l'interdiction du voile" },
-        agriculture: { synthese: "Propose l'interdiction des pesticides de synthèse d'ici 2030 et la généralisation du bio et du local dans la restauration scolaire, au risque de tensions avec une partie du monde agricole.", direction: "transition écologique renforcée de l'agriculture" },
-        numerique: { synthese: "Défend une « technodiversité » : pluralité d'outils, d'acteurs et d'infrastructures numériques, contre la concentration du secteur entre quelques multinationales, dans une logique de souveraineté et de sobriété.", direction: "diversité et souveraineté numériques contre la concentration" },
-        logement: { synthese: "Inscrit le droit au logement pour tous parmi les priorités communes de la gauche pour 2027, sans détail chiffré propre identifié à ce stade.", direction: "priorité au droit au logement" },
-        defense: { synthese: "Rompt avec la tradition pacifiste écologiste : soutient un engagement militaire renforcé auprès de l'Ukraine, veut un commandement militaire européen intégré placé sous l'autorité du Conseil européen, et demande que le Parlement soit associé à la définition de la doctrine de dissuasion.", direction: "défense européenne intégrée, soutien à l'Ukraine" }
+        pouvoir_achat: { synthese: "Cherche à préserver le pouvoir d'achat des classes moyennes et populaires pendant la transition écologique, via un « ISF climatique », une TVA modulée selon l'impact environnemental et une réforme de la fiscalité des transports favorisant le rail.", direction: "fiscalité écologique redistributive" , source: { nom: "Pour une prospérité écologique, programme des Écologistes, juillet 2026", url: "https://marinetondelier.fr/programme-2027" } },
+        retraites: { synthese: "S'inscrit dans la ligne de la gauche, opposée à la réforme portant l'âge à 64 ans, sans chiffrage détaillé et confirmé pour 2027.", direction: "opposition à la réforme des 64 ans" , source: { nom: "Pour une prospérité écologique, programme des Écologistes, juillet 2026", url: "https://marinetondelier.fr/programme-2027" } },
+        securite: { synthese: "Privilégie la prévention à la répression : police de proximité, justice des mineurs renforcée, insertion professionnelle plutôt que répression.", direction: "prévention / proximité" , source: { nom: "Pour une prospérité écologique, programme des Écologistes, juillet 2026", url: "https://marinetondelier.fr/programme-2027" } },
+        immigration: { synthese: "Ligne humaniste : régularisation de travailleurs sans papiers dans les métiers en tension, voies légales pour réfugiés climatiques ; conteste le lien immigration-délinquance.", direction: "accueil / régularisation" , source: { nom: "Pour une prospérité écologique, programme des Écologistes, juillet 2026", url: "https://marinetondelier.fr/programme-2027" } },
+        sante: { synthese: "50 000 recrutements hospitaliers, +15% de salaires, plan de 10 000 psychologues dans écoles et entreprises.", direction: "investissement public" , source: { nom: "Pour une prospérité écologique, programme des Écologistes, juillet 2026", url: "https://marinetondelier.fr/programme-2027" } },
+        ecologie: { synthese: "Axe central du programme : transition écologique estimée à ~140 Md€/an, articulant mitigation et adaptation.", direction: "transition renforcée" , source: { nom: "Pour une prospérité écologique, programme des Écologistes, juillet 2026", url: "https://marinetondelier.fr/programme-2027" } },
+        education: { synthese: "Cours d'écologie obligatoires dès le primaire, +20% de salaires enseignants, classes plafonnées à 20 élèves.", direction: "renforcement des moyens" , source: { nom: "Pour une prospérité écologique, programme des Écologistes, juillet 2026", url: "https://marinetondelier.fr/programme-2027" } },
+        europe: { synthese: "Ligne fédéraliste assumée, signataire d'un manifeste pour une Europe fédérale, forte et sociale.", direction: "fédéralisme européen" , source: { nom: "Pour une prospérité écologique, programme des Écologistes, juillet 2026", url: "https://marinetondelier.fr/programme-2027" } },
+        dette: { synthese: "Pas de position chiffrée officielle sur la dette ; des analyses externes pointent un risque de financement par la dette de son plan écologique.", direction: "non précisé / critiqué en externe" , source: { nom: "Pour une prospérité écologique, programme des Écologistes, juillet 2026", url: "https://marinetondelier.fr/programme-2027" } },
+        institutions: { synthese: "VIe République plus parlementaire, proportionnelle, référendum d'initiative citoyenne.", direction: "VIe République / proportionnelle" , source: { nom: "Pour une prospérité écologique, programme des Écologistes, juillet 2026", url: "https://marinetondelier.fr/programme-2027" } },
+        laicite: { synthese: "Défend une lecture libérale de la loi de 1905, centrée sur la neutralité de l'État et la liberté individuelle ; critique l'usage de la laïcité comme prétexte pour viser une religion en particulier.", direction: "laïcité libérale, opposée à l'interdiction du voile" , source: { nom: "Pour une prospérité écologique, programme des Écologistes, juillet 2026", url: "https://marinetondelier.fr/programme-2027" } },
+        agriculture: { synthese: "Propose l'interdiction des pesticides de synthèse d'ici 2030 et la généralisation du bio et du local dans la restauration scolaire, au risque de tensions avec une partie du monde agricole.", direction: "transition écologique renforcée de l'agriculture" , source: { nom: "Pour une prospérité écologique, programme des Écologistes, juillet 2026", url: "https://marinetondelier.fr/programme-2027" } },
+        numerique: { synthese: "Défend une « technodiversité » : pluralité d'outils, d'acteurs et d'infrastructures numériques, contre la concentration du secteur entre quelques multinationales, dans une logique de souveraineté et de sobriété.", direction: "diversité et souveraineté numériques contre la concentration" , source: { nom: "Pour une prospérité écologique, programme des Écologistes, juillet 2026", url: "https://marinetondelier.fr/programme-2027" } },
+        logement: { synthese: "Inscrit le droit au logement pour tous parmi les priorités communes de la gauche pour 2027, sans détail chiffré propre identifié à ce stade.", direction: "priorité au droit au logement" , source: { nom: "Pour une prospérité écologique, programme des Écologistes, juillet 2026", url: "https://marinetondelier.fr/programme-2027" } },
+        defense: { synthese: "Rompt avec la tradition pacifiste écologiste : soutient un engagement militaire renforcé auprès de l'Ukraine, veut un commandement militaire européen intégré placé sous l'autorité du Conseil européen, et demande que le Parlement soit associé à la définition de la doctrine de dissuasion.", direction: "défense européenne intégrée, soutien à l'Ukraine" , source: { nom: "Pour une prospérité écologique, programme des Écologistes, juillet 2026", url: "https://marinetondelier.fr/programme-2027" } }
       },
       soutiens: [
         { nom: "Olivier Faure", fonction: "Premier secrétaire du Parti socialiste", type: "officiel" },
@@ -748,6 +752,7 @@ window.SITE_DATA = {
     // ================= GAUCHE, PRIMAIRE PS / PLACE PUBLIQUE =================
     {
       slug: "raphael-glucksmann",
+      programme_publie: { niveau: "aucun", detail: "Aucun programme publié sur le site de campagne à ce jour. Le meeting de lancement est annoncé pour le 6 décembre 2026.", url: "https://glucks2027.fr/", verifie: "2026-11-09" },
       nom: "Raphaël Glucksmann",
       parti: "Place publique",
       note: "★",
@@ -935,6 +940,7 @@ window.SITE_DATA = {
     // ================= BLOC CENTRAL =================
     {
       slug: "edouard-philippe",
+      programme_publie: { niveau: "partiel", detail: "Quatre pages d'orientations publiées sur le site de campagne, sans volet santé, laïcité, agriculture, logement ni défense.", url: "https://avecedouard.fr/", verifie: "2026-11-09" },
       nom: "Édouard Philippe",
       parti: "Horizons",
       bloc: "centre",
@@ -978,8 +984,7 @@ window.SITE_DATA = {
       },
       sources: [
         "https://en.wikipedia.org/wiki/%C3%89douard_Philippe",
-        "https://www.cnews.fr/france/2026-07-05/presidentielle-2027-refonte-de-lecole-justice-immigration-ce-quil-faut-retenir-du",
-        "https://www.elyseescope.com/candidat/edouard-philippe/programme-presidentiel-et-methode"
+        "https://www.cnews.fr/france/2026-07-05/presidentielle-2027-refonte-de-lecole-justice-immigration-ce-quil-faut-retenir-du"
       ],
       changements_ligne: [
         { date: "2002", de: "Parti socialiste (soutien à Michel Rocard)", vers: "UMP (proche d'Alain Juppé)", contexte: "Militant au PS dans les années 1990 en soutenant Michel Rocard, il rallie la droite lors de la création de l'UMP en 2002 et devient directeur général des services de l'UMP jusqu'en 2004." },
@@ -1079,6 +1084,7 @@ window.SITE_DATA = {
     },
     {
       slug: "gabriel-attal",
+      programme_publie: { niveau: "partiel", detail: "Engagements publiés sous le titre « Mes chantiers capitaux ». Le site indique que le programme est encore en construction et alimenté par une consultation en ligne.", url: "https://attalpresident.fr/", verifie: "2026-11-09" },
       nom: "Gabriel Attal",
       parti: "Renaissance (EPR)",
       bloc: "centre",
@@ -1191,6 +1197,7 @@ window.SITE_DATA = {
     // ================= DROITE =================
     {
       slug: "bruno-retailleau",
+      programme_publie: { niveau: "partiel", detail: "Projet en 16 mesures réparties sur trois axes, complété par des livrets thématiques.", url: "https://www.avecretailleau.fr/", verifie: "2026-11-09" },
       nom: "Bruno Retailleau",
       parti: "Les Républicains",
       bloc: "droite",
@@ -1301,6 +1308,7 @@ window.SITE_DATA = {
     },
     {
       slug: "david-lisnard",
+      programme_publie: { niveau: "complet", detail: "Programme de Nouvelle Énergie pour 2027, structuré en trois axes et décliné par thèmes sur le site du mouvement.", url: "https://www.unenouvelleenergie.fr/notre-programme/", verifie: "2026-11-09" },
       nom: "David Lisnard",
       parti: "Nouvelle Énergie",
       bloc: "droite",
@@ -1424,6 +1432,7 @@ window.SITE_DATA = {
     // ================= EXTRÊME DROITE =================
     {
       slug: "marine-le-pen",
+      programme_publie: { niveau: "aucun", detail: "Aucune page de programme présidentiel publiée à ce jour sur le site du Rassemblement national.", verifie: "2026-11-09" },
       nom: "Marine Le Pen",
       parti: "Rassemblement National",
       bloc: "exdroite",
@@ -1669,7 +1678,8 @@ window.SITE_DATA = {
 
     // ================= INCLASSABLES =================
     {
-      slug: "teddy-riner", nom: "Teddy Riner", parti: "Sans étiquette", bloc: "inclassable", fiche: false,
+      slug: "teddy-riner",
+      programme_publie: { niveau: "aucun", detail: "Candidat déclaré le 9 novembre 2026. Il indique travailler son programme avec une équipe d'une vingtaine de personnes.", verifie: "2026-11-09" }, nom: "Teddy Riner", parti: "Sans étiquette", bloc: "inclassable", fiche: false,
       note: "ℹ️",
       noteDetail: "Judoka, quintuple champion olympique et onze fois champion du monde, né à Pointe-à-Pitre. A annoncé sa candidature le 9 novembre 2026 sur X et dans Le Parisien, en se disant « ni de droite ni de gauche » et en visant le rôle de « président qui fédère ». Son programme est en cours d'élaboration avec une équipe d'une vingtaine de personnes : aucune position détaillée n'est documentée à ce stade. Il dit vouloir poursuivre sa carrière sportive jusqu'aux Jeux de 2028.",
       sondage: { label: "non testé", niveau: "faible", tendance: "stable" },

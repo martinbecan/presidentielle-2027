@@ -2027,3 +2027,39 @@ summary:focus-visible,
     text-align: left;
   }
 }
+
+/* ---- État de publication du programme ----
+   Rend visible, et donc interprétable, l'écart de documentation entre fiches :
+   il vient de ce que les candidats publient, pas d'un choix éditorial. */
+.programme-etat {
+  border: 1px solid var(--border-soft);
+  border-left: 3px solid var(--text-dim);
+  border-radius: 0 8px 8px 0;
+  background: rgba(255, 255, 255, 0.025);
+  padding: 0.85rem 1rem;
+  margin-bottom: 1.1rem;
+}
+.programme-etat-complet { border-left-color: #4ade80; }
+.programme-etat-partiel { border-left-color: #fbbf24; }
+.programme-etat-aucun   { border-left-color: #94a3b8; }
+.programme-etat-tete {
+  display: flex; flex-wrap: wrap; align-items: baseline;
+  gap: 0.5rem 0.9rem; margin-bottom: 0.45rem;
+}
+.programme-etat-badge { font-size: 0.86rem; font-weight: 600; color: var(--text); }
+.programme-etat-compte {
+  font-size: 0.74rem; color: var(--text-dim);
+  border: 1px solid var(--border-soft); border-radius: 999px;
+  padding: 0.1rem 0.55rem; white-space: nowrap;
+}
+.programme-etat-detail {
+  font-size: 0.82rem; line-height: 1.55; color: var(--text-soft);
+  margin: 0 0 0.45rem; text-align: justify; hyphens: auto;
+}
+.programme-etat-note {
+  font-size: 0.75rem; line-height: 1.5; color: var(--text-dim);
+  margin: 0 0 0.5rem; text-align: justify; hyphens: auto;
+}
+@media (max-width: 600px) {
+  .programme-etat-detail, .programme-etat-note { text-align: left; hyphens: manual; }
+}

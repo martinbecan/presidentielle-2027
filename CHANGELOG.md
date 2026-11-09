@@ -3,7 +3,7 @@
 Historique des mises à jour du site. Tenu à jour manuellement à chaque session de travail.
 
 ## 2026-11-09
-- **Le premier programme complet de la campagne est paru**, et il change la nature de ce que le site peut documenter. La France insoumise a publié le 6 novembre la cinquième édition de **L'Avenir en commun**, **1 069 mesures dont 238 nouvelles**, présentée au meeting du Bourget le 7. À cinq mois du premier tour, aucun autre candidat n'a publié de programme
+- **Un deuxième programme complet est paru.** La France insoumise a publié le 6 novembre la cinquième édition de **L'Avenir en commun**, **1 069 mesures dont 238 nouvelles**, présentée au meeting du Bourget le 7. Voir plus bas la correction : contrairement à ce que j'avais d'abord écrit, ce n'est pas le premier de la campagne
 - **Les 15 positions de Jean-Luc Mélenchon sont désormais sourcées** sur le programme officiel, contre zéro auparavant. La couverture du site passe de **20 à 35 positions sourcées sur 180**, soit de 11 % à 19 %. C'est le premier candidat entièrement documenté à partir d'une source primaire
 - **Trois positions étaient devenues fausses et sont corrigées** : le SMIC passe de 1 600 à **1 700 € net**, l'objectif de 100 % d'électricité renouvelable glisse de 2050 à **2060**, et la retraite est précisée en deux temps, abrogation avec retour à 62 ans puis 60 ans à taux plein pour 40 annuités. Le site affichait des chiffres périmés depuis la version précédente du programme
 - **4 engagements ajoutés** sur le pouvoir d'achat, la fiscalité, l'écologie et les institutions. Celui sur les institutions relève que la 6e République passerait par **l'article 11**, c'est-à-dire la même voie juridique que le référendum sur l'immigration de Marine Le Pen, contestée par le président du Conseil constitutionnel. Le rapprochement est factuel et sourcé des deux côtés
@@ -17,6 +17,17 @@ Historique des mises à jour du site. Tenu à jour manuellement à chaque sessio
 - **Nouvelle échéance sourcée** : grève de la fonction publique le **17 novembre**, décidée par l'intersyndicale le 9. Les 7 entrées à venir portent toutes leur source
 - **Recomposition à droite** : Gabriel Attal plaide pour une primaire de la droite et du centre afin d'éviter un second tour Le Pen contre Mélenchon. Retailleau et Lisnard sont favorables, Philippe s'y oppose, Wauquiez veut un candidat unique avant Noël. Et à gauche, neuf députés du groupe communiste soutiennent Mélenchon alors que Fabien Roussel est candidat
 - **Frise : 99 événements, dont 62 sourcés** (+9 événements, +9 sources)
+
+- **Correction publiée le soir même : Mélenchon n'est pas le premier à avoir publié un programme.** J'avais écrit, en reprenant une affirmation de LFI relayée par France 24, que L'Avenir en commun était « le premier programme présidentiel complet de la campagne » et qu'« aucun autre candidat n'a publié de programme ». Vérification faite sur les sites officiels, **Les Écologistes ont publié « Pour une prospérité écologique », 557 mesures, dès le 13 juillet 2026**. L'événement de frise est corrigé et celui du 13 juillet est ajouté
+- Une leçon qui vaut d'être notée : l'affirmation venait d'un parti, reprise telle quelle par une agence. Elle était vérifiable en cinq minutes sur le site du concurrent
+
+- **Nouvelle section : l'état de publication du programme, sur chaque fiche.** Trois niveaux, vérifiés un par un sur les sites officiels de campagne et non sur des agrégateurs : complet, orientations partielles, rien publié. Avec, à côté, le nombre de positions réellement sourcées sur 15
+- **Complet** : Tondelier (557 mesures, juillet), Mélenchon (1 069 mesures, novembre), Lisnard (programme Nouvelle Énergie). **Partiel** : Philippe (4 pages d'orientations), Retailleau (16 mesures), Attal (chantiers capitaux, programme explicitement en construction). **Rien publié** : Glucksmann, Le Pen, Riner
+- Chaque bloc porte la même phrase : le niveau de détail d'une fiche dépend de ce que le candidat publie, pas de l'intérêt qu'on lui porte. C'est la réponse au risque principal identifié à l'audit, une fiche fournie face à une fiche vide pouvant se lire comme un parti pris
+- **Les 15 positions de Marine Tondelier sont désormais sourcées** sur son programme. Le site passe de 35 à **50 positions sourcées sur 180**, soit 28 % contre 11 % ce matin
+- **Un agrégateur interdit était cité en source** sur la fiche d'Édouard Philippe, elyseescope.com, en contradiction avec nos propres règles. Retiré. Et la source du programme de Mélenchon pointait vers l'édition périmée, corrigée
+- **Nouvelle échéance sourcée** : meeting de lancement de campagne de Raphaël Glucksmann le 6 décembre, relevé sur son site officiel
+
 
 ## 2026-11-02
 - **La courbe des sondages repart après trois semaines d'arrêt.** Le dernier relevé datait du 8 octobre. L'enquête **Ipsos bva avec CESI pour Le Parisien**, terrain des 21 et 22 octobre auprès de 1 500 inscrits, fournit un 7e relevé propre : institut unique, hypothèse identifiée, rapport complet publié. **11 candidats mesurés, dont la somme fait exactement 100,0 %**, ce qui confirme au passage l'attribution des colonnes
