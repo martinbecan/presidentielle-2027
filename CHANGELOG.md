@@ -2,6 +2,22 @@
 
 Historique des mises à jour du site. Tenu à jour manuellement à chaque session de travail.
 
+## 2026-11-09
+- **Le premier programme complet de la campagne est paru**, et il change la nature de ce que le site peut documenter. La France insoumise a publié le 6 novembre la cinquième édition de **L'Avenir en commun**, **1 069 mesures dont 238 nouvelles**, présentée au meeting du Bourget le 7. À cinq mois du premier tour, aucun autre candidat n'a publié de programme
+- **Les 15 positions de Jean-Luc Mélenchon sont désormais sourcées** sur le programme officiel, contre zéro auparavant. La couverture du site passe de **20 à 35 positions sourcées sur 180**, soit de 11 % à 19 %. C'est le premier candidat entièrement documenté à partir d'une source primaire
+- **Trois positions étaient devenues fausses et sont corrigées** : le SMIC passe de 1 600 à **1 700 € net**, l'objectif de 100 % d'électricité renouvelable glisse de 2050 à **2060**, et la retraite est précisée en deux temps, abrogation avec retour à 62 ans puis 60 ans à taux plein pour 40 annuités. Le site affichait des chiffres périmés depuis la version précédente du programme
+- **4 engagements ajoutés** sur le pouvoir d'achat, la fiscalité, l'écologie et les institutions. Celui sur les institutions relève que la 6e République passerait par **l'article 11**, c'est-à-dire la même voie juridique que le référendum sur l'immigration de Marine Le Pen, contestée par le président du Conseil constitutionnel. Le rapprochement est factuel et sourcé des deux côtés
+
+- **Teddy Riner est candidat.** Le quintuple champion olympique de judo l'a annoncé le 9 novembre sur X et dans Le Parisien, « ni de droite ni de gauche », sous le slogan « La France qu'on veut ». Sa fiche porte la mention explicite qu'**aucune position détaillée n'est documentée à ce stade** : il dit travailler son programme avec une vingtaine de personnes. 34 candidats suivis
+- Les quatre idées reprises sont celles qu'il a lui-même énoncées en entretien, pas des déductions : réforme des retraites, réduction des dépenses, rapprochement du net et du brut, lutte contre le racisme
+
+- **Le budget 2027 a été rejeté à l'unanimité**, 458 voix contre zéro le 4 novembre, aucun groupe ne votant pour. Le texte part au Sénat dans sa version initiale
+- **La crise sociale continue** : grève interprofessionnelle le 5 novembre, 575 000 manifestants selon l'Intérieur et 1,6 million selon la CGT. Conférence sociale à Matignon le 9 novembre, qui anticipe au 1er décembre une hausse du SMIC de 1,6 %, à environ **1 502 € nets**. Le coup de pouce de 0,6 point est **le premier depuis 2012**
+- **Une opposition chiffrée apparaît sur le SMIC**, et le site la rend lisible : Mélenchon propose 1 700 € net, le ministre du Travail répond qu'un tel niveau détruirait plus de 230 000 emplois. Les deux chiffres sont rapportés avec leur auteur, sans arbitrer
+- **Nouvelle échéance sourcée** : grève de la fonction publique le **17 novembre**, décidée par l'intersyndicale le 9. Les 7 entrées à venir portent toutes leur source
+- **Recomposition à droite** : Gabriel Attal plaide pour une primaire de la droite et du centre afin d'éviter un second tour Le Pen contre Mélenchon. Retailleau et Lisnard sont favorables, Philippe s'y oppose, Wauquiez veut un candidat unique avant Noël. Et à gauche, neuf députés du groupe communiste soutiennent Mélenchon alors que Fabien Roussel est candidat
+- **Frise : 99 événements, dont 62 sourcés** (+9 événements, +9 sources)
+
 ## 2026-11-02
 - **La courbe des sondages repart après trois semaines d'arrêt.** Le dernier relevé datait du 8 octobre. L'enquête **Ipsos bva avec CESI pour Le Parisien**, terrain des 21 et 22 octobre auprès de 1 500 inscrits, fournit un 7e relevé propre : institut unique, hypothèse identifiée, rapport complet publié. **11 candidats mesurés, dont la somme fait exactement 100,0 %**, ce qui confirme au passage l'attribution des colonnes
 - **Hypothèse retenue : Glucksmann, Attal et Philippe tous candidats**, la même que les relevés précédents, pour que la série reste comparable. L'institut en teste trois autres, aux scores sensiblement différents, qui ne sont pas reprises
