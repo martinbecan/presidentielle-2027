@@ -2090,3 +2090,24 @@ summary:focus-visible,
 @media (max-width: 600px) {
   .notes-candidats-liste li { text-align: left; hyphens: manual; }
 }
+
+/* ---- Quiz : « Affiner » remonte en action principale ----
+   Le bouton était en bas de page et dans le style le moins visible des trois,
+   alors qu'il améliore le résultat que l'utilisateur vient d'obtenir. */
+.quiz-compat-affiner {
+  border: 1px solid var(--border-soft);
+  border-left: 3px solid #a78bfa;
+  border-radius: 0 8px 8px 0;
+  background: rgba(167, 139, 250, 0.06);
+  padding: 0.9rem 1rem;
+  margin: 1.1rem 0;
+}
+.quiz-compat-affiner p {
+  margin: 0 0 0.7rem;
+  font-size: 0.85rem; line-height: 1.55; color: var(--text-soft);
+  text-align: justify; hyphens: auto;
+}
+.quiz-compat-affiner .quiz-compat-extend-btn { margin: 0; }
+@media (max-width: 600px) {
+  .quiz-compat-affiner p { text-align: left; hyphens: manual; }
+}

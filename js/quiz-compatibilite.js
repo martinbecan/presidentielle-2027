@@ -237,6 +237,19 @@
         results[results.length - 1].candidat.nom + ' (' + results[results.length - 1].pct + ' %).</p>';
     }
 
+    // Affiner est l'action la plus utile juste après le résultat, puisqu'elle améliore
+    // ce que l'utilisateur vient d'obtenir. Elle était en bas de page et dans le style
+    // le moins visible des trois boutons : elle remonte ici, en action principale.
+    if (extensionQuestions.length && !extensionDone) {
+      var nbExt = extensionQuestions.length;
+      html += '<div class="quiz-compat-affiner">';
+      html += '<p>Ces ' + nbExt + ' questions supplémentaires portent sur des points plus précis, ' +
+        'ceux qui séparent des candidats proches. Elles prennent une minute.</p>';
+      html += '<button type="button" class="quiz-next-btn quiz-compat-extend-btn" id="quiz-extend-btn">Affiner mon résultat, ' +
+        nbExt + ' question' + (nbExt > 1 ? 's' : '') + ' de plus</button>';
+      html += '</div>';
+    }
+
     // Sur quoi s'est jouée la première place : les questions où les deux premiers
     // divergent le plus. C'est la question que se pose l'utilisateur devant deux
     // scores presque identiques.
@@ -263,24 +276,23 @@
       }
     }
 
-    var compareSlugs = top3.map(function (r) { return r.candidat.slug; }).join(',');
-    html += '<div class="quiz-compat-actions">';
-    html += '<a class="quiz-next-btn" href="comparateur.html?c=' + compareSlugs + '">🔀 Comparer ces 3 candidats</a>';
-    html += '<button type="button" class="quiz-next-btn quiz-next-btn-compat" id="quiz-memo-btn">📄 Générer mon mémo personnel</button>';
-    html += '</div>';
-
-    if (extensionQuestions.length && !extensionDone) {
-      html += '<button type="button" class="quiz-back-btn quiz-compat-extend-btn" id="quiz-extend-btn">➕ Affiner mon résultat avec ' + extensionQuestions.length + ' question' + (extensionQuestions.length > 1 ? 's' : '') + ' supplémentaire' + (extensionQuestions.length > 1 ? 's' : '') + '</button>';
-    }
-
-    html += '<p class="quiz-compat-disclaimer">Ce résultat est une aide à la réflexion basée sur vos réponses à quelques questions clés, pas un verdict. Ce site vous donne des sources, pas des vérités toutes faites : cliquez, recoupez, doutez, explorez les fiches candidats avant de vous décider, c\'est ça, voter en conscience.</p>';
-
+    // Les deux encarts explicatifs se suivent désormais, au lieu d'être séparés par
+    // les boutons d'action : ils répondent à la même question, « ce résultat tient-il ? ».
     html += '<details class="quiz-compat-methodo"><summary>Comment ce score est calculé ? <span class="chevron">▸</span></summary>';
     html += '<div class="quiz-compat-methodo-content">';
     html += '<p><strong>D\'où viennent les positions des candidats ?</strong> Des programmes officiels, déclarations publiques et votes recensés sur chaque fiche candidat, synthétisés thème par thème.</p>';
     html += '<p><strong>Comment le calcul fonctionne :</strong> chacune de vos réponses (de « tout à fait d\'accord » à « pas du tout d\'accord ») est comparée à la position du candidat sur le même sujet. Plus l\'écart est petit sur l\'ensemble des questions, plus le pourcentage de compatibilité est élevé. Les réponses « neutre » ne comptent ni pour ni contre un candidat.</p>';
     html += '<p><strong>Les limites de l\'exercice :</strong> ' + Object.keys(answers).length + ' questions ne peuvent pas capturer toutes les nuances d\'un programme. Certaines positions de candidats reposent sur une synthèse éditoriale de leurs déclarations, pas sur un questionnaire qu\'ils auraient eux-mêmes rempli. Un score élevé ne signifie pas un accord total, ni un score bas un désaccord total.</p>';
     html += '</div></details>';
+
+    // Actions secondaires : elles servent une fois le résultat compris et accepté.
+    var compareSlugs = top3.map(function (r) { return r.candidat.slug; }).join(',');
+    html += '<div class="quiz-compat-actions">';
+    html += '<a class="quiz-next-btn quiz-next-btn-compat" href="comparateur.html?c=' + compareSlugs + '">🔀 Comparer ces 3 candidats</a>';
+    html += '<button type="button" class="quiz-next-btn quiz-next-btn-compat" id="quiz-memo-btn">📄 Générer mon mémo personnel</button>';
+    html += '</div>';
+
+    html += '<p class="quiz-compat-disclaimer">Ce résultat est une aide à la réflexion basée sur vos réponses à quelques questions clés, pas un verdict. Ce site vous donne des sources, pas des vérités toutes faites : cliquez, recoupez, doutez, explorez les fiches candidats avant de vous décider, c\'est ça, voter en conscience.</p>';
 
     html += '<div class="voter-banner" style="margin-top:1.5rem;">';
     html += '<div class="voter-banner-icon">📋</div>';
